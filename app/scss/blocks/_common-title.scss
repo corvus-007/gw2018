@@ -1,0 +1,13 @@
+.common-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: rem(30);
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #4c4136;
+
+  @include mq-minh($vh-height-bp) {
+    font-size: vh(36);
+    line-height: vh(42);
+  }
+}

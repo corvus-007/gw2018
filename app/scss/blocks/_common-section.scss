@@ -1,0 +1,9 @@
+.common-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include mq-min(1024px) {
+    padding-top: vh(50);
+    padding-bottom: vh(50);
+  }
+}

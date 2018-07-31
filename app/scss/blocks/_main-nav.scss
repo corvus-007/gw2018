@@ -1,0 +1,31 @@
+.main-nav {
+
+}
+
+.main-nav__list {
+  @include clear-list();
+
+  display: flex;
+
+  a {
+    display: block;
+    padding: vh(7) vh(10);
+    font-weight: 700;
+    font-size: vh(14);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $base-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color-2;
+    }
+  }
+
+  li:first-child a {
+    border-radius: 100px;
+    padding-left: vh(25);
+    padding-right: vh(25);
+    background-color: #efebf0;
+  }
+}
