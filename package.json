@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.3.5",
-    "cleave.js": "^1.4.2",
     "flickity": "^2.1.2",
+    "inputmask": "^4.0.0",
     "svg4everybody": "^2.1.9"
   }
 }

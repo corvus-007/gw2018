@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
-  var cleave = new Cleave('.closed-show-form input[type="tel"]', {
-    phone: true,
-    phoneRegionCode: 'RU'
+  $('input[type="tel"]').inputmask({
+    "mask": "+7 (999) 999-99-99"
   });
 
   window.addEventListener('scroll', function () {
@@ -22,11 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
     $(constructionSlides).flickity({
       draggable: true,
       cellAlign: 'left',
-      // freeScroll: true,
       imagesLoaded: true,
       prevNextButtons: false,
       pageDots: false,
-      // lazyLoad: true,
       contain: true
     });
   }
