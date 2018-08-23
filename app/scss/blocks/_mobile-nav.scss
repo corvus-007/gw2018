@@ -5,10 +5,6 @@
 .mobile-nav__list {
   @include clear-list();
 
-  li {
-
-  }
-
   a {
     display: block;
     padding-top: 10px;

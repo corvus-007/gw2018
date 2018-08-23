@@ -32,7 +32,7 @@ $context-default: $font-size;
 
 // VH convert
 
-@function vh($target, $viewportHeight: 700) {
+@function vh($target, $viewportHeight: 740) {
   // высота шрифта в макете / высота макета * 100 + vh
   @return ($target / $viewportHeight) * 100vh;
 }

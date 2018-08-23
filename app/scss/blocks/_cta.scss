@@ -1,9 +1,8 @@
 .cta {
-  // margin-top: 50px;
-  // margin-bottom: 50px;
   padding-top: 35px;
   padding-bottom: 35px;
-  background-color: $accent-color-2;
+  background: $accent-color-2 url("images/bg_noise.png");
+  background-size: calc(476px / 2);
   color: #ffffff;
 
   @include mq-minh($vh-height-bp) {
@@ -41,8 +40,4 @@
       font-size: vh(30);
     }
   }
-}
-
-.cta__button {
-
 }

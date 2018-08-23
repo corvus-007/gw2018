@@ -1,11 +1,3 @@
-.construction-slider {
-
-}
-
-.construction-slider__slides {
-
-}
-
 .construction-slider__item {
   width: 100%;
 
@@ -27,10 +19,6 @@
   @include make-fit-object(300, 200);
 }
 
-.construction-slider__image {
-
-}
-
 .construction-slider__wraplink {
   display: block;
 }
@@ -44,13 +32,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: scale(1.4);
   justify-content: center;
   text-transform: uppercase;
   font-weight: 700;
   font-size: rem(24);
   line-height: 1.15;
   background-color: rgba(#252425, 0.8);
-  transform: scale(1.4);
   transition: $duration * 2 cubic-bezier(0.39, 0.58, 0.57, 1);
   opacity: 0;
 
@@ -59,8 +47,8 @@
   }
 
   @media (pointer: coarse) {
-    opacity: 1;
     background-color: rgba(#252425, 0.6);
+    opacity: 1;
   }
 }
 
@@ -80,6 +68,7 @@
 
 .construction-slider__hint {
   display: flex;
+  justify-content: center;
   align-items: center;
   max-width: 245px;
   margin: 0;
@@ -94,11 +83,28 @@
     width: 32px;
     height: 32px;
     margin-right: 5px;
-    background-color: #d56073;
+    background: url("images/swipe.svg") no-repeat center;
+    background-size: contain;
   }
 
   @include mq-min(1024px) {
-    max-width: vh(230);
+    max-width: vh(235);
     margin-top: 45px;
+  }
+}
+
+.construction-slider__hint-text {
+  &--for-mouse {
+    display: none;
+  }
+
+  @include mq-min(768px) {
+    &--for-mouse {
+      display: block;
+    }
+
+    &--for-touch {
+      display: none;
+    }
   }
 }

@@ -7,6 +7,10 @@
     background: #ffffff url("../images/intro-bg.jpg") no-repeat center;
     background-size: cover;
   }
+
+  @include mq-minh($vh-height-bp) {
+    padding-bottom: vh(50);
+  }
 }
 
 .section-intro__inner {
@@ -22,6 +26,7 @@
 
   @include mq-min(1024px) {
     min-height: auto;
+    padding-top: 105px;
     padding-bottom: 0;
   }
 }
@@ -42,9 +47,13 @@
     bottom: vh(25);
   }
 
-  @include mq-min(1440px) {
+  @include mq-min(1280px) {
     position: absolute;
-    bottom: vh(50);
+    bottom: vh(60);
+  }
+
+  @include mq-min(1440px) {
+    bottom: vh(100);
   }
 }
 
@@ -52,7 +61,7 @@
   margin: 0;
   margin-bottom: 20px;
   font-size: rem(24);
-  line-height: 1.35;
+  line-height: 1.3;
   text-transform: uppercase;
   color: #4c4136;
 
@@ -72,6 +81,7 @@
 
   @include mq-min(1024px) {
     font-size: rem(36);
+    min-width: 600px;
 
     span {
       padding: 0;
@@ -81,6 +91,7 @@
 
   @include mq-minh($vh-height-bp) {
     margin-bottom: vh(20);
+    margin-bottom: vh(40);
     font-size: vh(36);
 
     span {
@@ -101,7 +112,7 @@
 
   @include mq-minh($vh-height-bp) {
     margin-bottom: vh(20);
-    padding-left: vh(86);
+    padding-left: vh(86 + 5);
   }
 }
 
@@ -128,31 +139,37 @@
 }
 
 .section-intro__text-quantity {
+  position: relative;
+  z-index: 1;
   display: block;
-  // font-size: rem(240);
-  // font-size: vh(200);
   line-height: 0.8;
+  font-weight: 700;
   color: $accent-color;
 
   @include mq-max(1023px) {
     font-size: 50vmin;
-    font-weight: 800;
   }
 
   @include mq-min(1024px) {
-    display: inline;
+    display: inline-block;
+    margin-top: vh(15);
     font-size: rem(300);
     line-height: 0.6;
     color: #ffffff;
+    text-shadow: 15px 15px 7px rgba(52, 75, 90, 0.44);
 
     span {
-      letter-spacing: -0.035em;
+      position: relative;
+      top: vh(-15);
+      margin-right: vh(-20);
       color: transparent;
       background-image: url("http://greenwoodclub.ru/template/images/main_page/main_page_bg3.jpg");
       background-position: left;
       background-repeat: no-repeat;
       -webkit-background-clip: text;
       background-clip: text;
+      background-size: calc(2844px / 2);
+      text-shadow: none;
     }
   }
 
@@ -163,7 +180,6 @@
 
 .section-intro__text-unit {
   display: block;
-  // font-size: rem(60);
   color: #4c4136;
 
   @include mq-max(1023px) {
@@ -171,18 +187,31 @@
   }
 
   @include mq-min(1024px) {
+    // position: relative;
+    // top: vh(-60);
+    display: none;
+    // margin-left: vh(-10);
+    // font-size: vh(80);
+    // text-transform: uppercase;
+    // color: $secondary-color;
+  }
+}
+
+.section-intro__svg-unit {
+  display: none;
+
+  @include mq-min(1024px) {
     position: relative;
-    display: inline;
-    top: -60px;
-    font-size: rem(80);
-    font-size: vh(80);
-    text-transform: uppercase;
-    color: #ffffff;
+    top: vh(-60);
+    display: inline-block;
+    margin-left: vh(-20);
+    // border-top-right-radius: vh(24);
   }
 }
 
 .section-intro__to-more {
   position: relative;
+  z-index: 2;
   min-width: 265px;
   padding-top: 17px;
   padding-bottom: 17px;
