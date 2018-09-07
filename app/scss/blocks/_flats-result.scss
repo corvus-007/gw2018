@@ -1,0 +1,124 @@
+.flats-result {
+
+}
+
+.flats-result__table {
+  text-align: center;
+  border: none;
+
+  @include mq-min(992px) {
+    table-layout: fixed;
+  }
+}
+
+.flats-result__thead {
+  background-color: $secondary-color;
+}
+
+.flats-result__head {
+  padding: 15px 10px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #003d58;
+  border: none;
+
+  @include mq-min(1280px) {
+    font-size: vh(12);
+  }
+}
+
+.flats-result__tbody {
+
+}
+
+.flats-result__row {
+  cursor: pointer;
+}
+
+.flats-result__cell {
+  padding: 10.5px;
+  font-size: rem(17);
+  vertical-align: middle;
+  border: none;
+  border-top: 1px solid $gray-239;
+  border-bottom: 1px solid $gray-239;
+
+  &--type {
+    text-align: left;
+
+    span {
+      margin-left: 50%;
+    }
+  }
+
+  &--room {
+    .flats-result__row--reserve & {
+      span {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: calc(100% + 25px);
+          width: 12px;
+          height: 12px;
+          background: url("images/padlock.svg") no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  @include mq-max(480px) {
+    padding-left: 2px;
+    padding-right: 2px;
+
+    &--room {
+      .flats-result__row--reserve & {
+        span {
+          &::before {
+            right: calc(100% + 10px);
+          }
+        }
+      }
+    }
+  }
+
+  @include mq-range(768px, 991px) {
+    padding-left: 2px;
+    padding-right: 2px;
+
+    &--room {
+      .flats-result__row--reserve & {
+        span {
+          &::before {
+            right: calc(100% + 10px);
+          }
+        }
+      }
+    }
+  }
+
+  @include mq-min(1280px) {
+    font-size: vh(17);
+  }
+}
+
+.flats-result__to-request-flat {
+  min-width: auto;
+  padding: 3px 15px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-transform: none;
+  color: $brown-color;
+  background-color: $secondary-color;
+  box-shadow: none;
+
+  @include mq-max(480px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

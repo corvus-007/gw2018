@@ -1,0 +1,10 @@
+.text-agree {
+  font-size: rem(15);
+  line-height: 1.2;
+  text-align: center;
+  color: $brown-color;
+
+  @include mq-min(1280px) {
+    font-size: vh(15);
+  }
+}

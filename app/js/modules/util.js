@@ -1,8 +1,9 @@
-'use strict';
-
 window.util = (function () {
+  'use strict';
+
   return {
     KEYCODE_ESC: 27,
+    URL_FILTER_HANDLER: 'js/flats-mock.json',
     setMaxHeight: function (selector) {
       var maxHeight;
       var elements = document.querySelectorAll(selector);

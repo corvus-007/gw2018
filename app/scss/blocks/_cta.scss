@@ -1,43 +1,32 @@
 .cta {
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-top: 35px;
   padding-bottom: 35px;
-  background: $accent-color-2 url("images/bg_noise.png");
-  background-size: calc(476px / 2);
-  color: #ffffff;
+  background-color: $secondary-color;
 
   @include mq-minh($vh-height-bp) {
-    margin-top: vh(50);
-    margin-bottom: vh(50);
-    padding-top: vh(35);
-    padding-bottom: vh(35);
+    margin-top: vh(30);
+    margin-bottom: vh(30);
+    padding-top: vh(45);
+    padding-bottom: vh(45);
   }
 }
 
 .cta__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.cta__text {
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-size: rem(30);
-  text-transform: uppercase;
+.cta__title {
   text-align: center;
+  margin-bottom: 30px;
+}
 
-  span {
-    display: block;
-    font-size: rem(26);
-    text-transform: none;
-  }
+.cta__form {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include mq-minh($vh-height-bp) {
-    margin-bottom: vh(20);
-    font-size: vh(36);
-
-    span {
-      font-size: vh(30);
-    }
+  @include mq-min(1024px) {
+    max-width: vh(710);
   }
 }

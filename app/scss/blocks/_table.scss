@@ -1,6 +1,6 @@
 table {
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   cursor: default;
 }
@@ -14,9 +14,8 @@ caption {
 
 th,
 td {
-  border: 1px solid #364f6b;
   padding: rem(8);
-  text-align: left;
+  border: 1px solid #364f6b;
   transition: ($duration / 2);
 }
 
@@ -24,17 +23,17 @@ thead {
   th,
   td {
     border-bottom-width: 2px;
-    text-align: left;
   }
 }
 
 tbody {
   vertical-align: top;
+
   tr {
     &:hover {
       th,
       td {
-        background-color: #f5f5f5;
+        background-color: $gray-245;
       }
     }
   }

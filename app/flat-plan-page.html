@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Квартира / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  @@include('blocks/main-header.html')
+
+  <main class="main">
+    <article class="common-page">
+      <!-- <header class="common-page__header">
+        <h1 class="common-page__title"></h1>
+      </header> -->
+      <div class="common-page__body flat container">
+        <div class="flat__plans-area">
+          <div class="plans-flat">
+            <div class="plans-flat__slider plans-flat-slider js-plans-flat-slider">
+              <div class="plans-flat-slider__item">
+                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536141495324-a48c4f2abffc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac834f695d3df31b53c9d8a34f529a1b&auto=format&fit=crop&w=1275&q=80" alt="">
+              </div>
+              <div class="plans-flat-slider__item">
+                <img data-flickity-lazyload="https://images.unsplash.com/photo-1506451487263-97b75fd35c03?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1bacd5f790fc8305a42430d5e38637da&auto=format&fit=crop&w=1350&q=80" alt="">
+              </div>
+              <div class="plans-flat-slider__item">
+                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e78b5f0bf282b8b489eae7aa8ab3356&auto=format&fit=crop&w=630&q=80" alt="">
+              </div>
+              <div class="plans-flat-slider__item">
+                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536139846172-57b28f601fe7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0fe790a70b4190bc0070d5e9e71bef55&auto=format&fit=crop&w=634&q=80" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flat__detail-area">
+          <div class="detail-flat">
+            <ul class="detail-flat__features common-features-flat">
+              <li class="common-features-flat__item">
+                <span class="common-features-flat__label">Тип дома</span>
+                <b class="common-features-flat__value">4.3</b>
+              </li>
+              <li class="common-features-flat__item">
+                <span class="common-features-flat__label">Комнат</span>
+                <b class="common-features-flat__value">4</b>
+              </li>
+              <li class="common-features-flat__item">
+                <span class="common-features-flat__label">Площадь</span>
+                <b class="common-features-flat__value">128,7</b>
+              </li>
+            </ul>
+            <form class="detail-flat__form request-price-form" action="" method="POST">
+              <p class="request-price-form__title">Узнать стоимость квартиры</p>
+              <label class="request-price-form__field field">
+                <span class="field__label visually-hidden">Имя</span>
+                <div class="field__control">
+                  <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+                </div>
+              </label>
+              <label class="request-price-form__field field">
+                <span class="field__label visually-hidden">Телефон</span>
+                <div class="field__control">
+                  <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
+                </div>
+              </label>
+              <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
+              <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+            </form>
+            <div class="detail-flat__options">
+              <p class="detail-flat__otion-parking">
+                Дополнительно<br>
+                <span>2 парковочных места</span><br>
+                за 1 400 000 руб.
+              </p>
+            </div>
+            <div class="detail-flat__actions">
+              <a class="detail-flat__to-print button" href="">Распечать планировку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-similar-plans common-section">
+        <div class="section-similar-plans__inner container">
+          <h2 class="section-similar-plans__title common-title">Похожие варианты квартир</h2>
+          <p class="section-similar-plans__intro">Клубный квартир «Гринвуд» – это возможность выбора! Поэтому мы подобрали несколько квартир, похожих на выбранную вами.</p>
+          <div class="section-similar-plans__slider common-plans-slider js-common-plans-slider">
+            <div class="common-plans-slider__item">
+              <a class="common-plans-slider__wraplink" href="">
+                <div class="common-plans-slider__picture">
+                  <img src="https://images.unsplash.com/photo-1535914253584-25160fb61079?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c705fbf436829357548ca9ca99df74e6&auto=format&fit=crop&w=643&q=80" alt="">
+                </div>
+                <ul class="common-plans-slider__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">2</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">87,6</b>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div class="common-plans-slider__item">
+              <a class="common-plans-slider__wraplink" href="">
+                <div class="common-plans-slider__picture">
+                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535725525385-bc19d13c503c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3bff9651cf9a34975e278e47a1f049b&auto=format&fit=crop&w=634&q=80" alt="">
+                </div>
+                <ul class="common-plans-slider__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">2</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">87,6</b>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div class="common-plans-slider__item">
+              <a class="common-plans-slider__wraplink" href="">
+                <div class="common-plans-slider__picture">
+                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=21aa7b8efd783642e11d7e3719e41ac2&auto=format&fit=crop&w=634&q=80" alt="">
+                </div>
+                <ul class="common-plans-slider__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">2</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">87,6</b>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div class="common-plans-slider__item">
+              <a class="common-plans-slider__wraplink" href="">
+                <div class="common-plans-slider__picture">
+                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535930749574-1399327ce78f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f8a140ac20927deb386d1c9187433d6&auto=format&fit=crop&w=676&q=80" alt="">
+                </div>
+                <ul class="common-plans-slider__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">2</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">87,6</b>
+                  </li>
+                </ul>
+              </a>
+            </div>
+            <div class="common-plans-slider__item">
+              <a class="common-plans-slider__wraplink" href="">
+                <div class="common-plans-slider__picture">
+                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535927853242-fa2bde74fb7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b987eec696912dcc7e1fae2adc362f4&auto=format&fit=crop&w=634&q=80" alt="">
+                </div>
+                <ul class="common-plans-slider__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">2</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">87,6</b>
+                  </li>
+                </ul>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  @@include('blocks/main-footer.html')
+  @@include('blocks/out-cover.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>

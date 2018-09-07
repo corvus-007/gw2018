@@ -1,4 +1,4 @@
-.section-closed-show {
+.section-involve-person {
   overflow: hidden;
 
   @include mq-max(1023px) {
@@ -6,13 +6,13 @@
   }
 }
 
-.section-closed-show__inner {
+.section-involve-person__inner {
   @include mq-min(1024px) {
     display: flex;
   }
 }
 
-.section-closed-show__content {
+.section-involve-person__content {
   position: relative;
   z-index: 1;
 
@@ -25,14 +25,14 @@
   }
 }
 
-.section-closed-show__title {
+.section-involve-person__title {
   margin-bottom: 30px;
   text-align: center;
 
   @include mq-min(1024px) {
     position: relative;
     z-index: 1;
-    max-width: vh(400);
+    // max-width: vh(400);
     margin-bottom: vh(-20);
     text-align: left;
 
@@ -40,7 +40,7 @@
       content: "";
       position: absolute;
       right: 100%;
-      bottom: 100%;
+      bottom: vh(80); // прмерно две высоты строки заголовка
       width: 500px;
       height: 500px;
       margin-right: 15px;
@@ -51,7 +51,7 @@
   }
 }
 
-.section-closed-show__form {
+.section-involve-person__form {
   position: relative;
 
   @include mq-max(1023px) {
@@ -84,7 +84,7 @@
   }
 }
 
-.section-closed-show__picture {
+.section-involve-person__picture {
   @include make-fit-object(640, 450);
 
   @include mq-max(1023px) {
@@ -113,7 +113,7 @@
   }
 }
 
-.section-closed-show__image {
+.section-involve-person__image {
   width: 100%;
 
   @include mq-min(1024px) {

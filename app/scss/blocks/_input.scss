@@ -3,24 +3,22 @@
   max-height: 150px;
   padding: 15.5px 15px;
   font: inherit;
-  font-weight: 700;
-  font-size: rem(15);
+  font-weight: 600;
+  font-size: rem(17);
   line-height: rem(25);
-  text-align: center;
   resize: vertical;
   outline: none;
-  border: 1px solid $secondary-color;
-  border-radius: 100px;
+  border: 1px solid $secondary-color-2;
+  border-radius: $border-radius;
   background-color: #ffffff;
   line-height: normal;
-  text-transform: uppercase;
   box-shadow: none;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: $duration * 2;
 
   &:hover,
   &:focus {
-    border-color: darken(#ffffff, 10%);
+    border-color: darken($secondary-color-2, 10%);
   }
 
   &--fill-white {
@@ -34,6 +32,6 @@
 
   @include mq-minh($vh-height-bp) {
     padding: vh(15.5) vh(15);
-    font-size: vh(15);
+    font-size: vh(17);
   }
 }

@@ -57,13 +57,13 @@
       </div>
     </section>
 
-    <div class="cta">
-      <div class="cta__inner container">
-        <p class="cta__text">
+    <div class="simple-cta">
+      <div class="simple-cta__inner container">
+        <p class="simple-cta__text">
           Квартал «Гринвуд»
           <span>это клубная загородная жизнь в центре Брянска</span>
         </p>
-        <a class="cta__button button" href="">Подробнее о проекте</a>
+        <a class="simple-cta__button button" href="">Подробнее о проекте</a>
       </div>
     </div>
 
@@ -202,36 +202,37 @@
       </div>
     </section>
 
-    <section class="section-closed-show common-section">
-      <div class="section-closed-show__inner container">
-        <div class="section-closed-show__content">
-          <h2 class="section-closed-show__title common-title">
-            Записаться на закрытый показ в «Гринвуд»
+    <div class="section-involve-person common-section">
+      <div class="section-involve-person__inner container">
+        <div class="section-involve-person__content">
+          <h2 class="section-involve-person__title common-title">
+            Записаться на закрытый<br>
+            показ в «Гринвуд»
           </h2>
-          <form class="section-closed-show__form closed-show-form" action="" method="POST">
-            <div class="closed-show-form__row">
-              <label class="closed-show-form__field field">
+          <form class="section-involve-person__form cta-line-form" action="" method="POST">
+            <div class="cta-line-form__row">
+              <label class="cta-line-form__field field">
                 <span class="field__label">Ваше имя</span>
                 <div class="field__control">
                   <input class="field__input input" type="text" name="name" placeholder="Ваше имя" required>
                 </div>
               </label>
-              <label class="closed-show-form__field field">
+              <label class="cta-line-form__field field">
                 <span class="field__label">Телефон</span>
                 <div class="field__control">
                   <input class="field__input input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
                 </div>
               </label>
-              <button class="closed-show-form__submit button" type="submit">Отправить</button>
+              <button class="cta-line-form__submit button" type="submit">Отправить</button>
             </div>
-            <p class="closed-show-form__agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+            <p class="cta-line-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
           </form>
         </div>
-        <div class="section-closed-show__picture">
-          <img class="section-closed-show__image" src="https://images.unsplash.com/photo-1464886127619-5a478b4fad96?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c5e84bcd6733d84f4a696e893c9a66d1&auto=format&fit=crop&w=2000&q=80" alt="">
+        <div class="section-involve-person__picture">
+          <img class="section-involve-person__image" src="https://images.unsplash.com/photo-1518136247453-74e7b5265980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34d312abe67f954c279f1f244ce73963&auto=format&fit=crop&w=1350&q=80" alt="">
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   @@include('blocks/main-footer.html')

@@ -4,7 +4,7 @@
   font-size: rem(30);
   line-height: 1.15;
   text-transform: uppercase;
-  color: #4c4136;
+  color: $brown-color;
 
   @include mq-minh($vh-height-bp) {
     font-size: vh(36);

@@ -27,4 +27,41 @@ document.addEventListener('DOMContentLoaded', function () {
       contain: true
     });
   }
+
+
+  var commonPlansSlider = document.querySelector('.js-common-plans-slider');
+
+  if (commonPlansSlider) {
+    $(commonPlansSlider).flickity({
+      adaptiveHeight: false,
+      initialIndex: 1,
+      wrapAround: true,
+      imagesLoaded: true,
+      prevNextButtons: false,
+      contain: true,
+      lazyLoad: 1
+    });
+  }
+
+
+  var plansFlatSlider = document.querySelector('.js-plans-flat-slider');
+
+  if (plansFlatSlider) {
+    $(plansFlatSlider).flickity({
+      imagesLoaded: true,
+      percentPosition: false,
+      fullscreen: true,
+      lazyLoad: true,
+      pageDots: false
+    });
+  }
+
+
+  if (document.querySelector('.flat-filters')) {
+    var locationSearch = location.search;
+    window.flatsResult.displayResult({
+      filtersData: locationSearch
+    });
+    window.flatFilters.init();
+  }
 });

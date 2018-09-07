@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   min-width: 220px;
-  padding: 12px 15px;
+  padding: 12px 25px;
   font-weight: 700;
   font-size: rem(15);
   line-height: rem(25);
@@ -16,7 +16,7 @@
   border: 1px solid transparent;
   box-shadow: 0 0 33px rgba(48, 100, 60, 0.5);
   box-sizing: border-box;
-  border-radius: 100px;
+  border-radius: $border-radius;
   outline: none;
   user-select: none;
   transition-property: background, color, border-color;
@@ -40,7 +40,7 @@
 
   @include mq-minh($vh-height-bp) {
     min-width: vh(220);
-    padding: vh(12) vh(15);
+    padding: vh(12) vh(25);
     font-size: vh(15);
   }
 }

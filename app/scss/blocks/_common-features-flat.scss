@@ -1,0 +1,30 @@
+.common-features-flat {
+  @include clear-list();
+
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.common-features-flat__item {
+  text-transform: lowercase;
+  font-size: rem(12);
+
+  @include mq-min (1024px) {
+    font-size: vh(12);
+  }
+}
+
+.common-features-flat__label {
+}
+
+.common-features-flat__value {
+  display: block;
+  font-weight: 700;
+  font-size: rem(24px);
+
+  @include mq-min (1024px) {
+    font-size: vh(24);
+  }
+}

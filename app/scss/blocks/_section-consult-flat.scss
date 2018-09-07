@@ -1,0 +1,114 @@
+.section-consult-flat {
+  position: relative;
+  min-height: 90vh;
+  margin-bottom: 70px;
+  padding-top: $height-header-mobile;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+
+  @include mq-max(767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include mq-min(768px) {
+    min-height: auto;
+    margin-top: $height-header-mobile;
+    padding: 0;
+  }
+
+  @include mq-min(1024px) {
+    margin-top: $height-header-desktop;
+  }
+
+  @include mq-minh($vh-height-bp) {
+    margin-bottom: vh(85);
+  }
+}
+
+.section-consult-flat__inner {
+  @include mq-max(767px) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: rgba($secondary-color, 0.9);
+    }
+  }
+
+  @include mq-min(1024px) {
+    position: relative;
+  }
+}
+
+.section-consult-flat__content {
+  @include mq-max(767px) {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  @include mq-min(768px) {
+    position: absolute;
+    top: 50%;
+    max-width: 420px;
+    margin-left: -$gutter;
+    padding: $gutter;
+    transform: translateY(-50%);
+    background-color: rgba($secondary-color, 0.9);
+    box-sizing: border-box;
+  }
+
+  @include mq-min(1280px) {
+    max-width: vh(456);
+    margin-left: calc(#{vh(-50)} - #{$gutter});
+    padding: vh(60);
+    padding-top: vh(90);
+    padding-bottom: vh(80);
+    padding-left: calc(#{vh(50)} + #{$gutter});
+  }
+
+  @include mq-min(1440px) {
+    max-width: vh(480);
+    margin-left: calc(#{vh(-70)} - #{$gutter});
+    padding-left: calc(#{vh(70)} + #{$gutter});
+  }
+}
+
+.section-consult-flat__picture {
+  @include mq-max(1023px) {
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+  }
+
+  @include mq-max(767px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.section-consult-flat__title {
+  margin-bottom: 35px;
+}
+
+.section-consult-flat__text {
+  font-size: rem(18);
+  margin-bottom: 35px;
+}
+
+.section-consult-flat__button {
+  font-size: rem(18);
+
+  @include mq-min(1024px) {
+    padding-top: vh(16);
+    padding-bottom: vh(16);
+    width: 100%;
+  }
+}
