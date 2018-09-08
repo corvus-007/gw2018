@@ -9,7 +9,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  @@include('blocks/main-header.html')
+  <header class="main-header">
+    <div class="main-header__inner container">
+      <div class="main-header__logo">
+        <a href="index.html">
+          <img class="main-header__logo-image" src="../images/logo.svg" width="100" alt="Логотип Гринвуд">
+        </a>
+      </div>
+      <p class="main-header__contacts">
+        <a class="main-header__phone" href="tel:+7(4832)606-505">
+          +7 (4832) <span>606-505</span>
+        </a>
+      </p>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="select-flats-page.html">Выбрать квартиру</a></li>
+          <li><a href="">О комплексе</a></li>
+          <li class="current-menu-item"><a href="">Ход строительства</a></li>
+          <li><a href="">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
 
   <main class="main">
     <article class="common-page">
@@ -33,6 +58,7 @@
                 <img data-flickity-lazyload="https://images.unsplash.com/photo-1536139846172-57b28f601fe7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0fe790a70b4190bc0070d5e9e71bef55&auto=format&fit=crop&w=634&q=80" alt="">
               </div>
             </div>
+            <div class="plans-flat__nav-buttons"></div>
           </div>
         </div>
         <div class="flat__detail-area">
@@ -198,8 +224,35 @@
     </article>
   </main>
 
-  @@include('blocks/main-footer.html')
-  @@include('blocks/out-cover.html')
-  @@include('blocks/site-scripts.html')
+  <footer class="main-footer">
+    <div class="main-footer__inner container">
+      <p class="main-footer__copy">© 2016–2018 Касабланка</p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">Идее Пикс</a></p>
+    </div>
+  </footer>
+
+  <div class="out-cover">
+    <div class="out-cover__inner">
+      <div class="out-cover__body">
+        <div class="out-cover__mobile-nav mobile-nav">
+          <ul class="mobile-nav__list">
+            <li class="current-menu-item"><a href="select-flats-page.html">Выбрать квартиру</a></li>
+            <li><a href="">О комплексе</a></li>
+            <li><a href="">Ход строительства</a></li>
+            <li><a href="">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="out-cover__footer container">
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 </html>

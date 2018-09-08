@@ -47,13 +47,39 @@ document.addEventListener('DOMContentLoaded', function () {
   var plansFlatSlider = document.querySelector('.js-plans-flat-slider');
 
   if (plansFlatSlider) {
-    $(plansFlatSlider).flickity({
+    var $plansFlatSlider = $(plansFlatSlider).flickity({
       imagesLoaded: true,
       percentPosition: false,
       fullscreen: true,
       lazyLoad: true,
+      prevNextButtons: false,
       pageDots: false
     });
+
+    // Flickity instance
+    var flkty = $plansFlatSlider.data('flickity');
+
+    var flatSlidesCount = $(plansFlatSlider).find('.plans-flat-slider__item').length;
+    var $planFlatsButtons = $('.plans-flat__nav-buttons');
+
+    if (flatSlidesCount > 1) {
+      for (var i = 0; i < flatSlidesCount; i++) {
+        $('<button type="button">Планировка ' + (i + 1) + '</button>').appendTo($planFlatsButtons);
+      }
+
+      $planFlatsButtons.on('click', 'button', function (evt) {
+        var index = $(this).index();
+        $plansFlatSlider.flickity('select', index);
+      });
+
+      // update selected cellButtons
+      $plansFlatSlider.on('select.flickity', function () {
+        $planFlatsButtons.find('button').filter('.is-selected')
+          .removeClass('is-selected');
+        $planFlatsButtons.find('button').eq(flkty.selectedIndex)
+          .addClass('is-selected');
+      });
+    }
   }
 
 
