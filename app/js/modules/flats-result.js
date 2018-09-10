@@ -1,6 +1,7 @@
 window.flatsResult = (function () {
   'use srict';
 
+  var $ = window.jQuery;
   var flatsResult = document.querySelector('.flats-result');
 
   if (!flatsResult) {
@@ -10,6 +11,8 @@ window.flatsResult = (function () {
   var table = flatsResult.querySelector('.flats-result__table');
   var tbody = flatsResult.querySelector('.flats-result__tbody');
   var templateRow = document.querySelector('#flats-result-row-template').content.querySelector('.flats-result__row');
+
+  $(table).tablesorter();
 
   function displayResult(params) {
     var filtersData = params.data || '';
@@ -30,7 +33,7 @@ window.flatsResult = (function () {
 
     tbody.appendChild(fragment);
 
-    $(table).tablesorter();
+    $(table).trigger("updateAll", [true]);
 
     if (window.matchMedia('(min-width: 1024px)').matches) {
       $('[data-sticky-target]').stick_in_parent({
@@ -57,7 +60,6 @@ window.flatsResult = (function () {
     row.querySelector('.flats-result__cell--type span').textContent = attrs.type;
     row.querySelector('.flats-result__cell--floor span').textContent = attrs.floor;
     row.querySelector('.flats-result__cell--area span').textContent = attrs.area;
-    // row.querySelector('.flats-result__cell--price').textContent = attrs.price;
 
     return row;
   }
