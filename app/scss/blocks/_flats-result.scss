@@ -1,5 +1,41 @@
 .flats-result {
+  position: relative;
+  min-height: 250px;
+  transition: opacity $duration;
 
+  &::before {
+    content: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px; // высота шапки таблицы
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-top: 5px solid $secondary-color-2;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+  }
+
+  &--loading {
+    opacity: 0.5;
+    pointer-events: none;
+
+    &::before {
+      content: "";
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .flats-result__table {
@@ -26,10 +62,6 @@
   @include mq-min(1280px) {
     font-size: vh(12);
   }
-}
-
-.flats-result__tbody {
-
 }
 
 .flats-result__row {

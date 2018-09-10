@@ -2,32 +2,30 @@ window.flatFilters = (function () {
   'use strict';
 
   var $ = window.jQuery;
-  var flatFilters = document.querySelector('.flat-filters');
+  var flatFiltersElem = document.querySelector('.flat-filters');
 
-  if (!flatFilters) {
+  if (!flatFiltersElem) {
     return;
   }
 
-  var flatsResult = window.flatsResult;
+  var flatFiltersForm = flatFiltersElem.querySelector('.flat-filters__form');
+  var lastTimeout = null;
 
-  function init() {
-    console.log('flatFilters');
+  function handleInputFiltersForm(evt) {
+    var formData = $(this).serialize();
 
-    var flatFiltersForm = flatFilters.querySelector('.flat-filters__form');
+    if (lastTimeout) {
+      clearInterval(lastTimeout);
+    }
 
-    flatFiltersForm.addEventListener('input', function (evt) {
-      console.log(evt);
-
-    });
-
-    function handleInputFiltersForm(evt) {
-      var formData = $(this).serialize();
-
+    lastTimeout = window.setTimeout(function () {
       window.flatsResult.displayResult({
         filtersData: formData
       });
-    }
+    }, 200);
+  }
 
+  function init() {
     flatFiltersForm.addEventListener('input', handleInputFiltersForm);
   }
 

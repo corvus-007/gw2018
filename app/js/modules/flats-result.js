@@ -37,6 +37,10 @@ window.flatsResult = (function () {
         offset_top: 110
       });
     }
+
+    setTimeout(function () {
+      endLoading();
+    }, 350);
   }
 
   function renderRow(attrs) {
@@ -61,6 +65,8 @@ window.flatsResult = (function () {
   function sendRequest(data, onSuccess, onError) {
     data = data || '';
 
+    startLoading();
+
     return $.ajax({
       type: "GET",
       url: window.util.URL_FILTER_HANDLER,
@@ -72,8 +78,9 @@ window.flatsResult = (function () {
   function tableClickHandler(evt) {
     var target = evt.target;
     var row = target.closest('.flats-result__row');
+    var button = target.closest('.flats-result__to-request-flat');
 
-    if (!row) {
+    if (!row || button) {
       return;
     }
 
@@ -84,6 +91,14 @@ window.flatsResult = (function () {
 
   function clearBody() {
     tbody.innerHTML = '';
+  }
+
+  function startLoading() {
+    flatsResult.classList.add('flats-result--loading');
+  }
+
+  function endLoading() {
+    flatsResult.classList.remove('flats-result--loading');
   }
 
   return {
