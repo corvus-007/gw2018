@@ -34,14 +34,6 @@
 .main-header__inner {
   display: flex;
   align-items: center;
-
-  @include mq-min(768px) {
-    align-items: flex-end;
-
-    .is-main-header-sticky & {
-      align-items: center;
-    }
-  }
 }
 
 .main-header__logo {

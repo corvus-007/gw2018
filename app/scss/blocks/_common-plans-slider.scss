@@ -5,6 +5,11 @@
     margin-left: 4px;
     margin-right: 4px;
     background-color: $brown-color;
+    transition: transform $duration;
+
+    &:not(.is-selected) {
+      transform: scale(0.7);
+    }
   }
 
   .flickity-slider {

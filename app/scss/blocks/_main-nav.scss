@@ -35,7 +35,7 @@
     &:hover,
     &:focus {
       &::before {
-        background-color: #efebf0;
+        background-color: $secondary-color;
       }
     }
   }
@@ -43,7 +43,7 @@
   li:first-child a {
     border-radius: 100px;
     padding: calc(#{vh(7)} - 2px) calc(#{vh(25)} - 2px);
-    background-color: #efebf0;
+    background-color: $secondary-color;
     border: 2px solid transparent;
 
     &::before {
