@@ -11,16 +11,15 @@
   }
 
   polygon {
+    fill: $secondary-color;
+    fill-opacity: 0.5;
     cursor: pointer;
     transition: fill $duration;
-    mix-blend-mode: color;
-    fill: $secondary-color;
     pointer-events: none;
   }
 
   .house-finish {
     pointer-events: auto;
-    fill-opacity: 0.5;
     mix-blend-mode: normal;
     fill: transparent;
   }
@@ -68,11 +67,6 @@
   max-width: none;
   width: auto;
   height: 100%;
-
-  // @media (orientation: landscape) {
-  //   width: 165%;
-  //   height: auto;
-  // }
 }
 
 .genplan__compass {
