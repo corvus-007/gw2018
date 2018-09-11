@@ -52,6 +52,29 @@
   }
 }
 
+.main-header__toggle {
+  margin-left: auto;
+  order: 1;
+
+  @include mq-min(1024px) {
+    display: none;
+  }
+}
+
+.main-header__nav {
+  margin-left: auto;
+  transform-origin: 100%;
+  transition: $duration * 2;
+
+  .is-main-header-sticky & {
+    transform: scale(0.9);
+  }
+
+  @include mq-max(1023px) {
+    display: none;
+  }
+}
+
 .main-header__contacts {
   margin: 0;
   margin-left: 20px;
@@ -105,27 +128,5 @@
     .is-main-header-sticky & {
       transform: scale(0.8);
     }
-  }
-}
-
-.main-header__toggle {
-  margin-left: auto;
-
-  @include mq-min(1024px) {
-    display: none;
-  }
-}
-
-.main-header__nav {
-  margin-left: auto;
-  transform-origin: 100%;
-  transition: $duration * 2;
-
-  .is-main-header-sticky & {
-    transform: scale(0.9);
-  }
-
-  @include mq-max(1023px) {
-    display: none;
   }
 }
