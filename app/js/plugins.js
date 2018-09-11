@@ -4,4 +4,5 @@
 //=require ../../node_modules/flickity-fullscreen/fullscreen.js"
 //=require ../../node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js
 //=require ../../node_modules/tablesorter/dist/js/jquery.tablesorter.min.js
+//=require ../../node_modules/tabslet/jquery.tabslet.min.js
 //=require ../../node_modules/sticky-kit/dist/sticky-kit.min.js

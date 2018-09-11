@@ -51,4 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     window.flatFilters.init();
   }
+
+  $('.common-tabs').tabslet();
 });
