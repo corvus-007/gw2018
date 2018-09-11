@@ -44,19 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  var plansFlatSlider = document.querySelector('.js-plans-flat-slider');
-
-  if (plansFlatSlider) {
-    $(plansFlatSlider).flickity({
-      imagesLoaded: true,
-      percentPosition: false,
-      fullscreen: true,
-      lazyLoad: true,
-      pageDots: false
-    });
-  }
-
-
   if (document.querySelector('.flat-filters')) {
     var locationSearch = location.search;
     window.flatsResult.displayResult({
