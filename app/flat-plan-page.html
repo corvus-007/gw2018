@@ -12,61 +12,77 @@
   @@include('blocks/main-header.html')
 
   <main class="main">
-    <article class="common-page">
-      <!-- <header class="common-page__header">
-        <h1 class="common-page__title"></h1>
-      </header> -->
+    <article class="common-page flat-page">
+      <header class="flat-page__header common-page__header container">
+        <h1 class="common-page__title common-title">Заголовок</h1>
+      </header>
       <div class="common-page__body flat container">
-        <div class="flat__plans-area">
-          <div class="plans-flat">
-            <div class="plans-flat__picture">
-              <img src="https://images.unsplash.com/photo-1536141495324-a48c4f2abffc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac834f695d3df31b53c9d8a34f529a1b&auto=format&fit=crop&w=1275&q=80" alt="">
-            </div>
+        <div class="flat__tabs flat-tabs common-tabs">
+          <ul class="common-tabs__menu">
+            <li class="common-tabs__item">
+              <a href="#tab-1" class="common-tabs__link">Планировка</a>
+            </li>
+            <li class="common-tabs__item">
+              <a href="#tab-2" class="common-tabs__link">Посмотреть на плане</a>
+            </li>
+          </ul>
+          <div class="common-tabs__pane" id="tab-1">
+            <section class="flat-plan-section">
+              <h2 class="visually-hidden">Планировка</h2>
+              <div class="flat-plan-section__plans plans-flat">
+                <div class="plans-flat__picture">
+                  <img src="https://images.unsplash.com/photo-1536141495324-a48c4f2abffc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac834f695d3df31b53c9d8a34f529a1b&auto=format&fit=crop&w=1275&q=80" alt="">
+                </div>
+              </div>
+              <div class="flat-plan-section__detail detail-flat">
+                <ul class="detail-flat__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">4</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">128,7</b>
+                  </li>
+                </ul>
+                <form class="detail-flat__form request-price-form" action="" method="POST">
+                  <p class="request-price-form__title">Узнать стоимость квартиры</p>
+                  <label class="request-price-form__field field">
+                    <span class="field__label visually-hidden">Имя</span>
+                    <div class="field__control">
+                      <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+                    </div>
+                  </label>
+                  <label class="request-price-form__field field">
+                    <span class="field__label visually-hidden">Телефон</span>
+                    <div class="field__control">
+                      <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                  </label>
+                  <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
+                  <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+                </form>
+                <div class="detail-flat__actions">
+                  <a class="detail-flat__to-print button" href="">Распечать планировку</a>
+                </div>
+              </div>
+            </section>
           </div>
-        </div>
-        <div class="flat__detail-area">
-          <div class="detail-flat">
-            <ul class="detail-flat__features common-features-flat">
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Тип дома</span>
-                <b class="common-features-flat__value">4.3</b>
-              </li>
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Комнат</span>
-                <b class="common-features-flat__value">4</b>
-              </li>
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Площадь</span>
-                <b class="common-features-flat__value">128,7</b>
-              </li>
-            </ul>
-            <form class="detail-flat__form request-price-form" action="" method="POST">
-              <p class="request-price-form__title">Узнать стоимость квартиры</p>
-              <label class="request-price-form__field field">
-                <span class="field__label visually-hidden">Имя</span>
-                <div class="field__control">
-                  <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+
+          <div class="common-tabs__pane" id="tab-2">
+            <section class="flat-territory-section">
+              <h2 class="visually-hidden">Посмотреть на плане</h2>
+              <div class="flat-territory">
+                <div class="flat-territory__picture">
+                  <img src="https://images.unsplash.com/photo-1523958631412-cd125bb67e58?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5db2d9bf033d42dcf542a08d7fa695f1&auto=format&fit=crop&w=1319&q=80" alt="">
                 </div>
-              </label>
-              <label class="request-price-form__field field">
-                <span class="field__label visually-hidden">Телефон</span>
-                <div class="field__control">
-                  <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
-                </div>
-              </label>
-              <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
-              <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
-            </form>
-            <div class="detail-flat__options">
-              <p class="detail-flat__otion-parking">
-                Дополнительно<br>
-                <span>2 парковочных места</span><br>
-                за 1 400 000 руб.
-              </p>
-            </div>
-            <div class="detail-flat__actions">
-              <a class="detail-flat__to-print button" href="">Распечать планировку</a>
-            </div>
+              </div>
+
+            </section>
           </div>
         </div>
       </div>

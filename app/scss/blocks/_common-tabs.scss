@@ -1,0 +1,53 @@
+.common-tabs {
+
+}
+
+.common-tabs__menu {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  @include mq-max(767px) {
+    justify-content: center;
+  }
+}
+
+.common-tabs__item {
+  margin-right: 30px;
+}
+
+.common-tabs__link {
+  display: block;
+  padding: 5px 0;
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: 1.15;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: $base-color;
+  border-bottom: 4px solid transparent;
+  user-select: none;
+  transition: $duration * 1.5;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+    border-bottom-color: $secondary-color;
+  }
+
+  .active & {
+    color: $base-color;
+    border-bottom-color: $accent-color;
+  }
+
+  @include mq-min(1280px) {
+    font-size: vh(18);
+  }
+}
+
+.common-tabs__pane {
+  padding-top: 40px;
+}

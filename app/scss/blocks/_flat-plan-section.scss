@@ -1,0 +1,27 @@
+.flat-plan-section {
+
+  @include mq-min(768px) {
+    display: flex;
+  }
+}
+
+.flat-plan-section__plans {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.flat-plan-section__detail {
+  @include mq-min(768px) {
+    width: 275px;
+    margin-left: 30px;
+    flex-shrink: 0;
+  }
+
+  @include mq-min(992px) {
+    margin-left: 60px;
+  }
+
+  @include mq-min(1280px) {
+    width: vh(275);
+  }
+}
