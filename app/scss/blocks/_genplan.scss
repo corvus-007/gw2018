@@ -1,7 +1,8 @@
 .genplan {
+  padding-top: $height-header-mobile;
   position: relative;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
 
@@ -39,6 +40,10 @@
   @include mq-min(992px) {
     height: auto;
   }
+
+  @include mq-min(1024px) {
+    padding-top: $height-header-desktop;
+  }
 }
 
 .genplan__title {
@@ -53,7 +58,7 @@
   height: 100%;
   overflow: auto;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  // -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }
 
@@ -90,16 +95,24 @@
 }
 
 .genplan__tooltips-container {
-
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
 }
 
 .genplan__tooltip {
+  pointer-events: auto;
   position: fixed;
+  position: absolute;
   min-height: 250px;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  z-index: 20;
 
   @include mq-min(768px) {
     position: absolute;

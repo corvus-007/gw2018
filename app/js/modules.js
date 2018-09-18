@@ -4,3 +4,6 @@
 //=require modules/genplan-tooltip.js
 //=require modules/flats-result.js
 //=require modules/flat-filters.js
+//=require modules/flats-cards.js
+//=require modules/flat.js
+//=require modules/map.js

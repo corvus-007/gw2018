@@ -2,10 +2,11 @@
 
   @include mq-min(768px) {
     display: flex;
+    align-items: flex-start;
   }
 }
 
-.flat-plan-section__plans {
+.flat-plan-section__plan {
   width: 100%;
   flex-grow: 1;
 }

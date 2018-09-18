@@ -23,28 +23,28 @@
 
   @include mq-min(1024px) {
     margin-left: vh(220);
-    margin-right: -20px;
+    margin-right: -15px;
 
     .block-out--to-left & {
-      margin-left: -20px;
+      margin-left: -15px;
       margin-right: vh(220);
     }
   }
 
   @include mq-min(1280px) {
-    margin-right: vh(-50 - 20);
+    margin-right: vh(-50 - 15);
 
     .block-out--to-left & {
-      margin-left: vh(-50 - 20);
+      margin-left: vh(-50 - 15);
     }
   }
 
   @include mq-min(1440px) {
     margin-left: vh(280);
-    margin-right: vh(-70 - 20);
+    margin-right: vh(-70 - 15);
 
     .block-out--to-left & {
-      margin-left: vh(-70 - 20);
+      margin-left: vh(-70 - 15);
       margin-right: vh(280);
     }
   }

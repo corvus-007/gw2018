@@ -29,13 +29,16 @@
           <div class="common-tabs__pane" id="tab-1">
             <section class="flat-plan-section">
               <h2 class="visually-hidden">Планировка</h2>
-              <div class="flat-plan-section__plans plans-flat">
-                <div class="plans-flat__picture">
-                  <img src="https://images.unsplash.com/photo-1536141495324-a48c4f2abffc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac834f695d3df31b53c9d8a34f529a1b&auto=format&fit=crop&w=1275&q=80" alt="">
+              <div class="flat-plan-section__plan flat-plan">
+                <div class="flat__plan flat-plan">
+                  <div class="flat-plan__adjuster"></div>
+                  <div class="flat-plan__frame">
+                    <img class="flat-plan__image" src="images/plans/plan-2.svg" alt="Планировка — вариант №1">
+                  </div>
                 </div>
               </div>
-              <div class="flat-plan-section__detail detail-flat">
-                <ul class="detail-flat__features common-features-flat">
+              <div class="flat-plan-section__detail flat-detail">
+                <ul class="flat-detail__features common-features-flat">
                   <li class="common-features-flat__item">
                     <span class="common-features-flat__label">Тип дома</span>
                     <b class="common-features-flat__value">4.3</b>
@@ -49,7 +52,7 @@
                     <b class="common-features-flat__value">128,7</b>
                   </li>
                 </ul>
-                <form class="detail-flat__form request-price-form" action="" method="POST">
+                <form class="flat-detail__form request-price-form" action="" method="POST">
                   <p class="request-price-form__title">Узнать стоимость квартиры</p>
                   <label class="request-price-form__field field">
                     <span class="field__label visually-hidden">Имя</span>
@@ -66,8 +69,11 @@
                   <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
                   <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
                 </form>
-                <div class="detail-flat__actions">
-                  <a class="detail-flat__to-print button" href="">Распечать планировку</a>
+                <div class="flat-detail__actions">
+                  <a class="flat-detail__to-print button" href="">Распечать планировку</a>
+                </div>
+                <div class="flat-detail__disclamer">
+                  <p><small>Указанный размер площади может незначительно отличаться.</small></p>
                 </div>
               </div>
             </section>
@@ -81,7 +87,6 @@
                   <img src="https://images.unsplash.com/photo-1523958631412-cd125bb67e58?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5db2d9bf033d42dcf542a08d7fa695f1&auto=format&fit=crop&w=1319&q=80" alt="">
                 </div>
               </div>
-
             </section>
           </div>
         </div>
@@ -93,9 +98,9 @@
           <p class="section-similar-plans__intro">Клубный квартир «Гринвуд» – это возможность выбора! Поэтому мы подобрали несколько квартир, похожих на выбранную вами.</p>
           <div class="section-similar-plans__slider common-plans-slider js-common-plans-slider">
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img src="https://images.unsplash.com/photo-1535914253584-25160fb61079?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c705fbf436829357548ca9ca99df74e6&auto=format&fit=crop&w=643&q=80" alt="">
+                  <img data-flickity-lazyload="images/select_plan_1.jpg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -114,9 +119,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535725525385-bc19d13c503c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3bff9651cf9a34975e278e47a1f049b&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/select_plan_3.jpg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -135,9 +140,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=21aa7b8efd783642e11d7e3719e41ac2&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/select_plan_2.jpg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -156,9 +161,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535930749574-1399327ce78f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f8a140ac20927deb386d1c9187433d6&auto=format&fit=crop&w=676&q=80" alt="">
+                  <img data-flickity-lazyload="images/select_plan_3.jpg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -177,9 +182,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535927853242-fa2bde74fb7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b987eec696912dcc7e1fae2adc362f4&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/select_plan_2.jpg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">

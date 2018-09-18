@@ -1,11 +1,13 @@
 .genplan-tooltip {
+  min-width: 240px;
   padding: 20px;
   padding-bottom: 5px;
   background-color: #fff;
   border-radius: 2px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity $duration * 1.5, visibility $duration * 1.5;
+  transition: opacity $duration * 1.5, visibility $duration * 1.5, transform $duration;
+  box-sizing: border-box;
 
   &:hover{
     opacity: 1;
@@ -16,6 +18,14 @@
     opacity: 1;
     visibility: visible;
     transition-delay: $duration / 2;
+  }
+
+  @include mq-max(767px) {
+    transform: translateY(100%);
+
+    &--showed {
+      transform: translateY(0);
+    }
   }
 }
 

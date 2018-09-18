@@ -1,0 +1,55 @@
+.contacts-info {
+  display: table;
+}
+
+.contacts-info__item {
+  display: table-row;
+  font-size: rem(18);
+
+  @include mq-min(1280px) {
+    font-size: vh(18);
+  }
+}
+
+.contacts-info__label {
+  display: table-cell;
+  margin: 0;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  font-weight: 700;
+  font-size: rem(15);
+  text-transform: uppercase;
+  color: $brown-color;
+
+  @include mq-min(1280px) {
+    font-size: vh(15);
+  }
+}
+
+.contacts-info__value {
+  display: table-cell;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.contacts-info__phone {
+  font-size: rem(30);
+  color: $base-color;
+
+  @include mq-min(1280px) {
+    font-size: vh(30);
+  }
+}
+
+.contacts-info__socials {
+  align-items: center;
+}
+
+.contacts-info__socials-item {
+
+}
+
+.contacts-info__socials-icon {
+  width: 24px;
+  height: 24px;
+}

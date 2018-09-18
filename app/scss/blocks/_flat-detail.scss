@@ -1,29 +1,36 @@
-.detail-flat {
+.flat-detail {
   padding: 25px 27px;
   border: 1px solid $secondary-color;
   border-radius: $border-radius;
   box-sizing: border-box;
 }
 
-.detail-flat__features {
+.flat-detail__features {
   margin-bottom: 25px;
 }
 
-.detail-flat__form {
+.flat-detail__form {
   margin-bottom: 25px;
 }
 
-.detail-flat__actions {
+.flat-detail__actions {
   text-align: center;
 }
 
-.detail-flat__to-print {
-  padding: 0 17px;
+.flat-detail__to-print {
   min-width: auto;
+  margin-bottom: 20px;
+  padding: 0 17px;
   font-weight: 600;
   text-transform: none;
   color: $brown-color;
   border-radius: 100px;
   background-color: $secondary-color;
   box-shadow: none;
+}
+
+.flat-detail__disclamer {
+  line-height: 1.15;
+  text-align: center;
+  color: $muted-color;
 }

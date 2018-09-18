@@ -6,11 +6,10 @@ window.genplanTooltip = (function () {
   }
 
   var genplan = window.genplan.genplan;
-
-
   var genplanScroller = window.genplan.genplanScroller;
   var genplanSVG = window.genplan.genplanSVG;
   var prevTooltip;
+  var limitCoords = {};
 
   function unifiedId(pinId) {
     return pinId.replace(/\./g, '-');
@@ -27,19 +26,16 @@ window.genplanTooltip = (function () {
   genplanSVG.addEventListener('mouseover', function (event) {
     var target = event.target;
     var house = target.closest("[data-houseid]");
-    var genplanCoords = genplan.getBoundingClientRect();
+    var genplanSVGCoords = genplanSVG.getBoundingClientRect();
 
     if (!house) {
       return;
     }
 
     var pinId = house.dataset.houseid;
-
     var pin = getPinElem(pinId);
-
     var pinCoords = pin.getBoundingClientRect();
     var pinHeight = pinCoords.bottom - pinCoords.top;
-
     var tooltip = getTooltipElem(pinId);
 
     if (!tooltip) {
@@ -56,11 +52,17 @@ window.genplanTooltip = (function () {
 
     var tooltipHeight = tooltip.offsetHeight;
     var tooltipLeft = genplanScroller.scrollLeft + pinCoords.right + 20;
-    var tooltipTop = pinCoords.top + pinHeight / 2 - genplanCoords.top - tooltipHeight / 2;
+    var tooltipTop = pinCoords.top + pinHeight / 2 - genplanSVGCoords.top - tooltipHeight / 2;
     var tooltipCoords = null;
 
-    if (tooltipTop <= 20) {
-      tooltipTop = 20;
+    limitCoords.top = genplanSVGCoords.top + 20;
+    limitCoords.bottom = genplanSVGCoords.bottom - tooltipHeight - 40;
+
+    if (tooltipTop <= limitCoords.top) {
+      tooltipTop = limitCoords.top;
+    } else if (tooltipTop >= limitCoords.bottom) {
+      console.log('Выходит за нижнюю гарницу');
+      tooltipTop = limitCoords.bottom;
     }
 
     if (window.matchMedia("(min-width: 768px)").matches) {

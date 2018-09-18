@@ -2,17 +2,21 @@
   @include clear-list();
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
-
 }
 
 .common-features-flat__item {
   text-transform: lowercase;
-  font-size: rem(12);
+  font-size: rem(14);
+  margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   @include mq-min (1024px) {
-    font-size: vh(12);
+    font-size: vh(14);
   }
 }
 
@@ -22,9 +26,9 @@
 .common-features-flat__value {
   display: block;
   font-weight: 700;
-  font-size: rem(24px);
+  font-size: rem(32);
 
   @include mq-min (1024px) {
-    font-size: vh(24);
+    font-size: vh(32);
   }
 }

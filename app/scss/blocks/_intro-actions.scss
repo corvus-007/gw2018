@@ -1,0 +1,21 @@
+.intro-actions {
+  display: flex;
+  justify-content: space-around;
+
+  @include mq-min(1024px) {
+    flex-direction: column;
+  }
+}
+
+.intro-actions__item {
+  flex-basis: 130px;
+
+  @include mq-min(1024px) {
+    flex-basis: auto;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

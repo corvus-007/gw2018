@@ -9,31 +9,25 @@ window.flatsResult = (function () {
   }
 
   var table = flatsResult.querySelector('.flats-result__table');
-  var tbody = flatsResult.querySelector('.flats-result__tbody');
-  var templateRow = document.querySelector('#flats-result-row-template').content.querySelector('.flats-result__row');
-
-  $(table).tablesorter();
+  var cardsList = flatsResult.querySelector('.flats-cards');
+  var templateCard = document.querySelector('#flats-result-card-template').content.querySelector('.flat-card');
 
   function displayResult(params) {
     var filtersData = params.data || '';
     var response = sendRequest(filtersData, onSuccess);
 
     response.done(onSuccess);
-
-    tbody.addEventListener('click', tableClickHandler);
   }
 
   function onSuccess(data) {
     var fragment = document.createDocumentFragment();
-    clearBody();
+    clearCardsList();
 
     data.forEach(function (attrs) {
-      fragment.appendChild(renderRow(attrs));
+      fragment.appendChild(renderCard(attrs));
     });
 
-    tbody.appendChild(fragment);
-
-    $(table).trigger("updateAll", [true]);
+    cardsList.appendChild(fragment);
 
     if (window.matchMedia('(min-width: 1024px)').matches) {
       $('[data-sticky-target]').stick_in_parent({
@@ -46,22 +40,23 @@ window.flatsResult = (function () {
     }, 350);
   }
 
-  function renderRow(attrs) {
-    var row = templateRow.cloneNode(true);
+  function renderCard(attrs) {
+    var card = templateCard.cloneNode(true);
+    var reserveElem = card.querySelector('.flat-card__reserved');
+    var image = card.querySelector('.flat-card__picture img');
 
-    row.setAttribute('data-id', Math.random().toFixed(7).slice(2));
-    row.setAttribute('data-room', Math.random().toFixed(7).slice(2));
-
-    if (attrs.reserve) {
-      row.classList.add('flats-result__row--reserve');
+    if (!attrs.reserve) {
+      reserveElem.remove();
     }
 
-    row.querySelector('.flats-result__cell--room span').textContent = attrs.room;
-    row.querySelector('.flats-result__cell--type span').textContent = attrs.type;
-    row.querySelector('.flats-result__cell--floor span').textContent = attrs.floor;
-    row.querySelector('.flats-result__cell--area span').textContent = attrs.area;
+    image.src = 'images/plans/plan-2.svg';
 
-    return row;
+    // Проверка, добавлена-ли квартира в избранное
+
+    card.querySelector('[data-flat="room"]').textContent = attrs.room;
+    card.querySelector('[data-flat="area"]').textContent = attrs.area;
+
+    return card;
   }
 
   function sendRequest(data, onSuccess, onError) {
@@ -77,22 +72,8 @@ window.flatsResult = (function () {
     });
   }
 
-  function tableClickHandler(evt) {
-    var target = evt.target;
-    var row = target.closest('.flats-result__row');
-    var button = target.closest('.flats-result__to-request-flat');
-
-    if (!row || button) {
-      return;
-    }
-
-    var id = row.dataset.id;
-    // window.open(location.origin + location.pathname + '/' + id);
-    window.open(location.origin + '/flat-plan-page.html');
-  }
-
-  function clearBody() {
-    tbody.innerHTML = '';
+  function clearCardsList() {
+    cardsList.innerHTML = '';
   }
 
   function startLoading() {
@@ -105,12 +86,11 @@ window.flatsResult = (function () {
 
   return {
     displayResult: displayResult,
-    templateRow: templateRow,
+    templateCard: templateCard,
     table: table,
-    tbody: tbody,
+    tbody: cardsList,
     sendRequest: sendRequest,
-    renderRow: renderRow,
-    tableClickHandler: tableClickHandler,
-    clearBody: clearBody
+    renderCard: renderCard,
+    clearCardsList: clearCardsList
   };
 })();

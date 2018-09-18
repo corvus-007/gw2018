@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Офис продаж / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  @@include('blocks/main-header.html')
+
+  <main class="main">
+    <article class="common-page contacts-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Офис продаж</h1>
+      </header>
+      <div class="common-page__body contacts container">
+        <div class="contacts__info contacts-info">
+          <p class="contacts-info__item">
+            <span class="contacts-info__label">Телефон</span>
+            <span class="contacts-info__value"><a class="contacts-info__phone" href="tel: +7 (4832) 606-505">+7 (4832) 606-505</a></span>
+          </p>
+          <p class="contacts-info__item">
+            <span class="contacts-info__label">Адрес</span>
+            <span class="contacts-info__value">г. Брянск, <br> пр-кт Ленина, д. 67</span>
+          </p>
+          <p class="contacts-info__item">
+            <span class="contacts-info__label">Время</span>
+            <span class="contacts-info__value">Пн–Пт, с 10:00 до 19:00</span>
+          </p>
+          <p class="contacts-info__item">
+            <span class="contacts-info__label">Соц. сети</span>
+            <span class="contacts-info__value">
+              <span class="contacts-info__socials socials">
+                <a class="contacts-info__socials-item socials__item" href="">
+                  <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
+                    <use xlink:href="images/symbols.svg#vk"></use>
+                  </svg>
+                </a>
+                <a class="contacts-info__socials-item socials__item" href="">
+                  <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
+                    <use xlink:href="images/symbols.svg#facebook"></use>
+                  </svg>
+                </a>
+              </span>
+            </span>
+          </p>
+        </div>
+        <div class="contacts__map-frame">
+          <div class="contacts__map contacts__map--no-js" id="contacts-map"></div>
+        </div>
+      </div>
+      <div class="cta cta--last">
+        <div class="cta__inner container">
+          <h2 class="cta__title common-title">
+            Запишитесь на персональную <br>
+            презенацию «ГРИНВУДА»
+          </h2>
+          <form class="cta__form cta-line-form" action="" method="POST">
+            <div class="cta-line-form__row">
+              <label class="cta-line-form__field field">
+                <span class="field__label">Ваше имя</span>
+                <div class="field__control">
+                  <input class="field__input input" type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+              </label>
+              <label class="cta-line-form__field field">
+                <span class="field__label">Телефон</span>
+                <div class="field__control">
+                  <input class="field__input input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+              </label>
+              <button class="cta-line-form__submit button" type="submit">Отправить</button>
+            </div>
+            <p class="cta-line-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+          </form>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  @@include('blocks/main-footer.html')
+  @@include('blocks/out-cover.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>

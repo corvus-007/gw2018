@@ -9,13 +9,13 @@
   text-decoration: none;
   margin-right: 1.2em;
   border: none;
-  transition: $duration;
+  transition: $duration * 2;
   color: $accent-color;
 
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    color: $white-color;
+    // transform: scale(1.1);
+    color: $base-color;
   }
 
   &:last-child {
@@ -24,6 +24,7 @@
 }
 
 .socials__icon {
+  display: block;
   vertical-align: middle;
   fill: currentColor;
 }

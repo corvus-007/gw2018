@@ -1,0 +1,28 @@
+.construction-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  input {
+    @include visually-hidden();
+  }
+}
+
+.construction-filter-buttons__button {
+  min-width: auto;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: $base-color;
+  background-color: $gray-245;
+  box-shadow: none;
+
+  input:hover + &,
+  input:focus + & {
+    color: $base-color;
+    background-color: $secondary-color;
+  }
+
+  input:checked + & {
+    color: #ffffff;
+    background-color: $accent-color;
+  }
+}

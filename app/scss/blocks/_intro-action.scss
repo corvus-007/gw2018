@@ -1,0 +1,60 @@
+.intro-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.15;
+  text-align: center;
+  // color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+
+    .intro-action__iconbox {
+      background-color: $accent-color;
+      border-color: $accent-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  @include mq-min(1024px) {
+    color: #ffffff;
+  }
+}
+
+.intro-action__iconbox {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 5px solid currentColor;
+  border-radius: 50%;
+  transition: $duration;
+}
+
+.intro-action {
+}
+
+.intro-action__icon {
+  display: block;
+  fill: currentColor;
+
+  @include mq-min(1024px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.intro-action__text {
+  color: $brown-color;
+
+  @include mq-min(1024px) {
+    color: currentColor;
+  }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Ход строительства / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  @@include('blocks/main-header.html')
+
+  <main class="main">
+    <article class="common-page construction-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Ход строительства</h1>
+      </header>
+      <div class="common-page__body container">
+
+        <div class="construction-filter">
+          <form class="construction-filter__form construction-filter-form">
+            <div class="construction-filter-buttons">
+              <input type="radio" name="type" value="all" id="field-type-all" checked>
+              <label class="construction-filter-buttons__button button" for="field-type-all">Все</label>
+              <input type="radio" name="type" value="3.1" id="field-type-3.1">
+              <label class="construction-filter-buttons__button button" for="field-type-3.1">3.1</label>
+              <input type="radio" name="type" value="3.2" id="field-type-3.2">
+              <label class="construction-filter-buttons__button button" for="field-type-3.2">3.2</label>
+              <input type="radio" name="type" value="4.3" id="field-type-4.3">
+              <label class="construction-filter-buttons__button button" for="field-type-4.3">4.3</label>
+              <input type="radio" name="type" value="4.4" id="field-type-4.4">
+              <label class="construction-filter-buttons__button button" for="field-type-4.4">4.4</label>
+              <input type="radio" name="type" value="5" id="field-type-5">
+              <label class="construction-filter-buttons__button button" for="field-type-5">5</label>
+            </div>
+          </form>
+        </div>
+
+        <div class="construction-cards">
+          <ul class="construction-cards__list">
+            <li class="construction-cards__item construction-card">
+              <a class="construction-card__wraplink" data-fancybox-trigger="2018-октрябрь">
+                <span class="construction-card__picture">
+                  <img src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" alt="">
+                </span>
+                <span class="construction-card__body">
+                  <h2 class="construction-card__title">
+                    <span class="construction-card__month">октябрь</span>
+                    <span class="construction-card__year">2018</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-38.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-39.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-40.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-41.jpg" data-fancybox="2018-октрябрь" data-house-id="3.2" data-caption="Фотография за октябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-42.jpg" data-fancybox="2018-октрябрь" data-house-id="3.2" data-caption="Фотография за октябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-43.jpg" data-fancybox="2018-октрябрь" data-house-id="3.2" data-caption="Фотография за октябрь 2018 дом 3.2"></a>
+              </div>
+            </li>
+            <li class="construction-cards__item construction-card">
+              <a class="construction-card__wraplink" data-fancybox-trigger="2018-сентябрь">
+                <span class="construction-card__picture">
+                  <img src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" alt="">
+                </span>
+                <span class="construction-card__body">
+                  <h2 class="construction-card__title">
+                    <span class="construction-card__month">сентябрь</span>
+                    <span class="construction-card__year">2018</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-сентябрь" data-house-id="5" data-caption="Фотография за сентябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-сентябрь" data-house-id="5" data-caption="Фотография за сентябрь 2018 дом 5"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-сентябрь" data-house-id="3.2" data-caption="Фотография за сентябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-сентябрь" data-house-id="3.2" data-caption="Фотография за сентябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-сентябрь" data-house-id="3.2" data-caption="Фотография за сентябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-сентябрь" data-house-id="3.2" data-caption="Фотография за сентябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-сентябрь" data-house-id="3.2" data-caption="Фотография за сентябрь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-сентябрь" data-house-id="4.4" data-caption="Фотография за сентябрь 2018 дом 4.4"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-сентябрь" data-house-id="4.4" data-caption="Фотография за сентябрь 2018 дом 4.4"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-сентябрь" data-house-id="4.4" data-caption="Фотография за сентябрь 2018 дом 4.4"></a>
+              </div>
+            </li>
+            <li class="construction-cards__item construction-card">
+              <a class="construction-card__wraplink" data-fancybox-trigger="2018-август">
+                <span class="construction-card__picture">
+                  <img src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" alt="">
+                </span>
+                <span class="construction-card__body">
+                  <h2 class="construction-card__title">
+                    <span class="construction-card__month">август</span>
+                    <span class="construction-card__year">2018</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-август" data-house-id="4.4" data-caption="Фотография за август 2018 дом 4.4"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-август" data-house-id="4.4" data-caption="Фотография за август 2018 дом 4.4"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-август" data-house-id="4.4" data-caption="Фотография за август 2018 дом 4.4"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-август" data-house-id="3.2" data-caption="Фотография за август 2018 дом 3.2"></a>
+              </div>
+            </li>
+            <li class="construction-cards__item construction-card">
+              <a class="construction-card__wraplink" data-fancybox-trigger="2018-июль">
+                <span class="construction-card__picture">
+                  <img src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" alt="">
+                </span>
+                <span class="construction-card__body">
+                  <h2 class="construction-card__title">
+                    <span class="construction-card__month">июль</span>
+                    <span class="construction-card__year">2018</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-июль" data-house-id="3.2" data-caption="Фотография за июль 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-июль" data-house-id="3.1" data-caption="Фотография за июль 2018 дом 3.1"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-июль" data-house-id="3.2" data-caption="Фотография за июль 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-июль" data-house-id="3.2" data-caption="Фотография за июль 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-июль" data-house-id="3.2" data-caption="Фотография за июль 2018 дом 3.2"></a>
+              </div>
+            </li>
+            <li class="construction-cards__item construction-card">
+              <a class="construction-card__wraplink" data-fancybox-trigger="2018-июнь">
+                <span class="construction-card__picture">
+                  <img src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" alt="">
+                </span>
+                <span class="construction-card__body">
+                  <h2 class="construction-card__title">
+                    <span class="construction-card__month">июнь</span>
+                    <span class="construction-card__year">2018</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-июнь" data-house-id="3.2" data-caption="Фотография за июнь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-июнь" data-house-id="4.3" data-caption="Фотография за июнь 2018 дом 4.3"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-июнь" data-house-id="3.2" data-caption="Фотография за июнь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-июнь" data-house-id="3.2" data-caption="Фотография за июнь 2018 дом 3.2"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-июнь" data-house-id="3.2" data-caption="Фотография за июнь 2018 дом 3.2"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="picking__filter">
+          <div class="construction-filters" data-sticky-target>
+            <form class="construction-filters__form" action="" method="get">
+              <div class="construction-filters__item flat-filter">
+                <div class="flat-filter__label">Тип дома</div>
+                <div class="flat-filter__control">
+                  <div class="flat-filter__select select">
+                    <select name="type">
+                      <option value="all">Все</option>
+                      <option value="3.1">3.1</option>
+                      <option value="3.2">3.2</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> -->
+        <!-- <div class="picking__result">
+          <div class="construction-result construction-slider">
+            <div class="construction-slider__slides js-construction-slides">
+              <div class="construction-slider__item">
+                <a class="construction-slider__wraplink" data-fancybox-trigger="2018-октрябрь" data-caption="Фотография за октябрь 2018">
+                  <img class="construction-slider__image" src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" alt="">
+                  <div class="construction-slider__cover">
+                    <span class="construction-slider__month">октябрь</span>
+                    <span class="construction-slider__year">2018</span>
+                  </div>
+                </a>
+                <div hidden>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-38.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-39.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-40.jpg" data-fancybox="2018-октрябрь" data-house-id="5" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-41.jpg" data-fancybox="2018-октрябрь" data-house-id="6" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-42.jpg" data-fancybox="2018-октрябрь" data-house-id="6" data-caption="Фотография за октябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-43.jpg" data-fancybox="2018-октрябрь" data-house-id="6" data-caption="Фотография за октябрь 2018"></a>
+                </div>
+              </div>
+              <div class="construction-slider__item">
+                <a class="construction-slider__wraplink" data-fancybox-trigger="2018-сентябрь" data-caption="Фотография за сентябрь 2018">
+                  <img class="construction-slider__image" src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" alt="">
+                  <div class="construction-slider__cover">
+                    <span class="construction-slider__month">сентябрь</span>
+                    <span class="construction-slider__year">2018</span>
+                  </div>
+                </a>
+                <div hidden>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                  <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-сентябрь" data-house-id="6" data-caption="Фотография за сентябрь 2018"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </article>
+  </main>
+
+  @@include('blocks/main-footer.html')
+  @@include('blocks/out-cover.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>

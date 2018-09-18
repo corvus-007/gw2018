@@ -5,11 +5,19 @@
   padding-bottom: 35px;
   background-color: $secondary-color;
 
+  &--last {
+    margin-bottom: 0;
+  }
+
   @include mq-minh($vh-height-bp) {
     margin-top: vh(30);
     margin-bottom: vh(30);
     padding-top: vh(45);
     padding-bottom: vh(45);
+
+    &--last {
+      margin-bottom: 0;
+    }
   }
 }
 

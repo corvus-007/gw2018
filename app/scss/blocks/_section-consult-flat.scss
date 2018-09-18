@@ -1,8 +1,7 @@
 .section-consult-flat {
   position: relative;
-  min-height: 90vh;
+  min-height: 95vh;
   margin-bottom: 70px;
-  padding-top: $height-header-mobile;
   padding-bottom: 40px;
   box-sizing: border-box;
 
@@ -14,16 +13,13 @@
 
   @include mq-min(768px) {
     min-height: auto;
-    margin-top: $height-header-mobile;
+    margin-top: 85px;
     padding: 0;
   }
 
-  @include mq-min(1024px) {
-    margin-top: $height-header-desktop;
-  }
-
-  @include mq-minh($vh-height-bp) {
-    margin-bottom: vh(85);
+  @include mq-min(1280px) {
+    margin-top: vh(85);
+    margin-bottom: vh(15);
   }
 }
 

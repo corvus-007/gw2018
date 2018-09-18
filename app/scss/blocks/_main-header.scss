@@ -72,7 +72,13 @@
   margin-left: 20px;
 
   @include mq-min(1024px) {
+    margin-top: vh(-7); // высота нижнего паддинга у ссылки
     margin-left: vh(30);
+    transition: $duration * 2;
+
+    .is-main-header-sticky & {
+      transform: scale(0.8);
+    }
   }
 }
 
@@ -84,7 +90,6 @@
   line-height: 1.15;
   text-decoration: none;
   color: $base-color;
-  transition: $duration * 2;
 
   .is-out-cover-opened & {
     visibility: hidden;
@@ -115,10 +120,6 @@
 
     span {
       font-size: vh(36);
-    }
-
-    .is-main-header-sticky & {
-      transform: scale(0.8);
     }
   }
 }

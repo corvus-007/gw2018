@@ -52,5 +52,36 @@ document.addEventListener('DOMContentLoaded', function () {
     window.flatFilters.init();
   }
 
+
+  $('.construction-cards__item').each(function (index, el) {
+    var album = $(el).find('.construction-card__wraplink').data('fancybox-trigger');
+    el.dataset.album = album;
+  });
+
+  $('.construction-filter-form').on('input', function (evt) {
+    var target = evt.target;
+    var selectElem = target.closest('[name="type"]');
+    var selectType = selectElem.value;
+
+    $('[data-house-id]').each(function (index, el) {
+      var album = el.closest('[data-album]').dataset.album;
+
+      var id = el.dataset.houseId;
+      el.dataset.fancybox = album;
+
+      if (id != selectType && selectType != 'all') {
+        el.dataset.fancybox = '';
+      }
+    });
+
+    $('.construction-cards__item').each(function (index, el) {
+      if ($(el).find('[data-fancybox*="-"]').length) {
+        $(el).show();
+      } else {
+        $(el).hide();
+      }
+    });
+  });
+
   $('.common-tabs').tabslet();
 });

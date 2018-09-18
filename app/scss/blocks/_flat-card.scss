@@ -1,0 +1,161 @@
+.flat-card {
+  position: relative;
+
+  &--is-favorite {
+
+  }
+}
+
+.flat-card__wraplink {
+  position: relative;
+  display: block;
+  padding: 30px;
+  padding-top: 40px;
+  color: $base-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #ffffff;
+    border-radius: $border-radius;
+    box-shadow: 0 0px 5px rgba(#000, 0.1);
+    transition: $duration * 2;
+
+    .flat-card:hover & {
+      box-shadow: 0 5px 20px rgba(#000, 0.15);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+    z-index: 1;
+
+    &::before, {
+      box-shadow: 0 5px 20px rgba(#000, 0.15);
+    }
+  }
+
+  .flats-cards--display-list & {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-right: 70px;
+  }
+}
+
+.flat-card__picture {
+  @include make-fit-object(1, 1, contain);
+
+  margin-bottom: 20px;
+
+  .flats-cards--display-list & {
+    flex-shrink: 0;
+    flex-basis: 72px;
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  @include mq-min(600px) {
+    .flats-cards--display-list & {
+      flex-basis: 100px;
+    }
+  }
+
+  @include mq-min(1280px) {
+    .flats-cards--display-list & {
+      flex-basis: vh(100);
+    }
+  }
+}
+
+.flat-card__features {
+  // margin-left: auto;
+  // margin-right: auto;
+  flex-grow: 1;
+}
+
+.flat-card__features-item {
+  .flats-cards--display-list & {
+    margin-right: 10%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.flat-card__stick {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 15px;
+
+  .flats-cards--display-list & {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  @include mq-min(375px) {
+    .flats-cards--display-list & {
+      right: 15px;
+    }
+  }
+}
+
+.flat-card__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+
+  @include mq-min(1280px) {
+    width: vh(16);
+    height: vh(16);
+  }
+}
+
+.flat-card__reserved {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  color: $secondary-color;
+}
+
+.flat-card__reserved-icon {
+
+}
+
+.flat-card__add-to-favorite {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  background: none;
+  padding: 0;
+  color: $secondary-color;
+  outline: none;
+  cursor: pointer;
+  transition: color $duration;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  .flat-card--is-favorite {
+    color: $accent-color;
+  }
+}
+
+.flat-card__add-to-favorite-icon {
+  @media (pointer:coarse) {
+    width: 20px;
+    height: 20px;
+  }
+}
