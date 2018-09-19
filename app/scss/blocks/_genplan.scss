@@ -6,31 +6,51 @@
   overflow: hidden;
   box-sizing: border-box;
 
-  [id^="pin-"] {
-    display: none;
+  image {
     pointer-events: none;
   }
 
-  polygon {
-    fill: $secondary-color;
-    fill-opacity: 0.5;
-    cursor: pointer;
-    transition: fill $duration;
+  [id^="layer-group-"] {
     pointer-events: none;
-  }
 
-  .house-finish {
-    pointer-events: auto;
-    mix-blend-mode: normal;
-    fill: transparent;
-  }
+    image {
+      opacity: 0.8;
+      pointer-events: none;
+    }
 
-  .pin-house-finish {
-    display: block !important;
-  }
+    [id^="house-"] {
+      fill: #ffffff;
+      fill-opacity: 0.2;
+      transition: fill $duration;
+      cursor: pointer;
+    }
 
-  polygon:hover {
-    fill: #74fe0f;
+    [id^="pin-"] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &.finished {
+      pointer-events: auto;
+
+      image {
+        opacity: 1;
+      }
+
+      [id^="house-"] {
+        fill: transparent;
+        fill-opacity: 0.5;
+
+        &:hover {
+          fill: #74fe0f;
+        }
+      }
+
+      [id^="pin-"] {
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
   }
 
   @include mq-min(768px) {
@@ -58,7 +78,6 @@
   height: 100%;
   overflow: auto;
   overflow-y: hidden;
-  // -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
 }
 

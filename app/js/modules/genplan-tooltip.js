@@ -11,28 +11,25 @@ window.genplanTooltip = (function () {
   var prevTooltip;
   var limitCoords = {};
 
-  function unifiedId(pinId) {
-    return pinId.replace(/\./g, '-');
-  }
-
   function getPinElem(pinId) {
-    return genplanSVG.querySelector('#pin-' + unifiedId(pinId));
+    return genplanSVG.querySelector('#pin-' + pinId);
   }
 
   function getTooltipElem(pinId) {
-    return genplan.querySelector('[data-id=pin-' + unifiedId(pinId) + ']');
+    return genplan.querySelector('[data-id=pin-' + pinId + ']');
   }
 
   genplanSVG.addEventListener('mouseover', function (event) {
     var target = event.target;
-    var house = target.closest("[data-houseid]");
+    var house = target.closest('[id^="house-"]');
     var genplanSVGCoords = genplanSVG.getBoundingClientRect();
 
     if (!house) {
       return;
     }
 
-    var pinId = house.dataset.houseid;
+    var searchPosition = house.id.indexOf('-') + 1;
+    var pinId = house.id.slice(searchPosition);
     var pin = getPinElem(pinId);
     var pinCoords = pin.getBoundingClientRect();
     var pinHeight = pinCoords.bottom - pinCoords.top;
@@ -61,7 +58,6 @@ window.genplanTooltip = (function () {
     if (tooltipTop <= limitCoords.top) {
       tooltipTop = limitCoords.top;
     } else if (tooltipTop >= limitCoords.bottom) {
-      console.log('Выходит за нижнюю гарницу');
       tooltipTop = limitCoords.bottom;
     }
 
@@ -81,7 +77,7 @@ window.genplanTooltip = (function () {
 
   genplanSVG.addEventListener('mouseout', function (event) {
     var target = event.target;
-    var house = target.closest("[data-houseid]");
+    var house = target.closest('[id^="house-"]');
 
     if (!house) {
       return;
