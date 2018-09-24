@@ -90,6 +90,10 @@ gulp.task('copy-images', function () {
   return gulp.src('app/images/**/*').pipe(gulp.dest('build/images'));
 });
 
+gulp.task('copy-video', function () {
+  return gulp.src('app/video/**/*').pipe(gulp.dest('build/video'));
+});
+
 gulp.task('make-symbols', function () {
   return gulp
     .src('build/images/svg-symbols/*.svg')
@@ -121,6 +125,7 @@ gulp.task('build', function (fn) {
     'copy-root-htmls',
     'copy-fonts',
     'copy-images',
+    'copy-video',
     'copy-script',
     'style',
     'plugins-js',
@@ -143,6 +148,7 @@ gulp.task('serve', function () {
   });
   gulp.watch('app/fonts/**/*', ['copy-fonts']);
   gulp.watch('app/images/**/*', ['copy-images']);
+  gulp.watch('app/video/**/*', ['copy-video']);
   gulp.watch('app/js/*.{js,json}', ['copy-script']);
   gulp.watch('build/images/svg-symbols/*.svg', ['make-symbols']);
   gulp.watch(['app/js/plugins.js', 'app/js/plugins/*.js'], ['plugins-js']);
