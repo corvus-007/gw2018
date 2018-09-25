@@ -1,17 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW 2017 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="173px" height="173px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
-viewBox="0 0 78.44 78.6"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <g id="Слой_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1560243889040">
-   <path fill="#00823C" stroke="#00823C" stroke-width="4.02" stroke-miterlimit="22.9256" d="M55.45 7.42c-1.23,0 -2.23,-1 -2.23,-2.23 0,-1.23 1,-2.23 2.23,-2.23l20.98 0 0 73.63 -74.42 0 0 -74.58 28.15 0 20.29 14.61c0.99,0.71 1.22,2.11 0.5,3.1 -0.72,1 -2.11,1.23 -3.1,0.51l-19.1 -13.75 -22.27 0 0 65.64 65.48 0 0 -64.7 -16.51 0z"/>
-   <path fill="#00823C" stroke="#00823C" stroke-width="4.02" stroke-miterlimit="22.9256" d="M4.24 48.11c-1.23,0 -2.23,-1 -2.23,-2.23 0,-1.24 1,-2.24 2.23,-2.24l9.77 0c1.23,0 2.23,1 2.23,2.24 0,1.23 -1,2.23 -2.23,2.23l-9.77 0z"/>
-   <path fill="#00823C" stroke="#00823C" stroke-width="4.02" stroke-miterlimit="22.9256" d="M64.43 48.11c-1.23,0 -2.23,-1 -2.23,-2.23 0,-1.24 1,-2.24 2.23,-2.24l9.77 0c1.23,0 2.23,1 2.23,2.24 0,1.23 -1,2.23 -2.23,2.23l-9.77 0z"/>
-   <path fill="#00823C" stroke="#00823C" stroke-width="4.02" stroke-miterlimit="22.9256" d="M36.99 45.96c0,-1.24 1,-2.24 2.23,-2.24 1.23,0 2.23,1 2.23,2.24l0 28.4c0,1.23 -1,2.23 -2.23,2.23 -1.23,0 -2.23,-1 -2.23,-2.23l0 -28.4z"/>
-   <path fill="#00823C" stroke="#00823C" stroke-width="4.02" stroke-miterlimit="22.9256" d="M29.93 48.11c-1.24,0 -2.24,-1 -2.24,-2.23 0,-1.24 1,-2.24 2.24,-2.24l18.59 0c1.23,0 2.23,1 2.23,2.24 0,1.23 -1,2.23 -2.23,2.23l-18.59 0z"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 78.4 78.6">
+  <g fill="#00823C" stroke="#00823C" stroke-miterlimit="22.9" stroke-width="4">
+    <path d="M55.5 7.4a2.2 2.2 0 0 1 0-4.4h21v73.6H2V2h28.2l20.3 14.6a2.2 2.2 0 0 1-2.6 3.6L28.8 6.5H6.4V72H72V7.4H55.5z"/>
+    <path d="M4.2 48.1a2.2 2.2 0 0 1 0-4.5H14a2.2 2.2 0 0 1 0 4.5H4.2zM64.4 48.1a2.2 2.2 0 0 1 0-4.5h9.8a2.2 2.2 0 0 1 0 4.5h-9.8zM37 46a2.2 2.2 0 1 1 4.4 0v28.4a2.2 2.2 0 0 1-4.4 0V46z"/>
+    <path d="M30 48.1a2.2 2.2 0 1 1 0-4.5h18.5a2.2 2.2 0 0 1 0 4.5H30z"/>
   </g>
- </g>
 </svg>
