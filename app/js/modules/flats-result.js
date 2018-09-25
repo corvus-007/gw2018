@@ -1,20 +1,21 @@
-window.flatsResult = (function () {
+window.flatsResult = (function (window, $) {
   'use srict';
 
-  var $ = window.jQuery;
   var flatsResult = document.querySelector('.flats-result');
 
   if (!flatsResult) {
     return;
   }
 
-  var table = flatsResult.querySelector('.flats-result__table');
   var cardsList = flatsResult.querySelector('.flats-cards');
   var templateCard = document.querySelector('#flats-result-card-template').content.querySelector('.flat-card');
+  var favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
   function displayResult(params) {
     var filtersData = params.data || '';
     var response = sendRequest(filtersData, onSuccess);
+
+    favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
     response.done(onSuccess);
   }
@@ -23,8 +24,8 @@ window.flatsResult = (function () {
     var fragment = document.createDocumentFragment();
     clearCardsList();
 
-    data.forEach(function (attrs) {
-      fragment.appendChild(renderCard(attrs));
+    data.forEach(function (attrs, index) {
+      fragment.appendChild(renderCard(attrs, index));
     });
 
     cardsList.appendChild(fragment);
@@ -37,21 +38,26 @@ window.flatsResult = (function () {
 
     setTimeout(function () {
       endLoading();
-    }, 350);
+    }, 800);
   }
 
-  function renderCard(attrs) {
+  function renderCard(attrs, index) {
     var card = templateCard.cloneNode(true);
     var reserveElem = card.querySelector('.flat-card__reserved');
     var image = card.querySelector('.flat-card__picture img');
+
+    var id = index + '';
+    card.dataset.flatId = id;
+
+    if (favoritesCards.includes(id)) {
+      card.classList.add('flat-card--is-favorite');
+    }
 
     if (!attrs.reserve) {
       reserveElem.remove();
     }
 
     image.src = 'images/plans/plan-2.svg';
-
-    // Проверка, добавлена-ли квартира в избранное
 
     card.querySelector('[data-flat="room"]').textContent = attrs.room;
     card.querySelector('[data-flat="area"]').textContent = attrs.area;
@@ -87,10 +93,9 @@ window.flatsResult = (function () {
   return {
     displayResult: displayResult,
     templateCard: templateCard,
-    table: table,
-    tbody: cardsList,
+    cardsList: cardsList,
     sendRequest: sendRequest,
     renderCard: renderCard,
     clearCardsList: clearCardsList
   };
-})();
+})(window, jQuery);

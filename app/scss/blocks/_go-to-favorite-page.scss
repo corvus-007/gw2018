@@ -1,0 +1,79 @@
+.go-to-favorite-page {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: $duration * 2;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    animation: bounceIn 1s;
+  }
+}
+
+.go-to-favorite-page__link {
+  display: block;
+  padding: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(#000000, 0.2);
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 4px 16px rgba(#000000, 0.3);
+  }
+}
+
+.go-to-favorite-page__icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  fill: #ffffff;
+  fill: $accent-color;
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}

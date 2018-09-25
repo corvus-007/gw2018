@@ -25,9 +25,10 @@
     border-radius: $border-radius;
     box-shadow: 0 0px 5px rgba(#000, 0.1);
     transition: $duration * 2;
+    will-change: box-shadow;
 
     .flat-card:hover & {
-      box-shadow: 0 5px 20px rgba(#000, 0.15);
+      // box-shadow: 0 5px 20px rgba(#000, 0.15);
     }
   }
 
@@ -75,8 +76,6 @@
 }
 
 .flat-card__features {
-  // margin-left: auto;
-  // margin-right: auto;
   flex-grow: 1;
 }
 
@@ -137,18 +136,21 @@
   vertical-align: middle;
   border: none;
   background: none;
-  padding: 0;
+  padding: 5px;
   color: $secondary-color;
   outline: none;
   cursor: pointer;
   transition: color $duration;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $accent-color;
   }
 
-  .flat-card--is-favorite {
+  &:focus {
+    color: $secondary-color-2;
+  }
+
+  .flat-card--is-favorite & {
     color: $accent-color;
   }
 }

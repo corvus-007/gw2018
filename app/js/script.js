@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
+  var controller = new ScrollMagic.Controller();
+
+  var tl = new TimelineMax();
+
+  tl.staggerFrom('.features__item', 1.3, {
+    opacity: 0,
+    scale: 0.5,
+    ease: Back.easeInOut.config(1.7),
+  }, 0.15);
+
+  new ScrollMagic.Scene({
+      triggerElement: '.features',
+      offset: 0,
+      reverse: false
+    })
+    .setTween(tl)
+    .addTo(controller);
+
   $('input[type="tel"]').inputmask({
     "mask": "+7 (999) 999-99-99"
   });
@@ -14,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
   var constructionSlides = document.querySelector('.js-construction-slides');
 
   if (constructionSlides) {
@@ -27,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
       contain: true
     });
   }
-
 
   var commonPlansSlider = document.querySelector('.js-common-plans-slider');
 
@@ -47,11 +63,19 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.flat-filters')) {
     var locationSearch = location.search;
     window.flatsResult.displayResult({
-      filtersData: locationSearch
+      data: locationSearch
     });
     window.flatFilters.init();
   }
 
+  if (document.querySelector('.favorites-flats')) {
+
+    window.flatsResult.displayResult({
+      data: $.param({
+        'favorites_cards[]': window.favoritesCards.getFavoritesFlatsAsArr()
+      })
+    });
+  }
 
   $('.construction-cards__item').each(function (index, el) {
     var album = $(el).find('.construction-card__wraplink').data('fancybox-trigger');

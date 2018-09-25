@@ -8,12 +8,19 @@
 
 .main-footer__inner {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+
+  @include mq-min(568px) {
+    justify-content: space-between;
+    text-align: center;
+  }
 }
 
 .main-footer__copy {
   margin: 0;
+  margin-right: 10px;
 }
 
 .main-footer__dev {

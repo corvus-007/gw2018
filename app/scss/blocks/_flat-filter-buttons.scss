@@ -10,9 +10,13 @@
   }
 
   label {
-    padding: 10px 5px;
     flex-basis: 100%;
     flex-grow: 1;
+    padding: 10px 5px;
+    font: inherit;
+    font-weight: 600;
+    font-size: rem(17);
+    line-height: rem(25);
     text-align: center;
     background-color: #fafafa;
     user-select: none;
@@ -31,5 +35,12 @@
   input:checked + label {
     color: #ffffff;
     background-color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  @include mq-minh($vh-height-bp) {
+    label {
+      font-size: vh(17);
+    }
   }
 }

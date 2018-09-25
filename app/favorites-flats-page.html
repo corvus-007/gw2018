@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Избранное / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  @@include('blocks/main-header.html')
+
+  <main class="main">
+    <article class="common-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Избранное</h1>
+      </header>
+      <div class="common-page__body common-page__body--has-sidebar container">
+
+        <div class="common-page__sidebar">
+
+        </div>
+        <div class="common-page__content favorites-flats">
+          <div class="flats-result">
+            <div class="flats-result__dashboard flats-result-dashboard">
+              <div class="flats-result-dashboard__view view-mode">
+                <form class="view-mode-form">
+                  <div class="view-mode-buttons">
+                    <input type="radio" name="view" id="field-view-card" value="card">
+                    <label for="field-view-card" aria-label="Показать в виде карточек">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_module-24px"></use>
+                      </svg>
+                    </label>
+                    <input type="radio" name="view" id="field-view-list" value="list">
+                    <label for="field-view-list" aria-label="Показать в виде списка">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_stream-24px"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--
+            flats-cards--display-card
+            flats-cards--display-list
+          -->
+            <ul class="flats-result__list favorites-flats__list flats-cards"></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <template id="flats-result-card-template">
+    <li class="flats-result__item flats-cards__item flat-card">
+      <a class="flat-card__wraplink" href="flat-plan-page.html">
+        <div class="flat-card__picture">
+          <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+        </div>
+        <ul class="flat-card__features common-features-flat">
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Комнат</span>
+            <b class="common-features-flat__value" data-flat="room">2</b>
+          </li>
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Площадь</span>
+            <b class="common-features-flat__value" data-flat="area">278,64</b>
+          </li>
+        </ul>
+      </a>
+      <div class="flat-card__stick">
+        <span class="flat-card__reserved" aria-label="Забронирована" title="Забронирована">
+          <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z"/>
+          </svg>
+        </span>
+        <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
+            <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+          </svg>
+        </button>
+      </div>
+    </li>
+  </template>
+
+  @@include('blocks/main-footer.html')
+  @@include('blocks/out-cover.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>

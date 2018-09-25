@@ -11,7 +11,6 @@
 // Vendors
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
 @import "../../node_modules/flickity/dist/flickity";
-@import "../../node_modules/flickity-fullscreen/fullscreen";
 
 // Blocks
 @import "blocks/flickity-override";
@@ -42,10 +41,13 @@
 @import "blocks/intro-action";
 @import "blocks/intro-actions";
 @import "blocks/section-choose";
+@import "blocks/presentation-video";
+@import "blocks/district";
 @import "blocks/construction-slider";
 @import "blocks/section-construction";
 @import "blocks/section-involve-person";
 @import "blocks/section-consult-flat";
+@import "blocks/features";
 @import "blocks/cta-line-form";
 @import "blocks/simple-cta";
 @import "blocks/cta";
@@ -80,7 +82,10 @@
 @import "blocks/contacts-info";
 @import "blocks/contacts";
 @import "blocks/contacts-page";
+@import "blocks/documents-file";
+@import "blocks/documents";
 @import "blocks/main-footer";
 @import "blocks/socials";
 @import "blocks/mobile-nav";
 @import "blocks/out-cover";
+@import "blocks/go-to-favorite-page";

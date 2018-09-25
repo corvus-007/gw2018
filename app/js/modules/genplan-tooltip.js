@@ -49,10 +49,11 @@ window.genplanTooltip = (function () {
 
     var tooltipHeight = tooltip.offsetHeight;
     var tooltipLeft = genplanScroller.scrollLeft + pinCoords.right + 20;
-    var tooltipTop = pinCoords.top + pinHeight / 2 - genplanSVGCoords.top - tooltipHeight / 2;
+    var tooltipTop = pinCoords.top + pinHeight / 2 - tooltipHeight / 2;
     var tooltipCoords = null;
 
     limitCoords.top = genplanSVGCoords.top + 20;
+
     limitCoords.bottom = genplanSVGCoords.bottom - tooltipHeight - 40;
 
     if (tooltipTop <= limitCoords.top) {

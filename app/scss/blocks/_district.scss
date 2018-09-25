@@ -1,0 +1,45 @@
+.district {
+  padding-top: 0;
+  margin-top: -40px;
+
+  @include mq-min(1280px) {
+    margin-top: vh(-30);
+  }
+}
+
+.district__map-frame {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 110%;
+  }
+
+  @media (min-width: 768px), (orientation: landscape) {
+    &::before {
+      padding-top: calc(350 / 859 * 100%);
+    }
+  }
+
+  @include mq-min(1280px) {
+    &::before {
+      padding-top: 500px;
+    }
+  }
+}
+
+.district__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $gray-245;
+
+  .ymaps-2-1-68-ground-pane {
+    filter: grayscale(1);
+  }
+}

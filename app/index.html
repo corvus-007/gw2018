@@ -7,6 +7,8 @@
   <meta name="format-detection" content="telephone=no">
   <title>Главная / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <link rel="preload" href="images/layers-houses/genplan-back.jpg" media="(min-width: 1280px)" as="image" type="image/jpeg">
 </head>
 <body class="homepage">
   @@include('blocks/main-header.html')
@@ -18,8 +20,7 @@
           <p class="section-intro__text-first-line">
             <span>
               «Гринвуд» – это масса преимуществ<br>
-              и один недостаток...<br>
-              Осталось всего
+              и один недостаток. Осталось всего...
             </span>
           </p>
           <p class="section-intro__text-second-line">
@@ -52,7 +53,7 @@
               <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
             </svg>
           </p>
-          <a class="section-intro__to-more button" href="">Подробнее о проекте</a>
+          <a class="section-intro__to-more button" href="#section-features">Подробнее о проекте</a>
         </div>
         <div class="section-intro__picture block-out__picture">
           <img class="block-out__image" src="images/intro-bg.jpg" alt="">
@@ -82,9 +83,124 @@
           </a>
         </div>
       </div>
+      <div id="section-features"></div>
     </section>
 
-    <div class="section-choose block-out block-out--to-left">
+    <section class="features common-section">
+      <div class="features__inner container">
+        <div class="features__header">
+          <h2 class="features__title common-title">12 из 46 преимущества «ГРИНВУДА»</h2>
+        </div>
+        <ul class="features__list">
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-00"></use>
+            </svg>
+            <b class="features__caption">Лучший жилой комплекс премиум-класса в России</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-01"></use>
+            </svg>
+            <b class="features__caption">Географический центр Брянска</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-03"></use>
+            </svg>
+            <b class="features__caption">Прекрасные виды на парк "Соловьи"</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-02"></use>
+            </svg>
+            <b class="features__caption">4 школы и 3 детских сада в радиусе 2 км</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-05"></use>
+            </svg>
+            <b class="features__caption">Охраняемая территория</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-19"></use>
+            </svg>
+            <b class="features__caption">Безопасный двор без машин</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-08"></use>
+            </svg>
+            <b class="features__caption">Самая низкая плотность застройки в городе</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-04"></use>
+            </svg>
+            <b class="features__caption">Детские и спортивные площадки</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-13"></use>
+            </svg>
+            <b class="features__caption">Подземный паркинг с лифтовым доступом</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-10"></use>
+            </svg>
+            <b class="features__caption">Шумоизоляция и утолщенные перегородки</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-15"></use>
+            </svg>
+            <b class="features__caption">Панорамное остекление из "теплого" алюминия</b>
+          </li>
+          <li class="features__item">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-17"></use>
+            </svg>
+            <b class="features__caption">Увеличенная высота потолков до 3,1 м</b>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta__inner container">
+        <h2 class="cta__title common-title">
+          Узнайте обо всех <br> 46 преимуществах «Гринвуда»
+        </h2>
+        <form class="cta__form cta-line-form" action="" method="POST">
+          <div class="cta-line-form__row">
+            <label class="cta-line-form__field field">
+              <span class="field__label">Ваше имя</span>
+              <div class="field__control">
+                <input class="field__input input" type="text" name="name" placeholder="Ваше имя" required>
+              </div>
+            </label>
+            <label class="cta-line-form__field field">
+              <span class="field__label">Телефон</span>
+              <div class="field__control">
+                <input class="field__input input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+              </div>
+            </label>
+            <button class="cta-line-form__submit button" type="submit">Хочу узнать</button>
+          </div>
+          <p class="cta-line-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="district common-section">
+      <div class="district__map-frame">
+        <div class="district__map" id="district-map"></div>
+      </div>
+    </div>
+
+    <!-- <div class="section-choose block-out block-out--to-left">
       <div class="section-choose__inner block-out__inner container">
         <div class="section-choose__content block-out__content">
           <p class="section-choose__text">
@@ -98,9 +214,38 @@
           <img class="block-out__image" src="images/index_section_2.jpg" alt="">
         </div>
       </div>
+    </div> -->
+
+    <!-- presentation-video--playing -->
+    <div class="presentation-video block-out block-out--to-left">
+      <div class="presentation-video__inner block-out__inner container">
+        <div class="presentation-video__content block-out__content">
+          <p class="presentation-video__text">
+            <span>Посмотрите великолепное короткое видео, как выглядел «ГРИНВУД» этим летом.</span>
+          </p>
+        </div>
+        <div class="presentation-video__frame block-out__picture">
+          <video poster="video/video_cover.jpg">
+            <source src="video/presentation-greenwood.mp4" type="video/mp4">
+            <source src="video/presentation-greenwood.webm" type="video/webm">
+          </video>
+          <div class="presentation-video__controls">
+            <button class="presentation-video__control presentation-video__play" data-video-action="play" type="button" aria-label="Воспроизвести видео">
+              <svg class="presentation-video__control-icon">
+                <use xlink:href="images/symbols.svg#player-play"></use>
+              </svg>
+            </button>
+            <button class="presentation-video__control presentation-video__pause" data-video-action="pause" type="button" aria-label="Приостановить видео">
+              <svg class="presentation-video__control-icon">
+                <use xlink:href="images/symbols.svg#player-pause"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <section class="section-construction common-section">
+    <!-- <section class="section-construction common-section">
       <div class="section-construction__inner">
         <header class="section-construction__header container">
           <h2 class="common-title">
@@ -217,14 +362,14 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="section-involve-person common-section">
       <div class="section-involve-person__inner container">
         <div class="section-involve-person__content">
           <h2 class="section-involve-person__title common-title">
-            Записаться на персональную<br>
-            презенацию «Гринвуда»
+            Сейчас «ГРИНВУД» уже совсем другой.
+            Запишитесь на персональную<br>экскурсию в «Гринвуде».
           </h2>
           <form class="section-involve-person__form cta-line-form" action="" method="POST">
             <div class="cta-line-form__row">

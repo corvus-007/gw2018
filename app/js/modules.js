@@ -2,8 +2,11 @@
 //=require modules/out-cover.js
 //=require modules/genplan.js
 //=require modules/genplan-tooltip.js
+//=require modules/favorites-cards.js
+//=require modules/flats-cards.js
 //=require modules/flats-result.js
 //=require modules/flat-filters.js
-//=require modules/flats-cards.js
 //=require modules/flat.js
 //=require modules/map.js
+//=require modules/presentation-video.js
+//=require modules/district-map.js

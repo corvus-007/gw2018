@@ -13,12 +13,15 @@ window.flat = (function (window, $) {
     var flat = document.querySelector('.flat');
     // var flatPlans = flat.querySelectorAll('.flat__plan');
     var flatPlan = flat.querySelector('.flat-plan');
-    var frame = flat.querySelector('.flat-plan__frame');
     var flatDetail = flat.querySelector('.flat-detail');
+    var frame = flat.querySelector('.flat-plan__frame');
+    var planZoomToImage = flatPlan.querySelector('.flat-plan__zoom-to-image');
+    var planAdjuster = flatPlan.querySelector('.flat-plan__adjuster');
+    var planImage = flatPlan.querySelector('.flat-plan__image');
 
     function processingPlan(plan) {
-      var planAdjuster = plan.querySelector('.flat-plan__adjuster');
-      var planImage = plan.querySelector('.flat-plan__image');
+      planAdjuster = plan.querySelector('.flat-plan__adjuster');
+      planImage = plan.querySelector('.flat-plan__image');
 
       function updatePlanAdjuster(ratio) {
         planAdjuster.style.paddingTop = ratio * 100 + '%';
@@ -45,8 +48,15 @@ window.flat = (function (window, $) {
 
     if (window.matchMedia("(pointer: coarse)").matches) {
       processingPlan(flatPlan);
+      planZoomToImage.addEventListener('click', function(evt){
+        evt.preventDefault();
+      });
     } else {
-      $(frame).zoom();
+      // $(frame).zoom();
+      $(planZoomToImage).fancybox({
+        slideClass: 'flat-plan-popup',
+        animationEffect: 'zoom-in-out'
+      });
     }
 
     if (window.matchMedia("(min-width: 768px)").matches) {

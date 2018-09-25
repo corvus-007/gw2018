@@ -14,14 +14,22 @@
 .contacts-info__label {
   display: table-cell;
   margin: 0;
-  padding-right: 50px;
-  padding-bottom: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-weight: 700;
   font-size: rem(15);
   text-transform: uppercase;
+  white-space: nowrap;
   color: $brown-color;
 
+  @include mq-min(768px) {
+    padding-right: 50px;
+  }
+
   @include mq-min(1280px) {
+    padding-top: vh(15);
+    padding-bottom: vh(15);
     font-size: vh(15);
   }
 }
@@ -29,7 +37,9 @@
 .contacts-info__value {
   display: table-cell;
   margin: 0;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  white-space: nowrap;
 }
 
 .contacts-info__phone {
@@ -37,6 +47,8 @@
   color: $base-color;
 
   @include mq-min(1280px) {
+    padding-top: vh(15);
+    padding-bottom: vh(15);
     font-size: vh(30);
   }
 }

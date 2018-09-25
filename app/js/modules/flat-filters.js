@@ -18,15 +18,32 @@ window.flatFilters = (function () {
       clearInterval(lastTimeout);
     }
 
+    history.replaceState({}, '', '?'+formData);
+
     lastTimeout = window.setTimeout(function () {
       window.flatsResult.displayResult({
-        filtersData: formData
+        data: formData
       });
     }, 200);
   }
 
   function init() {
-    flatFiltersForm.addEventListener('input', handleInputFiltersForm);
+    var params = new URLSearchParams(location.search);
+    var paramType = params.get('type');
+    var paramAmountList = params.getAll('amount[]');
+
+    flatFiltersForm.elements.type.value = paramType;
+
+    for (var checkboxItem of flatFiltersForm.elements['amount[]']) {
+      var val = checkboxItem.value;
+
+      if (!paramAmountList.includes(val)) {
+        continue;
+      }
+      checkboxItem.checked = true;
+    }
+
+    flatFiltersForm.addEventListener('change', handleInputFiltersForm);
   }
 
   return {

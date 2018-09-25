@@ -1,0 +1,23 @@
+.documents {
+
+}
+
+.documents__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.documents__item {
+  width: 100%;
+  margin-bottom: $gutter * 2;
+
+  @include mq-range(630px, 991px) {
+    @include calc-column-width(2, $gutter * 2);
+  }
+
+  @include mq-min(992px) {
+    @include calc-column-width(3, $gutter * 2);
+  }
+}

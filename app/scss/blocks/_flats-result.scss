@@ -1,15 +1,14 @@
 .flats-result {
   position: relative;
-  min-height: 250px;
-  transition: opacity $duration;
+  min-height: 300px;
+  transition: opacity $duration * 2;
 
   &::before {
     content: none;
     position: absolute;
     left: 0;
     right: 0;
-    top: 50px; // высота шапки таблицы
-    bottom: 0;
+    top: 100px;
     width: 100px;
     height: 100px;
     margin: auto;
@@ -20,7 +19,7 @@
   }
 
   &--loading {
-    opacity: 0.5;
+    opacity: 0.25;
     pointer-events: none;
 
     &::before {

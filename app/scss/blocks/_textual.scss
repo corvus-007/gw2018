@@ -62,7 +62,7 @@
     margin-right: auto;
   }
 
-  & > ul {
+  & > ul:not([class]) {
     li {
       position: relative;
 

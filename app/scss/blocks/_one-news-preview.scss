@@ -7,7 +7,7 @@
   position: relative;
   flex-grow: 1;
   display: inherit;
-  padding: 50px 30px;
+  padding: 40px 20px;
   color: $base-color;
   overflow: hidden;
   transition: $duration;
@@ -36,6 +36,10 @@
     &::before {
       background-color: $accent-color-2;
     }
+  }
+
+  @include mq-min(768px) {
+    padding: 50px 30px;
   }
 
   @include mq-min(1280px) {

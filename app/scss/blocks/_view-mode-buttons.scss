@@ -10,9 +10,7 @@
   }
 
   label {
-    padding: 10px 5px;
-    flex-basis: 100%;
-    flex-grow: 1;
+    padding: 5px;
     text-align: center;
     background-color: #fafafa;
     user-select: none;
@@ -32,4 +30,11 @@
     color: #ffffff;
     background-color: $accent-color;
   }
+}
+
+.view-mode-buttons__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
