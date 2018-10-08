@@ -4,6 +4,17 @@
   text-align: center;
   color: $brown-color;
 
+  a {
+    color: $brown-color;
+    border-bottom: 1px solid rgba($brown-color, 0.25);
+    transition: $duration;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $brown-color;
+    }
+  }
+
   @include mq-min(1280px) {
     font-size: vh(15);
   }

@@ -1,5 +1,7 @@
 //=require modules/util.js
+//=require modules/splash-screen.js
 //=require modules/out-cover.js
+//=require modules/animation.js
 //=require modules/genplan.js
 //=require modules/genplan-tooltip.js
 //=require modules/favorites-cards.js
@@ -9,4 +11,4 @@
 //=require modules/flat.js
 //=require modules/map.js
 //=require modules/presentation-video.js
-//=require modules/district-map.js
+//=require modules/district.js

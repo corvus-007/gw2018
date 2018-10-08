@@ -6,7 +6,6 @@
   font-size: 14px;
   line-height: 1.15;
   text-align: center;
-  // color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   transition: $duration;
@@ -46,8 +45,13 @@
   fill: currentColor;
 
   @include mq-min(1024px) {
-    width: 32px;
-    height: 32px;
+    width: 56px;
+    height: 56px;
+  }
+
+  @include mq-min(1280px) {
+    width: vh(56);
+    height: vh(56);
   }
 }
 

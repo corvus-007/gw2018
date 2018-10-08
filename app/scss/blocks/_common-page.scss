@@ -20,7 +20,6 @@
 }
 
 .common-page__body {
-
   @include mq-min(768px) {
     &--has-sidebar {
       display: flex;

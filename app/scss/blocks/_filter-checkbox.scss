@@ -1,0 +1,46 @@
+.filter-checkbox {
+  display: flex;
+  overflow: hidden;
+
+}
+
+.filter-checkbox__input {
+  @include visually-hidden();
+}
+
+.filter-checkbox__indicator {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px 5px;
+  font: inherit;
+  font-weight: 600;
+  font-size: rem(17);
+  line-height: rem(25);
+  text-align: center;
+  background-color: #fafafa;
+  user-select: none;
+  transition: $duration;
+
+  .filter-checkbox:not(:last-child) & {
+    border-right: 1px solid $secondary-color-2;
+  }
+
+  .filter-checkbox__input:hover + & {
+    background-color: $secondary-color;
+  }
+
+  .filter-checkbox__input:focus + & {
+    color: $base-color;
+  }
+
+  .filter-checkbox__input:checked + & {
+    color: #ffffff;
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  @include mq-minh($vh-height-bp) {
+    padding: vh(10) vh(5);
+    font-size: vh(17);
+  }
+}

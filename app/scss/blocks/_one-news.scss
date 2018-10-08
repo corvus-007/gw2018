@@ -3,9 +3,11 @@
 }
 
 .one-news__inner {
-  max-width: 710px;
-  margin-left: auto;
-  margin-right: auto;
+  @include mq-min(1024px) {
+    max-width: vh(800);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .one-news__back-to-news {

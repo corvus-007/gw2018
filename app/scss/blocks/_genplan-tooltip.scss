@@ -1,5 +1,5 @@
 .genplan-tooltip {
-  min-width: 240px;
+  min-width: 220px;
   padding: 20px;
   padding-bottom: 5px;
   background-color: #fff;
@@ -29,7 +29,7 @@
   }
 
   @include mq-min(1280px) {
-    min-width: vh(240);
+    min-width: vh(220);
     padding: vh(20);
   }
 }

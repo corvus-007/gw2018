@@ -38,32 +38,56 @@
               <div class="flat-filters__item flat-filter">
                 <div class="flat-filter__label">Количество комнат</div>
                 <div class="flat-filter__control">
-                  <div class="flat-filter-buttons">
-                    <input type="checkbox" name="amount[]" value="flat-1" id="field-amount-1">
-                    <label for="field-amount-1">1</label>
-                    <input type="checkbox" name="amount[]" value="flat-2" id="field-amount-2">
-                    <label for="field-amount-2">2</label>
-                    <input type="checkbox" name="amount[]" value="flat-3" id="field-amount-3">
-                    <label for="field-amount-3">3</label>
-                    <input type="checkbox" name="amount[]" value="flat-penthouse" id="field-amount-4">
-                    <label for="field-amount-4" title="Пентхаус">П</label>
+                  <div class="flat-filter-checkboxes">
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-1">
+                      <span class="filter-checkbox__indicator" title="Однакомнатная квартира">1</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-2">
+                      <span class="filter-checkbox__indicator" title="Двухкомнатная квартира">2</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-3">
+                      <span class="filter-checkbox__indicator" title="Трехкомнатная квартира">3</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-4">
+                      <span class="filter-checkbox__indicator" title="Четырехкомнатная квартира">4</span>
+                    </label>
                   </div>
                 </div>
               </div>
               <div class="flat-filters__item flat-filter">
                 <div class="flat-filter__label">Площадь м²</div>
+                <div class="flat-filter__control flat-filter__control--range filter-range">
+                  <div class="filter-range-slider" data-type-slider="area" data-range="[20, 150]"></div>
+                  <div class="filter-range-values">
+                    <div class="filter-range-values__from">
+                      от <span data-range-from>20</span> м²
+                    </div>
+                    <div class="filter-range-values__to">
+                      до <span data-range-to>150</span> м²
+                    </div>
+                    <input type="hidden" name="area_from" value="20">
+                    <input type="hidden" name="area_to" value="150">
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="flat-filters__item flat-filter">
+                <div class="flat-filter__label">Площадь м²</div>
                 <div class="flat-filter__controls">
                   <div class="flat-filter__control">
                     <span class="flat-filter__placeholder">от</span>
-                    <input class="flat-filter__input input" type="text" name="area_from">
+                    <input class="flat-filter__input input" type="number" name="area_from">
                   </div>
                   <div class="flat-filter__controls-divider"></div>
                   <div class="flat-filter__control">
                     <span class="flat-filter__placeholder">до</span>
-                    <input class="flat-filter__input input" type="text" name="area_to">
+                    <input class="flat-filter__input input" type="number" name="area_to">
                   </div>
                 </div>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>

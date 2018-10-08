@@ -53,15 +53,8 @@
     }
   }
 
-  @include mq-min(768px) {
-    height: calc(80vh);
-  }
-
-  @include mq-min(992px) {
-    height: auto;
-  }
-
   @include mq-min(1024px) {
+    height: auto;
     padding-top: $height-header-desktop;
   }
 }
@@ -94,8 +87,8 @@
 }
 
 .genplan__compass {
-  position: absolute;
-  bottom: 90px;
+  position: fixed;
+  bottom: 25px;
   width: 80px;
   height: 80px;
   padding: 15px;
@@ -107,6 +100,7 @@
   border-radius: 50%;
 
   @include mq-min(1280px) {
+    bottom: 90px;
     width: vh(80);
     height: vh(80);
     padding: vh(15);
@@ -138,5 +132,60 @@
     left: auto;
     right: auto;
     bottom: auto;
+  }
+}
+
+.genplan__tip {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: $height-header-mobile;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  background-color: rgba($black-color, 0.5);
+  transition: $duration * 3;
+
+  &::before {
+    content: "";
+    width: 120px;
+    height: 120px;
+    margin-left: -25px;
+    margin-bottom: 20px;
+    background: url("images/swipe-genplan.svg") no-repeat center / contain;
+  }
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @media (orientation: landscape) and (max-height: 374px) {
+    &::before {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  @media (pointer: coarse) {
+    display: flex;
+  }
+}
+
+.genplan__tip-text {
+  max-width: 200px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.25;
+  text-align: center;
+
+  @media (orientation: landscape) and (max-height: 374px) {
+    max-width: 300px;
   }
 }

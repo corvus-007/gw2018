@@ -6,11 +6,25 @@
   }
 }
 
-.contacts__info {
+.contacts__content {
   @include mq-min(1024px) {
     flex-shrink: 0;
     margin-right: 60px;
   }
+}
+
+.contacts__intro {
+  max-width: 300px;
+  font-size: rem(18);
+  line-height: 1.15;
+
+  @include mq-min(1280px) {
+    max-width: vh(300);
+    font-size: vh(18);
+  }
+}
+
+.contacts__info {
 }
 
 .contacts__map-frame {
@@ -25,7 +39,7 @@
 
   @media (min-width: 768px), (orientation: landscape) {
     &::before {
-      padding-top: calc(350 / 859 * 100%);
+      padding-top: calc(420 / 859 * 100%);
     }
   }
 
@@ -65,7 +79,7 @@
     background-image: url("images/bg-fallback-map@2x.png");
   }
 
-  .ymaps-2-1-68-ground-pane {
+  [class$="-ground-pane"] {
     filter: grayscale(1);
   }
 }

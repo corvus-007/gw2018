@@ -18,4 +18,8 @@
       margin-bottom: 0;
     }
   }
+
+  @include mq-min(1280px) {
+    margin-bottom: vh(30);
+  }
 }

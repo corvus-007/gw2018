@@ -1,0 +1,12 @@
+.flat-filter-checkboxes {
+  display: flex;
+  background-color: $gray-245;
+  border: 1px solid $secondary-color-2;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.flat-filter-checkboxes__item {
+  flex-grow: 1;
+  width: 100%;
+}

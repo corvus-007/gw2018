@@ -1,0 +1,11 @@
+.fancybox-caption {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+
+  background: linear-gradient(to top, rgba(#000000, 0.5), rgba(#000000, 0.05) 100%);
+
+  &::after {
+    content: none;
+  }
+}

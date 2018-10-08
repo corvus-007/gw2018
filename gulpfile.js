@@ -97,7 +97,7 @@ gulp.task('copy-video', function () {
 gulp.task('make-symbols', function () {
   return gulp
     .src('build/images/svg-symbols/*.svg')
-    .pipe(svgmin())
+    // .pipe(svgmin())
     .pipe(
       svgstore({
         inlineSvg: true

@@ -39,7 +39,26 @@
   height: 100%;
   background-color: $gray-245;
 
-  .ymaps-2-1-68-ground-pane {
+  [class$="-ground-pane"] {
     filter: grayscale(1);
   }
+}
+
+.district__legend-toggle {
+  position: absolute;
+  top: $gutter / 2;
+  right: $gutter / 2;
+
+  @include mq-min(992px) {
+    display: none;
+  }
+}
+
+.district__legend {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 100%;
+  box-sizing: border-box;
 }

@@ -30,6 +30,13 @@
     opacity: 0.4;
   }
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
   @include mq-minh($vh-height-bp) {
     padding: vh(15.5) vh(15);
     font-size: vh(17);

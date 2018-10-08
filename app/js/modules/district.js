@@ -1,4 +1,4 @@
-window.districtMap = (function (window, $) {
+window.district = (function (window, $) {
   'use strict';
 
   // Группы объектов
@@ -67,18 +67,42 @@ window.districtMap = (function (window, $) {
     }]
   }];
 
+  var district = document.querySelector('.district');
 
-  var mapElem = document.querySelector('#district-map');
-
-  if (!mapElem) {
+  if (!district) {
     return;
   }
 
-  mapElem.classList.remove('.district__map--no-js');
+  var districtMap = document.querySelector('#district-map');
+  var districtLegend = district.querySelector('.district-legend');
+  var districtLegendToggle = district.querySelector('.district-legend-toggle');
+  var districtLegendClose = districtLegend.querySelector(
+    '.district-legend__close'
+  );
+
+  function showLegend() {
+    districtLegend.classList.remove('district-legend--hidden');
+    districtLegendToggle.classList.add('district-legend-toggle--hidden');
+  }
+
+  function hideLegend() {
+    districtLegend.classList.add('district-legend--hidden');
+    districtLegendToggle.classList.remove('district-legend-toggle--hidden');
+  }
+
+  districtLegendToggle.addEventListener('click', function() {
+    showLegend();
+  });
+
+  districtLegendClose.addEventListener('click', function() {
+    hideLegend();
+  });
+
+  districtMap.classList.remove('.district__map--no-js');
 
 
   ymaps.ready(function () {
-    var map = new ymaps.Map(mapElem, {
+    var map = new ymaps.Map(districtMap, {
       center: [53.276576, 34.350161],
       zoom: 15,
       controls: []
@@ -91,7 +115,7 @@ window.districtMap = (function (window, $) {
     map.behaviors.disable(['scrollZoom']);
 
     var myPlacemark = new ymaps.Placemark([53.276576, 34.350161], {
-      hintContent: "г. Брянск, пр-кт Ленина, д. 67"
+      hintContent: "ЖК «Гринвуд»"
     }, {
       iconLayout: 'default#image',
       iconImageHref: 'images/icon-map-pin.svg',

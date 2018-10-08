@@ -8,7 +8,6 @@
   <title>Главная / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <link rel="preload" href="images/layers-houses/genplan-back.jpg" media="(min-width: 1280px)" as="image" type="image/jpeg">
 </head>
 <body class="homepage">
   @@include('blocks/main-header.html')
@@ -19,39 +18,42 @@
         <div class="section-intro__text block-out__content">
           <p class="section-intro__text-first-line">
             <span>
-              «Гринвуд» – это масса преимуществ<br>
+              «Гринвуд» – это много преимуществ<br>
               и один недостаток. Осталось всего...
             </span>
           </p>
           <p class="section-intro__text-second-line">
             <span class="section-intro__text-quantity"><span>4</span>0</span>
-            <span class="section-intro__text-unit">квартир</span>
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 438.7 114.4" style="left: 0px;">
-              <mask id="text-mask">
-                <rect width="438.7" height="114.4" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
-              </mask>
-              <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
-            </svg>
+            <!-- <span class="section-intro__text-unit">квартир</span> -->
+            <span class="section-intro__text-unit-holder">
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 438.7 114.4" style="left: 0px;">
+                <mask id="text-mask">
+                  <rect width="438.7" height="114.4" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
+                </mask>
+                <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
+              </svg>
 
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 519.7 114.4" style="display: none;">
-              <mask id="text-mask-1">
-                <rect x="0.2" y="0.1" width="519" height="114" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
-              </mask>
-              <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
-            </svg>
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 519.7 114.4" style="display: none;">
+                <mask id="text-mask-1">
+                  <rect x="0.2" y="0.1" width="519" height="114" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
+                </mask>
+                <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
+              </svg>
 
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 495 114.4" style="display: none;">
-              <mask id="text-mask-2">
-                <rect x="0.2" y="0.1" width="495" height="114" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
-              </mask>
-              <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
-            </svg>
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 495 114.4" style="display: none;">
+                <mask id="text-mask-2">
+                  <rect x="0.2" y="0.1" width="495" height="114" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
+                </mask>
+                <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
+              </svg>
+              <span class="section-intro__text-unit-description">с самыми популярными планировками</span>
+            </span>
           </p>
           <a class="section-intro__to-more button" href="#section-features">Подробнее о проекте</a>
         </div>
@@ -89,76 +91,78 @@
     <section class="features common-section">
       <div class="features__inner container">
         <div class="features__header">
-          <h2 class="features__title common-title">12 из 46 преимущества «ГРИНВУДА»</h2>
+          <h2 class="features__title common-title">8 из 20 преимуществ «ГРИНВУДА»</h2>
         </div>
         <ul class="features__list">
-          <li class="features__item">
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1800">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-00"></use>
             </svg>
             <b class="features__caption">Лучший жилой комплекс премиум-класса в России</b>
           </li>
-          <li class="features__item">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-01"></use>
-            </svg>
-            <b class="features__caption">Географический центр Брянска</b>
-          </li>
-          <li class="features__item">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-03"></use>
-            </svg>
-            <b class="features__caption">Прекрасные виды на парк "Соловьи"</b>
-          </li>
-          <li class="features__item">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-02"></use>
-            </svg>
-            <b class="features__caption">4 школы и 3 детских сада в радиусе 2 км</b>
-          </li>
-          <li class="features__item">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-05"></use>
-            </svg>
-            <b class="features__caption">Охраняемая территория</b>
-          </li>
-          <li class="features__item">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-19"></use>
-            </svg>
-            <b class="features__caption">Безопасный двор без машин</b>
-          </li>
-          <li class="features__item">
+          <li class="features__item" data-aos="flip-up" data-aos-delay="800">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-08"></use>
             </svg>
             <b class="features__caption">Самая низкая плотность застройки в городе</b>
           </li>
-          <li class="features__item">
+          <li class="features__item" data-aos="flip-up" data-aos-delay="100">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-01"></use>
+            </svg>
+            <b class="features__caption">Географический центр Брянска</b>
+          </li>
+          <li class="features__item" data-aos="flip-up" data-aos-delay="300">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-03"></use>
+            </svg>
+            <b class="features__caption">Прекрасные виды на рощу «Соловьи»</b>
+          </li>
+
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="200">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-02"></use>
+            </svg>
+            <b class="features__caption">4 школы и 3 детских сада в радиусе 2 км</b>
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="500">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-05"></use>
+            </svg>
+            <b class="features__caption">Охраняемая территория</b>
+          </li>
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1800">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-19"></use>
+            </svg>
+            <b class="features__caption">Безопасный двор без машин</b>
+          </li> -->
+
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="400">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-04"></use>
             </svg>
             <b class="features__caption">Детские и спортивные площадки</b>
-          </li>
-          <li class="features__item">
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1300">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-13"></use>
             </svg>
             <b class="features__caption">Подземный паркинг с лифтовым доступом</b>
           </li>
-          <li class="features__item">
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1000">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-10"></use>
             </svg>
             <b class="features__caption">Шумоизоляция и утолщенные перегородки</b>
-          </li>
-          <li class="features__item">
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1500">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-15"></use>
             </svg>
-            <b class="features__caption">Панорамное остекление из "теплого" алюминия</b>
+            <b class="features__caption">Панорамное остекление из «теплого» алюминия</b>
           </li>
-          <li class="features__item">
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1700">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-17"></use>
             </svg>
@@ -171,7 +175,7 @@
     <div class="cta">
       <div class="cta__inner container">
         <h2 class="cta__title common-title">
-          Узнайте обо всех <br> 46 преимуществах «Гринвуда»
+          Узнайте обо всех <br> 20 преимуществах «Гринвуда»
         </h2>
         <form class="cta__form cta-line-form" action="" method="POST">
           <div class="cta-line-form__row">
@@ -189,7 +193,7 @@
             </label>
             <button class="cta-line-form__submit button" type="submit">Хочу узнать</button>
           </div>
-          <p class="cta-line-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+          <p class="cta-line-form__agree text-agree">Нажимая «Хочу узнать», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
         </form>
       </div>
     </div>
@@ -197,6 +201,24 @@
     <div class="district common-section">
       <div class="district__map-frame">
         <div class="district__map" id="district-map"></div>
+        <div class="container">
+          <button class="district__legend-toggle district-legend-toggle" type="button">
+            <span class="district-legend-toggle__label">Показать легенду</span>
+          </button>
+          <div class="district__legend district-legend district-legend--hidden">
+            <button class="district-legend__close" type="button">Скрыть легенду</button>
+            <ul class="district-legend__list">
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_university.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Университет</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_post.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Почта</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_health.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Мед. учреждение</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_food.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Питание</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_mall.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Шоппинг</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_park.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Парк</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_bus-station.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Остановка</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_gym.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Фитнес</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -221,7 +243,7 @@
       <div class="presentation-video__inner block-out__inner container">
         <div class="presentation-video__content block-out__content">
           <p class="presentation-video__text">
-            <span>Посмотрите великолепное короткое видео, как выглядел «ГРИНВУД» этим летом.</span>
+            <span>Посмотрите, как выглядит «Гринвуд» с высоты птичьего полета</span>
           </p>
         </div>
         <div class="presentation-video__frame block-out__picture">

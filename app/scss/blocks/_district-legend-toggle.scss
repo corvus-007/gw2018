@@ -1,0 +1,39 @@
+.district-legend-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: #ffffff;
+  background-color: $accent-color;
+  border: none;
+  border-radius: 50%;
+  transition: $duration * 2 ease-out $duration / 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: url("images/information.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: scale(0)
+  }
+}
+
+.district-legend-toggle__label {
+  @include visually-hidden();
+}

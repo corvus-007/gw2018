@@ -1,7 +1,8 @@
 .textual {
-  font-size: rem(19);
+  font-size: rem(20);
   line-height: 1.5;
   font-weight: 400;
+  color: lighten($base-color, 25%);
 
   & > * + *:not(li) {
     margin-top: 2rem;
@@ -62,26 +63,9 @@
     margin-right: auto;
   }
 
-  & > ul:not([class]) {
-    li {
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: -1em;
-        top: 0;
-        z-index: -1;
-        width: em(20, 16);
-        height: em(20, 16);
-        border-radius: 50%;
-        background-color: $warning-color;
-        box-sizing: border-box;
-      }
-    }
-  }
-
   @include mq-min(1024px) {
+    font-size: vh(19);
+
     .alignleft {
       float: left;
       margin-right: $gutter;

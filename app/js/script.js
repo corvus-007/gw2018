@@ -1,23 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
-  var controller = new ScrollMagic.Controller();
-
-  var tl = new TimelineMax();
-
-  tl.staggerFrom('.features__item', 1.3, {
-    opacity: 0,
-    scale: 0.5,
-    ease: Back.easeInOut.config(1.7),
-  }, 0.15);
-
-  new ScrollMagic.Scene({
-      triggerElement: '.features',
-      offset: 0,
-      reverse: false
-    })
-    .setTween(tl)
-    .addTo(controller);
+  $.fancybox.defaults.animationEffect = 'zoom-in-out';
 
   $('input[type="tel"]').inputmask({
     "mask": "+7 (999) 999-99-99"

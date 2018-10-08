@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
-  <title>Офис продаж / Гринвуд</title>
+  <title>Офис продаж и консультаций / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
+
 <body>
   @@include('blocks/main-header.html')
 
   <main class="main">
     <article class="common-page contacts-page">
       <header class="common-page__header container">
-        <h1 class="common-page__title common-title">Офис продаж</h1>
+        <h1 class="common-page__title common-title">Офис продаж и консультаций</h1>
       </header>
       <div class="common-page__body contacts container">
-        <div class="contacts__info contacts-info">
-          <p class="contacts-info__item">
-            <span class="contacts-info__label">Телефон</span>
-            <span class="contacts-info__value"><a class="contacts-info__phone" href="tel: +7 (4832) 606-505">+7 (4832) 606-505</a></span>
-          </p>
-          <p class="contacts-info__item">
-            <span class="contacts-info__label">Адрес</span>
-            <span class="contacts-info__value">г. Брянск, <br> пр-кт Ленина, д. 67</span>
-          </p>
-          <p class="contacts-info__item">
-            <span class="contacts-info__label">Время</span>
-            <span class="contacts-info__value">Пн–Пт, с 10:00 до 19:00</span>
-          </p>
-          <p class="contacts-info__item">
-            <span class="contacts-info__label">Соц. сети</span>
-            <span class="contacts-info__value">
-              <span class="contacts-info__socials socials">
-                <a class="contacts-info__socials-item socials__item" href="">
-                  <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
-                    <use xlink:href="images/symbols.svg#vk"></use>
-                  </svg>
-                </a>
-                <a class="contacts-info__socials-item socials__item" href="">
-                  <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
-                    <use xlink:href="images/symbols.svg#facebook"></use>
-                  </svg>
-                </a>
+        <div class="contacts__content">
+          <div class="contacts__intro">
+            <p>Ждем вас в гости в нашем главном офисе продаж и консультаций.</p>
+            <p>Также будем рады ответить на ваши вопросы по телефону.</p>
+          </div>
+          <div class="contacts__info contacts-info">
+            <p class="contacts-info__item">
+              <span class="contacts-info__label">Телефон</span>
+              <span class="contacts-info__value"><a class="contacts-info__phone" href="tel: +7 (4832) 606-505">+7 (4832) 606-505</a></span>
+            </p>
+            <p class="contacts-info__item">
+              <span class="contacts-info__label">Адрес</span>
+              <span class="contacts-info__value">г. Брянск, <br> ул. Степная, д. 12</span>
+            </p>
+            <p class="contacts-info__item">
+              <span class="contacts-info__label">Время</span>
+              <span class="contacts-info__value">Пн–Пт, с 10:00 до 19:00</span>
+            </p>
+            <p class="contacts-info__item">
+              <span class="contacts-info__label">Соц. сети</span>
+              <span class="contacts-info__value">
+                <span class="contacts-info__socials socials">
+                  <a class="contacts-info__socials-item socials__item" href="">
+                    <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
+                      <use xlink:href="images/symbols.svg#vk"></use>
+                    </svg>
+                  </a>
+                  <a class="contacts-info__socials-item socials__item" href="">
+                    <svg class="contacts-info__socials-icon socials__icon" width="16" height="16">
+                      <use xlink:href="images/symbols.svg#facebook"></use>
+                    </svg>
+                  </a>
+                </span>
               </span>
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
         <div class="contacts__map-frame">
           <div class="contacts__map contacts__map--no-js" id="contacts-map"></div>
@@ -57,7 +65,7 @@
         <div class="cta__inner container">
           <h2 class="cta__title common-title">
             Запишитесь на персональную <br>
-            презенацию «ГРИНВУДА»
+            презентацию «ГРИНВУДА»
           </h2>
           <form class="cta__form cta-line-form" action="" method="POST">
             <div class="cta-line-form__row">
@@ -86,4 +94,5 @@
   @@include('blocks/out-cover.html')
   @@include('blocks/site-scripts.html')
 </body>
+
 </html>

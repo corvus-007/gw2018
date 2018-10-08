@@ -11,14 +11,14 @@ window.map = (function (window, $) {
 
   ymaps.ready(function () {
     var map = new ymaps.Map(mapElem, {
-      center: [53.250706, 34.371277],
+      center: [53.273316, 34.346687],
       zoom: 17,
       controls: []
     });
 
     map.behaviors.disable(['scrollZoom']);
-    var myPlacemark = new ymaps.Placemark([53.250706, 34.371277], {
-      hintContent: "г. Брянск, пр-кт Ленина, д. 67"
+    var myPlacemark = new ymaps.Placemark([53.273316, 34.346687], {
+      hintContent: "г. Брянск, ул. Степная, д. 12"
     }, {
       iconLayout: 'default#image',
       iconImageHref: 'images/icon-map-pin.svg',

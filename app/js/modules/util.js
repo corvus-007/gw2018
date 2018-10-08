@@ -35,5 +35,5 @@ window.util = (function () {
 
       return scrollWidth;
     },
-  }
+  };
 })();

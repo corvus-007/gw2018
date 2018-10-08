@@ -11,6 +11,7 @@
 // Vendors
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
 @import "../../node_modules/flickity/dist/flickity";
+@import "../../node_modules/nouislider/distribute/nouislider";
 
 // Blocks
 @import "blocks/flickity-override";
@@ -18,11 +19,14 @@
 @import "blocks/input";
 @import "blocks/select";
 @import "blocks/field";
+@import "blocks/filter-checkbox";
 @import "blocks/form";
 @import "blocks/text-agree";
 @import "blocks/table";
+@import "blocks/file";
 @import "blocks/popup";
 @import "blocks/pagination";
+@import "blocks/override-fancybox";
 @import "blocks/textual";
 @import "blocks/block-out";
 @import "blocks/out-cover-toggle";
@@ -33,8 +37,9 @@
 @import "blocks/common-tabs";
 @import "blocks/flats-cards";
 @import "blocks/flat-card";
-@import "blocks/custom-ol";
-@import "blocks/custom-ul";
+// @import "blocks/custom-ol";
+// @import "blocks/custom-ul";
+@import "blocks/genplan-page";
 @import "blocks/main-header";
 @import "blocks/main-nav";
 @import "blocks/section-intro";
@@ -42,6 +47,8 @@
 @import "blocks/intro-actions";
 @import "blocks/section-choose";
 @import "blocks/presentation-video";
+@import "blocks/district-legend";
+@import "blocks/district-legend-toggle";
 @import "blocks/district";
 @import "blocks/construction-slider";
 @import "blocks/section-construction";
@@ -56,9 +63,11 @@
 @import "blocks/section-functional-plans";
 @import "blocks/common-plans-slider";
 @import "blocks/common-page";
+@import "blocks/filter-range-slider";
+@import "blocks/filter-range-values";
 @import "blocks/flat-filter";
 @import "blocks/flat-filters";
-@import "blocks/flat-filter-buttons";
+@import "blocks/flat-filter-checkboxes";
 @import "blocks/flats-result";
 @import "blocks/flats-result-dashboard";
 @import "blocks/view-mode-buttons";
@@ -68,7 +77,7 @@
 @import "blocks/flat-plan";
 @import "blocks/flat-territory";
 @import "blocks/flat-plan-section";
-@import "blocks/plans-flat-slider";
+// @import "blocks/plans-flat-slider";
 // @import "blocks/plans-flat";
 @import "blocks/request-price-form";
 @import "blocks/flat-detail";

@@ -1,0 +1,91 @@
+.district-legend {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: $duration * 2;
+
+  @include mq-max(991px) {
+    padding-top: 60px;
+    scale: 1;
+
+    &--hidden {
+      scale: 0.5;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.district-legend__close {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  width: 28px;
+  height: 28px;
+  font-size: 0;
+  line-height: 0;
+  background: none;
+  border: none;
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: currentColor;
+  }
+
+  &::before {
+    transform: translateY(-50%) rotate(-45deg) scaleX(1);
+  }
+
+  &::after {
+    transform: translateY(-50%) rotate(45deg) scaleX(1);
+  }
+
+  @include mq-min(992px) {
+    display: none;
+  }
+}
+
+
+.district-legend__list {
+  @include clear-list();
+
+  padding: 40px;
+  background-color: rgba(#ffffff, 0.9);
+  border-radius: $border-radius;
+}
+
+.district-legend__item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.district-legend__iconbox {
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.district-legend__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.district-legend__label {
+
+}
