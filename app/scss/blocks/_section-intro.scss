@@ -140,6 +140,7 @@
 
   @include mq-max(1023px) {
     font-size: 50vmin;
+    margin-bottom: 15px;
   }
 
   @include mq-min(1024px) {
@@ -189,13 +190,7 @@
   }
 
   @include mq-min(1024px) {
-    // position: relative;
-    // top: vh(-60);
     display: none;
-    // margin-left: vh(-10);
-    // font-size: vh(80);
-    // text-transform: uppercase;
-    // color: $secondary-color;
   }
 }
 
@@ -210,10 +205,15 @@
 
 .section-intro__text-unit-description {
   display: block;
-  margin-left: 10px;
-  font-weight: 400;
-  font-size: 15px;
-  color: #fff;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $brown-color;
+
+  @include mq-min(1024px) {
+    background-color: $secondary-color;
+  }
 }
 
 .section-intro__to-more {
