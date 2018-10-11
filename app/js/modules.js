@@ -1,7 +1,7 @@
 //=require modules/util.js
 //=require modules/splash-screen.js
 //=require modules/out-cover.js
-//=require modules/animation.js
+//=require modules/animations.js
 //=require modules/genplan.js
 //=require modules/genplan-tooltip.js
 //=require modules/favorites-cards.js

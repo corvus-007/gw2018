@@ -1,4 +1,4 @@
-window.animation = (function (window, $) {
+window.animations = (function (window, $) {
   'use strict';
 
   var controller = new ScrollMagic.Controller();
