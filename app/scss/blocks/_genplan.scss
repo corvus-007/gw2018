@@ -1,8 +1,8 @@
 .genplan {
-  padding-top: $height-header-mobile;
   position: relative;
   width: 100%;
   height: 100vh;
+  padding-top: $height-header-mobile;
   overflow: hidden;
   box-sizing: border-box;
 
@@ -54,7 +54,6 @@
   }
 
   @include mq-min(1024px) {
-    height: auto;
     padding-top: $height-header-desktop;
   }
 }
@@ -81,8 +80,8 @@
 
 .genplan__svg {
   display: block;
-  max-width: none;
   width: auto;
+  min-width: 100%;
   height: 100%;
 }
 
@@ -91,9 +90,9 @@
   bottom: 25px;
   width: 80px;
   height: 80px;
+  margin-left: auto;
   padding: 15px;
   box-sizing: border-box;
-  margin-left: auto;
   background: #ffffff url("images/compass.svg") no-repeat center;
   background-origin: content-box;
   background-size: contain;
@@ -109,26 +108,24 @@
 
 .genplan__tooltips-container {
   position: fixed;
-  z-index: 10;
-  height: 100%;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
+  height: 100%;
   pointer-events: none;
 }
 
 .genplan__tooltip {
-  pointer-events: auto;
-  position: fixed;
   position: absolute;
-  min-height: 250px;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 20;
+  min-height: 250px;
+  pointer-events: auto;
 
   @include mq-min(768px) {
-    position: absolute;
     left: auto;
     right: auto;
     bottom: auto;
@@ -136,12 +133,12 @@
 }
 
 .genplan__tip {
-  display: none;
   position: absolute;
   left: 0;
   top: $height-header-mobile;
   right: 0;
   bottom: 0;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
