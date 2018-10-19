@@ -1,6 +1,8 @@
 window.map = (function (window, $) {
   'use strict';
 
+  var dirname = window.util.isDevMode() ? '' : '/wp-content/themes/greenwood/';
+
   var mapElem = document.querySelector('#contacts-map');
 
   if (!mapElem) {
@@ -21,7 +23,7 @@ window.map = (function (window, $) {
       hintContent: "г. Брянск, ул. Степная, д. 12"
     }, {
       iconLayout: 'default#image',
-      iconImageHref: 'images/icon-map-pin.svg',
+      iconImageHref: dirname + 'images/icon-map-pin.svg',
       iconImageSize: [54, 54],
       iconImageOffset: [-25, -54]
     });

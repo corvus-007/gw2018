@@ -37,6 +37,14 @@
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
   }
 
+  &--fill-white {
+    background-color: #ffffff;
+  }
+
+  &.wpcf7-not-valid {
+    border-color: $danger-color;
+  }
+
   @include mq-minh($vh-height-bp) {
     padding: vh(15.5) vh(15);
     font-size: vh(17);

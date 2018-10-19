@@ -1,7 +1,8 @@
 .genplan-tooltip {
+  display: flex;
+  flex-direction: column;
   min-width: 220px;
   padding: 20px;
-  padding-bottom: 5px;
   background-color: #fff;
   border-radius: 2px;
   opacity: 0;
@@ -21,6 +22,7 @@
   }
 
   @include mq-max(767px) {
+    display: none;
     transform: translateY(100%);
 
     &--showed {
@@ -49,7 +51,7 @@
 }
 
 .genplan-tooltip__type {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: rem(12);
   line-height: 1.15;
 
@@ -61,63 +63,86 @@
 .genplan-tooltip__type-value {
   display: block;
   font-weight: 700;
-  font-size: rem(24);
+  font-size: rem(25);
 
   @include mq-min(1280px) {
-    font-size: vh(24);
+    font-size: vh(25);
   }
 }
 
 .genplan-tooltip__status {
-  display: inline-block;
-  margin-left: -8px;
-  margin-bottom: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  // display: inline-block;
+  // align-self: flex-start;
+  // margin-left: -8px;
+  // margin-bottom: 15px;
   padding: 5px 8px;
-  font-size: 12px;
+  font-size: 14px;
   background-color: $secondary-color;
 
   @include mq-min(1280px) {
+    top: vh(20);
+    right: vh(20);
     font-size: vh(12);
   }
 }
 
-.genplan-tooltip__rooms-list {
-  @include clear-list();
-}
-
-.genplan-tooltip__room {
-  border-bottom: 1px solid $secondary-color;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.genplan-tooltip__room-wraplink {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  font-size: rem(15);
-  text-decoration: none;
-  white-space: nowrap;
+.genplan-tooltip__button {
+  display: block;
+  min-width: auto;
+  padding: calc(#{vh(7)} - 2px) calc(#{vh(25)} - 2px);
+  font-size: vh(14);
   color: $base-color;
-  transition: color $duration;
+  background-color: $secondary-color;
+  border-radius: 100px;
+  box-shadow: none;
 
-  &:hover {
-    color: $accent-color;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: $accent-color;
   }
-
-  @include mq-min(1280px) {
-    font-size: vh(15);
-  }
 }
 
-.genplan-tooltip__room-label {
-  font-weight: 700;
-}
+// .genplan-tooltip__rooms-list {
+//   @include clear-list();
+// }
 
-.genplan-tooltip__room-value {
-  margin-left: 35px;
-  color: $base-color;
-}
+// .genplan-tooltip__room {
+//   border-bottom: 1px solid $secondary-color;
+
+//   &:last-child {
+//     border-bottom: none;
+//   }
+// }
+
+// .genplan-tooltip__room-wraplink {
+//   display: flex;
+//   justify-content: space-between;
+//   padding-top: 9px;
+//   padding-bottom: 9px;
+//   font-size: rem(15);
+//   text-decoration: none;
+//   white-space: nowrap;
+//   color: $base-color;
+//   transition: color $duration;
+
+//   &:hover {
+//     color: $accent-color;
+//   }
+
+//   @include mq-min(1280px) {
+//     font-size: vh(15);
+//   }
+// }
+
+// .genplan-tooltip__room-label {
+//   font-weight: 700;
+// }
+
+// .genplan-tooltip__room-value {
+//   margin-left: 35px;
+//   color: $base-color;
+// }

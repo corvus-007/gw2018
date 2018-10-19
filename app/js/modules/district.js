@@ -1,13 +1,15 @@
 window.district = (function (window, $) {
   'use strict';
 
+  var dirname = window.util.isDevMode() ? '' : '/wp-content/themes/greenwood/';
+
   // Группы объектов
   var groups = [{
     name: "Университет",
     style: "islands#redIcon",
     opt: {
       iconLayout: 'default#image',
-      iconImageHref: 'images/district/district_university.svg',
+      iconImageHref: dirname + 'images/district/district_university.svg',
       iconImageSize: [36, 45],
       iconImageOffset: [-18, -45]
     },
@@ -26,7 +28,7 @@ window.district = (function (window, $) {
     style: "islands#redIcon",
     opt: {
       iconLayout: 'default#image',
-      iconImageHref: 'images/district/district_post.svg',
+      iconImageHref: dirname + 'images/district/district_post.svg',
       iconImageSize: [36, 45],
       iconImageOffset: [-18, -45]
     },
@@ -42,7 +44,7 @@ window.district = (function (window, $) {
     style: "islands#redIcon",
     opt: {
       iconLayout: 'default#image',
-      iconImageHref: 'images/district/district_health.svg',
+      iconImageHref: dirname + 'images/district/district_health.svg',
       iconImageSize: [36, 45],
       iconImageOffset: [-18, -45]
     },
@@ -55,7 +57,7 @@ window.district = (function (window, $) {
     style: "islands#redIcon",
     opt: {
       iconLayout: 'default#image',
-      iconImageHref: 'images/district/district_food.svg',
+      iconImageHref: dirname + 'images/district/district_food.svg',
       iconImageSize: [36, 45],
       iconImageOffset: [-18, -45]
     },
@@ -90,11 +92,11 @@ window.district = (function (window, $) {
     districtLegendToggle.classList.remove('district-legend-toggle--hidden');
   }
 
-  districtLegendToggle.addEventListener('click', function() {
+  districtLegendToggle.addEventListener('click', function () {
     showLegend();
   });
 
-  districtLegendClose.addEventListener('click', function() {
+  districtLegendClose.addEventListener('click', function () {
     hideLegend();
   });
 
@@ -118,7 +120,7 @@ window.district = (function (window, $) {
       hintContent: "ЖК «Гринвуд»"
     }, {
       iconLayout: 'default#image',
-      iconImageHref: 'images/icon-map-pin.svg',
+      iconImageHref: dirname + 'images/icon-map-pin.svg',
       iconImageSize: [54, 54],
       iconImageOffset: [-25, -54]
     });

@@ -10,16 +10,16 @@
 
 // Vendors
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
-@import "../../node_modules/flickity/dist/flickity";
-@import "../../node_modules/nouislider/distribute/nouislider";
+// @import "../../node_modules/flickity/dist/flickity";
+// @import "../../node_modules/nouislider/distribute/nouislider";
 
 // Blocks
-@import "blocks/flickity-override";
+// @import "blocks/flickity-override";
 @import "blocks/button";
 @import "blocks/input";
 @import "blocks/select";
 @import "blocks/field";
-@import "blocks/filter-checkbox";
+// @import "blocks/filter-checkbox";
 @import "blocks/form";
 @import "blocks/text-agree";
 @import "blocks/table";
@@ -35,11 +35,12 @@
 @import "blocks/common-section";
 @import "blocks/common-features-flat";
 @import "blocks/common-tabs";
-@import "blocks/flats-cards";
-@import "blocks/flat-card";
+// @import "blocks/flats-cards";
+// @import "blocks/flat-card";
 // @import "blocks/custom-ol";
 // @import "blocks/custom-ul";
 @import "blocks/genplan-page";
+@import "blocks/header-action-button";
 @import "blocks/main-header";
 @import "blocks/main-nav";
 @import "blocks/section-intro";
@@ -63,25 +64,25 @@
 @import "blocks/section-functional-plans";
 @import "blocks/common-plans-slider";
 @import "blocks/common-page";
-@import "blocks/filter-range-slider";
-@import "blocks/filter-range-values";
-@import "blocks/flat-filter";
-@import "blocks/flat-filters";
-@import "blocks/flat-filter-checkboxes";
-@import "blocks/flats-result";
-@import "blocks/flats-result-dashboard";
-@import "blocks/view-mode-buttons";
-@import "blocks/picking";
-@import "blocks/flat-page";
-@import "blocks/flat";
-@import "blocks/flat-plan";
-@import "blocks/flat-territory";
-@import "blocks/flat-plan-section";
+// @import "blocks/filter-range-slider";
+// @import "blocks/filter-range-values";
+// @import "blocks/flat-filter";
+// @import "blocks/flat-filters";
+// @import "blocks/flat-filter-checkboxes";
+// @import "blocks/flats-result";
+// @import "blocks/flats-result-dashboard";
+// @import "blocks/view-mode-buttons";
+// @import "blocks/picking";
+// @import "blocks/flat-page";
+// @import "blocks/flat";
+// @import "blocks/flat-plan";
+// @import "blocks/flat-territory";
+// @import "blocks/flat-plan-section";
 // @import "blocks/plans-flat-slider";
 // @import "blocks/plans-flat";
-@import "blocks/request-price-form";
-@import "blocks/flat-detail";
-@import "blocks/section-similar-plans";
+// @import "blocks/request-price-form";
+// @import "blocks/flat-detail";
+// @import "blocks/section-similar-plans";
 @import "blocks/news-preview";
 @import "blocks/one-news-preview";
 @import "blocks/one-news";
@@ -91,10 +92,12 @@
 @import "blocks/contacts-info";
 @import "blocks/contacts";
 @import "blocks/contacts-page";
-@import "blocks/documents-file";
-@import "blocks/documents";
+// @import "blocks/documents-file";
+// @import "blocks/documents";
+@import "blocks/download-attachments";
+
 @import "blocks/main-footer";
 @import "blocks/socials";
 @import "blocks/mobile-nav";
 @import "blocks/out-cover";
-@import "blocks/go-to-favorite-page";
+// @import "blocks/go-to-favorite-page";

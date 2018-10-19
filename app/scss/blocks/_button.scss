@@ -17,6 +17,8 @@
   box-shadow: 0 0 33px rgba(48, 100, 60, 0.5);
   box-sizing: border-box;
   border-radius: $border-radius;
+  -webkit-appearance: none;
+  -webkit-border-radius: $border-radius;
   outline: none;
   user-select: none;
   transition-property: background, color, border-color;

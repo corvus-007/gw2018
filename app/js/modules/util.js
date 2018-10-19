@@ -4,6 +4,9 @@ window.util = (function () {
   return {
     KEYCODE_ESC: 27,
     URL_FILTER_HANDLER: 'js/flats-mock.json',
+    isDevMode: function () {
+      return location.hostname === 'localhost';
+    },
     setMaxHeight: function (selector) {
       var maxHeight;
       var elements = document.querySelectorAll(selector);

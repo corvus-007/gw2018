@@ -53,8 +53,21 @@
   }
 }
 
-.main-header__nav {
+.main-header__action-button {
   margin-left: auto;
+  transition: $duration * 2;
+
+  .is-main-header-sticky & {
+    transform: scale(0.9) translateX(40px);
+  }
+
+  @include mq-max(1023px) {
+    display: none;
+  }
+}
+
+.main-header__nav {
+  margin-left: vh(10);
   transform-origin: 100%;
   transition: $duration * 2;
 

@@ -53,7 +53,7 @@ window.animations = (function (window, $) {
 
   new ScrollMagic.Scene({
       triggerElement: '.features',
-      offset: 80,
+      triggerHook: 1,
       reverse: false
     })
     .setTween(tl)

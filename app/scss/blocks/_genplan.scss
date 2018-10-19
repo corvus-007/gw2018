@@ -122,13 +122,14 @@
   bottom: 0;
   right: 0;
   z-index: 20;
-  min-height: 250px;
+  // min-height: 250px;
   pointer-events: auto;
 
   @include mq-min(768px) {
     left: auto;
     right: auto;
     bottom: auto;
+    min-height: auto;
   }
 }
 

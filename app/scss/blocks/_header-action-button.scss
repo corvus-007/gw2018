@@ -1,0 +1,22 @@
+.header-action-button {
+  display: block;
+  padding: calc(#{vh(7)} - 2px) calc(#{vh(25)} - 2px);
+  font: inherit;
+  font-weight: 700;
+  font-size: vh(14);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $base-color;
+  background-color: $secondary-color;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  transition: $duration * 1.5;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: $accent-color;
+  }
+}
