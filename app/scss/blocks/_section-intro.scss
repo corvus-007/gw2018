@@ -177,7 +177,8 @@
   @include mq-min(1024px) {
     position: relative;
     top: vh(-60);
-    margin-left: vh(-20);
+    // margin-left: vh(-20);
+    margin-left: vh(34.5);
   }
 }
 
