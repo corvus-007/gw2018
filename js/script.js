@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
+  $.fancybox.defaults.animationEffect = 'zoom-in-out';
+
   $('input[type="tel"]').inputmask({
     "mask": "+7 (999) 999-99-99"
   });
@@ -14,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
   var constructionSlides = document.querySelector('.js-construction-slides');
 
   if (constructionSlides) {
@@ -27,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
       contain: true
     });
   }
-
 
   var commonPlansSlider = document.querySelector('.js-common-plans-slider');
 
@@ -44,50 +44,52 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  var plansFlatSlider = document.querySelector('.js-plans-flat-slider');
-
-  if (plansFlatSlider) {
-    var $plansFlatSlider = $(plansFlatSlider).flickity({
-      imagesLoaded: true,
-      percentPosition: false,
-      fullscreen: true,
-      lazyLoad: true,
-      prevNextButtons: false,
-      pageDots: false
-    });
-
-    // Flickity instance
-    var flkty = $plansFlatSlider.data('flickity');
-
-    var flatSlidesCount = $(plansFlatSlider).find('.plans-flat-slider__item').length;
-    var $planFlatsButtons = $('.plans-flat__nav-buttons');
-
-    if (flatSlidesCount > 1) {
-      for (var i = 0; i < flatSlidesCount; i++) {
-        $('<button type="button">Планировка ' + (i + 1) + '</button>').appendTo($planFlatsButtons);
-      }
-
-      $planFlatsButtons.on('click', 'button', function (evt) {
-        var index = $(this).index();
-        $plansFlatSlider.flickity('select', index);
-      });
-
-      // update selected cellButtons
-      $plansFlatSlider.on('select.flickity', function () {
-        $planFlatsButtons.find('button').filter('.is-selected')
-          .removeClass('is-selected');
-        $planFlatsButtons.find('button').eq(flkty.selectedIndex)
-          .addClass('is-selected');
-      });
-    }
-  }
-
-
   if (document.querySelector('.flat-filters')) {
     var locationSearch = location.search;
     window.flatsResult.displayResult({
-      filtersData: locationSearch
+      data: locationSearch
     });
     window.flatFilters.init();
   }
+
+  if (document.querySelector('.favorites-flats')) {
+
+    window.flatsResult.displayResult({
+      data: $.param({
+        'favorites_cards[]': window.favoritesCards.getFavoritesFlatsAsArr()
+      })
+    });
+  }
+
+  $('.construction-cards__item').each(function (index, el) {
+    var album = $(el).find('.construction-card__wraplink').data('fancybox-trigger');
+    el.dataset.album = album;
+  });
+
+  $('.construction-filter-form').on('input', function (evt) {
+    var target = evt.target;
+    var selectElem = target.closest('[name="type"]');
+    var selectType = selectElem.value;
+
+    $('[data-house-id]').each(function (index, el) {
+      var album = el.closest('[data-album]').dataset.album;
+
+      var id = el.dataset.houseId;
+      el.dataset.fancybox = album;
+
+      if (id != selectType && selectType != 'all') {
+        el.dataset.fancybox = '';
+      }
+    });
+
+    $('.construction-cards__item').each(function (index, el) {
+      if ($(el).find('[data-fancybox*="-"]').length) {
+        $(el).show();
+      } else {
+        $(el).hide();
+      }
+    });
+  });
+
+  $('.common-tabs').tabslet();
 });

@@ -7,31 +7,123 @@
   <meta name="format-detection" content="telephone=no">
   <title>Главная / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body class="homepage">
+  <style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .splash-screen--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 82px;
+    height: 82px;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3aa652;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+  }
+  .sk-folding-cube .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      transform: perspective(140px) rotateX(-180deg);
+      opacity: 0;
+    } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      transform: perspective(140px) rotateY(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-screen__item">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+
+
   <header class="main-header">
     <div class="main-header__inner container">
       <div class="main-header__logo">
         <a href="index.html">
-          <img class="main-header__logo-image" src="../images/logo.svg" width="100" alt="Логотип Гринвуд">
+          <img class="main-header__logo-image" src="images/logo.svg" width="100" alt="Логотип Гринвуд">
         </a>
       </div>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="news-page.html">Новости</a></li>
+          <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
+          <li><a href="contacts-page.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p class="main-header__contacts">
         <a class="main-header__phone" href="tel:+7(4832)606-505">
           +7 (4832) <span>606-505</span>
         </a>
       </p>
-      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
-        <span class="out-cover-toggle__line"></span>
-      </button>
-      <nav class="main-header__nav main-nav">
-        <ul class="main-nav__list">
-          <li><a href="select-flats-page.html">Выбрать квартиру</a></li>
-          <li><a href="">О комплексе</a></li>
-          <li class="current-menu-item"><a href="">Ход строительства</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -41,58 +133,212 @@
       <div class="section-intro__inner block-out__inner container">
         <div class="section-intro__text block-out__content">
           <p class="section-intro__text-first-line">
-            <span>«Гринвуд» – это масса преимуществ<br>
-              и один недостаток...</span>
+            <span>
+              «Гринвуд» – это много преимуществ<br>
+              и один недостаток. Осталось всего...
+            </span>
           </p>
           <p class="section-intro__text-second-line">
-            <span class="section-intro__text-accent">Осталось всего</span> <span class="section-intro__text-quantity"><span>4</span>0</span>
-            <span class="section-intro__text-unit">квартир</span>
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 438.7 114.4" style="left: 0px;">
-              <mask id="text-mask">
-                <rect width="438.7" height="114.4" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
-              </mask>
-              <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
-            </svg>
+            <span class="section-intro__text-quantity"><span>7</span></span>
+            <!-- <span class="section-intro__text-unit">квартир</span> -->
+            <span class="section-intro__text-unit-holder">
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 438.7 114.4" style="left: 0px;">
+                <mask id="text-mask">
+                  <rect width="438.7" height="114.4" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
+                </mask>
+                <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
+              </svg>
 
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 519.7 114.4" style="display: none;">
-              <mask id="text-mask-1">
-                <rect x="0.2" y="0.1" width="519" height="114" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
-              </mask>
-              <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
-            </svg>
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 519.7 114.4" style="display: none;">
+                <mask id="text-mask-1">
+                  <rect x="0.2" y="0.1" width="519" height="114" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
+                </mask>
+                <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
+              </svg>
 
-            <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 495 114.4" style="display: none;">
-              <mask id="text-mask-2">
-                <rect x="0.2" y="0.1" width="495" height="114" fill="#fff"/>
-                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
-              </mask>
-              <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)"/>
-              <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
-            </svg>
+              <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 495 114.4" style="display: none;">
+                <mask id="text-mask-2">
+                  <rect x="0.2" y="0.1" width="495" height="114" fill="#fff"/>
+                  <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
+                </mask>
+                <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)"/>
+                <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
+              </svg>
+              <span class="section-intro__text-unit-description">с самыми популярными планировками</span>
+            </span>
           </p>
-          <a class="section-intro__to-more button" href="">Узнать подробнее</a>
+          <a class="section-intro__to-more button" href="#section-features">Подробнее о проекте</a>
         </div>
         <div class="section-intro__picture block-out__picture">
           <img class="block-out__image" src="images/intro-bg.jpg" alt="">
         </div>
+        <div class="section-intro__actions intro-actions">
+          <a class="intro-actions__item intro-action" href="http://greenwoodclub.ru/virtual_tour/">
+            <span class="intro-action__iconbox">
+              <svg class="intro-action__icon" width="48" height="48">
+                <use xlink:href="images/symbols.svg#3d"></use>
+              </svg>
+            </span>
+            <span class="intro-action__text">
+              Виртуальная<br>
+              прогулка
+            </span>
+          </a>
+          <a class="intro-actions__item intro-action" href="https://www.youtube.com/watch?v=925igQS7IP0&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0" data-fancybox="">
+            <span class="intro-action__iconbox">
+              <svg class="intro-action__icon" width="48" height="48">
+                <use xlink:href="images/symbols.svg#play"></use>
+              </svg>
+            </span>
+            <span class="intro-action__text">
+              Смотреть<br>
+              ролик
+            </span>
+          </a>
+        </div>
+      </div>
+      <div id="section-features"></div>
+    </section>
+
+    <section class="features common-section">
+      <div class="features__inner container">
+        <div class="features__header">
+          <h2 class="features__title common-title">8 из 20 преимуществ «ГРИНВУДА»</h2>
+        </div>
+        <ul class="features__list">
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1800">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-00"></use>
+            </svg>
+            <b class="features__caption">Лучший жилой комплекс премиум-класса в России</b>
+          </li>
+          <li class="features__item" data-aos="flip-up" data-aos-delay="800">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-08"></use>
+            </svg>
+            <b class="features__caption">Самая низкая плотность застройки в городе</b>
+          </li>
+          <li class="features__item" data-aos="flip-up" data-aos-delay="100">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-01"></use>
+            </svg>
+            <b class="features__caption">Географический центр Брянска</b>
+          </li>
+          <li class="features__item" data-aos="flip-up" data-aos-delay="300">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-03"></use>
+            </svg>
+            <b class="features__caption">Прекрасные виды на рощу «Соловьи»</b>
+          </li>
+
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="200">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-02"></use>
+            </svg>
+            <b class="features__caption">4 школы и 3 детских сада в радиусе 2 км</b>
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="500">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-05"></use>
+            </svg>
+            <b class="features__caption">Охраняемая территория</b>
+          </li>
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1800">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-19"></use>
+            </svg>
+            <b class="features__caption">Безопасный двор без машин</b>
+          </li> -->
+
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="400">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-04"></use>
+            </svg>
+            <b class="features__caption">Детские и спортивные площадки</b>
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1300">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-13"></use>
+            </svg>
+            <b class="features__caption">Подземный паркинг с лифтовым доступом</b>
+          </li>
+          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1000">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-10"></use>
+            </svg>
+            <b class="features__caption">Шумоизоляция и утолщенные перегородки</b>
+          </li> -->
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1500">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-15"></use>
+            </svg>
+            <b class="features__caption">Панорамное остекление из «теплого» алюминия</b>
+          </li>
+          <li class="features__item" data-aos="flip-up" data-aos-delay="1700">
+            <svg class="features__icon" width="16" height="16">
+              <use xlink:href="images/symbols.svg#feat-17"></use>
+            </svg>
+            <b class="features__caption">Увеличенная высота потолков до 3,1 м</b>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <div class="simple-cta">
-      <div class="simple-cta__inner container">
-        <p class="simple-cta__text">
-          Квартал «Гринвуд»
-          <span>это клубная загородная жизнь в центре Брянска</span>
-        </p>
-        <a class="simple-cta__button button" href="">Подробнее о проекте</a>
+    <div class="cta">
+      <div class="cta__inner container">
+        <h2 class="cta__title common-title">
+          Узнайте обо всех <br> 20 преимуществах «Гринвуда»
+        </h2>
+        <form class="cta__form cta-line-form" action="" method="POST">
+          <div class="cta-line-form__row">
+            <label class="cta-line-form__field field">
+              <span class="field__label">Ваше имя</span>
+              <div class="field__control">
+                <input class="field__input input" type="text" name="name" placeholder="Ваше имя" required>
+              </div>
+            </label>
+            <label class="cta-line-form__field field">
+              <span class="field__label">Телефон</span>
+              <div class="field__control">
+                <input class="field__input input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+              </div>
+            </label>
+            <button class="cta-line-form__submit button" type="submit">Хочу узнать</button>
+          </div>
+        </form>
+        <p class="cta__form-agree text-agree">Нажимая «Хочу узнать», вы соглашаетесь с <a href="">Условиями и Правилами</a> компании</p>
       </div>
     </div>
 
-    <div class="section-choose block-out block-out--to-left">
+    <div class="district common-section">
+      <div class="district__map-frame">
+        <div class="district__map" id="district-map"></div>
+        <div class="container">
+          <button class="district__legend-toggle district-legend-toggle" type="button">
+            <span class="district-legend-toggle__label">Показать легенду</span>
+          </button>
+          <div class="district__legend district-legend district-legend--hidden">
+            <button class="district-legend__close" type="button">Скрыть легенду</button>
+            <ul class="district-legend__list">
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_university.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Университет</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_post.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Почта</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_health.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Мед. учреждение</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_food.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Питание</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_mall.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Шоппинг</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_park.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Парк</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_bus-station.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Остановка</span></li>
+              <li class="district-legend__item"><span class="district-legend__iconbox"><img src="images/district/district_gym.svg" width="36" height="45" class="district-legend__icon"></span><span class="district-legend__label">Фитнес</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="section-choose block-out block-out--to-left">
       <div class="section-choose__inner block-out__inner container">
         <div class="section-choose__content block-out__content">
           <p class="section-choose__text">
@@ -103,12 +349,41 @@
           <a class="section-choose__button button" href="">Выбрать квартиру</a>
         </div>
         <div class="section-choose__picture block-out__picture">
-          <img class="block-out__image" src="https://images.unsplash.com/photo-1445510861639-5651173bc5d5?ixlib=rb-0.3.5&s=119f2d84e3421146b5fd9aa50d6a6062&auto=format&fit=crop&w=1254&q=80" alt="">
+          <img class="block-out__image" src="images/index_section_2.jpg" alt="">
+        </div>
+      </div>
+    </div> -->
+
+    <!-- presentation-video--playing -->
+    <div class="presentation-video block-out block-out--to-left">
+      <div class="presentation-video__inner block-out__inner container">
+        <div class="presentation-video__content block-out__content">
+          <p class="presentation-video__text">
+            <span>Посмотрите, как выглядит «Гринвуд» с высоты птичьего полета</span>
+          </p>
+        </div>
+        <div class="presentation-video__frame block-out__picture">
+          <video poster="video/video_cover.jpg">
+            <source src="video/presentation-greenwood.mp4" type="video/mp4">
+            <source src="video/presentation-greenwood.webm" type="video/webm">
+          </video>
+          <div class="presentation-video__controls">
+            <button class="presentation-video__control presentation-video__play" data-video-action="play" type="button" aria-label="Воспроизвести видео">
+              <svg class="presentation-video__control-icon">
+                <use xlink:href="images/symbols.svg#player-play"></use>
+              </svg>
+            </button>
+            <button class="presentation-video__control presentation-video__pause" data-video-action="pause" type="button" aria-label="Приостановить видео">
+              <svg class="presentation-video__control-icon">
+                <use xlink:href="images/symbols.svg#player-pause"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <section class="section-construction common-section">
+    <!-- <section class="section-construction common-section">
       <div class="section-construction__inner">
         <header class="section-construction__header container">
           <h2 class="common-title">
@@ -120,7 +395,7 @@
         <div class="construction-slider">
           <div class="construction-slider__slides js-construction-slides">
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-октрябрь" href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg">
+              <a class="construction-slider__wraplink" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018" href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg">
                 <img class="construction-slider__image" src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">октябрь</span>
@@ -128,17 +403,17 @@
                 </div>
               </a>
               <div hidden>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-38.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-39.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-40.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-41.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-42.jpg" data-fancybox="2018-октрябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-43.jpg" data-fancybox="2018-октрябрь"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-37.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-38.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-39.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-40.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-41.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-42.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-june/photo_2018-07-04_11-14-43.jpg" data-fancybox="2018-октрябрь" data-caption="Фотография за октябрь 2018"></a>
               </div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-сентябрь" href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg">
+              <a class="construction-slider__wraplink" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018" href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg">
                 <img class="construction-slider__image" src="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">сентябрь</span>
@@ -146,20 +421,20 @@
                 </div>
               </a>
               <div hidden>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-сентябрь"></a>
-                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-сентябрь"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay1.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay10.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay2.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay3.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay4.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay5.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay6.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay7.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay8.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
+                <a href="http://greenwoodclub.ru/template/images/hod_stroitelstva/gallery/2018-may/grwmay9.jpeg" data-fancybox="2018-сентябрь" data-caption="Фотография за сентябрь 2018"></a>
               </div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-август" href="https://images.unsplash.com/photo-1532303682189-b6cbdb87d3d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2df016dcd96c1381f82ec38d1ce399da&auto=format&fit=crop&w=1350&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-август" data-caption="Фотография за аавгуст 2018" href="https://images.unsplash.com/photo-1532303682189-b6cbdb87d3d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2df016dcd96c1381f82ec38d1ce399da&auto=format&fit=crop&w=1350&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532303682189-b6cbdb87d3d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2df016dcd96c1381f82ec38d1ce399da&auto=format&fit=crop&w=1350&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">август</span>
@@ -169,7 +444,7 @@
               <div hidden></div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-июль" href="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=53d820e6622fadd53b8638d60f468ccd&auto=format&fit=crop&w=1308&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-июль" data-caption="Фотография за июль 2018" href="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=53d820e6622fadd53b8638d60f468ccd&auto=format&fit=crop&w=1308&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=53d820e6622fadd53b8638d60f468ccd&auto=format&fit=crop&w=1308&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">июль</span>
@@ -179,7 +454,7 @@
               <div hidden></div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-июнь" href="https://images.unsplash.com/photo-1532275184950-4401e12adcaf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c1a81c056d924fc1181deea8790d6c8&auto=format&fit=crop&w=749&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-июнь" data-caption="Фотография за июнь 2018" href="https://images.unsplash.com/photo-1532275184950-4401e12adcaf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c1a81c056d924fc1181deea8790d6c8&auto=format&fit=crop&w=749&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532275184950-4401e12adcaf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6c1a81c056d924fc1181deea8790d6c8&auto=format&fit=crop&w=749&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">июнь</span>
@@ -189,7 +464,7 @@
               <div hidden></div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-май" href="https://images.unsplash.com/photo-1532191343016-47bf741b8b3c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=707e39712147676ddc5223f4316bac6c&auto=format&fit=crop&w=1267&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-май" data-caption="Фотография за май 2018" href="https://images.unsplash.com/photo-1532191343016-47bf741b8b3c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=707e39712147676ddc5223f4316bac6c&auto=format&fit=crop&w=1267&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532191343016-47bf741b8b3c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=707e39712147676ddc5223f4316bac6c&auto=format&fit=crop&w=1267&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">май</span>
@@ -199,7 +474,7 @@
               <div hidden></div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-апрель" href="https://images.unsplash.com/photo-1532303444188-865eaf2a4026?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5540f75b6532f1362c2b06dc3e0c6a50&auto=format&fit=crop&w=1268&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-апрель" data-caption="Фотография за апрель 2018" href="https://images.unsplash.com/photo-1532303444188-865eaf2a4026?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5540f75b6532f1362c2b06dc3e0c6a50&auto=format&fit=crop&w=1268&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532303444188-865eaf2a4026?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5540f75b6532f1362c2b06dc3e0c6a50&auto=format&fit=crop&w=1268&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">апрель</span>
@@ -209,7 +484,7 @@
               <div hidden></div>
             </div>
             <div class="construction-slider__item">
-              <a class="construction-slider__wraplink" data-fancybox="2018-март" href="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=81a5f1725ca68c549e0054dcfdf269de&auto=format&fit=crop&w=1350&q=80">
+              <a class="construction-slider__wraplink" data-fancybox="2018-март" data-caption="Фотография за март 2018" href="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=81a5f1725ca68c549e0054dcfdf269de&auto=format&fit=crop&w=1350&q=80">
                 <img class="construction-slider__image" src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=81a5f1725ca68c549e0054dcfdf269de&auto=format&fit=crop&w=1350&q=80" alt="">
                 <div class="construction-slider__cover">
                   <span class="construction-slider__month">март</span>
@@ -225,14 +500,14 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="section-involve-person common-section">
       <div class="section-involve-person__inner container">
         <div class="section-involve-person__content">
           <h2 class="section-involve-person__title common-title">
-            Записаться на закрытый<br>
-            показ в «Гринвуд»
+            Сейчас «ГРИНВУД» уже совсем другой.
+            Запишитесь на персональную<br>экскурсию в «Гринвуде».
           </h2>
           <form class="section-involve-person__form cta-line-form" action="" method="POST">
             <div class="cta-line-form__row">
@@ -254,7 +529,7 @@
           </form>
         </div>
         <div class="section-involve-person__picture">
-          <img class="section-involve-person__image" src="https://images.unsplash.com/photo-1518136247453-74e7b5265980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=34d312abe67f954c279f1f244ce73963&auto=format&fit=crop&w=1350&q=80" alt="">
+          <img class="section-involve-person__image" src="images/select_section_1.jpg" alt="">
         </div>
       </div>
     </div>
@@ -263,19 +538,29 @@
   <footer class="main-footer">
     <div class="main-footer__inner container">
       <p class="main-footer__copy">© 2016–2018 Касабланка</p>
-      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">Идее Пикс</a></p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
     </div>
   </footer>
+
+  <div class="go-to-favorite-page">
+    <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
+      <svg class="go-to-favorite-page__icon" width="16" height="16" viewBox="0 0 455 455">
+        <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+      </svg>
+    </a>
+  </div>
+
 
   <div class="out-cover">
     <div class="out-cover__inner">
       <div class="out-cover__body">
+        <button class="out-cover__action-button button" type="button">Выбрать квартиру</button>
         <div class="out-cover__mobile-nav mobile-nav">
           <ul class="mobile-nav__list">
-            <li class="current-menu-item"><a href="select-flats-page.html">Выбрать квартиру</a></li>
-            <li><a href="">О комплексе</a></li>
-            <li><a href="">Ход строительства</a></li>
-            <li><a href="">Контакты</a></li>
+            <li class="current-menu-item"><a href="documents-page.html">Документация</a></li>
+            <li><a href="news-page.html">Новости</a></li>
+            <li><a href="construction-page.html">Ход строительства</a></li>
+            <li><a href="contacts-page.html">Контакты</a></li>
           </ul>
         </div>
       </div>

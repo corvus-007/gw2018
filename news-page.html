@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Новости / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .splash-screen--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 82px;
+    height: 82px;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3aa652;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+  }
+  .sk-folding-cube .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      transform: perspective(140px) rotateX(-180deg);
+      opacity: 0;
+    } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      transform: perspective(140px) rotateY(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-screen__item">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+
+
+  <header class="main-header">
+    <div class="main-header__inner container">
+      <div class="main-header__logo">
+        <a href="index.html">
+          <img class="main-header__logo-image" src="images/logo.svg" width="100" alt="Логотип Гринвуд">
+        </a>
+      </div>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="news-page.html">Новости</a></li>
+          <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
+          <li><a href="contacts-page.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <p class="main-header__contacts">
+        <a class="main-header__phone" href="tel:+7(4832)606-505">
+          +7 (4832) <span>606-505</span>
+        </a>
+      </p>
+    </div>
+  </header>
+
+
+  <main class="main">
+    <article class="common-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Новости проекта</h1>
+      </header>
+      <div class="common-page__body news-preview container">
+        <ul class="news-preview__list">
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c87934a2a2bee8546db4747930d00370&auto=format&fit=crop&w=634&q=80" alt="Укладка асфальта и тротуарной плитки в «Гринвуде»">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-09-10">
+                  <span>10</span> сен
+                </time>
+                <h2 class="one-news-preview__title">Укладка асфальта и тротуарной плитки в «Гринвуде»</h2>
+                <div class="one-news-preview__text">
+                  <p>Дорожные организации активно выполняют работу по укладке асфальта и тротуарной плитки на территории клубного квартала «Гринвуд».</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536692546400-ac0af3f293fd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=24d0534f3e6bf5e7cf3d683fb8e7b325&auto=format&fit=crop&w=634&q=80" alt="Клубному кварталу «Гринвуд» присвоен адрес!">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-09-05">
+                  <span>05</span> сен
+                </time>
+                <h2 class="one-news-preview__title">Клубному кварталу «Гринвуд» присвоен адрес!</h2>
+                <div class="one-news-preview__text">
+                  <p>Согласно постановления Брянской городской администрации присвоен адрес позициям первой очереди клубного квартала «Гринвуд».</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536677813196-8fed27bcecdc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ab258bcea677ce81fb342c6420a85f29&auto=format&fit=crop&w=700&q=80" alt="Премьера этой осенью">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-09-01">
+                  <span>01</span> сен
+                </time>
+                <h2 class="one-news-preview__title">Премьера этой осенью</h2>
+                <div class="one-news-preview__text">
+                  <p>Согласно постановления Брянской городской администрации присвоен адрес позициям первой очереди клубного квартала «Гринвуд».</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536702567485-2c5f40fec9c7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cf961f745651a312b7174f1451caf925&auto=format&fit=crop&w=1350&q=80" alt="«Гринвуд». Решать Вам!">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-07-04">
+                  <span>04</span> июн
+                </time>
+                <h2 class="one-news-preview__title">"Гринвуд". Решать Вам!</h2>
+                <div class="one-news-preview__text">
+                  <p>Кто паркуется около вашего дома? Вдыхать чистый лесной воздух или выхлопные газы? В какую школу пойдут ваши дети? </p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536704689578-8fff53d4dfd7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c605b8fe7095e29a0bb5510829d2aab&auto=format&fit=crop&w=634&q=80" alt="«Гринвуд». Решать Вам!">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-05-30">
+                  <span>30</span> мая
+                </time>
+                <h2 class="one-news-preview__title">"Гринвуд". По-настоящему свежий воздух!</h2>
+                <div class="one-news-preview__text">
+                  <p>Месторасположение клубного квартала «Гринвуд» поистине уникально. Он находится в непосредственной близости от городского леса, в живописной зоне.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536688261748-9d56b3acf077?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c2b6fa9b053d05fe8cb7b9be35653017&auto=format&fit=crop&w=1350&q=80" alt="«Гринвуд». Решать Вам!">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-05-17">
+                  <span>17</span> мая
+                </time>
+                <h2 class="one-news-preview__title">Клубный квартал "Гринвуд". Выполнили то, что обещали.</h2>
+                <div class="one-news-preview__text">
+                  <p>Уже этой осенью жители клубного квартала "Гринвуд" получат ключи от квартир. У вас ещё есть возможность стать одним из них.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536668104859-d6a4f9e8bba9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56632f8d3984097dd123f4cf7e64568f&auto=format&fit=crop&w=658&q=80" alt="Строительство первой очереди практически завершено">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-04-30">
+                  <span>30</span> апр
+                </time>
+                <h2 class="one-news-preview__title">Строительство первой очереди практически завершено</h2>
+                <div class="one-news-preview__text">
+                  <p>Уже этой осенью удачливые обладатели квартир в клубном квартале «Гринвуд» будут жить в уникальном месте ближе к природе.</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="news-preview__item one-news-preview">
+            <a class="one-news-preview__wraplink" href="one-news-page.html">
+              <div class="one-news-preview__picture">
+                <img src="https://images.unsplash.com/photo-1536679887050-4bdea5bf41c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e2382881d2f2d7346c32da6fca7cf268&auto=format&fit=crop&w=634&q=80" alt="Остеклён третий дом. Заселение этой осенью!">
+              </div>
+              <div class="one-news-preview__body">
+                <time class="one-news-preview__date" datetime="2018-04-10">
+                  <span>10</span> апр
+                </time>
+                <h2 class="one-news-preview__title">Остеклён третий дом. Заселение этой осенью!</h2>
+                <div class="one-news-preview__text">
+                  <p>Хорошие новости, друзья! Во всех позициях осуществляются штукатурные работы и прокладка сетей!</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="navigation pagination container" role="navigation">
+        <div class="nav-links">
+          <span class="page-numbers current"><span class="meta-nav screen-reader-text">Страница </span>1</span>
+          <a class="page-numbers" href="http://wptest.ru/page/2/"><span class="meta-nav screen-reader-text">Страница </span>2</a>
+          <span class="page-numbers dots">…</span>
+          <a class="page-numbers" href="http://wptest.ru/page/86/"><span class="meta-nav screen-reader-text">Страница </span>86</a>
+          <a class="page-numbers" href="http://wptest.ru/page/87/"><span class="meta-nav screen-reader-text">Страница </span>87</a>
+          <a class="next page-numbers" href="http://wptest.ru/page/2/">Следующая страница</a>
+        </div>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="main-footer">
+    <div class="main-footer__inner container">
+      <p class="main-footer__copy">© 2016–2018 Касабланка</p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+    </div>
+  </footer>
+
+  <div class="go-to-favorite-page">
+    <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
+      <svg class="go-to-favorite-page__icon" width="16" height="16" viewBox="0 0 455 455">
+        <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <div class="out-cover">
+    <div class="out-cover__inner">
+      <div class="out-cover__body">
+        <button class="out-cover__action-button button" type="button">Выбрать квартиру</button>
+        <div class="out-cover__mobile-nav mobile-nav">
+          <ul class="mobile-nav__list">
+            <li class="current-menu-item"><a href="documents-page.html">Документация</a></li>
+            <li><a href="news-page.html">Новости</a></li>
+            <li><a href="construction-page.html">Ход строительства</a></li>
+            <li><a href="contacts-page.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="out-cover__footer container">
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

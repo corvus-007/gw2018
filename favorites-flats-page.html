@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Избранное / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .splash-screen--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 82px;
+    height: 82px;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3aa652;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+  }
+  .sk-folding-cube .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      transform: perspective(140px) rotateX(-180deg);
+      opacity: 0;
+    } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      transform: perspective(140px) rotateY(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-screen__item">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+
+
+  <header class="main-header">
+    <div class="main-header__inner container">
+      <div class="main-header__logo">
+        <a href="index.html">
+          <img class="main-header__logo-image" src="images/logo.svg" width="100" alt="Логотип Гринвуд">
+        </a>
+      </div>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="news-page.html">Новости</a></li>
+          <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
+          <li><a href="contacts-page.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <p class="main-header__contacts">
+        <a class="main-header__phone" href="tel:+7(4832)606-505">
+          +7 (4832) <span>606-505</span>
+        </a>
+      </p>
+    </div>
+  </header>
+
+
+  <main class="main">
+    <article class="common-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Избранное</h1>
+      </header>
+      <div class="common-page__body common-page__body--has-sidebar container">
+
+        <div class="common-page__sidebar">
+
+        </div>
+        <div class="common-page__content favorites-flats">
+          <div class="flats-result">
+            <div class="flats-result__dashboard flats-result-dashboard">
+              <div class="flats-result-dashboard__view view-mode">
+                <form class="view-mode-form">
+                  <div class="view-mode-buttons">
+                    <input type="radio" name="view" id="field-view-card" value="card">
+                    <label for="field-view-card" aria-label="Показать в виде карточек">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_module-24px"></use>
+                      </svg>
+                    </label>
+                    <input type="radio" name="view" id="field-view-list" value="list">
+                    <label for="field-view-list" aria-label="Показать в виде списка">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_stream-24px"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--
+            flats-cards--display-card
+            flats-cards--display-list
+          -->
+            <ul class="flats-result__list favorites-flats__list flats-cards"></ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <template id="flats-result-card-template">
+    <li class="flats-result__item flats-cards__item flat-card">
+      <a class="flat-card__wraplink" href="flat-plan-page.html">
+        <div class="flat-card__picture">
+          <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+        </div>
+        <ul class="flat-card__features common-features-flat">
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Комнат</span>
+            <b class="common-features-flat__value" data-flat="room">2</b>
+          </li>
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Площадь</span>
+            <b class="common-features-flat__value" data-flat="area">278,64</b>
+          </li>
+        </ul>
+      </a>
+      <div class="flat-card__stick">
+        <span class="flat-card__reserved" aria-label="Забронирована" title="Забронирована">
+          <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z"/>
+          </svg>
+        </span>
+        <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
+            <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+          </svg>
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <footer class="main-footer">
+    <div class="main-footer__inner container">
+      <p class="main-footer__copy">© 2016–2018 Касабланка</p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+    </div>
+  </footer>
+
+  <div class="go-to-favorite-page">
+    <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
+      <svg class="go-to-favorite-page__icon" width="16" height="16" viewBox="0 0 455 455">
+        <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <div class="out-cover">
+    <div class="out-cover__inner">
+      <div class="out-cover__body">
+        <button class="out-cover__action-button button" type="button">Выбрать квартиру</button>
+        <div class="out-cover__mobile-nav mobile-nav">
+          <ul class="mobile-nav__list">
+            <li class="current-menu-item"><a href="documents-page.html">Документация</a></li>
+            <li><a href="news-page.html">Новости</a></li>
+            <li><a href="construction-page.html">Ход строительства</a></li>
+            <li><a href="contacts-page.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="out-cover__footer container">
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

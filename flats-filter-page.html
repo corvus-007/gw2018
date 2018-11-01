@@ -9,29 +9,120 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .splash-screen--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 82px;
+    height: 82px;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3aa652;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+  }
+  .sk-folding-cube .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      transform: perspective(140px) rotateX(-180deg);
+      opacity: 0;
+    } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      transform: perspective(140px) rotateY(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-screen__item">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+
+
   <header class="main-header">
     <div class="main-header__inner container">
       <div class="main-header__logo">
         <a href="index.html">
-          <img class="main-header__logo-image" src="../images/logo.svg" width="100" alt="Логотип Гринвуд">
+          <img class="main-header__logo-image" src="images/logo.svg" width="100" alt="Логотип Гринвуд">
         </a>
       </div>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="news-page.html">Новости</a></li>
+          <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
+          <li><a href="contacts-page.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p class="main-header__contacts">
         <a class="main-header__phone" href="tel:+7(4832)606-505">
           +7 (4832) <span>606-505</span>
         </a>
       </p>
-      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
-        <span class="out-cover-toggle__line"></span>
-      </button>
-      <nav class="main-header__nav main-nav">
-        <ul class="main-nav__list">
-          <li><a href="select-flats-page.html">Выбрать квартиру</a></li>
-          <li><a href="">О комплексе</a></li>
-          <li class="current-menu-item"><a href="">Ход строительства</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -41,8 +132,8 @@
       <header class="common-page__header container">
         <h1 class="common-page__title common-title">Выбрать квартиру по характеристикам</h1>
       </header>
-      <div class="common-page__body picking container">
-        <div class="picking__filter">
+      <div class="common-page__body common-page__body--has-sidebar picking container">
+        <div class="common-page__sidebar">
           <div class="flat-filters" data-sticky-target>
             <form class="flat-filters__form" action="" method="get">
               <div class="flat-filters__item flat-filter">
@@ -51,8 +142,11 @@
                   <div class="flat-filter__select select">
                     <select name="type">
                       <option value="all">Все</option>
-                      <option value="3.1">3.1</option>
-                      <option value="3.2">3.2</option>
+                      <option value="3-1">3.1</option>
+                      <option value="3-2">3.2</option>
+                      <option value="4-3">4.3</option>
+                      <option value="4-4">4.4</option>
+                      <option value="5">5</option>
                     </select>
                   </div>
                 </div>
@@ -60,98 +154,125 @@
               <div class="flat-filters__item flat-filter">
                 <div class="flat-filter__label">Количество комнат</div>
                 <div class="flat-filter__control">
-                  <div class="flat-filter__select select">
-                    <select name="amount">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="flat-filters__item flat-filter">
-                <div class="flat-filter__label">Количество комнат</div>
-                <div class="flat-filter__control">
-                  <div class="flat-filter-buttons">
-                    <input type="radio" name="amount" value="all" id="field-amount-1" checked>
-                    <label for="field-amount-1">Все</label>
-                    <input type="radio" name="amount" value="studio" id="field-amount-2">
-                    <label for="field-amount-2">Ст</label>
-                    <input type="radio" name="amount" value="flat-1" id="field-amount-3">
-                    <label for="field-amount-3">1</label>
-                    <input type="radio" name="amount" value="flat-2" id="field-amount-4">
-                    <label for="field-amount-4">2</label>
-                    <input type="radio" name="amount" value="flat-3-plus" id="field-amount-5">
-                    <label for="field-amount-5">3+</label>
-                  </div>
-                </div>
-              </div> -->
-              <div class="flat-filters__item flat-filter">
-                <div class="flat-filter__label">Стоимость, руб.</div>
-                <div class="flat-filter__controls">
-                  <div class="flat-filter__control">
-                    <span class="flat-filter__placeholder">от</span>
-                    <input class="flat-filter__input input" type="text" name="price_from">
-                  </div>
-                  <div class="flat-filter__controls-divider"></div>
-                  <div class="flat-filter__control">
-                    <span class="flat-filter__placeholder">до</span>
-                    <input class="flat-filter__input input" type="text" name="price_to">
-                  </div>
-                </div>
-              </div>
-              <div class="flat-filters__item flat-filter">
-                <div class="flat-filter__label">Этаж</div>
-                <div class="flat-filter__controls">
-                  <div class="flat-filter__control">
-                    <span class="flat-filter__placeholder">от</span>
-                    <input class="flat-filter__input input" type="text" name="floor_from">
-                  </div>
-                  <div class="flat-filter__controls-divider"></div>
-                  <div class="flat-filter__control">
-                    <span class="flat-filter__placeholder">до</span>
-                    <input class="flat-filter__input input" type="text" name="floor_to">
+                  <div class="flat-filter-checkboxes">
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-1">
+                      <span class="filter-checkbox__indicator" title="Однакомнатная квартира">1</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-2">
+                      <span class="filter-checkbox__indicator" title="Двухкомнатная квартира">2</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-3">
+                      <span class="filter-checkbox__indicator" title="Трехкомнатная квартира">3</span>
+                    </label>
+                    <label class="flat-filter-checkboxes__item filter-checkbox">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-4">
+                      <span class="filter-checkbox__indicator" title="Четырехкомнатная квартира">4</span>
+                    </label>
                   </div>
                 </div>
               </div>
               <div class="flat-filters__item flat-filter">
                 <div class="flat-filter__label">Площадь м²</div>
+                <div class="flat-filter__control flat-filter__control--range filter-range">
+                  <div class="filter-range-slider" data-type-slider="area" data-range="[20, 150]"></div>
+                  <div class="filter-range-values">
+                    <div class="filter-range-values__from">
+                      от <span data-range-from>20</span> м²
+                    </div>
+                    <div class="filter-range-values__to">
+                      до <span data-range-to>150</span> м²
+                    </div>
+                    <input type="hidden" name="area_from" value="20">
+                    <input type="hidden" name="area_to" value="150">
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="flat-filters__item flat-filter">
+                <div class="flat-filter__label">Площадь м²</div>
                 <div class="flat-filter__controls">
                   <div class="flat-filter__control">
                     <span class="flat-filter__placeholder">от</span>
-                    <input class="flat-filter__input input" type="text" name="area_from">
+                    <input class="flat-filter__input input" type="number" name="area_from">
                   </div>
                   <div class="flat-filter__controls-divider"></div>
                   <div class="flat-filter__control">
                     <span class="flat-filter__placeholder">до</span>
-                    <input class="flat-filter__input input" type="text" name="area_to">
+                    <input class="flat-filter__input input" type="number" name="area_to">
                   </div>
                 </div>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>
-        <div class="picking__result">
+        <div class="common-page__content">
           <div class="flats-result">
-            <table class="flats-result__table">
-              <thead class="flats-result__thead">
-                <tr>
-                  <th class="flats-result__head">Комнат</th>
-                  <th class="flats-result__head">Тип дома</th>
-                  <th class="flats-result__head">Этаж</th>
-                  <th class="flats-result__head">Площадь</th>
-                  <th class="flats-result__head" data-sorter="false">Стоимость</th>
-                </tr>
-              </thead>
-              <tbody class="flats-result__tbody"></tbody>
-            </table>
+            <div class="flats-result__dashboard flats-result-dashboard">
+              <div class="flats-result-dashboard__view view-mode">
+                <form class="view-mode-form">
+                  <div class="view-mode-buttons">
+                    <input type="radio" name="view" id="field-view-card" value="card">
+                    <label for="field-view-card" aria-label="Показать в виде карточек">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_module-24px"></use>
+                      </svg>
+                    </label>
+                    <input type="radio" name="view" id="field-view-list" value="list">
+                    <label for="field-view-list" aria-label="Показать в виде списка">
+                      <svg class="view-mode-buttons__icon" width="16" height="16">
+                        <use xlink:href="images/symbols.svg#baseline-view_stream-24px"></use>
+                      </svg>
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--
+            flats-cards--display-card
+            flats-cards--display-list
+          -->
+            <ul class="flats-result__list flats-cards"></ul>
           </div>
         </div>
       </div>
     </article>
   </main>
 
-  <template id="flats-result-row-template">
+  <template id="flats-result-card-template">
+    <li class="flats-result__item flats-cards__item flat-card">
+      <a class="flat-card__wraplink" href="flat-plan-page.html">
+        <div class="flat-card__picture">
+          <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+        </div>
+        <ul class="flat-card__features common-features-flat">
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Комнат</span>
+            <b class="common-features-flat__value" data-flat="room">2</b>
+          </li>
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Площадь</span>
+            <b class="common-features-flat__value" data-flat="area">278,64</b>
+          </li>
+        </ul>
+      </a>
+      <div class="flat-card__stick">
+        <span class="flat-card__reserved" aria-label="Забронирована" title="Забронирована">
+          <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z"/>
+          </svg>
+        </span>
+        <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
+            <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+          </svg>
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <!-- <template id="flats-result-row-template">
     <tr class="flats-result__row">
       <td class="flats-result__cell flats-result__cell--room">
         <span></span>
@@ -169,24 +290,34 @@
         <button class="flats-result__to-request-flat button" type="button">Запросить</button>
       </td>
     </tr>
-  </template>
+  </template> -->
 
   <footer class="main-footer">
     <div class="main-footer__inner container">
       <p class="main-footer__copy">© 2016–2018 Касабланка</p>
-      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">Идее Пикс</a></p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
     </div>
   </footer>
+
+  <div class="go-to-favorite-page">
+    <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
+      <svg class="go-to-favorite-page__icon" width="16" height="16" viewBox="0 0 455 455">
+        <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+      </svg>
+    </a>
+  </div>
+
 
   <div class="out-cover">
     <div class="out-cover__inner">
       <div class="out-cover__body">
+        <button class="out-cover__action-button button" type="button">Выбрать квартиру</button>
         <div class="out-cover__mobile-nav mobile-nav">
           <ul class="mobile-nav__list">
-            <li class="current-menu-item"><a href="select-flats-page.html">Выбрать квартиру</a></li>
-            <li><a href="">О комплексе</a></li>
-            <li><a href="">Ход строительства</a></li>
-            <li><a href="">Контакты</a></li>
+            <li class="current-menu-item"><a href="documents-page.html">Документация</a></li>
+            <li><a href="news-page.html">Новости</a></li>
+            <li><a href="construction-page.html">Ход строительства</a></li>
+            <li><a href="contacts-page.html">Контакты</a></li>
           </ul>
         </div>
       </div>

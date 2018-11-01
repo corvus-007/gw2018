@@ -9,101 +9,203 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <style>
+  .splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
+
+  .splash-screen--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 82px;
+    height: 82px;
+    position: relative;
+    transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3aa652;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+  }
+  .sk-folding-cube .sk-cube2 {
+    transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+    animation-delay: 0.9s;
+  }
+
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      transform: perspective(140px) rotateX(-180deg);
+      opacity: 0;
+    } 25%, 75% {
+      transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      transform: perspective(140px) rotateY(180deg);
+      opacity: 0;
+    }
+  }
+</style>
+<div id="splash-screen" class="splash-screen">
+  <div class="splash-screen__item">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+
+
   <header class="main-header">
     <div class="main-header__inner container">
       <div class="main-header__logo">
         <a href="index.html">
-          <img class="main-header__logo-image" src="../images/logo.svg" width="100" alt="Логотип Гринвуд">
+          <img class="main-header__logo-image" src="images/logo.svg" width="100" alt="Логотип Гринвуд">
         </a>
       </div>
+      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
+        <span class="out-cover-toggle__line"></span>
+      </button>
+      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <nav class="main-header__nav main-nav">
+        <ul class="main-nav__list">
+          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="news-page.html">Новости</a></li>
+          <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
+          <li><a href="contacts-page.html">Контакты</a></li>
+        </ul>
+      </nav>
       <p class="main-header__contacts">
         <a class="main-header__phone" href="tel:+7(4832)606-505">
           +7 (4832) <span>606-505</span>
         </a>
       </p>
-      <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
-        <span class="out-cover-toggle__line"></span>
-      </button>
-      <nav class="main-header__nav main-nav">
-        <ul class="main-nav__list">
-          <li><a href="select-flats-page.html">Выбрать квартиру</a></li>
-          <li><a href="">О комплексе</a></li>
-          <li class="current-menu-item"><a href="">Ход строительства</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
 
   <main class="main">
-    <article class="common-page">
-      <!-- <header class="common-page__header">
-        <h1 class="common-page__title"></h1>
-      </header> -->
+    <article class="common-page flat-page">
+      <header class="flat-page__header common-page__header container">
+        <h1 class="common-page__title common-title">Заголовок</h1>
+      </header>
       <div class="common-page__body flat container">
-        <div class="flat__plans-area">
-          <div class="plans-flat">
-            <div class="plans-flat__slider plans-flat-slider js-plans-flat-slider">
-              <div class="plans-flat-slider__item">
-                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536141495324-a48c4f2abffc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac834f695d3df31b53c9d8a34f529a1b&auto=format&fit=crop&w=1275&q=80" alt="">
+        <div class="flat__tabs flat-tabs common-tabs">
+          <ul class="common-tabs__menu">
+            <li class="common-tabs__item">
+              <a href="#tab-1" class="common-tabs__link">Планировка</a>
+            </li>
+            <li class="common-tabs__item">
+              <a href="#tab-2" class="common-tabs__link">Посмотреть на плане</a>
+            </li>
+          </ul>
+          <div class="common-tabs__pane" id="tab-1">
+            <section class="flat-plan-section">
+              <h2 class="visually-hidden">Планировка</h2>
+              <div class="flat-plan-section__plan flat-plan">
+                <div class="flat__plan flat-plan">
+                  <div class="flat-plan__adjuster"></div>
+                  <div class="flat-plan__frame">
+                    <a class="flat-plan__zoom-to-image" href="images/plans/plan-2.svg">
+                      <img class="flat-plan__image" src="images/plans/plan-2.svg" alt="Планировка — вариант №1">
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="plans-flat-slider__item">
-                <img data-flickity-lazyload="https://images.unsplash.com/photo-1506451487263-97b75fd35c03?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1bacd5f790fc8305a42430d5e38637da&auto=format&fit=crop&w=1350&q=80" alt="">
+              <div class="flat-plan-section__detail flat-detail">
+                <ul class="flat-detail__features common-features-flat">
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Тип дома</span>
+                    <b class="common-features-flat__value">4.3</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Комнат</span>
+                    <b class="common-features-flat__value">4</b>
+                  </li>
+                  <li class="common-features-flat__item">
+                    <span class="common-features-flat__label">Площадь</span>
+                    <b class="common-features-flat__value">128,7</b>
+                  </li>
+                </ul>
+                <form class="flat-detail__form request-price-form" action="" method="POST">
+                  <p class="request-price-form__title">Узнать стоимость квартиры</p>
+                  <label class="request-price-form__field field">
+                    <span class="field__label visually-hidden">Имя</span>
+                    <div class="field__control">
+                      <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+                    </div>
+                  </label>
+                  <label class="request-price-form__field field">
+                    <span class="field__label visually-hidden">Телефон</span>
+                    <div class="field__control">
+                      <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                  </label>
+                  <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
+                  <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+                </form>
+                <div class="flat-detail__actions">
+                  <a class="flat-detail__to-print button" href="">Распечать планировку</a>
+                </div>
+                <div class="flat-detail__disclamer">
+                  <p><small>Указанный размер площади может незначительно отличаться.</small></p>
+                </div>
               </div>
-              <div class="plans-flat-slider__item">
-                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e78b5f0bf282b8b489eae7aa8ab3356&auto=format&fit=crop&w=630&q=80" alt="">
-              </div>
-              <div class="plans-flat-slider__item">
-                <img data-flickity-lazyload="https://images.unsplash.com/photo-1536139846172-57b28f601fe7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0fe790a70b4190bc0070d5e9e71bef55&auto=format&fit=crop&w=634&q=80" alt="">
-              </div>
-            </div>
-            <div class="plans-flat__nav-buttons"></div>
+            </section>
           </div>
-        </div>
-        <div class="flat__detail-area">
-          <div class="detail-flat">
-            <ul class="detail-flat__features common-features-flat">
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Тип дома</span>
-                <b class="common-features-flat__value">4.3</b>
-              </li>
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Комнат</span>
-                <b class="common-features-flat__value">4</b>
-              </li>
-              <li class="common-features-flat__item">
-                <span class="common-features-flat__label">Площадь</span>
-                <b class="common-features-flat__value">128,7</b>
-              </li>
-            </ul>
-            <form class="detail-flat__form request-price-form" action="" method="POST">
-              <p class="request-price-form__title">Узнать стоимость квартиры</p>
-              <label class="request-price-form__field field">
-                <span class="field__label visually-hidden">Имя</span>
-                <div class="field__control">
-                  <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+
+          <div class="common-tabs__pane" id="tab-2">
+            <section class="flat-territory-section">
+              <h2 class="visually-hidden">Посмотреть на плане</h2>
+              <div class="flat-territory">
+                <div class="flat-territory__picture">
+                  <img src="images/plans/schema-house.svg" alt="">
                 </div>
-              </label>
-              <label class="request-price-form__field field">
-                <span class="field__label visually-hidden">Телефон</span>
-                <div class="field__control">
-                  <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
-                </div>
-              </label>
-              <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
-              <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
-            </form>
-            <div class="detail-flat__options">
-              <p class="detail-flat__otion-parking">
-                Дополнительно<br>
-                <span>2 парковочных места</span><br>
-                за 1 400 000 руб.
-              </p>
-            </div>
-            <div class="detail-flat__actions">
-              <a class="detail-flat__to-print button" href="">Распечать планировку</a>
-            </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -114,9 +216,9 @@
           <p class="section-similar-plans__intro">Клубный квартир «Гринвуд» – это возможность выбора! Поэтому мы подобрали несколько квартир, похожих на выбранную вами.</p>
           <div class="section-similar-plans__slider common-plans-slider js-common-plans-slider">
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img src="https://images.unsplash.com/photo-1535914253584-25160fb61079?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c705fbf436829357548ca9ca99df74e6&auto=format&fit=crop&w=643&q=80" alt="">
+                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -135,9 +237,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535725525385-bc19d13c503c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3bff9651cf9a34975e278e47a1f049b&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/plans/plan-2.svg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -156,9 +258,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535704882196-765e5fc62a53?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=21aa7b8efd783642e11d7e3719e41ac2&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -177,9 +279,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535930749574-1399327ce78f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1f8a140ac20927deb386d1c9187433d6&auto=format&fit=crop&w=676&q=80" alt="">
+                  <img data-flickity-lazyload="images/plans/plan-2.svg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -198,9 +300,9 @@
               </a>
             </div>
             <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="">
+              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="https://images.unsplash.com/photo-1535927853242-fa2bde74fb7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b987eec696912dcc7e1fae2adc362f4&auto=format&fit=crop&w=634&q=80" alt="">
+                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -227,19 +329,29 @@
   <footer class="main-footer">
     <div class="main-footer__inner container">
       <p class="main-footer__copy">© 2016–2018 Касабланка</p>
-      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">Идее Пикс</a></p>
+      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
     </div>
   </footer>
+
+  <div class="go-to-favorite-page">
+    <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
+      <svg class="go-to-favorite-page__icon" width="16" height="16" viewBox="0 0 455 455">
+        <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+      </svg>
+    </a>
+  </div>
+
 
   <div class="out-cover">
     <div class="out-cover__inner">
       <div class="out-cover__body">
+        <button class="out-cover__action-button button" type="button">Выбрать квартиру</button>
         <div class="out-cover__mobile-nav mobile-nav">
           <ul class="mobile-nav__list">
-            <li class="current-menu-item"><a href="select-flats-page.html">Выбрать квартиру</a></li>
-            <li><a href="">О комплексе</a></li>
-            <li><a href="">Ход строительства</a></li>
-            <li><a href="">Контакты</a></li>
+            <li class="current-menu-item"><a href="documents-page.html">Документация</a></li>
+            <li><a href="news-page.html">Новости</a></li>
+            <li><a href="construction-page.html">Ход строительства</a></li>
+            <li><a href="contacts-page.html">Контакты</a></li>
           </ul>
         </div>
       </div>
