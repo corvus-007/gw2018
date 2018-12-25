@@ -1,0 +1,51 @@
+.promo-popup {
+  max-width: 650px;
+  padding: 0;
+}
+
+.promo-popup__inner {
+  @include mq-min(568px) {
+    display: flex;
+  }
+}
+
+.promo-popup__picture {
+  @include make-fit-object();
+
+  width: 100%;
+
+  @include mq-min(568px) {
+    width: 50%;
+  }
+}
+
+.promo-popup__content {
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+
+  @include mq-min(568px) {
+    width: 50%;
+  }
+}
+
+.promo-popup__header {
+  margin-bottom: 40px;
+}
+
+.promo-popup__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 46px;
+}
+
+.promo-popup__text {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  line-height: 24px;
+  // text-align: center;
+  color: $muted-color;
+}

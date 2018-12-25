@@ -44,22 +44,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  // if (document.querySelector('.flat-filters')) {
-  //   var locationSearch = location.search;
-  //   window.flatsResult.displayResult({
-  //     data: locationSearch
-  //   });
-  //   window.flatFilters.init();
-  // }
+  if (document.querySelector('.flat-filters')) {
+    var locationSearch = location.search;
+    window.flatsResult.displayResult({
+      data: locationSearch
+    });
+    window.flatFilters.init();
+  }
 
-  // if (document.querySelector('.favorites-flats')) {
+  if (document.querySelector('.favorites-flats')) {
 
-  //   window.flatsResult.displayResult({
-  //     data: $.param({
-  //       'favorites_cards[]': window.favoritesCards.getFavoritesFlatsAsArr()
-  //     })
-  //   });
-  // }
+    window.flatsResult.displayResult({
+      data: $.param({
+        'favorites_cards[]': window.favoritesCards.getFavoritesFlatsAsArr()
+      })
+    });
+  }
 
   $('.construction-cards__item').each(function (index, el) {
     var album = $(el).find('.construction-card__wraplink').data('fancybox-trigger');

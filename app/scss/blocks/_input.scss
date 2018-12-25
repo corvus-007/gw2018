@@ -21,10 +21,6 @@
     border-color: darken($secondary-color-2, 10%);
   }
 
-  &--fill-white {
-    background-color: #ffffff;
-  }
-
   &::placeholder {
     color: $base-color;
     opacity: 0.4;

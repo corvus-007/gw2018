@@ -138,7 +138,8 @@ gulp.task('build', function (fn) {
 
 gulp.task('serve', function () {
   browserSync.init({
-    server: './build'
+    server: './build',
+    port: 3004
   });
 
   gulp.watch('app/scss/**/*.scss', function () {

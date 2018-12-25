@@ -17,3 +17,18 @@
     margin-right: vh(70);
   }
 }
+
+@mixin make-slim-container($gutter: $gutter) {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+
+  @include mq-min(1024px) {
+    max-width: vh(800);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

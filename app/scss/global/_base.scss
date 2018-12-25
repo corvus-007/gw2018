@@ -28,6 +28,10 @@ body {
   @include make-container();
 }
 
+.slim-container {
+  @include make-slim-container();
+}
+
 a {
   color: $link-color;
   outline: none;

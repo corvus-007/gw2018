@@ -1,0 +1,56 @@
+.incut-visual {
+  position: relative;
+  color: #ffffff;
+  background-color: gray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.incut-visual__wraplink {
+  display: block;
+  padding-top: vh(80);
+  padding-bottom: vh(80);
+  background-color: rgba(#000000, 0.25);
+  transition: $duration;
+
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: rgba(#000000, 0.4);
+  }
+}
+
+.incut-visual__cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.incut-visual__title {
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.incut-visual__button {
+  color: #ffffff;
+}
+
+.incut-visual__button-icon {
+  display: block;
+  width: 96px;
+  height: 96px;
+  fill: currentColor;
+  transition: $duration * 2;
+
+  .incut-visual__wraplink:hover & ,
+  .incut-visual__wraplink:focus & {
+    transform: scale(1.2);
+  }
+}
