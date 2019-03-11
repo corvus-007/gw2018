@@ -1,0 +1,32 @@
+.promo-slider {
+  @include clear-list();
+
+  .flickity-button {
+    top: 50%;
+  }
+
+  .flickity-page-dots {
+    bottom: 10px;
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      margin-left: 4px;
+      margin-right: 4px;
+      background: transparent;
+      background-clip: content-box;
+      background-color: #ffffff;
+      border: 4px solid transparent;
+      transition: $duration;
+
+      &.is-selected {
+        border-color: #ffffff;
+      }
+    }
+  }
+}
+
+.promo-slider__item {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,22 @@
+.promo {
+  // height: 400px;
+  // margin-top: calc(#{$height-header-mobile} + 30px);
+  // padding-top: $height-header-mobile;
+  // box-sizing: border-box;
+
+  @include mq-min(1024px) {
+    // margin-top: calc(#{$height-header-desktop} + 30px);
+  }
+}
+
+.promo__slider {
+  height: 320px;
+
+  @include mq-min(768px) {
+    height: 480px;
+  }
+
+  @include mq-min(1024px) {
+    height: 640px;
+  }
+}
