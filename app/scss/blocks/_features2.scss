@@ -1,0 +1,40 @@
+.features2 {
+
+}
+
+.features2__header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include mq-min(1024px) {
+    margin-bottom: vh(45);
+  }
+}
+
+.features2__main {
+  @include mq-min(768px) {
+    display: flex;
+  }
+}
+
+.features2__accordion-wrapper {
+  @include mq-min(768px) {
+    width: 50%;
+    margin-right: 20px;
+  }
+}
+
+.features2__accordion {
+
+}
+
+.features2__slider-wrapper {
+  flex-grow: 1;
+  background-color: darksalmon;
+}
+
+.features2__slider {
+  height: vh(400);
+  min-height: 350px;
+  max-height: 450px;
+}

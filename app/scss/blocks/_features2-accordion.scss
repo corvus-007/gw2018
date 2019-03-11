@@ -1,0 +1,59 @@
+.features2-accordion {
+  @include clear-list();
+}
+
+.features2-accordion__section {
+  border-top: 1px solid $light-color;
+
+  &:last-child {
+    border-bottom: 1px solid $light-color;
+  }
+}
+
+.features2-accordion__caption {
+  position: relative;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 40px;
+  font-weight: 700;
+  font-size: rem(20);
+  cursor: pointer;
+  color: $muted-color;
+  transition: $duration;
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    border: 2px solid;
+    border-left: none;
+    border-top: none;
+    box-sizing: border-box;
+    opacity: 0.5;
+    transform: rotate(45deg);
+    transition: transform $duration;
+  }
+
+  .acc_active & {
+    color: $base-color;
+
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+.features2-accordion__content {
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
