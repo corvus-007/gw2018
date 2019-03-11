@@ -2,6 +2,8 @@
 Структура:
 ```
 app/
+  |--css/
+    |--additional-style.css (Стилевой файл от сторонних разработчиков)
   |--scss/
      |--global/
      |--blocks/
@@ -12,7 +14,7 @@ app/
      |--styles.scss
   |--images/
      |--svg-icons/
-     |--svg-symbols/ (для объединения в один файл symbols.svg)
+     |--svg-symbols/ (для объединения в один файл images/symbols.svg)
   |--js/
      |--plugins/
      |--modules/
