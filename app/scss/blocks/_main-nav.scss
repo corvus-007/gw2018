@@ -36,6 +36,10 @@
     &:focus {
       &::before {
         background-color: $secondary-color;
+
+        .homepage & {
+          background-color: #077f43;
+        }
       }
     }
   }

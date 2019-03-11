@@ -24,6 +24,14 @@
     padding-bottom: 20px;
     background-color: #ffffff;
 
+    .homepage & {
+      background-color: transparent;
+    }
+
+    .homepage.is-main-header-sticky & {
+      background-color: #ffffff;
+    }
+
     .is-main-header-sticky & {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -38,6 +46,7 @@
 
 .main-header__logo {
   transition: $duration * 2;
+  margin-right: auto;
 
   .is-main-header-sticky & {
     transform: scale(0.8);
@@ -45,8 +54,8 @@
 }
 
 .main-header__toggle {
-  margin-left: auto;
   order: 1;
+  margin-left: 20px;
 
   @include mq-min(1024px) {
     display: none;

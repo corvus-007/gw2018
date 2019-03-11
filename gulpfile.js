@@ -17,7 +17,7 @@ var del = require('del');
 var ghPages = require('gulp-gh-pages');
 
 gulp.task('style', function () {
-  return (gulp
+  return gulp
     .src('app/scss/style.scss')
     .pipe(
       plumber({
@@ -42,7 +42,21 @@ gulp.task('style', function () {
     )
     // .pipe(minify())
     .pipe(gulp.dest('build/'))
-    .pipe(browserSync.stream()));
+    .pipe(browserSync.stream());
+});
+
+gulp.task('additional-style', () => {
+  return gulp
+    .src('app/css/additional-style.css')
+    .pipe(
+      postcss([
+        autoprefixer({
+          browsers: ['last 2 version']
+        })
+      ])
+    )
+    .pipe(gulp.dest('build/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('plugins-js', function () {
@@ -128,6 +142,7 @@ gulp.task('build', function (fn) {
     'copy-video',
     'copy-script',
     'style',
+    'additional-style',
     'plugins-js',
     'modules-js',
     'fileinclude',
@@ -145,6 +160,11 @@ gulp.task('serve', function () {
   gulp.watch('app/scss/**/*.scss', function () {
     setTimeout(function () {
       gulp.start('style');
+    }, 500);
+  });
+  gulp.watch('app/css/additional-style.css', function () {
+    setTimeout(function () {
+      gulp.start('additional-style');
     }, 500);
   });
   gulp.watch('app/fonts/**/*', ['copy-fonts']);
