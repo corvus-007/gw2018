@@ -6,21 +6,76 @@
   background-color: #4b4f53;
 }
 
-.main-footer__inner {
+.main-footer__top {
+  padding-bottom: 20px;
+}
+
+.main-footer__top-inner {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @include mq-min(568px) {
-    justify-content: space-between;
+  @include mq-max(666px) {
     text-align: center;
+  }
+
+  @include mq-min(667px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.main-footer__note {
+  max-width: 320px;
+  margin: 0;
+  margin-bottom: 10px;
+
+  @include mq-min(667px) {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.main-footer__disclamer {
+  max-width: 450px;
+  margin-right: 0;
+}
+
+.main-footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mq-max(666px) {
+    text-align: center;
+  }
+
+  @include mq-min(667px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .main-footer__copy {
   margin: 0;
-  margin-right: 10px;
+  margin-bottom: 10px;
+
+  @include mq-min(667px) {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.main-footer__docs {
+  margin: 0;
+  margin-bottom: 10px;
+
+  @include mq-min(667px) {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
 }
 
 .main-footer__dev {
@@ -36,6 +91,10 @@
     vertical-align: middle;
     color: $danger-color;
     animation: heartbeat 2.2s infinite;
+  }
+
+  @include mq-min(667px) {
+    text-align: right;
   }
 }
 
