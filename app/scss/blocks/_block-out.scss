@@ -10,7 +10,6 @@
 }
 
 .block-out__inner {
-
 }
 
 .block-out__content {
@@ -32,19 +31,23 @@
   }
 
   @include mq-min(1280px) {
-    margin-right: vh(-50 - 15);
+    // margin-right: vh(-50 - 15);
+    margin-right: calc((100vw - 1150px) / -2 - 10px);
 
     .block-out--to-left & {
-      margin-left: vh(-50 - 15);
+      // margin-left: vh(-50 - 15);
+      margin-left: calc((100vw - 1150px) / -2 - 10px);
     }
   }
 
   @include mq-min(1440px) {
     margin-left: vh(280);
-    margin-right: vh(-70 - 15);
+    // margin-right: vh(-70 - 15);
+    // margin-right: calc((100vw - 1150px) / -2 - 10px);
 
     .block-out--to-left & {
-      margin-left: vh(-70 - 15);
+      // margin-left: vh(-70 - 15);
+      // margin-left: calc((100vw - 1150px) / -2 - 10px);
       margin-right: vh(280);
     }
   }

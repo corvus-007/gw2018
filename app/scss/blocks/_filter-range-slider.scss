@@ -1,24 +1,24 @@
 .filter-range-slider {
   height: 3px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px 8px;
   background-color: $secondary-color-2;
   border: none;
   box-shadow: none;
 
   .noUi-connect {
-    background-color: $accent-color;
+    background-color: #003d58;
   }
 
   .noUi-handle {
-    top: -14px;
-    right: -14px !important;
-    width: 28px;
-    height: 28px;
+    top: calc(14px / -2 + 3px / 2);
+    right: calc(14px / -2) !important;
+    width: 14px;
+    height: 14px;
+    background-color: #003d58;
+    border: none;
     border-radius: 50%;
     box-shadow: none;
-    border: none;
-    background-color: $accent-color;
+    outline: none;
 
     &::before,
     &::after {

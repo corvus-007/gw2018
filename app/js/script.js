@@ -98,12 +98,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  if (document.querySelector('.flat-filters')) {
+  var flatFiltersElem = document.querySelector('.flat-filters');
+
+  if (flatFiltersElem) {
     var locationSearch = location.search;
     window.flatsResult.displayResult({
       data: locationSearch
     });
     window.flatFilters.init();
+    var selectSortElem = document.querySelector('[name="sort-by"]');
+    selectSortElem.addEventListener('change', function (evt) {
+      var flatFiltersForm = flatFiltersElem.querySelector('.flat-filters__form');
+      var formData = $(flatFiltersForm).serialize();
+      window.flatsResult.displayResult({
+        data: formData
+      });
+    });
   }
 
   if (document.querySelector('.favorites-flats')) {

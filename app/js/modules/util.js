@@ -38,5 +38,38 @@ window.util = (function () {
 
       return scrollWidth;
     },
+    formatNumber: function (num) {
+      var formatter = new Intl.NumberFormat('ru', {
+        minimumFractionDigits: 0
+      });
+
+      return formatter.format(num);
+    },
+    compareTypes: {
+      rooms: function (a, b) {
+        var roomsA = parseInt(a.room, 10);
+        var roomsB = parseInt(b.room, 10);
+
+        return (roomsA - roomsB);
+      },
+      floor: function (a, b) {
+        var floorA = parseInt(a.floor, 10);
+        var floorB = parseInt(b.floor, 10);
+
+        return (floorA - floorB);
+      },
+      area: function (a, b) {
+        var areaA = parseFloat(a.area);
+        var areaB = parseFloat(b.area);
+
+        return (areaA - areaB);
+      },
+      price: function (a, b) {
+        var priceA = parseFloat(a.price);
+        var priceB = parseFloat(b.price);
+
+        return priceA - priceB;
+      }
+    }
   };
 })();

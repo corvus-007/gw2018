@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var minify = require('gulp-csso');
 var include = require('gulp-include');
+var sourcemaps = require('gulp-sourcemaps');
 var fileinclude = require('gulp-file-include');
 var rename = require('gulp-rename');
 var svgstore = require('gulp-svgstore');
@@ -19,6 +20,7 @@ var ghPages = require('gulp-gh-pages');
 gulp.task('style', function () {
   return gulp
     .src('app/scss/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(
       plumber({
         errorHandler: function (err) {
@@ -28,10 +30,10 @@ gulp.task('style', function () {
     )
     .pipe(
       sass
-      .sync({
-        outputStyle: 'expanded'
-      })
-      .on('error', sass.logError)
+        .sync({
+          outputStyle: 'expanded'
+        })
+        .on('error', sass.logError)
     )
     .pipe(
       postcss([
@@ -40,7 +42,8 @@ gulp.task('style', function () {
         })
       ])
     )
-    // .pipe(minify())
+    .pipe(minify())
+    .pipe(sourcemaps.write(''))
     .pipe(gulp.dest('build/'))
     .pipe(browserSync.stream());
 });

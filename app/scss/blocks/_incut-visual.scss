@@ -8,12 +8,15 @@
 }
 
 .incut-visual__wraplink {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
   padding-top: vh(80);
   padding-bottom: vh(80);
   background-color: rgba(#000000, 0.25);
   transition: $duration;
-
+  box-sizing: border-box;
 
   &:hover,
   &:focus {
@@ -49,7 +52,7 @@
   fill: currentColor;
   transition: $duration * 2;
 
-  .incut-visual__wraplink:hover & ,
+  .incut-visual__wraplink:hover &,
   .incut-visual__wraplink:focus & {
     transform: scale(1.2);
   }

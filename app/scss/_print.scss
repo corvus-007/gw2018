@@ -1,0 +1,34 @@
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .main-header,
+  .main-footer {
+    display: none;
+  }
+
+  .common-page {
+    padding: 0;
+  }
+
+  .common-tabs__menu {
+    display: none;
+  }
+
+  .common-tabs__pane {
+    display: block !important;
+  }
+
+  .flat-plan-section {
+    display: block;
+  }
+
+  .flat-plan {
+    height: auto !important;
+  }
+
+  .flat-detail {
+    width: auto;
+  }
+}

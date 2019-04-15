@@ -8,7 +8,7 @@
   <title>Выбрать квартиру по характеристикам / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-flats-filter">
   @@include('blocks/main-header.html')
 
   <main class="main">
@@ -25,7 +25,7 @@
                 <div class="flat-filter__control">
                   <div class="flat-filter__select select">
                     <select name="type">
-                      <option value="all">Все</option>
+                      <option value="all" selected>Все типы домов</option>
                       <option value="3-1">3.1</option>
                       <option value="3-2">3.2</option>
                       <option value="4-3">4.3</option>
@@ -36,38 +36,72 @@
                 </div>
               </div>
               <div class="flat-filters__item flat-filter">
+                <div class="flat-filter__label">Этаж</div>
+                <div class="flat-filter__control">
+                  <div class="flat-filter__select select">
+                    <select name="floor">
+                      <option value="all" selected>Все этажи</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="flat-filters__item flat-filter">
                 <div class="flat-filter__label">Количество комнат</div>
                 <div class="flat-filter__control">
                   <div class="flat-filter-checkboxes">
                     <label class="flat-filter-checkboxes__item filter-checkbox">
-                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-1">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="1">
                       <span class="filter-checkbox__indicator" title="Однакомнатная квартира">1</span>
                     </label>
                     <label class="flat-filter-checkboxes__item filter-checkbox">
-                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-2">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="2">
                       <span class="filter-checkbox__indicator" title="Двухкомнатная квартира">2</span>
                     </label>
                     <label class="flat-filter-checkboxes__item filter-checkbox">
-                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-3">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="3">
                       <span class="filter-checkbox__indicator" title="Трехкомнатная квартира">3</span>
                     </label>
                     <label class="flat-filter-checkboxes__item filter-checkbox">
-                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="flat-4">
+                      <input class="filter-checkbox__input" type="checkbox" name="amount[]" value="4">
                       <span class="filter-checkbox__indicator" title="Четырехкомнатная квартира">4</span>
                     </label>
                   </div>
                 </div>
               </div>
               <div class="flat-filters__item flat-filter">
-                <div class="flat-filter__label">Площадь м²</div>
+                <div class="flat-filter__label">Стоимость, руб.</div>
                 <div class="flat-filter__control flat-filter__control--range filter-range">
-                  <div class="filter-range-slider" data-type-slider="area" data-range="[20, 150]"></div>
+                  <div class="filter-range-slider" data-type-slider="price" data-range="[2000000, 12000000]" data-step="10000"></div>
                   <div class="filter-range-values">
                     <div class="filter-range-values__from">
-                      от <span data-range-from>20</span> м²
+                      от <span data-range-from>2 000 000</span>
                     </div>
                     <div class="filter-range-values__to">
-                      до <span data-range-to>150</span> м²
+                      до <span data-range-to>12 000 000</span>
+                    </div>
+                    <input type="hidden" name="price_from" value="20">
+                    <input type="hidden" name="price_to" value="150">
+                  </div>
+                </div>
+              </div>
+              <div class="flat-filters__item flat-filter">
+                <div class="flat-filter__label">Площадь, м²</div>
+                <div class="flat-filter__control flat-filter__control--range filter-range">
+                  <div class="filter-range-slider" data-type-slider="area" data-range="[20, 150]" data-step="1"></div>
+                  <div class="filter-range-values">
+                    <div class="filter-range-values__from">
+                      от <span data-range-from>20</span>
+                    </div>
+                    <div class="filter-range-values__to">
+                      до <span data-range-to>150</span>
                     </div>
                     <input type="hidden" name="area_from" value="20">
                     <input type="hidden" name="area_to" value="150">
@@ -91,6 +125,7 @@
             </form>
           </div>
         </div>
+
         <div class="common-page__content">
           <div class="flats-result">
             <div class="flats-result__dashboard flats-result-dashboard">
@@ -112,12 +147,73 @@
                   </div>
                 </form>
               </div>
+
+              <div class="flats-result-dashboard__sort nav-sort">
+                <form class="nav-sort__form">
+                  <select name="sort-by" class="nav-sort__select">
+                    <option value="default" selected>По умолчанию</option>
+                    <option value="rooms">Кол-во комнат</option>
+                    <option value="floor">Этаж</option>
+                    <option value="area">Площадь</option>
+                    <option value="price">Стоимость</option>
+                  </select>
+                </form>
+              </div>
             </div>
             <!--
             flats-cards--display-card
             flats-cards--display-list
           -->
-            <ul class="flats-result__list flats-cards"></ul>
+            <ul class="flats-result__list flats-cards">
+              <li class="flats-result__item flats-cards__item flat-card">
+                <a class="flat-card__wraplink" href="flat-plan-page.html">
+                  <div class="flat-card__picture-holder">
+                    <div class="flat-card__picture">
+                      <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="flat-card__content">
+                    <div class="flat-card__info-block">
+                      <span class="flat-card__type-of-building">
+                        Тип дома
+                        <span class="flat-card__type-of-building-value" data-flat-type-value>3.1</span>
+                      </span>
+                      <b class="flat-card__title">
+                        <span class="flat-card__rooms" data-flat-room-value>Однокомнатная</span>
+                        <span class="flat-card__area"><span class="flat-card__area-value" data-flat-area-value>38,20</span> м²</span>
+                      </b>
+                      <span class="flat-card__floor"><span class="flat-card__floor-value" data-flat-floor-value>4</span> этаж</span>
+                    </div>
+                    <div class="flat-card__price-block">
+                      <b class="flat-card__price-for-flat"><span class="flat-card__price-for-flat-value" data-flat-price-value>6 494 000</span> руб.</b>
+                      <span class="flat-card__price-for-square-meter">или <span class="flat-card__price-for-square-meter-value" data-flat-price-for-square-meter-value>170 000</span> за м²</span>
+                    </div>
+                  </div>
+                  <!-- <ul class="flat-card__features common-features-flat">
+                    <li class="flat-card__features-item common-features-flat__item">
+                      <span class="common-features-flat__label">Комнат</span>
+                      <b class="common-features-flat__value" data-flat="room">2</b>
+                    </li>
+                    <li class="flat-card__features-item common-features-flat__item">
+                      <span class="common-features-flat__label">Площадь</span>
+                      <b class="common-features-flat__value" data-flat="area">278,64</b>
+                    </li>
+                  </ul> -->
+                </a>
+                <div class="flat-card__stick">
+                  <span class="flat-card__reserved" aria-label="Квартира забронирована" title="Квартира забронирована">
+                    <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+                      <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z" />
+                    </svg>
+                  </span>
+                  <!-- <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
+                      <path d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z" />
+                    </svg>
+                  </button> -->
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -125,6 +221,42 @@
   </main>
 
   <template id="flats-result-card-template">
+    <li class="flats-result__item flats-cards__item flat-card">
+      <a class="flat-card__wraplink" href="flat-plan-page.html">
+        <div class="flat-card__picture-holder">
+          <div class="flat-card__picture">
+            <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+          </div>
+        </div>
+        <div class="flat-card__content">
+          <div class="flat-card__info-block">
+            <span class="flat-card__type-of-building">
+              Тип дома
+              <span class="flat-card__type-of-building-value" data-flat-type-value>3.1</span>
+            </span>
+            <b class="flat-card__title">
+              <span class="flat-card__rooms" data-flat-room-value>Однокомнатная</span>
+              <span class="flat-card__area"><span class="flat-card__area-value" data-flat-area-value>38,20</span> м²</span>
+            </b>
+            <span class="flat-card__floor"><span class="flat-card__floor-value" data-flat-floor-value>4</span> этаж</span>
+          </div>
+          <div class="flat-card__price-block">
+            <b class="flat-card__price-for-flat"><span class="flat-card__price-for-flat-value" data-flat-price-value>6 494 000</span> руб.</b>
+            <span class="flat-card__price-for-square-meter">или <span class="flat-card__price-for-square-meter-value" data-flat-price-for-square-meter-value>170 000</span> за м²</span>
+          </div>
+        </div>
+      </a>
+      <div class="flat-card__stick">
+        <span class="flat-card__reserved" aria-label="Квартира забронирована" title="Квартира забронирована">
+          <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z" />
+          </svg>
+        </span>
+      </div>
+    </li>
+  </template>
+
+  <!-- <template id="flats-result-card-template">
     <li class="flats-result__item flats-cards__item flat-card">
       <a class="flat-card__wraplink" href="flat-plan-page.html">
         <div class="flat-card__picture">
@@ -142,38 +274,50 @@
         </ul>
       </a>
       <div class="flat-card__stick">
-        <span class="flat-card__reserved" aria-label="Забронирована" title="Забронирована">
+        <span class="flat-card__reserved" aria-label="Квартира забронирована" title="Квартира забронирована">
           <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
-            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z"/>
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z" />
           </svg>
         </span>
         <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
-            <path  d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z"/>
+            <path d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z" />
           </svg>
         </button>
       </div>
     </li>
-  </template>
+  </template> -->
 
-  <!-- <template id="flats-result-row-template">
-    <tr class="flats-result__row">
-      <td class="flats-result__cell flats-result__cell--room">
-        <span></span>
-      </td>
-      <td class="flats-result__cell flats-result__cell--type">
-        <span></span>
-      </td>
-      <td class="flats-result__cell flats-result__cell--floor">
-        <span></span>
-      </td>
-      <td class="flats-result__cell flats-result__cell--area">
-        <span></span>
-      </td>
-      <td class="flats-result__cell flats-result__cell--price">
-        <button class="flats-result__to-request-flat button" type="button">Запросить</button>
-      </td>
-    </tr>
+  <!-- <template id="flats-result-card-template">
+    <li class="flats-result__item flats-cards__item flat-card">
+      <a class="flat-card__wraplink" href="flat-plan-page.html">
+        <div class="flat-card__picture">
+          <img src="http://greenwood.01it.ru/images/select_plan_3.jpg" alt="">
+        </div>
+        <ul class="flat-card__features common-features-flat">
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Комнат</span>
+            <b class="common-features-flat__value" data-flat="room">2</b>
+          </li>
+          <li class="flat-card__features-item common-features-flat__item">
+            <span class="common-features-flat__label">Площадь</span>
+            <b class="common-features-flat__value" data-flat="area">278,64</b>
+          </li>
+        </ul>
+      </a>
+      <div class="flat-card__stick">
+        <span class="flat-card__reserved" aria-label="Квартира забронирована" title="Квартира забронирована">
+          <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
+            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z" />
+          </svg>
+        </span>
+        <button class="flat-card__add-to-favorite" data-action="add-to-favorite" type="button" aria-label="Добавить в избранное" title="Добавить в избранное">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flat-card__add-to-favorite-icon flat-card__icon" width="16" height="16" viewBox="0 0 455 455">
+            <path d="M326.6 10.3c-38.7 0-75 17.6-99.1 47A128.4 128.4 0 0 0 0 138.7c0 55.4 33 119.5 98.2 190.6a946 946 0 0 0 120.3 108.6l9 6.8 9-6.8a946 946 0 0 0 120.3-108.6c65.1-71 98.2-135.2 98.2-190.6C455 68 397.4 10.3 326.6 10.3z" />
+          </svg>
+        </button>
+      </div>
+    </li>
   </template> -->
 
   @@include('blocks/main-footer.html')

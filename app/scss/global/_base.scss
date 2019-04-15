@@ -25,11 +25,15 @@ body {
 }
 
 .container {
-  @include make-container();
+  @media not print {
+    @include make-container();
+  }
 }
 
 .slim-container {
-  @include make-slim-container();
+  @media not print {
+    @include make-slim-container();
+  }
 }
 
 a {
@@ -82,5 +86,7 @@ img {
 }
 
 .visually-hidden {
-  @include visually-hidden();
+  @media not print {
+    @include visually-hidden();
+  }
 }

@@ -20,8 +20,10 @@
 .flat-detail__to-print {
   min-width: auto;
   margin-bottom: 20px;
-  padding: 1px 17px;
+  padding: 4px 17px;
   font-weight: 600;
+  font-size: 17px;
+  line-height: 1.2;
   text-transform: none;
   color: $brown-color;
   border-radius: 100px;

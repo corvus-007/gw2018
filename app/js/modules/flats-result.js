@@ -11,9 +11,18 @@ window.flatsResult = (function (window, $) {
   var templateCard = document.querySelector('#flats-result-card-template').content.querySelector('.flat-card');
   var favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
+  var selectSortElem = document.querySelector('[name="sort-by"]');
+
+  var textRooms = {
+    '1': 'Однокомнатная',
+    '2': 'Двухкомнатная',
+    '3': 'Трехкомнатная',
+    '4': 'Четырехкомнатная'
+  };
+
   function displayResult(params) {
     var filtersData = params.data || '';
-    var response = sendRequest(filtersData, onSuccess);
+    var response = sendRequest(filtersData);
 
     favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
@@ -24,7 +33,9 @@ window.flatsResult = (function (window, $) {
     var fragment = document.createDocumentFragment();
     clearCardsList();
 
-    data.forEach(function (attrs, index) {
+    var sortedData = window.flatsSort.sortFlats(data, window.flatsSort.getSortByVal(selectSortElem));
+
+    sortedData.forEach(function (attrs, index) {
       fragment.appendChild(renderCard(attrs, index));
     });
 
@@ -38,34 +49,49 @@ window.flatsResult = (function (window, $) {
 
     setTimeout(function () {
       endLoading();
-    }, 800);
+    }, 300);
   }
 
   function renderCard(attrs, index) {
     var card = templateCard.cloneNode(true);
     var reserveElem = card.querySelector('.flat-card__reserved');
+    var wrapLinkElem = card.querySelector('.flat-card__wraplink');
     var image = card.querySelector('.flat-card__picture img');
 
-    var id = index + '';
+    var id = attrs.id;
+    var linkToFlat = attrs.link;
+    var imgSrc = attrs.img;
+    var room = attrs.room;
+    var isReserve = attrs.reserve;
+    var type = attrs.type;
+    var floor = attrs.floor;
+    var area = parseFloat(attrs.area, 10);
+    var price = parseFloat(attrs.price, 10);
+
     card.dataset.flatId = id;
 
     if (favoritesCards.includes(id)) {
       card.classList.add('flat-card--is-favorite');
     }
 
-    if (!attrs.reserve) {
+    if (!isReserve) {
       reserveElem.remove();
     }
 
-    image.src = 'images/plans/plan-2.svg';
+    wrapLinkElem.href = linkToFlat || 'flat-plan-page.html';
+    image.src = imgSrc || 'images/plans/plan-2.svg';
 
-    card.querySelector('[data-flat="room"]').textContent = attrs.room;
-    card.querySelector('[data-flat="area"]').textContent = attrs.area;
+    card.querySelector('[data-flat-type-value]').textContent = type;
+    card.querySelector('[data-flat-room-value]').textContent = textRooms[room];
+    card.querySelector('[data-flat-area-value]').textContent = area;
+    card.querySelector('[data-flat-floor-value]').textContent = floor;
+    card.querySelector('[data-flat-price-value]').textContent = window.util.formatNumber(price);
+    card.querySelector('[data-flat-price-for-square-meter-value]').textContent = window.util.formatNumber(price / area);
 
     return card;
   }
 
-  function sendRequest(data, onSuccess, onError) {
+  function sendRequest(data) {
     data = data || '';
 
     startLoading();
@@ -96,6 +122,8 @@ window.flatsResult = (function (window, $) {
     cardsList: cardsList,
     sendRequest: sendRequest,
     renderCard: renderCard,
+    startLoading: startLoading,
+    endLoading: endLoading,
     clearCardsList: clearCardsList
   };
 })(window, jQuery);

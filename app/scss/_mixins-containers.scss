@@ -1,21 +1,22 @@
 @mixin make-container($gutter: $gutter) {
   width: 100%;
+  max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
 
-  @include mq-min(1280px) {
-    width: auto;
-    margin-left: vh(50);
-    margin-right: vh(50);
-  }
+  // @include mq-min(1280px) {
+  //   width: auto;
+  //   margin-left: vh(50);
+  //   margin-right: vh(50);
+  // }
 
-  @include mq-min(1440px) {
-    margin-left: vh(70);
-    margin-right: vh(70);
-  }
+  // @include mq-min(1440px) {
+  //   margin-left: vh(70);
+  //   margin-right: vh(70);
+  // }
 }
 
 @mixin make-slim-container($gutter: $gutter) {

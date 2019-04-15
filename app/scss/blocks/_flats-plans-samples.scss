@@ -1,0 +1,11 @@
+.flats-plans-samples {
+}
+
+.flats-plans-samples__header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include mq-min(1024px) {
+    margin-bottom: vh(45);
+  }
+}

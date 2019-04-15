@@ -8,7 +8,7 @@
     transition: transform $duration;
 
     &:not(.is-selected) {
-      transform: scale(0.7);
+      transform: scale3d(0.7, 0.7, 0.7);
     }
   }
 
@@ -20,13 +20,14 @@
 .common-plans-slider__item {
   width: 100%;
   box-sizing: border-box;
+  will-change: transform, opacity;
 
   @include mq-min(568px) {
     padding-left: 5px;
     padding-right: 5px;
     width: calc(100% / 3);
-    transform: scale(0.7);
-    opacity: 0.7;
+    // transform: scale3d(0.7, 0.7, 0.7);
+    opacity: 0.6;
     transition: transform $duration * 4, opacity $duration * 4;
 
     &.is-selected {
@@ -59,7 +60,8 @@
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
-  transition: opacity $duration * 4;
+  transition: opacity $duration * 3;
+  will-change: opacity;
 
   .common-plans-slider__item.is-selected & {
     opacity: 1;

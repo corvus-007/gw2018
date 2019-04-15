@@ -7,8 +7,20 @@
 }
 
 .section-involve-person__inner {
+  max-width: none;
+
   @include mq-min(1024px) {
     display: flex;
+  }
+
+  @include mq-min(1280px) {
+    margin-left: vh(50);
+    margin-right: vh(50);
+  }
+
+  @include mq-min(1440px) {
+    margin-left: vh(70);
+    margin-right: vh(70);
   }
 }
 

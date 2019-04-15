@@ -10,7 +10,7 @@
   transition: opacity $duration * 1.5, visibility $duration * 1.5, transform $duration;
   box-sizing: border-box;
 
-  &:hover{
+  &:hover {
     opacity: 1;
     visibility: visible;
   }
@@ -74,10 +74,6 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  // display: inline-block;
-  // align-self: flex-start;
-  // margin-left: -8px;
-  // margin-bottom: 15px;
   padding: 5px 8px;
   font-size: 14px;
   background-color: $secondary-color;
@@ -106,43 +102,43 @@
   }
 }
 
-// .genplan-tooltip__rooms-list {
-//   @include clear-list();
-// }
+.genplan-tooltip__rooms-list {
+  @include clear-list();
+}
 
-// .genplan-tooltip__room {
-//   border-bottom: 1px solid $secondary-color;
+.genplan-tooltip__room {
+  border-bottom: 1px solid $secondary-color;
 
-//   &:last-child {
-//     border-bottom: none;
-//   }
-// }
+  &:last-child {
+    border-bottom: none;
+  }
+}
 
-// .genplan-tooltip__room-wraplink {
-//   display: flex;
-//   justify-content: space-between;
-//   padding-top: 9px;
-//   padding-bottom: 9px;
-//   font-size: rem(15);
-//   text-decoration: none;
-//   white-space: nowrap;
-//   color: $base-color;
-//   transition: color $duration;
+.genplan-tooltip__room-wraplink {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: rem(15);
+  text-decoration: none;
+  white-space: nowrap;
+  color: $base-color;
+  transition: color $duration;
 
-//   &:hover {
-//     color: $accent-color;
-//   }
+  &:hover {
+    color: $accent-color;
+  }
 
-//   @include mq-min(1280px) {
-//     font-size: vh(15);
-//   }
-// }
+  @include mq-min(1280px) {
+    font-size: vh(15);
+  }
+}
 
-// .genplan-tooltip__room-label {
-//   font-weight: 700;
-// }
+.genplan-tooltip__room-label {
+  font-weight: 700;
+}
 
-// .genplan-tooltip__room-value {
-//   margin-left: 35px;
-//   color: $base-color;
-// }
+.genplan-tooltip__room-value {
+  margin-left: 35px;
+  color: $base-color;
+}

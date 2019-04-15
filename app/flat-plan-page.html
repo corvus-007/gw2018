@@ -8,7 +8,7 @@
   <title>Квартира / Гринвуд</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-flat-plan">
   @@include('blocks/main-header.html')
 
   <main class="main">
@@ -54,7 +54,7 @@
                     <b class="common-features-flat__value">128,7</b>
                   </li>
                 </ul>
-                <form class="flat-detail__form request-price-form" action="" method="POST">
+                <!-- <form class="flat-detail__form request-price-form no-print" action="" method="POST">
                   <p class="request-price-form__title">Узнать стоимость квартиры</p>
                   <label class="request-price-form__field field">
                     <span class="field__label visually-hidden">Имя</span>
@@ -65,14 +65,15 @@
                   <label class="request-price-form__field field">
                     <span class="field__label visually-hidden">Телефон</span>
                     <div class="field__control">
-                      <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__">
+                      <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__" required>
                     </div>
                   </label>
                   <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
                   <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
-                </form>
-                <div class="flat-detail__actions">
-                  <a class="flat-detail__to-print button" href="">Распечать планировку</a>
+                </form> -->
+                <div class="flat-detail__actions no-print">
+                  <button class="flat-detail__to-print button" type="button">Распечать планировку</button>
+                  <button class="flat-detail__to-mortgaga button" type="button" data-fancybox data-src="#popup-request-mortgage">Эта квартира в ипотеку</button>
                 </div>
                 <div class="flat-detail__disclamer">
                   <p><small>Указанный размер площади может незначительно отличаться.</small></p>
@@ -81,9 +82,9 @@
             </section>
           </div>
 
-          <div class="common-tabs__pane" id="tab-2">
+          <div class="common-tabs__pane page-break-before" id="tab-2">
             <section class="flat-territory-section">
-              <h2 class="visually-hidden">Посмотреть на плане</h2>
+              <h2 class="visually-hidden ">Посмотреть на плане</h2>
               <div class="flat-territory">
                 <div class="flat-territory__picture">
                   <img src="images/plans/schema-house.svg" alt="">
@@ -94,7 +95,7 @@
         </div>
       </div>
 
-      <section class="section-similar-plans common-section">
+      <section class="section-similar-plans common-section no-print">
         <div class="section-similar-plans__inner container">
           <h2 class="section-similar-plans__title common-title">Похожие варианты квартир</h2>
           <p class="section-similar-plans__intro">Клубный квартир «Гринвуд» – это возможность выбора! Поэтому мы подобрали несколько квартир, похожих на выбранную вами.</p>
@@ -212,6 +213,7 @@
 
   @@include('blocks/main-footer.html')
   @@include('blocks/out-cover.html')
+  @@include('blocks/popup-request-mortgage.html')
   @@include('blocks/site-scripts.html')
 </body>
 </html>

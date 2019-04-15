@@ -1,8 +1,11 @@
 .flats-result-dashboard {
   display: flex;
-
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flats-result-dashboard__view {
-  margin-left: auto;
+}
+
+.flats-result-dashboard__sort {
 }

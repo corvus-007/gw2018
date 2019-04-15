@@ -35,6 +35,8 @@
 }
 
 .contacts-info__value {
+  @include clear-list();
+
   display: table-cell;
   margin: 0;
   padding-top: 15px;
@@ -58,7 +60,6 @@
 }
 
 .contacts-info__socials-item {
-
 }
 
 .contacts-info__socials-icon {

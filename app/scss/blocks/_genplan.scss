@@ -2,10 +2,15 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  // padding-top: $height-header-mobile;
-  // padding-top: 0;
+  padding-top: $height-header-mobile;
   overflow: hidden;
   box-sizing: border-box;
+
+  .homepage & {
+    height: calc(100vh - #{$height-header-mobile});
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   image {
     pointer-events: none;
@@ -55,8 +60,11 @@
   }
 
   @include mq-min(1024px) {
+    padding-top: $height-header-desktop;
 
-    // padding-top: $height-header-desktop;
+    .homepage & {
+      height: calc(100vh - #{$height-header-desktop--sticky});
+    }
   }
 }
 
@@ -73,6 +81,10 @@
   overflow: auto;
   overflow-y: hidden;
   overflow-scrolling: touch;
+
+  @include mq-min(1200px) {
+    overflow-x: hidden;
+  }
 }
 
 .genplan__compass-wrapper {

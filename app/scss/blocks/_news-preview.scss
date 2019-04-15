@@ -1,5 +1,4 @@
 .news-preview {
-
 }
 
 .news-preview__list {
@@ -13,15 +12,19 @@
   width: 100%;
   margin-bottom: 10px;
 
-  @include mq-range(568px, 889px) {
+  @include mq-min(568px) {
     @include calc-column-width(2, 10px);
   }
 
-  @include mq-range(890px, 1279px) {
-    @include calc-column-width(3, 10px);
-  }
+  // @include mq-range(568px, 889px) {
+  //   @include calc-column-width(2, 10px);
+  // }
 
-  @include mq-min(1280px) {
-    @include calc-column-width(4, 10px);
-  }
+  // @include mq-range(890px, 1279px) {
+  //   @include calc-column-width(2, 10px);
+  // }
+
+  // @include mq-min(1280px) {
+  //   @include calc-column-width(2, 10px);
+  // }
 }

@@ -1,5 +1,4 @@
 .main-nav {
-
 }
 
 .main-nav__list {
@@ -78,4 +77,10 @@
   //     background-color: none;
   //   }
   // }
+
+  @include mq-min(1280px) {
+    a {
+      font-size: 15px;
+    }
+  }
 }

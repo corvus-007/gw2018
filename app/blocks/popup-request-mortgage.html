@@ -1,0 +1,27 @@
+<div id="popup-request-mortgage" class="popup popup-callback" hidden>
+  <div class="popup__title">Квартира в ипотеку</div>
+  <form class="form popup-form" action="" method="post">
+    <label class="field">
+      <span class="field__label">Имя</span>
+      <div class="field__control">
+        <input class="field__input input" type="text" name="request_mortgage_name" placeholder="Ваше имя">
+      </div>
+    </label>
+    <label class="field">
+      <span class="field__label">Телефон</span>
+      <div class="field__control">
+        <input class="field__input input" type="tel" name="request_mortgage_phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+    </label>
+    <label class="field">
+      <span class="field__label">Текст сообщения</span>
+      <div class="field__control">
+        <textarea class="field__input input" name="request_mortgage_message" rows="4" placeholder="Текст сообщения" required></textarea>
+      </div>
+    </label>
+
+    <div class="popup-form__submit-wrapper form-submit-wrapper">
+      <button class="button form-submit" type="sumbit">Отправить</button>
+    </div>
+  </form>
+</div>

@@ -48,3 +48,12 @@ $context-default: $font-size;
   // высота шрифта в макете / высота макета * 100 + vh
   @return ($target / $viewportHeight) * 100vh;
 }
+// https://github.com/sass/sass/issues/2378#issuecomment-433868712
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers})
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers})
+}

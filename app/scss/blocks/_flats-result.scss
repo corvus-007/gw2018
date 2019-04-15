@@ -43,6 +43,7 @@
   @include mq-min(768px) {
     position: absolute;
     bottom: 100%;
+    left: 0;
     right: 0;
   }
 }

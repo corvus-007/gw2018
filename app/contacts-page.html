@@ -26,19 +26,24 @@
             <p>Также будем рады ответить на ваши вопросы по телефону.</p>
           </div>
           <div class="contacts__info contacts-info">
-            <p class="contacts-info__item">
+            <div class="contacts-info__item">
               <span class="contacts-info__label">Телефон</span>
               <span class="contacts-info__value"><a class="contacts-info__phone" href="tel: +7 (4832) 606-505">+7 (4832) 606-505</a></span>
-            </p>
-            <p class="contacts-info__item">
+            </div>
+            <div class="contacts-info__item">
               <span class="contacts-info__label">Адрес</span>
-              <span class="contacts-info__value">г. Брянск, <br> ул. Степная, д. 12</span>
-            </p>
-            <p class="contacts-info__item">
+              <span class="contacts-info__value">г. Брянск, <br> ул. Степная, д. 12, офис 11</span>
+            </div>
+            <div class="contacts-info__item">
               <span class="contacts-info__label">Время</span>
-              <span class="contacts-info__value">Пн–Пт, с 10:00 до 19:00</span>
-            </p>
-            <p class="contacts-info__item">
+              <ul class="contacts-info__value">
+                <li>Пн–Чт, с 09:00 до 19:00</li>
+                <li>Пт, с 09:00 до 18:00</li>
+                <li>Сб, с 10:00 до 14:00</li>
+              </ul>
+              <!-- <span class="contacts-info__value">Пн–Пт, с 10:00 до 19:00</span> -->
+            </div>
+            <div class="contacts-info__item">
               <span class="contacts-info__label">Соц. сети</span>
               <span class="contacts-info__value">
                 <span class="contacts-info__socials socials">
@@ -59,7 +64,7 @@
                   </a>
                 </span>
               </span>
-            </p>
+            </div>
           </div>
         </div>
         <div class="contacts__map-frame">
@@ -96,7 +101,7 @@
   </main>
 
   @@include('blocks/main-footer.html')
-  @@include('blocks/info-popup.html')
+  <!-- @@include('blocks/info-popup.html') -->
   @@include('blocks/out-cover.html')
   @@include('blocks/site-scripts.html')
 </body>
