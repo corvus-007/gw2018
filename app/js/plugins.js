@@ -13,3 +13,4 @@
 //=require ../../node_modules/nouislider/distribute/nouislider.min.js
 //=require ../../node_modules/js-cookie/src/js.cookie.js
 //=require ../../node_modules/accordionjs/accordion.min.js
+//=require ../../node_modules/handlebars/dist/handlebars.min.js
