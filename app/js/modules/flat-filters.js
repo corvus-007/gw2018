@@ -32,7 +32,7 @@ window.flatFilters = (function () {
     var params = new URLSearchParams(location.search);
     var paramType = params.get('type') || 'all';
     var paramFloor = params.get('floor') || 'all';
-    var paramAmountList = params.getAll('amount[]');
+    var paramRoomsList = params.getAll('rooms[]');
 
     sliderRangeItems.forEach(prepareSliderRange);
 
@@ -80,10 +80,10 @@ window.flatFilters = (function () {
     flatFiltersForm.elements.type.value = paramType;
     flatFiltersForm.elements.floor.value = paramFloor;
 
-    for (var checkboxItem of flatFiltersForm.elements['amount[]']) {
+    for (var checkboxItem of flatFiltersForm.elements['rooms[]']) {
       var val = checkboxItem.value;
 
-      if (!paramAmountList.includes(val)) {
+      if (!paramRoomsList.includes(val)) {
         continue;
       }
       checkboxItem.checked = true;
