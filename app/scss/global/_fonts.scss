@@ -2,49 +2,86 @@
 
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat Thin"), local("Akrobat-Thin"), url("fonts/akrobat/Akrobatthin.woff2") format("woff2"), url("fonts/akrobat/Akrobatthin.woff") format("woff");
+  src: local("Akrobat Thin"), local("Akrobat-Thin"), url("fonts/akrobat/Akrobatthin.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatthin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat ExtraLight"), local("Akrobat-ExtraLight"), url("fonts/akrobat/Akrobatextralight.woff2") format("woff2"), url("fonts/akrobat/Akrobatextralight.woff") format("woff");
+  src: local("Akrobat ExtraLight"), local("Akrobat-ExtraLight"),
+    url("fonts/akrobat/Akrobatextralight.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatextralight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat Light"), local("Akrobat-Light"), url("fonts/akrobat/Akrobatlight.woff2") format("woff2"), url("fonts/akrobat/Akrobatlight.woff") format("woff");
+  src: local("Akrobat Light"), local("Akrobat-Light"), url("fonts/akrobat/Akrobatlight.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatlight.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat"), local("Akrobat-Regular"), url("fonts/akrobat/Akrobat.woff2") format("woff2"), url("fonts/akrobat/Akrobat.woff") format("woff");
+  src: local("Akrobat"), local("Akrobat-Regular"), url("fonts/akrobat/Akrobat.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobat.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat SemiBold"), local("Akrobat-SemiBold"), url("fonts/akrobat/Akrobatsemibold.woff2") format("woff2"), url("fonts/akrobat/Akrobatsemibold.woff") format("woff");
+  src: local("Akrobat SemiBold"), local("Akrobat-SemiBold"), url("fonts/akrobat/Akrobatsemibold.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatsemibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat Bold"), local("Akrobat-Bold"), url("fonts/akrobat/Akrobatbold.woff2") format("woff2"), url("fonts/akrobat/Akrobatbold.woff") format("woff");
+  src: local("Akrobat Bold"), local("Akrobat-Bold"), url("fonts/akrobat/Akrobatbold.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatbold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat ExtraBold"), local("Akrobat-ExtraBold"), url("fonts/akrobat/Akrobatextrabold.woff2") format("woff2"), url("fonts/akrobat/Akrobatextrabold.woff") format("woff");
+  src: local("Akrobat ExtraBold"), local("Akrobat-ExtraBold"),
+    url("fonts/akrobat/Akrobatextrabold.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatextrabold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Akrobat";
-  src: local("Akrobat Black"), local("Akrobat-Black"), url("fonts/akrobat/Akrobatblack.woff2") format("woff2"), url("fonts/akrobat/Akrobatblack.woff") format("woff");
+  src: local("Akrobat Black"), local("Akrobat-Black"), url("fonts/akrobat/Akrobatblack.woff2") format("woff2"),
+    url("fonts/akrobat/Akrobatblack.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+// Noah
+
+@font-face {
+  font-family: "Noah";
+  src: local("Noah Regular Italic"), local("Noah-RegularItalic"), url("fonts/noah/Noahregularitalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Noah";
+  src: local("Noah Regular"), local("Noah-Regular"), url("fonts/noah/Noahregular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noah";
+  src: local("Noah Bold Italic"), local("Noah-BoldItalic"), url("fonts/noah/Noahbolditalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Noah";
+  src: local("Noah Bold"), local("Noah-Bold"), url("fonts/noah/Noahbold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
