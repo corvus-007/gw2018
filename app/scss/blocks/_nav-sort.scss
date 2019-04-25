@@ -1,13 +1,22 @@
 .nav-sort {
-
 }
 
 .nav-sort__form {
-
 }
 
 .nav-sort__select {
-  border: none;
-  background-color: transparent;
-  outline: none;
+
+  &::before {
+    right: 4px;
+  }
+
+  select {
+    appearance: none;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+  }
 }

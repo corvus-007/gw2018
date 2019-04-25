@@ -1,11 +1,13 @@
 .section-similar-plans {
   margin-bottom: -60px;
   margin-top: 45px;
-  background-color: $gray-245;
+
+  &--white-fill {
+    background-color: #ffffff;
+  }
 }
 
 .section-similar-plans__inner {
-
 }
 
 .section-similar-plans__title {
@@ -30,5 +32,4 @@
 }
 
 .section-similar-plans__slider {
-
 }

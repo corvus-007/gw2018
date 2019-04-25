@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: center;
   min-width: 220px;
-  padding: 12px 25px;
+  padding: 12px 20px;
+  appearance: none;
   font-weight: 700;
-  font-size: rem(15);
+  font-size: rem(14);
   line-height: rem(25);
   font-family: $primary-font;
   text-align: center;
@@ -17,8 +18,6 @@
   box-shadow: 0 0 33px rgba(48, 100, 60, 0.5);
   box-sizing: border-box;
   border-radius: $border-radius;
-  -webkit-appearance: none;
-  -webkit-border-radius: $border-radius;
   outline: none;
   user-select: none;
   transition-property: background, color, border-color;
@@ -33,17 +32,24 @@
 
   &:active {
     color: #ffffff;
-    background-color: darken($accent-color-2, 6%);
+    background-color: $accent-color;
   }
 
   &--fluid {
     width: 100%;
   }
 
-  @include mq-minh($vh-height-bp) {
-    min-width: vh(220);
-    padding: vh(12) vh(25);
-    font-size: vh(15);
+  &--outline {
+    color: $base-color;
+    border-color: currentColor;
+    background-color: transparent;
+    box-shadow: none;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: lighten($accent-color-2, 6%);
+  }
   }
 }
 

@@ -3,7 +3,6 @@
   font-weight: 700;
   font-size: rem(30);
   line-height: 1.15;
-  text-transform: uppercase;
   color: $brown-color;
 
   @include mq-minh($vh-height-bp) {

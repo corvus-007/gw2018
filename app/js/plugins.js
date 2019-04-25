@@ -14,3 +14,4 @@
 //=require ../../node_modules/js-cookie/src/js.cookie.js
 //=require ../../node_modules/accordionjs/accordion.min.js
 //=require ../../node_modules/handlebars/dist/handlebars.min.js
+//=require ../../node_modules/beerslider/dist/BeerSlider.js

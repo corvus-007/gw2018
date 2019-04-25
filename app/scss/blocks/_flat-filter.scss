@@ -1,12 +1,11 @@
 .flat-filter {
-
 }
 
 .flat-filter__label {
   margin-bottom: 5px;
   font-weight: 700;
-  font-size: rem(13);
-  text-transform: uppercase;
+  font-size: rem(14);
+  // text-transform: uppercase;
   color: #003d58;
 }
 
@@ -15,6 +14,14 @@
   flex-grow: 1;
 }
 
+.flat-filter__select {
+  @include mq-minh($vh-height-bp) {
+    select {
+      padding: 10px 15px;
+      font-size: 17px;
+    }
+  }
+}
 
 .flat-filter__controls {
   display: flex;

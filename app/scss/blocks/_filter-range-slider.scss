@@ -19,10 +19,15 @@
     border-radius: 50%;
     box-shadow: none;
     outline: none;
+    cursor: grab;
 
     &::before,
     &::after {
       content: none;
+    }
+
+    &.noUi-active {
+      cursor: grabbing;
     }
   }
 }

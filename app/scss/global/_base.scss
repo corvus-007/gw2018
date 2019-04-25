@@ -27,6 +27,10 @@ body {
 .container {
   @media not print {
     @include make-container();
+
+    &--fluid {
+      max-width: none;
+    }
   }
 }
 

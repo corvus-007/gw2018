@@ -12,12 +12,14 @@
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
 @import "../../node_modules/flickity/dist/flickity";
 @import "../../node_modules/nouislider/distribute/nouislider";
+@import "../../node_modules/beerslider/dist/BeerSlider";
 
 // Blocks
 // @import "blocks/flickity-override";
 @import "blocks/button";
 @import "blocks/input";
 @import "blocks/select";
+@import "blocks/checkboxes-select";
 @import "blocks/field";
 @import "blocks/filter-checkbox";
 @import "blocks/form";
@@ -29,6 +31,7 @@
 @import "blocks/text-agree";
 @import "blocks/table";
 @import "blocks/file";
+@import "blocks/back-link";
 @import "blocks/popup";
 @import "blocks/popup-form";
 @import "blocks/promo-popup";
@@ -73,6 +76,7 @@
 @import "blocks/genplan";
 @import "blocks/genplan-tooltip";
 @import "blocks/section-functional-plans";
+@import "blocks/page-action-panel";
 @import "blocks/common-plans-slider";
 @import "blocks/common-page";
 @import "blocks/filter-range-slider";
@@ -85,11 +89,15 @@
 @import "blocks/view-mode-buttons";
 @import "blocks/nav-sort";
 @import "blocks/picking";
+@import "blocks/flat-page-navigation";
+@import "blocks/flat-page-nav-content";
 @import "blocks/flat-page";
 @import "blocks/flat";
+@import "blocks/flat-info";
+@import "blocks/flat-plans-slider";
 @import "blocks/flat-plan";
 @import "blocks/flat-territory";
-@import "blocks/flat-plan-section";
+// @import "blocks/flat-plan-section";
 @import "blocks/plans-flat-slider";
 @import "blocks/plans-flat";
 @import "blocks/request-price-form";

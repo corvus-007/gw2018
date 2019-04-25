@@ -5,3 +5,16 @@
 .flat-page__header {
   margin-bottom: 40px;
 }
+
+.flat-page__nav-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.flat-page__nav {
+  display: flex;
+  margin-left: auto;
+  height: 100%;
+}

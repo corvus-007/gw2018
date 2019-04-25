@@ -1,16 +1,28 @@
 .flat-detail {
   padding: 25px 27px;
-  border: 1px solid $secondary-color;
-  border-radius: $border-radius;
+  // background-color: #ffffff;
   box-sizing: border-box;
 }
 
-.flat-detail__features {
-  margin-bottom: 25px;
+.flat-detail__info {
+  margin-top: -25px;
+  margin-left: -27px;
+  margin-right: -27px;
+  margin-bottom: 15px;
+  padding: 25px 27px;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius * 2;
 }
 
 .flat-detail__form {
   margin-bottom: 25px;
+}
+
+.flat-detail__disclamer {
+  margin-bottom: 10px;
+  line-height: 1.15;
+  text-align: center;
+  color: $muted-color;
 }
 
 .flat-detail__actions {
@@ -19,20 +31,15 @@
 
 .flat-detail__to-print {
   min-width: auto;
-  margin-bottom: 20px;
-  padding: 4px 17px;
-  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 6px 15px;
+  font-weight: 400;
   font-size: 17px;
-  line-height: 1.2;
   text-transform: none;
-  color: $brown-color;
-  border-radius: 100px;
-  background-color: $secondary-color;
-  box-shadow: none;
+  border-radius: $border-radius * 2;
 }
 
-.flat-detail__disclamer {
-  line-height: 1.15;
-  text-align: center;
-  color: $muted-color;
+.flat-detail__to-mortgage {
+  min-width: auto;
 }

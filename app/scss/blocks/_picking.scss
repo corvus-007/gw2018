@@ -1,31 +1,28 @@
 .picking {
 
-  // @include mq-min(768px) {
-  //   display: flex;
-  // }
 }
 
-.picking__filter {
-  // width: 100%;
-  // margin-bottom: 30px;
+.picking__row {
+  display: flex;
+  margin-bottom: 10px;
 
-  // @include mq-min(768px) {
-  //   width: 275px;
-  //   margin-right: 30px;
-  //   margin-bottom: 0;
-  //   flex-shrink: 0;
-  // }
-
-  // @include mq-min(992px) {
-  //   // margin-right: 60px;
-  // }
-
-  // @include mq-min(1280px) {
-  //   width: vh(275);
-  // }
+  &--dashboard {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+  }
 }
 
-.picking__result {
-  // width: 100%;
-  // flex-grow: 1;
+.picking__dashboard {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.picking__dashboard-left-col {
+  margin-right: 30px;
+}
+
+.picking__dashboard-right-col {
+
 }

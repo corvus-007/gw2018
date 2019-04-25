@@ -11,13 +11,34 @@ window.flat = (function (window, $) {
 
   function init() {
     var flat = document.querySelector('.flat');
+    var flatPlanSlider = document.querySelector('.js-flat-plans-slider');
     // var flatPlans = flat.querySelectorAll('.flat__plan');
     var flatPlan = flat.querySelector('.flat-plan');
     var flatDetail = flat.querySelector('.flat-detail');
     var frame = flat.querySelector('.flat-plan__frame');
-    var planZoomToImage = flatPlan.querySelector('.flat-plan__zoom-to-image');
-    var planAdjuster = flatPlan.querySelector('.flat-plan__adjuster');
-    var planImage = flatPlan.querySelector('.flat-plan__image');
+    // var planZoomToImage = flatPlan.querySelector('.flat-plan__zoom-to-image');
+    // var planAdjuster = flatPlan.querySelector('.flat-plan__adjuster');
+    // var planImage = flatPlan.querySelector('.flat-plan__image');
+
+    // var $(flatPlanSlider);
+    // var flkty = $flatPlanSliderInstance.data('flickity');
+
+    // console.log(flkty);
+
+    $(flatPlanSlider).flickity({
+      // draggable: false
+      adaptiveHeight: true,
+      imagesLoaded: true,
+      pageDots: false
+    });
+
+    var flatPlanSliderData = $(flatPlanSlider).data('flickity');
+
+    if (flatPlanSliderData.cells.length <= 1) {
+      flatPlanSlider.classList.add('flat-plans-slider--one-slide')
+    }
+
+
 
     function processingPlan(plan) {
       planAdjuster = plan.querySelector('.flat-plan__adjuster');
@@ -48,19 +69,19 @@ window.flat = (function (window, $) {
 
     if (window.matchMedia("(pointer: coarse)").matches) {
       processingPlan(flatPlan);
-      planZoomToImage.addEventListener('click', function(evt){
-        evt.preventDefault();
-      });
+      // planZoomToImage.addEventListener('click', function (evt) {
+      //   evt.preventDefault();
+      // });
     } else {
       // $(frame).zoom();
-      $(planZoomToImage).fancybox({
-        slideClass: 'flat-plan-popup',
-        animationEffect: 'zoom-in-out'
-      });
+      // $(planZoomToImage).fancybox({
+      //   slideClass: 'flat-plan-popup',
+      //   animationEffect: 'zoom-in-out'
+      // });
     }
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-      flatPlan.style.height = getDetailHeight() + 'px';
+      // flatPlan.style.height = getDetailHeight() + 'px';
     }
 
     // if (window.matchMedia("(min-width: 768px) and not (pointer: coarse)").matches) {

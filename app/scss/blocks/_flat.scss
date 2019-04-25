@@ -2,3 +2,37 @@
 
 }
 
+.flat__grid {
+
+  @include mq-min(768px) {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.flat__main-column {
+  flex-grow: 1;
+  margin-bottom: 30px;
+  // outline: 1px solid green;
+
+  @include mq-min(768px) {
+    margin-bottom: 0;
+  }
+}
+
+.flat__aside-column {
+  flex-shrink: 0;
+  // outline: 1px solid tomato;
+
+  @include mq-min(768px) {
+    position: sticky;
+    top: $height-header-desktop--sticky + 15px;
+    width: 275px;
+    margin-left: 30px;
+  }
+
+  @include mq-min(1280px) {
+    width: vh(270);
+  }
+}

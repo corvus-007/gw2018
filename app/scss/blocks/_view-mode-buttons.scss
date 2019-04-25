@@ -1,7 +1,5 @@
 .view-mode-buttons {
   display: flex;
-  background-color: $gray-245;
-  border: 1px solid $secondary-color-2;
   border-radius: $border-radius;
   overflow: hidden;
 
@@ -12,24 +10,18 @@
   label {
     padding: 5px;
     text-align: center;
-    background-color: #fafafa;
+    color: $gray-189;
     user-select: none;
     transition: $duration;
-
-    &:not(:last-child) {
-      border-right: 1px solid $secondary-color-2;
-    }
   }
 
   input:hover + label,
   input:focus + label {
-    background-color: $secondary-color;
+    color: $gray-169;
   }
 
   input:checked + label {
-    color: #ffffff;
-    // background-color: $accent-color;
-    background-color: #003d58;
+    color: #003d58;
   }
 }
 

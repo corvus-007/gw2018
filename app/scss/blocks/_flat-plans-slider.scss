@@ -1,0 +1,34 @@
+.flat-plans-slider {
+  .flickity-viewport {
+    transition: $duration;
+  }
+
+  &--one-slide {
+    .flickity-button:disabled {
+      display: none;
+    }
+  }
+}
+
+.flat-plans-slider__item {
+  display: flex;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.flat-plans-slide__wraplink {
+  height: 100%;
+  display: block;
+}
+
+.flat-plans-slide__picture {
+  height: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

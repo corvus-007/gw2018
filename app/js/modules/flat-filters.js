@@ -30,8 +30,10 @@ window.flatFilters = (function () {
 
   function init() {
     var params = new URLSearchParams(location.search);
-    var paramType = params.get('type') || 'all';
-    var paramFloor = params.get('floor') || 'all';
+    // var paramType = params.get('type') || 'all';
+    // var paramFloor = params.get('floor') || 'all';
+    var paramTypesList = params.getAll('types[]');
+    var paramFloorsList = params.getAll('floors[]');
     var paramRoomsList = params.getAll('rooms[]');
 
     sliderRangeItems.forEach(prepareSliderRange);
@@ -77,8 +79,26 @@ window.flatFilters = (function () {
       }
     }
 
-    flatFiltersForm.elements.type.value = paramType;
-    flatFiltersForm.elements.floor.value = paramFloor;
+    // flatFiltersForm.elements.type.value = paramType;
+    // flatFiltersForm.elements.floor.value = paramFloor;
+
+    for (var checkboxItem of flatFiltersForm.elements['types[]']) {
+      var val = checkboxItem.value;
+
+      if (!paramTypesList.includes(val)) {
+        continue;
+      }
+      checkboxItem.checked = true;
+    }
+
+    for (var checkboxItem of flatFiltersForm.elements['floors[]']) {
+      var val = checkboxItem.value;
+
+      if (!paramFloorsList.includes(val)) {
+        continue;
+      }
+      checkboxItem.checked = true;
+    }
 
     for (var checkboxItem of flatFiltersForm.elements['rooms[]']) {
       var val = checkboxItem.value;

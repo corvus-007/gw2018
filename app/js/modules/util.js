@@ -3,7 +3,35 @@ window.util = (function () {
 
   return {
     KEYCODE_ESC: 27,
+    URL_TOOLTIP_HOUSE_HANDLER: 'js/tooltip-house-mock.json',
     URL_FILTER_HANDLER: 'js/flats-mock.json',
+    compareTypes: {
+      rooms: function (a, b) {
+        var roomsA = parseInt(a.room, 10);
+        var roomsB = parseInt(b.room, 10);
+
+        return (roomsA - roomsB);
+      },
+      floor: function (a, b) {
+        var floorA = parseInt(a.floor, 10);
+        var floorB = parseInt(b.floor, 10);
+
+        return (floorA - floorB);
+      },
+      area: function (a, b) {
+        var areaA = parseFloat(a.area);
+        var areaB = parseFloat(b.area);
+
+        return (areaA - areaB);
+      },
+      price: function (a, b) {
+        var priceA = parseFloat(a.price);
+        var priceB = parseFloat(b.price);
+
+        return priceA - priceB;
+      }
+    },
+    filteredFlats: null,
     isDevMode: function () {
       return location.hostname === 'localhost';
     },
@@ -45,31 +73,15 @@ window.util = (function () {
 
       return formatter.format(num);
     },
-    compareTypes: {
-      rooms: function (a, b) {
-        var roomsA = parseInt(a.room, 10);
-        var roomsB = parseInt(b.room, 10);
+    sendRequest: function (data, url) {
+      data = data || '';
 
-        return (roomsA - roomsB);
-      },
-      floor: function (a, b) {
-        var floorA = parseInt(a.floor, 10);
-        var floorB = parseInt(b.floor, 10);
-
-        return (floorA - floorB);
-      },
-      area: function (a, b) {
-        var areaA = parseFloat(a.area);
-        var areaB = parseFloat(b.area);
-
-        return (areaA - areaB);
-      },
-      price: function (a, b) {
-        var priceA = parseFloat(a.price);
-        var priceB = parseFloat(b.price);
-
-        return priceA - priceB;
-      }
-    }
+      return $.ajax({
+        type: "GET",
+        url: url,
+        data: data,
+        dataType: "JSON"
+      });
+    },
   };
 })();

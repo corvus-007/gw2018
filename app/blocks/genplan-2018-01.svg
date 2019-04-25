@@ -16,7 +16,7 @@
       <polygon id="house-3-1" points="428.2 155.8 427.3 147.2 421.6 145.3 420.3 134.4 422.6 133.1 420.8 115.6 428.8 109.7 427.8 101.3 436.5 95.8 436.5 93.4 447.3 86.6 450.4 87.7 458.7 83 494.5 94 495 102.3 505.1 105.4 507.3 107.1 509.8 133 512.5 134 513 143.3 507.1 147.1 503.5 146.5 472.7 167.7 458.5 162.5 450 162.5 428.2 155.8" fill="#008dd0"/></a>
     <g id="pin-3-1">
       <path d="M477.2,72.7a12,12,0,0,0-24-.2h0v.4c.2,7.8,9,16,12,18.9,8.5-6.9,11-13.3,11.7-16.7a.4.4,0,0,0,.1-.3,3.8,3.8,0,0,0,.1-1h0A11.6,11.6,0,0,0,477.2,72.7Z" fill="#fff"/>
-      <text transform="translate(459 77.6)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.09em">.</tspan><tspan x="7.9" y="0">1</tspan></text>
+      <text transform="translate(459 77.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.09em">.</tspan><tspan x="7.9" y="0">1</tspan></text>
     </g>
   </g>
   <g id="layer-group-3-2" class="finished">
@@ -25,7 +25,7 @@
       <polygon id="house-3-2" points="624.1 170.1 584.3 157.5 583.8 151.2 581.3 150.3 581.4 142.7 578.6 141.6 577.9 130.8 581 128.7 580.7 121.2 591.5 113 591.5 105.7 616.7 88.1 627.8 91.4 630.1 89.3 644.8 93.4 644.8 96.1 656.8 99.4 656.8 108.5 662.9 110.4 662.9 111.3 665.4 112.5 665.4 119.9 668.2 121.3 667.8 131.2 664.5 134.1 664.5 141.3 662.6 143 662.6 148.4 632.6 174.8 624.1 172.3 624.1 170.1" fill="#2d5980"/></a>
     <g id="pin-3-2">
       <path d="M636.5,79.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V82a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,636.5,79.7Z" fill="#fff"/>
-      <text transform="translate(616.8 84.6)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">3.2</text>
+      <text transform="translate(616.8 84.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3.2</text>
     </g>
   </g>
   <g id="layer-group-3-3">
@@ -33,7 +33,7 @@
     <path id="house-3-3" d="M742.9,161.8l-8.6-2.2v-9.3l2.8-2.7,1.7-25.1L750,112.2l.3-5.3L771.6,89l12.2,3.1,2-2.1,15.6,4.3v2.6l12.7,3.7v9.2l5.5,1.5v1.1l2.1.9-1.8,17.2,2.5.7v1.7l-.9.7v8l-6,5.9-.2,7.4-25.4,23.7-5.6-2s2.4-6.4-1.6-4.1l-.4-3.7.3-2.7-1.7-2.5a1.5,1.5,0,0,1-2.1-.2s-.5-3.5-1.8-2.3-4.8-5.1-6.1-.2l-2.4-.3-1,1.5-.3,4.2-22-5.8Z" fill="#6950a1"/>
     <g id="pin-3-3">
       <path d="M795.5,78.2a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,795.5,78.2Z" fill="#fff"/>
-      <text transform="translate(775.8 83.1)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">3.3</text>
+      <text transform="translate(775.8 83.1)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3.3</text>
     </g>
   </g>
   <g id="layer-group-3-4">
@@ -41,7 +41,7 @@
     <polygon id="house-3-4" points="727.2 235.2 714.3 231 714.6 221.4 717.8 218 719.3 191.6 733.2 179.1 733.2 177.3 758.3 155 804 168.1 803.3 176.8 811.4 180.8 809.6 199.2 811.8 199.5 811.1 211.3 805.1 217 804.5 224.5 801.6 227.1 805.1 228 805.1 230.5 792.6 244 785.9 242.8 780.8 248.9 780.8 245.8 776.1 249 729.4 233.4 727.2 235.2" fill="#8552a1"/>
     <g id="pin-3-4">
       <path d="M777.7,144.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V147a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,777.7,144.7Z" fill="#fff"/>
-      <text transform="translate(758.4 149.6)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.2" y="0">4</tspan></text>
+      <text transform="translate(758.4 149.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.2" y="0">4</tspan></text>
     </g>
   </g>
   <g id="layer-group-4-1">
@@ -49,7 +49,7 @@
     <polygon id="house-4-1" points="647.3 293.8 647.3 284.1 650.7 281.3 651 232.6 666 219.5 666 217.2 695.5 191.5 744.3 206.9 743.8 216.6 752.9 220.1 750.3 259.5 753.8 261.1 753.1 262.8 752.7 271.8 746.1 278.8 746.1 284.9 741.7 289.9 744.3 290.7 744.3 293 733.9 304.1 725.1 302.4 713.2 315.5 663.3 296.9 661.1 299.1 647.3 293.8" fill="#de3d96"/>
     <g id="pin-4-1">
       <path d="M710.3,186.9a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,710.3,186.9Z" fill="#fff"/>
-      <text transform="translate(692.1 191.8)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.09em">.</tspan><tspan x="8" y="0">1</tspan></text>
+      <text transform="translate(692.1 191.8)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.09em">.</tspan><tspan x="8" y="0">1</tspan></text>
     </g>
   </g>
   <g id="layer-group-4-2">
@@ -57,7 +57,7 @@
     <polygon id="house-4-2" points="681.9 324.8 678.4 323.2 678.8 292.7 675.8 291.8 675.8 290.9 668.8 288.8 668.8 279.5 616.9 260.6 581.1 292.4 581.1 294.6 566.1 307.9 566.1 316.4 562.8 319.8 563.3 332.9 567.5 334.4 569 362.8 572.1 364.8 572.1 370.9 634.6 397 650.8 382 657.9 385.2 671.1 371.3 671.1 368.9 666.7 367.3 674.6 360.1 674.6 350.9 678.1 347.4 678.2 340.6 681.6 337.4 681.9 324.8" fill="#00b085"/>
     <g id="pin-4-2">
       <path d="M626.4,261.4a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,626.4,261.4Z" fill="#fff"/>
-      <text transform="translate(606.6 266.3)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">4.2</text>
+      <text transform="translate(606.6 266.3)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4.2</text>
     </g>
   </g>
   <g id="layer-group-4-4" class="finished">
@@ -66,7 +66,7 @@
       <polygon id="house-4-4" points="391 168 399 162 398 150 408 144 409 142 421 135 424 136 433 131 474 144 475 152 485 155 485 156 489 158 493 204 497 206 497 216 490 221 485 221 477 227 477 229 452 248 403 231 402 222 396 220 394 208 397 206 391 168" fill="#f7941d"/></a>
     <g id="pin-4-4">
       <path d="M454.2,134.8a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,454.2,134.8Z" fill="#fff"/>
-      <text transform="translate(434.8 139.7)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.3" y="0">4</tspan></text>
+      <text transform="translate(434.8 139.7)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.3" y="0">4</tspan></text>
     </g>
   </g>
   <g id="layer-group-4-3" class="finished">
@@ -75,7 +75,7 @@
       <polygon id="house-4-3" points="426 348 380 328 380 324 376 323 376 319 371 314 369 315 368 314 367 312 366 313 364 313 362 300 365 298 357 258 367 250 366 240 377 232 377 229 391 219 395 220 406 213 451 230 452 238 468 244 473 294 478 297 478 303 470 310 465 311 455 320 456 321 426 348" fill="#f04e45"/></a>
     <g id="pin-4-3">
       <path d="M422.6,223.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V226a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,422.6,223.7Z" fill="#fff"/>
-      <text transform="translate(402.8 228.6)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">4.3</text>
+      <text transform="translate(402.8 228.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4.3</text>
     </g>
   </g>
   <g id="layer-group-5">
@@ -84,7 +84,7 @@
       <polygon id="house-5" points="993 484 958.7 470.4 962 454 934 444 925.9 457.4 925.9 457.4 775.6 397.7 777 382 753 373 742.6 384.6 721 376 673 429 672.9 432.4 677 434 677 440 672.7 443.7 671.2 519.4 668 523 668 525 671.1 526.4 671 530 929 652 964 581 966.3 573.4 968 571 967.3 570 993 484" fill="#c1272d"/></a>
     <g id="pin-5">
       <path d="M872.9,428.5a12,12,0,0,0-24-.3h0v.2h0v.4c.2,7.8,9,16,12,18.9,8.5-6.9,11-13.3,11.7-16.7a.6.6,0,0,0,.1-.4c.1-.3.1-.7.2-1h0Z" fill="#fff"/>
-      <text transform="translate(857.7 433.4)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">5</text>
+      <text transform="translate(857.7 433.4)" font-size="11" font-family="Noah, Akrobat" font-weight="700">5</text>
     </g>
   </g>
   <g id="layer-group-6">
@@ -92,7 +92,7 @@
     <path id="house-6" d="M574,465l-3.8-1.9L566,378l-37.3-15.7L528,351l-21-8s-4.1,4.1-7.3,7.1L409.3,312,408,301l-18-7-9.1,6.1L357,290l-62,44,.7,2.8L303,340l1,4-5.4,3.9,19.6,75.3L315,425v3l4.9,1.8L321,434,519,534l52-55-.5-9.5L574,466Z" fill="#ffea82"/>
     <g id="pin-6">
       <path d="M479.9,346.2a12,12,0,0,0-24-.3h0v.2h0v.3c.2,7.8,9,16,12,19,8.5-6.9,11-13.3,11.7-16.8a.4.4,0,0,0,.1-.3c.1-.4.1-.7.2-1h0Z" fill="#fff"/>
-      <text transform="translate(464.6 351)" font-size="15" font-family="Akrobat-Bold, Akrobat" font-weight="700">6</text>
+      <text transform="translate(464.6 351)" font-size="11" font-family="Noah, Akrobat" font-weight="700">6</text>
     </g>
   </g>
 </svg>

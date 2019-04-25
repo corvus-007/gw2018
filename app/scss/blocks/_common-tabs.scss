@@ -4,6 +4,7 @@
 
 .common-tabs__menu {
   display: flex;
+  justify-content: center;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
@@ -21,12 +22,12 @@
 .common-tabs__link {
   display: block;
   padding: 5px 0;
-  font-weight: 700;
-  font-size: rem(18);
+  font-weight: 400;
+  font-size: rem(16);
   line-height: 1.15;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: $base-color;
   border-bottom: 4px solid transparent;
   user-select: none;
@@ -41,10 +42,6 @@
   .active & {
     color: $base-color;
     border-bottom-color: $accent-color;
-  }
-
-  @include mq-min(1280px) {
-    font-size: vh(18);
   }
 }
 

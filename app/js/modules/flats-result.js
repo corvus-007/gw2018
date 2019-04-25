@@ -8,11 +8,10 @@ window.flatsResult = (function (window, $) {
   }
 
   var cardsList = flatsResult.querySelector('.flats-cards');
-  var templateCard = document.querySelector('#flats-result-card-template').content.querySelector('.flat-card');
   var favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
-
   var selectSortElem = document.querySelector('[name="sort-by"]');
-
+  var source = document.querySelector('#flatsResultCardTemplate').innerHTML;
+  var template = Handlebars.compile(source);
   var textRooms = {
     '1': 'Однокомнатная',
     '2': 'Двухкомнатная',
@@ -21,31 +20,24 @@ window.flatsResult = (function (window, $) {
   };
 
   function displayResult(params) {
-    var filtersData = params.data || '';
-    var response = sendRequest(filtersData);
+    startLoading();
+
+    var data = params.data || '';
+    var response = window.util.sendRequest(data, window.util.URL_FILTER_HANDLER);
 
     favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
-    response.done(onSuccess);
+    response.done(renderFilteredFlats);
   }
 
-  function onSuccess(data) {
-    var fragment = document.createDocumentFragment();
+  function renderFilteredFlats(data) {
     clearCardsList();
 
-    var sortedData = window.flatsSort.sortFlats(data, window.flatsSort.getSortByVal(selectSortElem));
+    window.util.filteredFlats = data;
 
-    sortedData.forEach(function (attrs, index) {
-      fragment.appendChild(renderCard(attrs, index));
-    });
+    var sortedData = window.flatsSort.sortFlats(window.util.filteredFlats, window.flatsSort.getSortByVal(selectSortElem));
 
-    cardsList.appendChild(fragment);
-
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      $('[data-sticky-target]').stick_in_parent({
-        offset_top: 110
-      });
-    }
+    cardsList.innerHTML = template(sortedData);
 
     setTimeout(function () {
       endLoading();
@@ -79,7 +71,7 @@ window.flatsResult = (function (window, $) {
     }
 
     wrapLinkElem.href = linkToFlat || 'flat-plan-page.html';
-    image.src = imgSrc || 'images/plans/plan-2.svg';
+    image.src = imgSrc || 'images/plans/1-1.png';
 
     card.querySelector('[data-flat-type-value]').textContent = type;
     card.querySelector('[data-flat-room-value]').textContent = textRooms[room];
@@ -89,19 +81,6 @@ window.flatsResult = (function (window, $) {
     card.querySelector('[data-flat-price-for-square-meter-value]').textContent = window.util.formatNumber(price / area);
 
     return card;
-  }
-
-  function sendRequest(data) {
-    data = data || '';
-
-    startLoading();
-
-    return $.ajax({
-      type: "GET",
-      url: window.util.URL_FILTER_HANDLER,
-      data: data,
-      dataType: "JSON"
-    });
   }
 
   function clearCardsList() {
@@ -118,12 +97,11 @@ window.flatsResult = (function (window, $) {
 
   return {
     displayResult: displayResult,
-    templateCard: templateCard,
     cardsList: cardsList,
-    sendRequest: sendRequest,
-    renderCard: renderCard,
+    // renderCard: renderCard,
     startLoading: startLoading,
     endLoading: endLoading,
-    clearCardsList: clearCardsList
+    clearCardsList: clearCardsList,
+    renderFilteredFlats: renderFilteredFlats
   };
 })(window, jQuery);

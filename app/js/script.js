@@ -102,22 +102,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (flatFiltersElem) {
     var locationSearch = location.search;
+
     window.flatsResult.displayResult({
       data: locationSearch
     });
+
     window.flatFilters.init();
+
     var selectSortElem = document.querySelector('[name="sort-by"]');
+
     selectSortElem.addEventListener('change', function (evt) {
-      var flatFiltersForm = flatFiltersElem.querySelector('.flat-filters__form');
-      var formData = $(flatFiltersForm).serialize();
-      window.flatsResult.displayResult({
-        data: formData
-      });
+      window.flatsResult.renderFilteredFlats(window.util.filteredFlats);
     });
   }
 
   if (document.querySelector('.favorites-flats')) {
-
     window.flatsResult.displayResult({
       data: $.param({
         'favorites_cards[]': window.favoritesCards.getFavoritesFlatsAsArr()
@@ -155,5 +154,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  $('.common-tabs').tabslet();
+  var selectTypeNode = document.querySelectorAll('[data-target="checkboxes-select"]');
+  [...selectTypeNode].forEach((it) => {
+    new checkboxesSelect(it);
+  });
+
+  $('.common-tabs').tabslet({
+    controls: {
+      prev: '.to-prev-tab',
+      next: '.to-next-tab'
+    }
+  });
 });

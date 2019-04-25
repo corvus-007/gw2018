@@ -14,88 +14,188 @@
   <main class="main">
     <article class="common-page flat-page">
       <header class="flat-page__header common-page__header container">
-        <h1 class="common-page__title common-title">Заголовок</h1>
+        <h1 class="common-page__title common-title">Двухкомнатная квартира 39.4 м²</h1>
       </header>
+      <div class="common-page__action-panel page-action-panel">
+        <div class="page-action-panel__container container">
+          <div class="page-action-panel__left-column">
+            <a class="back-link button no-print" href="flats-filter-page.html">
+              <svg class="back-link__icon button__icon button__icon--left" width="16" height="16">
+                <use xlink:href="images/symbols.svg#left-arrow"></use>
+              </svg>
+              Назад
+            </a>
+          </div>
+          <div class="page-action-panel__right-column flat-page__nav-wrapper">
+            <div class="flat-page__nav flat-page-navigation" data-target="flat-page-navigation">
+              <ul class="flat-page-navigation__list">
+                <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
+                  <a href="#flat-plan" class="flat-page-navigation__link" data-action="toggle-flat-page-content">Планировка</a>
+                </li>
+                <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
+                  <a href="#flat-floor" class="flat-page-navigation__link" data-action="toggle-flat-page-content">На плане этажа</a>
+                </li>
+                <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
+                  <a href="#flat-genplan" class="flat-page-navigation__link" data-action="toggle-flat-page-content">На плане квартала</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="common-page__body flat container">
-        <div class="flat__tabs flat-tabs common-tabs">
-          <ul class="common-tabs__menu">
-            <li class="common-tabs__item">
-              <a href="#tab-1" class="common-tabs__link">Планировка</a>
-            </li>
-            <li class="common-tabs__item">
-              <a href="#tab-2" class="common-tabs__link">Посмотреть на плане</a>
-            </li>
-          </ul>
-          <div class="common-tabs__pane" id="tab-1">
-            <section class="flat-plan-section">
+        <div class="flat__grid">
+          <div class="flat__main-column">
+
+
+
+            <section class="flat-plan-section flat-page-nav-content" id="flat-plan" data-target="flat-page-nav-content">
               <h2 class="visually-hidden">Планировка</h2>
-              <div class="flat-plan-section__plan flat-plan">
-                <div class="flat__plan flat-plan">
-                  <div class="flat-plan__adjuster"></div>
-                  <div class="flat-plan__frame">
-                    <a class="flat-plan__zoom-to-image" href="images/plans/plan-2.svg">
-                      <img class="flat-plan__image" src="images/plans/plan-2.svg" alt="Планировка — вариант №1">
-                    </a>
+              <div class="common-tabs">
+                <ul class="common-tabs__menu">
+                  <li class="common-tabs__item">
+                    <a href="#tab-1-1" class="common-tabs__link">План квартиры</a>
+                  </li>
+                  <li class="common-tabs__item">
+                    <a href="#tab-1-2" class="common-tabs__link">С мебелью</a>
+                  </li>
+                  <!--                   <li class="common-tabs__item">
+                    <a href="#tab-1-3" class="common-tabs__link">Варианты отделки</a>
+                  </li> -->
+                </ul>
+                <div class="common-tabs__pane" id="tab-1-1">
+                  <section>
+                    <h3 class="visually-hidden">План квартиры</h3>
+                    <div class="flat-plans-slider js-flat-plans-slider">
+                      <div class="flat-plans-slider__item flat-plans-slide">
+                        <a class="flat-plans-slide__wraplink" href="images/plans/1.png" data-fancybox="plans-gallery">
+                          <div class="flat-plans-slide__picture">
+                            <img src="images/plans/1.png" alt="">
+                          </div>
+                        </a>
+                      </div>
+                      <!--                       <div class="flat-plans-slider__item flat-plans-slide">
+                        <a class="flat-plans-slide__wraplink" href="https://images.unsplash.com/photo-1542264867-e99604862a7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" data-fancybox="plans-gallery">
+                          <div class="flat-plans-slide__picture">
+                            <img src="https://images.unsplash.com/photo-1542264867-e99604862a7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="flat-plans-slider__item flat-plans-slide">
+                        <a class="flat-plans-slide__wraplink" href="https://images.unsplash.com/photo-1470645792662-dd18394f8c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" data-fancybox="plans-gallery">
+                          <div class="flat-plans-slide__picture">
+                            <img src="https://images.unsplash.com/photo-1470645792662-dd18394f8c97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+                          </div>
+                        </a>
+                      </div> -->
+                    </div>
+                  </section>
+                </div>
+                <div class="common-tabs__pane" id="tab-1-2">
+                  <h3 class="visually-hidden">С мебелью</h3>
+                  <div class="flat-plans-slider js-flat-plans-slider">
+                    <div class="flat-plans-slider__item flat-plans-slide">
+                      <a class="flat-plans-slide__wraplink" href="images/plans/1-2.png" data-fancybox="plans-gallery">
+                        <div class="flat-plans-slide__picture">
+                          <img src="images/plans/1-2.png" alt="">
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="flat-plan-section__detail flat-detail">
-                <ul class="flat-detail__features common-features-flat">
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Тип дома</span>
-                    <b class="common-features-flat__value">4.3</b>
-                  </li>
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Комнат</span>
-                    <b class="common-features-flat__value">4</b>
-                  </li>
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Площадь</span>
-                    <b class="common-features-flat__value">128,7</b>
-                  </li>
-                </ul>
-                <!-- <form class="flat-detail__form request-price-form no-print" action="" method="POST">
-                  <p class="request-price-form__title">Узнать стоимость квартиры</p>
-                  <label class="request-price-form__field field">
-                    <span class="field__label visually-hidden">Имя</span>
-                    <div class="field__control">
-                      <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
-                    </div>
-                  </label>
-                  <label class="request-price-form__field field">
-                    <span class="field__label visually-hidden">Телефон</span>
-                    <div class="field__control">
-                      <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                  </label>
-                  <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
-                  <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
-                </form> -->
-                <div class="flat-detail__actions no-print">
-                  <button class="flat-detail__to-print button" type="button">Распечать планировку</button>
-                  <button class="flat-detail__to-mortgaga button" type="button" data-fancybox data-src="#popup-request-mortgage">Эта квартира в ипотеку</button>
-                </div>
-                <div class="flat-detail__disclamer">
-                  <p><small>Указанный размер площади может незначительно отличаться.</small></p>
+                <div class="common-tabs__pane" id="tab-1-3">
+                  <h3 class="visually-hidden">Варианты отделки</h3>
                 </div>
               </div>
             </section>
-          </div>
 
-          <div class="common-tabs__pane page-break-before" id="tab-2">
-            <section class="flat-territory-section">
-              <h2 class="visually-hidden ">Посмотреть на плане</h2>
+
+            <section class="flat-territory-section flat-page-nav-content" id="flat-genplan" data-target="flat-page-nav-content">
+              <h2 class="visually-hidden ">На плане квартала</h2>
               <div class="flat-territory">
                 <div class="flat-territory__picture">
                   <img src="images/plans/schema-house.svg" alt="">
                 </div>
               </div>
             </section>
+
+            <section class="flat-territory-section flat-page-nav-content" id="flat-floor" data-target="flat-page-nav-content">
+              <h2 class="visually-hidden ">На плане этажа</h2>
+              <div class="flat-territory">
+                <div class="flat-territory__picture">
+                  <img src="images/plans/floor.png" alt="">
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="flat__aside-column">
+            <div class="flat-plan-section__detail flat-detail">
+              <div class="flat-detail__info flat-info">
+                <div class="flat-info__row">
+                  <form class="flat-detail__form request-price-form no-print" action="" method="POST">
+                    <p class="request-price-form__title">Узнать стоимость квартиры</p>
+                    <label class="request-price-form__field field">
+                      <span class="field__label visually-hidden">Имя</span>
+                      <div class="field__control">
+                        <input class="field__input input" type="text" name="plan_name" placeholder="Ваше имя">
+                      </div>
+                    </label>
+                    <label class="request-price-form__field field">
+                      <span class="field__label visually-hidden">Телефон</span>
+                      <div class="field__control">
+                        <input class="field__input input" type="tel" name="plan_phone" placeholder="+7 (___) ___-__-__" required>
+                      </div>
+                    </label>
+                    <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
+                    <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
+                  </form>
+                </div>
+                <div class="flat-info__row">
+                  <a class="flat-detail__button-mortgage button button--outline" href="">Рассчитать ипотеку</a>
+                </div>
+                <div class="flat-info__row">
+                  <div class="flat-info__column">
+                    <div class="flat-info__item">
+                      <span class="flat-info__caption">Площадь</span>
+                      <b class="flat-info__value">36,4 м²</b>
+                    </div>
+                  </div>
+                  <div class="flat-info__column">
+                    <div class="flat-info__item">
+                      <span class="flat-info__caption">Кол-во комнат</span>
+                      <b class="flat-info__value">3</b>
+                    </div>
+                  </div>
+                </div>
+                <div class="flat-info__row">
+                  <div class="flat-info__column">
+                    <div class="flat-info__item">
+                      <span class="flat-info__caption">Этаж</span>
+                      <b class="flat-info__value">8</b>
+                    </div>
+                  </div>
+                  <div class="flat-info__column">
+                    <div class="flat-info__item">
+                      <span class="flat-info__caption">Тип дома</span>
+                      <b class="flat-info__value">4.3</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flat-detail__disclamer">
+                <p><small>Указанный размер площади может незначительно отличаться.</small></p>
+              </div>
+              <div class="flat-detail__actions no-print">
+                <button class="flat-detail__to-print button button--outline" type="button">Распечать планировку</button>
+                <!-- <button class="flat-detail__to-mortgage button" type="button" data-fancybox data-src="#popup-request-mortgage">Эта квартира в ипотеку</button> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <section class="section-similar-plans common-section no-print">
+      <section class="section-similar-plans section-similar-plans--white-fill common-section no-print">
         <div class="section-similar-plans__inner container">
           <h2 class="section-similar-plans__title common-title">Похожие варианты квартир</h2>
           <p class="section-similar-plans__intro">Клубный квартир «Гринвуд» – это возможность выбора! Поэтому мы подобрали несколько квартир, похожих на выбранную вами.</p>
@@ -103,7 +203,7 @@
             <div class="common-plans-slider__item">
               <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
+                  <img data-flickity-lazyload="images/plans/2.png" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -124,7 +224,7 @@
             <div class="common-plans-slider__item">
               <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="images/plans/plan-2.svg" alt="">
+                  <img data-flickity-lazyload="images/plans/3.png" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -145,7 +245,7 @@
             <div class="common-plans-slider__item">
               <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
+                  <img data-flickity-lazyload="images/plans/2.png" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">
@@ -166,28 +266,7 @@
             <div class="common-plans-slider__item">
               <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
                 <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="images/plans/plan-2.svg" alt="">
-                </div>
-                <ul class="common-plans-slider__features common-features-flat">
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Тип дома</span>
-                    <b class="common-features-flat__value">4.3</b>
-                  </li>
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Комнат</span>
-                    <b class="common-features-flat__value">2</b>
-                  </li>
-                  <li class="common-features-flat__item">
-                    <span class="common-features-flat__label">Площадь</span>
-                    <b class="common-features-flat__value">87,6</b>
-                  </li>
-                </ul>
-              </a>
-            </div>
-            <div class="common-plans-slider__item">
-              <a class="common-plans-slider__wraplink" href="flat-plan-page.html">
-                <div class="common-plans-slider__picture">
-                  <img data-flickity-lazyload="images/plans/plan-1.svg" alt="">
+                  <img data-flickity-lazyload="images/plans/3.png" alt="">
                 </div>
                 <ul class="common-plans-slider__features common-features-flat">
                   <li class="common-features-flat__item">

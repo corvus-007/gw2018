@@ -1,0 +1,140 @@
+.checkboxes-select {
+}
+
+.checkboxes-select__toggle {
+  position: relative;
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 16px;
+    z-index: 2;
+    width: 0;
+    height: 0;
+    width: 4px;
+    height: 4px;
+    border: 2px solid #003d58;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    margin: auto;
+    transition: $duration;
+    pointer-events: none;
+  }
+
+  &:focus {
+    &::before {
+      border-right-color: darken($secondary-color-2, 10%);
+      border-bottom-color: darken($secondary-color-2, 10%);
+    }
+  }
+
+  @include mq-minh($vh-height-bp) {
+    padding: 10px 15px;
+    font-size: 17px;
+  }
+}
+
+.checkboxes-select__value {
+}
+
+.checkboxes-select__dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  transform: translateY(5px);
+  opacity: 0;
+  background-color: #ffffff;
+  border: 1px solid $secondary-color-2;
+  border-radius: $border-radius;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  overflow: hidden;
+  transition: $duration;
+
+  .checkboxes-select--open & {
+    transition-duration: $duration;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.checkboxes-select__list {
+  @include clear-list();
+
+  max-height: calc(6 * 44px);
+  overflow: hidden;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+}
+
+.checkboxes-select__list-item {
+}
+
+.checkboxes-select__box {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 15px;
+  padding-right: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $duration / 2;
+
+  &:hover,
+  &:focus {
+    background-color: $gray-245;
+  }
+}
+
+.checkboxes-select__box-input {
+}
+
+.checkboxes-select__box-indicator {
+  position: relative;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
+  border: 1px solid $secondary-color-2;
+  border-radius: $border-radius;
+  transition: $duration / 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+
+  input:focus ~ & {
+    background-color: $gray-245;
+  }
+
+  input:checked ~ & {
+    background-color: #003d58;
+    border-color: #003d58;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.checkboxes-select__box-value {
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,6 +1,4 @@
 .flat-card {
-  position: relative;
-
   &--is-favorite {
   }
 }
@@ -25,13 +23,13 @@
   .flats-cards--display-list & {
     display: flex;
     align-items: center;
-    padding: 15px;
-    // padding: 15px;
-    // padding-right: 70px;
+    padding: 8px 15px;
   }
 }
 
 .flat-card__content {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
 
   .flats-cards--display-list & {
@@ -49,9 +47,9 @@
   }
 
   .flats-cards--display-list & {
+    flex-grow: 1;
     padding-bottom: 0;
     padding-right: 15px;
-    flex-grow: 1;
   }
 }
 
@@ -119,6 +117,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
     margin-bottom: 0;
+    font-size: 18px;
   }
 }
 
@@ -134,11 +133,55 @@
   }
 }
 
+.flat-card__floor-to-look {
+  position: relative;
+  display: block;
+  padding: 0;
+  min-width: auto;
+  font-size: inherit;
+  text-transform: none;
+  color: inherit;
+  background-color: transparent;
+  box-shadow: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    background-color: transparent;
+
+    &::before {
+      background-image: linear-gradient(to right, rgba($muted-color, 1) 2px, transparent 0);
+    }
+  }
+
+  .flats-cards--display-card & {
+  }
+
+  .flats-cards--display-list & {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: baseline;
+  }
+}
+
 .flat-card__price-for-flat {
   display: block;
   font-weight: 700;
   font-size: 24px;
   line-height: 1.15;
+
+  .flats-cards--display-card & {
+    font-size: 18px;
+  }
 }
 
 .flat-card__price-for-square-meter {
@@ -196,33 +239,33 @@
   display: block;
 }
 
-.flat-card__add-to-favorite {
-  display: inline-block;
-  vertical-align: middle;
-  border: none;
-  background: none;
-  padding: 5px;
-  color: $gray-189;
-  outline: none;
-  cursor: pointer;
-  transition: color $duration;
+// .flat-card__add-to-favorite {
+//   display: inline-block;
+//   padding: 5px;
+//   vertical-align: middle;
+//   color: $gray-189;
+//   background: none;
+//   border: none;
+//   outline: none;
+//   cursor: pointer;
+//   transition: color $duration;
 
-  &:hover {
-    color: $accent-color;
-  }
+//   &:hover {
+//     color: $accent-color;
+//   }
 
-  &:focus {
-    color: $secondary-color-2;
-  }
+//   &:focus {
+//     color: $secondary-color-2;
+//   }
 
-  .flat-card--is-favorite & {
-    color: $accent-color;
-  }
-}
+//   .flat-card--is-favorite & {
+//     color: $accent-color;
+//   }
+// }
 
-.flat-card__add-to-favorite-icon {
-  @media (pointer: coarse) {
-    width: 20px;
-    height: 20px;
-  }
-}
+// .flat-card__add-to-favorite-icon {
+//   @media (pointer: coarse) {
+//     width: 20px;
+//     height: 20px;
+//   }
+// }

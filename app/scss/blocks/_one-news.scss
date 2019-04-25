@@ -1,5 +1,4 @@
 .one-news {
-
 }
 
 .one-news__inner {
@@ -12,23 +11,10 @@
 
 .one-news__back-to-news {
   margin-bottom: 45px;
-  padding: 5px 17px;
-  min-width: auto;
-  font-weight: 600;
-  text-transform: none;
-  color: $brown-color;
-  border-radius: 100px;
-  background-color: $secondary-color;
-  box-shadow: none;
 
   @include mq-min(768px) {
     margin-bottom: 85px;
   }
-}
-
-.one-news__back-to-news-icon {
-  width: 16px;
-  height: 16px;
 }
 
 .one-news__header {
@@ -45,5 +31,4 @@
 }
 
 .one-news__content {
-
 }

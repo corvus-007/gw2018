@@ -1,0 +1,58 @@
+.flat-info {
+  background-color: #ffffff;
+}
+
+.flat-info__row {
+  display: flex;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $gray-239;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.flat-info__column {
+  width: 50%;
+  padding-right: 15px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.flat-info__item {
+
+}
+
+.flat-info__caption {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1;
+  color: $muted-color;
+}
+
+.flat-info__value {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.flat-detail__button-mortgage {
+  min-width: auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 6px 15px;
+  font-weight: 400;
+  font-size: 17px;
+  text-transform: none;
+  border-radius: $border-radius * 2;
+}

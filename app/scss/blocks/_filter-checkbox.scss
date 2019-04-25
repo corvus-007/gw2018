@@ -26,7 +26,6 @@
 
   .filter-checkbox__input:hover + & {
     background-color: $secondary-color;
-
   }
 
   .filter-checkbox__input:focus + & {
@@ -35,14 +34,7 @@
 
   .filter-checkbox__input:checked + & {
     color: #ffffff;
-    // background-color: $accent-color;
-    // border-color: $accent-color;
     background-color: #003d58;
     border-color: #003d58;
-  }
-
-  @include mq-minh($vh-height-bp) {
-    padding: vh(10) vh(5);
-    font-size: vh(17);
   }
 }

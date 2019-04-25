@@ -1,0 +1,43 @@
+.flat-page-navigation {
+}
+
+.flat-page-navigation__list {
+  @include clear-list();
+
+  display: flex;
+  height: 100%;
+}
+
+.flat-page-navigation__item {
+  display: flex;
+  height: 100%;
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--active {
+  }
+}
+
+.flat-page-navigation__link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-weight: 700;
+  color: $gray-189;
+  border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  transition: $duration;
+
+  &:hover,
+  &:focus {
+    color: $gray-169;
+  }
+
+  .flat-page-navigation__item--active & {
+    color: $accent-color;
+    border-bottom-color: currentColor;
+  }
+}

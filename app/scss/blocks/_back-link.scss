@@ -1,0 +1,15 @@
+.back-link {
+  padding: 5px 17px;
+  min-width: auto;
+  font-weight: 600;
+  text-transform: none;
+  color: $brown-color;
+  border-radius: 100px;
+  background-color: $secondary-color;
+  box-shadow: none;
+}
+
+.back-link__icon {
+  width: 16px;
+  height: 16px;
+}

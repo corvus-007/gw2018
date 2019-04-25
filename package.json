@@ -29,6 +29,7 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "accordionjs": "^2.1.1",
+    "beerslider": "^1.0.3",
     "flickity": "^2.2.0",
     "flickity-bg-lazyload": "^1.0.1",
     "flickity-fullscreen": "^1.1.1",

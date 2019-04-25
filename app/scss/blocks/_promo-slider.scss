@@ -24,6 +24,12 @@
       }
     }
   }
+
+  @include mq-max(767px) {
+    .flickity-button {
+      display: none;
+    }
+  }
 }
 
 .promo-slider__item {

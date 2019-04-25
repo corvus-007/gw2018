@@ -120,7 +120,7 @@
   }
 }
 
-.genplan__tooltips-container {
+.genplan__tooltip-container {
   position: fixed;
   left: 0;
   right: 0;
@@ -136,7 +136,6 @@
   bottom: 0;
   right: 0;
   z-index: 20;
-  // min-height: 250px;
   pointer-events: auto;
 
   @include mq-min(768px) {
@@ -150,7 +149,6 @@
 .genplan__tip {
   position: absolute;
   left: 0;
-  // top: $height-header-mobile;
   top: 0;
   right: 0;
   bottom: 0;
