@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
+
 <body class="homepage">
   <style>
   .splash-screen {
@@ -110,10 +112,13 @@
       <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
         <span class="out-cover-toggle__line"></span>
       </button>
-      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <!-- <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a> -->
       <nav class="main-header__nav main-nav">
         <ul class="main-nav__list">
-          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="flats-filter-page.html">Выбрать планировку</a></li>
+          <li><a href="about-page.html">О проекте</a></li>
+          <li><a href="">Ипотека</a></li>
+          <!-- <li><a href="documents-page.html">Документация</a></li> -->
           <li><a href="news-page.html">Новости</a></li>
           <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
           <li><a href="contacts-page.html">Контакты</a></li>
@@ -129,7 +134,7 @@
 
 
   <main class="main">
-    <section class="section-intro block-out">
+    <section class="section-intro block-out" hidden>
       <div class="section-intro__inner block-out__inner container">
         <div class="section-intro__text block-out__content">
           <p class="section-intro__text-first-line">
@@ -141,31 +146,31 @@
           <p class="section-intro__text-second-line">
             <span class="section-intro__text-quantity"><span>7</span></span>
             <!-- <span class="section-intro__text-unit">квартир</span> -->
-            <span class="section-intro__text-unit-holder">
+            <span class="section-intro__text-unit-holder" style="margin-left: 4.92857vh;">
               <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 438.7 114.4" style="left: 0px;">
                 <mask id="text-mask">
-                  <rect width="438.7" height="114.4" fill="#fff"/>
+                  <rect width="438.7" height="114.4" fill="#fff" />
                   <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
                 </mask>
-                <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)"/>
+                <rect width="438.7" height="114.4" fill="#efebf0" mask="url(#text-mask)" />
                 <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИР</text>
               </svg>
 
               <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 519.7 114.4" style="display: none;">
                 <mask id="text-mask-1">
-                  <rect x="0.2" y="0.1" width="519" height="114" fill="#fff"/>
+                  <rect x="0.2" y="0.1" width="519" height="114" fill="#fff" />
                   <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
                 </mask>
-                <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)"/>
+                <rect x="0.2" y="0.1" width="519" height="114" fill="#efebf0" mask="url(#text-mask-1)" />
                 <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРЫ</text>
               </svg>
 
               <svg class="section-intro__svg-unit" xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 495 114.4" style="display: none;">
                 <mask id="text-mask-2">
-                  <rect x="0.2" y="0.1" width="495" height="114" fill="#fff"/>
+                  <rect x="0.2" y="0.1" width="495" height="114" fill="#fff" />
                   <text transform="translate(5.4 100.4)" font-size="123.44" fill="#010101" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
                 </mask>
-                <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)"/>
+                <rect x="0.2" y="0.1" width="495" height="114" fill="#efebf0" mask="url(#text-mask-2)" />
                 <text transform="translate(5.4 100.4)" font-size="123.44" fill="#000" fill-opacity="0.2" font-family="Akrobat-Bold, Akrobat" font-weight="700">КВАРТИРА</text>
               </svg>
               <span class="section-intro__text-unit-description">с самыми популярными планировками</span>
@@ -204,6 +209,18 @@
       <div id="section-features"></div>
     </section>
 
+    <div class="promo">
+      <ul class="promo__slider promo-slider" data-promo-slider>
+        <li class="promo-slider__item promo-slide">
+          <a class="promo-slide__wraplink">
+            <div class="promo-slide__picture">
+              <img src="images/promo-slides/01.jpg" alt="Успей забрнировать квартиру до 14.02.2019">
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <section class="features common-section">
       <div class="features__inner container">
         <div class="features__header">
@@ -234,44 +251,18 @@
             </svg>
             <b class="features__caption">Прекрасные виды на рощу «Соловьи»</b>
           </li>
-
-          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="200">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-02"></use>
-            </svg>
-            <b class="features__caption">4 школы и 3 детских сада в радиусе 2 км</b>
-          </li> -->
           <li class="features__item" data-aos="flip-up" data-aos-delay="500">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-05"></use>
             </svg>
             <b class="features__caption">Охраняемая территория</b>
           </li>
-          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1800">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-19"></use>
-            </svg>
-            <b class="features__caption">Безопасный двор без машин</b>
-          </li> -->
-
-          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="400">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-04"></use>
-            </svg>
-            <b class="features__caption">Детские и спортивные площадки</b>
-          </li> -->
           <li class="features__item" data-aos="flip-up" data-aos-delay="1300">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-13"></use>
             </svg>
             <b class="features__caption">Подземный паркинг с лифтовым доступом</b>
           </li>
-          <!-- <li class="features__item" data-aos="flip-up" data-aos-delay="1000">
-            <svg class="features__icon" width="16" height="16">
-              <use xlink:href="images/symbols.svg#feat-10"></use>
-            </svg>
-            <b class="features__caption">Шумоизоляция и утолщенные перегородки</b>
-          </li> -->
           <li class="features__item" data-aos="flip-up" data-aos-delay="1500">
             <svg class="features__icon" width="16" height="16">
               <use xlink:href="images/symbols.svg#feat-15"></use>
@@ -288,7 +279,222 @@
       </div>
     </section>
 
-    <div class="cta">
+    <section class="genplan" id="genplan">
+      <div class="genplan__scroller">
+        <div class="container">
+          <h2 class="genplan__title common-title visually-hidden">
+            Выбрать<br>
+            квартиру
+          </h2>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="genplan__svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMin slice">
+          <g id="genplan-back-l">
+            <image id="genplan-back" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-back.jpg"/>
+          </g>
+          <g id="layer-group-1">
+            <image id="genplan-house-1" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-houses-1.png"/>
+            <path id="house-1" d="M442.3,89.4l2.6-1.3-.5-21h-1.8l-.7-6.1-21.5-.3-.5,1.2H399.6V60.3l-20.9-.2-8.8,17.8,1.4,8.7,2.1,2.5,3.2.5.4,2.6,1.9,1.1.4,2.1,3.2.7,2.1,1.2,42.2.2,1.5-1.2.8,1,6.4.3,1.1-1,1-.2,1.5,1.4h3.5V95.3l2.7-2.5-3-.5Zm84.8,4.1-2.4-2.2,2.4-3.6-.2-18.6-1.3-.2V62.6h-22v1.3H482.8V61.8H461.6l-5.5,17.5V87H453l.4,11.4,12.9.5,1.7-1,1.1,1h32.8l9.8-.2,1-.5,1.5.6,12.1-.4-1-.9,2.4-2.7Zm84.5-3.9-2.4-.3-.4-24.7-21.5.2v1.3l-20.7-.6V63.8H545l-3.7,17.5v7.5l2.2.9.7,1.8-1.5,1.8,1.1,2.8,1.2-.2.6,2.4-2.3,2.2,6.5.5,2-1.6,1.5,1.9,43.2-.2.4-1.5,2.4,1.8h6.2l1.2-3.7,4.7,3.7.3-3.4a12.4,12.4,0,0,0,1.1-2.3,10.5,10.5,0,0,0,0-1.8Zm81.3.2-.3-23.3H670.8v1h-21V65.7H628.1l-.9,23.4h-2.1L623,91.5l.6,11.1,12.2.4,1.5-1,2.3,1.1h40.7l2.5-1.7,1.5,1.7,12.3.3-.3-6.7-1.6-2.1,4.1-4.9Zm90.4-8.5h-5l-2.4-12.7H754.6v1.7H733.8V67.8H712.2l-1.3,9.3v14h-4.1v2.1l1,1.6s-.5,2.7-.5,3,.6,6,.6,6l.9.8,11.6.3,2.6-1.6,1.8,1.5,41.6.3,2.2-1,1.4,1.5h11.7l.7-8.8h2.2l-.3-13Zm81.3,14.3.6-7.8L859.7,70H838.4v1.9h-21V69.8H795.6v4.5l-1.3,1.5-.9,16.5-.2,14.1h5.4l1.6-1.2,2.2.9,4.4-.2,1.4-.4,1,1,42.8.3,1.1-.9,1.9.9,12,.7,1.4-9.5-1-2.6Zm.4,7.2-1.8-1.8V99.4h2.3Zm85.8-5.2,1-7.7L944,72.3H922.5l-.2,1.3H901.6l-.6-2H879.7l-.8,6.4-1.9-.6-1,10,.8,2.1-.5,5.3.8,1.1a.6.6,0,0,0,.8.2l.9-.4.9-1a.5.5,0,0,1,.9.3l.4,1.1a.7.7,0,0,0,.7.5h.9l.3-1.1h2.8v1.9l1.1.4v3.8l-1.9.2v.5l1.6,1.1a.8.8,0,0,1,.3.7l-.3,2.2a.8.8,0,0,1-.7.7l-2,.3v1.1h8l1-1a.6.6,0,0,1,.8,0l1.5,1.4h42.3l1-1a.5.5,0,0,1,.8.1l1.1,1.5,12.5.2,1.8-9.3-1.1-2.7Zm-.5,6.9-2.1-1,.6-2.1,2.2.2Zm87.9-5.2h-1.4l1.8-7.4-10.1-18h-22.1v1.4l-20.3-.2-1-1.4H963.3l-.6,5-2.1-.2-2.3,10.3,1.5,3.5a2.7,2.7,0,0,1,.1,1.8l-1.6,5.9,2.7.5s3.1,9.2,3.1,9.6l13.8.3.7-.5a.9.9,0,0,1,1.1-.1l1.1.6,42.6.4.8-.5a1.3,1.3,0,0,1,1.2,0l.8.5,11.9.3,2.3-9Zm-2.8,7.1h-1.3v-2.4l1.2-.9.8,1.1Z" fill="#00aebd"/>
+          </g>
+          <g id="layer-group-2">
+            <image id="genplan-house-2" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-houses-2.png"/>
+            <path id="house-2" d="M854.3,330v-2.6l3.4-3.8,1.5-11,8.7-10.7,4.5,1.2,1.1-8.6,9.2-11,3.5.9.8-6.3,6.7-10.1,3,.9.4-6.5,5.6-10.6,1.9.3v-4.8l4-10.3,2-15.8-1.5-1.2-1.1-9.8.9-4.5-1.8.5-.5-3.6-2.5-5.3,1.2-6.1-2.5-.3-2.8-8,.7-7-1-.5-1.6,1.6-2.7-8.4,1-5.2-3.2-.2-.4-3.7-1.5-2.5-.4-2.5.9-4.5h-2.4l-2.4-7.8,2.9-19.1h5.2l1.2-7h13.9l.4,1.1,25.1.6,2.8,6.2-3.1,15.8h3.8l1.5,4.2h5.6l2.6,7.2-1.9,12v4.2h3.4l1.7,4.7h5.5l3.1,7.8-3.6,17.5,5,.3.8,6.3,5,.4.8,9.1-4,18H967l-.4,8h1v2.5l-6,26.7-5.3,17.8-3.4,5.4-.9,5.4-8.2,14.4-1.5-.6-5.7,12.3-7.5,10.2-1.5,1-.5,1.8-13.2,18.8-10.5-3.9-.6-2.4-1.7-2-1.8.9s-2.8-2.4-3.6-1.2l-1.6-.4s-.3-2.1-2.9-.5l-.7-.2s.2-4.3-4-1.3L874,342.6l-.2-.7-1.4-.4v-.9l1.3-.4v-1.3l-2.7.4-.3,1.8-.7,1.2-3.7-.5-.2-1.7s3.3-2.4-.5-2l-.4-1.8h-2.4l.2-2.4-2-1.4-.2-1.2L859,331l-2,.8Z" fill="#009bcb"/>
+          </g>
+          <g id="layer-group-3-1" class="finished">
+            <image id="genplan-house-3-1" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-3.1.png"/>
+            <a xlink:href="flats-filter-page.html?type=3-1">
+              <polygon id="house-3-1" points="428.2 155.8 427.3 147.2 421.6 145.3 420.3 134.4 422.6 133.1 420.8 115.6 428.8 109.7 427.8 101.3 436.5 95.8 436.5 93.4 447.3 86.6 450.4 87.7 458.7 83 494.5 94 495 102.3 505.1 105.4 507.3 107.1 509.8 133 512.5 134 513 143.3 507.1 147.1 503.5 146.5 472.7 167.7 458.5 162.5 450 162.5 428.2 155.8" fill="#008dd0"/></a>
+            <g id="pin-3-1">
+              <path d="M477.2,72.7a12,12,0,0,0-24-.2h0v.4c.2,7.8,9,16,12,18.9,8.5-6.9,11-13.3,11.7-16.7a.4.4,0,0,0,.1-.3,3.8,3.8,0,0,0,.1-1h0A11.6,11.6,0,0,0,477.2,72.7Z" fill="#fff"/>
+              <text transform="translate(459 77.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.09em">.</tspan><tspan x="7.9" y="0">1</tspan></text>
+            </g>
+          </g>
+          <g id="layer-group-3-2" class="finished">
+            <image id="genplan-house-3-2" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-3.2.png"/>
+            <a xlink:href="flats-filter-page.html?type=3-2">
+              <polygon id="house-3-2" points="624.1 170.1 584.3 157.5 583.8 151.2 581.3 150.3 581.4 142.7 578.6 141.6 577.9 130.8 581 128.7 580.7 121.2 591.5 113 591.5 105.7 616.7 88.1 627.8 91.4 630.1 89.3 644.8 93.4 644.8 96.1 656.8 99.4 656.8 108.5 662.9 110.4 662.9 111.3 665.4 112.5 665.4 119.9 668.2 121.3 667.8 131.2 664.5 134.1 664.5 141.3 662.6 143 662.6 148.4 632.6 174.8 624.1 172.3 624.1 170.1" fill="#2d5980"/></a>
+            <g id="pin-3-2">
+              <path d="M636.5,79.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V82a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,636.5,79.7Z" fill="#fff"/>
+              <text transform="translate(616.8 84.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3.2</text>
+            </g>
+          </g>
+          <g id="layer-group-3-3">
+            <image id="genplan-house-3-3" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-3.3.png"/>
+            <path id="house-3-3" d="M742.9,161.8l-8.6-2.2v-9.3l2.8-2.7,1.7-25.1L750,112.2l.3-5.3L771.6,89l12.2,3.1,2-2.1,15.6,4.3v2.6l12.7,3.7v9.2l5.5,1.5v1.1l2.1.9-1.8,17.2,2.5.7v1.7l-.9.7v8l-6,5.9-.2,7.4-25.4,23.7-5.6-2s2.4-6.4-1.6-4.1l-.4-3.7.3-2.7-1.7-2.5a1.5,1.5,0,0,1-2.1-.2s-.5-3.5-1.8-2.3-4.8-5.1-6.1-.2l-2.4-.3-1,1.5-.3,4.2-22-5.8Z" fill="#6950a1"/>
+            <g id="pin-3-3">
+              <path d="M795.5,78.2a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,795.5,78.2Z" fill="#fff"/>
+              <text transform="translate(775.8 83.1)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3.3</text>
+            </g>
+          </g>
+          <g id="layer-group-3-4">
+            <image id="genplan-house-3-4" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-3.4.png"/>
+            <polygon id="house-3-4" points="727.2 235.2 714.3 231 714.6 221.4 717.8 218 719.3 191.6 733.2 179.1 733.2 177.3 758.3 155 804 168.1 803.3 176.8 811.4 180.8 809.6 199.2 811.8 199.5 811.1 211.3 805.1 217 804.5 224.5 801.6 227.1 805.1 228 805.1 230.5 792.6 244 785.9 242.8 780.8 248.9 780.8 245.8 776.1 249 729.4 233.4 727.2 235.2" fill="#8552a1"/>
+            <g id="pin-3-4">
+              <path d="M777.7,144.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V147a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,777.7,144.7Z" fill="#fff"/>
+              <text transform="translate(758.4 149.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">3<tspan x="6.3" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.2" y="0">4</tspan></text>
+            </g>
+          </g>
+          <g id="layer-group-4-1">
+            <image id="genplan-house-4-1" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-4.1.png"/>
+            <polygon id="house-4-1" points="647.3 293.8 647.3 284.1 650.7 281.3 651 232.6 666 219.5 666 217.2 695.5 191.5 744.3 206.9 743.8 216.6 752.9 220.1 750.3 259.5 753.8 261.1 753.1 262.8 752.7 271.8 746.1 278.8 746.1 284.9 741.7 289.9 744.3 290.7 744.3 293 733.9 304.1 725.1 302.4 713.2 315.5 663.3 296.9 661.1 299.1 647.3 293.8" fill="#de3d96"/>
+            <g id="pin-4-1">
+              <path d="M710.3,186.9a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,710.3,186.9Z" fill="#fff"/>
+              <text transform="translate(692.1 191.8)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.09em">.</tspan><tspan x="8" y="0">1</tspan></text>
+            </g>
+          </g>
+          <g id="layer-group-4-2">
+            <image id="genplan-house-4-2" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-4.2.png"/>
+            <polygon id="house-4-2" points="681.9 324.8 678.4 323.2 678.8 292.7 675.8 291.8 675.8 290.9 668.8 288.8 668.8 279.5 616.9 260.6 581.1 292.4 581.1 294.6 566.1 307.9 566.1 316.4 562.8 319.8 563.3 332.9 567.5 334.4 569 362.8 572.1 364.8 572.1 370.9 634.6 397 650.8 382 657.9 385.2 671.1 371.3 671.1 368.9 666.7 367.3 674.6 360.1 674.6 350.9 678.1 347.4 678.2 340.6 681.6 337.4 681.9 324.8" fill="#00b085"/>
+            <g id="pin-4-2">
+              <path d="M626.4,261.4a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,626.4,261.4Z" fill="#fff"/>
+              <text transform="translate(606.6 266.3)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4.2</text>
+            </g>
+          </g>
+          <g id="layer-group-4-4" class="finished">
+            <image id="genplan-house-4-4" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-4.4.png"/>
+            <a xlink:href="flats-filter-page.html?type=4-4">
+              <polygon id="house-4-4" points="391 168 399 162 398 150 408 144 409 142 421 135 424 136 433 131 474 144 475 152 485 155 485 156 489 158 493 204 497 206 497 216 490 221 485 221 477 227 477 229 452 248 403 231 402 222 396 220 394 208 397 206 391 168" fill="#f7941d"/></a>
+            <g id="pin-4-4">
+              <path d="M454.2,134.8a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7v-.3a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,454.2,134.8Z" fill="#fff"/>
+              <text transform="translate(434.8 139.7)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4<tspan x="6.5" y="0" letter-spacing="-0.07em">.</tspan><tspan x="8.3" y="0">4</tspan></text>
+            </g>
+          </g>
+          <g id="layer-group-4-3" class="finished">
+            <image id="genplan-house-4-3" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-4.3.png"/>
+            <a xlink:href="flats-filter-page.html?type=4-3">
+              <polygon id="house-4-3" points="426 348 380 328 380 324 376 323 376 319 371 314 369 315 368 314 367 312 366 313 364 313 362 300 365 298 357 258 367 250 366 240 377 232 377 229 391 219 395 220 406 213 451 230 452 238 468 244 473 294 478 297 478 303 470 310 465 311 455 320 456 321 426 348" fill="#f04e45"/></a>
+            <g id="pin-4-3">
+              <path d="M422.6,223.7a12,12,0,0,0-23.9-.2h0v.4c.1,7.8,8.9,16,12,18.9,8.5-6.9,10.9-13.3,11.7-16.7V226a4.4,4.4,0,0,0,.2-1h0A4.5,4.5,0,0,0,422.6,223.7Z" fill="#fff"/>
+              <text transform="translate(402.8 228.6)" font-size="11" font-family="Noah, Akrobat" font-weight="700">4.3</text>
+            </g>
+          </g>
+          <g id="layer-group-5">
+            <image id="genplan-house-5" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-5.png"/>
+            <a xlink:href="flats-filter-page.html?type=5">
+              <polygon id="house-5" points="993 484 958.7 470.4 962 454 934 444 925.9 457.4 925.9 457.4 775.6 397.7 777 382 753 373 742.6 384.6 721 376 673 429 672.9 432.4 677 434 677 440 672.7 443.7 671.2 519.4 668 523 668 525 671.1 526.4 671 530 929 652 964 581 966.3 573.4 968 571 967.3 570 993 484" fill="#c1272d"/></a>
+            <g id="pin-5">
+              <path d="M872.9,428.5a12,12,0,0,0-24-.3h0v.2h0v.4c.2,7.8,9,16,12,18.9,8.5-6.9,11-13.3,11.7-16.7a.6.6,0,0,0,.1-.4c.1-.3.1-.7.2-1h0Z" fill="#fff"/>
+              <text transform="translate(857.7 433.4)" font-size="11" font-family="Noah, Akrobat" font-weight="700">5</text>
+            </g>
+          </g>
+          <g id="layer-group-6">
+            <image id="genplan-house-6" width="2560" height="1440" transform="scale(0.5)" xlink:href="images/layers-houses/genplan-house-6.png"/>
+            <path id="house-6" d="M574,465l-3.8-1.9L566,378l-37.3-15.7L528,351l-21-8s-4.1,4.1-7.3,7.1L409.3,312,408,301l-18-7-9.1,6.1L357,290l-62,44,.7,2.8L303,340l1,4-5.4,3.9,19.6,75.3L315,425v3l4.9,1.8L321,434,519,534l52-55-.5-9.5L574,466Z" fill="#ffea82"/>
+            <g id="pin-6">
+              <path d="M479.9,346.2a12,12,0,0,0-24-.3h0v.2h0v.3c.2,7.8,9,16,12,19,8.5-6.9,11-13.3,11.7-16.8a.4.4,0,0,0,.1-.3c.1-.4.1-.7.2-1h0Z" fill="#fff"/>
+              <text transform="translate(464.6 351)" font-size="11" font-family="Noah, Akrobat" font-weight="700">6</text>
+            </g>
+          </g>
+        </svg>
+
+        <div class="genplan__tooltip-container">
+          <div class="genplan__tooltip genplan-tooltip" data-target="genplan-tooltip"></div>
+        </div>
+      </div>
+      <div class="genplan__tip">
+        <p class="genplan__tip-text">Перемещайте генплан для просмотра и выбора дома</p>
+      </div>
+      <div class="genplan__compass-wrapper container">
+        <div class="genplan__compass"></div>
+      </div>
+    </section>
+
+    <section class="flats-plans-samples common-section" style="display: none">
+      <div class="flats-plans-samples__header container">
+        <h2 class="common-title">Планировки</h2>
+      </div>
+      <div class="flats-plans-samples__slider flats-plans-samples-slider js-flats-plans-samples-slider container">
+        <div class="flats-plans-samples-slider__item flats-plans-samples-slide">
+          <div class="flats-plans-samples-slide__picture">
+            <img src="" alt="">
+          </div>
+          <div class="flats-plans-samples-slide__content">
+            <p>
+              <b class="flats-plans-samples-slide__title">Трехкомнатная квартира</b>
+            </p>
+            <p>
+              <b>Площадь:</b> 151.82 м²
+            </p>
+            <p><button class="button">Узнать стоимость</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features2 common-section" hidden>
+      <div class="container">
+        <div class="features2__header">
+          <h2 class="features2__title common-title">Преимущества</h2>
+        </div>
+        <div class="features2__main">
+          <div class="features2__accordion-wrapper">
+            <ul class="features2__accordion features2-accordion" data-features2-accordion>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Лучший жилой комплекс премиум-класса в России</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Самая низкая плотность застройки в городе</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Географический центр Брянска</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Прекрасные виды на рощу «Соловьи»</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Охраняемая территория</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Подземный паркинг с лифтовым доступом</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Панорамное остекление из «теплого» алюминия</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+              <li class="features2-accordion__section">
+                <div class="features2-accordion__caption">Увеличенная высота потолков до 3,1 м</div>
+                <div class="features2-accordion__content">
+                  Section content here.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="features2__slider-wrapper">
+            <div class="features2__slider features2-slider" data-features2-slider>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1540354600717-b44cd1870b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1529026698204-4686b45488ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1545608444-f045a6db6133?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1505567745926-ba89000d255a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=1351&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1479722842840-c0a823bd0cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1541414779316-956a5084c0d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=80"></div>
+              <div class="features2-slider__item" data-flickity-bg-lazyload="https://images.unsplash.com/photo-1535478044878-3ed83d5456ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1369&q=80"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta no-print" style="display: none">
       <div class="cta__inner container">
         <h2 class="cta__title common-title">
           Узнайте обо всех <br> 20 преимуществах «Гринвуда»
@@ -314,7 +520,7 @@
       </div>
     </div>
 
-    <div class="district common-section">
+    <div class="district common-section no-print" style="display: none">
       <div class="district__map-frame">
         <div class="district__map" id="district-map"></div>
         <div class="container">
@@ -355,7 +561,7 @@
     </div> -->
 
     <!-- presentation-video--playing -->
-    <div class="presentation-video block-out block-out--to-left">
+    <div class="presentation-video block-out block-out--to-left no-print" style="display: none">
       <div class="presentation-video__inner block-out__inner container">
         <div class="presentation-video__content block-out__content">
           <p class="presentation-video__text">
@@ -502,7 +708,7 @@
       </div>
     </section> -->
 
-    <div class="section-involve-person common-section">
+    <div class="section-involve-person common-section no-print" style="display: none">
       <div class="section-involve-person__inner container">
         <div class="section-involve-person__content">
           <h2 class="section-involve-person__title common-title">
@@ -535,12 +741,63 @@
     </div>
   </main>
 
+  <script id="tooltipHouseTemplate" type="text/x-handlebars-template">
+    <div class="genplan-tooltip__type">
+      тип дома
+      <span class="genplan-tooltip__type-value">{{type}}</span>
+    </div>
+    {{#if is_vacant}}
+      <span class="genplan-tooltip__status">Квартиры в наличии</span>
+    {{/if}}
+    <ul class="genplan-tooltip__rooms-list">
+      {{#each roomsList}}
+      <li class="genplan-tooltip__room">
+        <a href="flats-filter-page.html?type={{replaceDotOnDash ../type}}&rooms[]={{rooms}}" class="genplan-tooltip__room-wraplink">
+          <b class="genplan-tooltip__room-label">{{caption}}</b>
+          <span class="genplan-tooltip__room-value">от {{min_price}} млн.</span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+    <span class="genplan-tooltip__corner"></span>
+  </script>
+
   <footer class="main-footer">
-    <div class="main-footer__inner container">
-      <p class="main-footer__copy">© 2016–2018 Касабланка</p>
-      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+    <div class="main-footer__top">
+      <div class="main-footer__top-inner container">
+        <p class="main-footer__note">*Рассчитана максимальная выгода на двухкомнатную квартиру по адресу: Степная, д. 18, кв. 2.</p>
+        <p class="main-footer__note">**Сданы/введены в эксплуатацию поз. 3.1,3.2,4.3.,4.4 комплексного освоения.</p>
+        <p class="main-footer__note main-footer__disclamer">Информация, размещенная на сайте, носит исключительно информационно-рекламный характер, и не является офертой или публичной офертой в соответствии со статьей 435 и пунктом 2 статьи 437 Гражданского кодекса Российской Федерации</p>
+      </div>
+    </div>
+    <div class="main-footer__bottom">
+      <div class="main-footer__bottom-inner container">
+        <div class="main-footer__bottom-left">
+          <p class="main-footer__copy">© 2016–2018 Касабланка</p>
+          <p class="main-footer__docs"><a href="" style="color: #fff;font-size: 18px;text-decoration: underline;">Документация</a></p>
+        </div>
+        <div class="main-footer__bottom-right">
+          <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <div class="promo-popup popup" id="promo-popup" hidden>
+    <div class="promo-popup__inner">
+      <div class="promo-popup__picture">
+        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fde969420cb3cea0ec5740cfbd521c93&auto=format&fit=crop&w=1350&q=80" alt="">
+      </div>
+      <div class="promo-popup__content">
+        <div class="promo-popup__header">
+          <h2 class="promo-popup__title common-title">Хочу 25% скидку</h2>
+        </div>
+        <div class="promo-popup__text">
+          <p>Будь первым, чтобы узнать о наших спец. предложениях и получить 25% на перую покупку!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="go-to-favorite-page">
     <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">
@@ -576,4 +833,5 @@
   <script src="js/script.js"></script>
 
 </body>
+
 </html>

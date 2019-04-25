@@ -3,7 +3,35 @@ window.util = (function () {
 
   return {
     KEYCODE_ESC: 27,
+    URL_TOOLTIP_HOUSE_HANDLER: 'js/tooltip-house-mock.json',
     URL_FILTER_HANDLER: 'js/flats-mock.json',
+    compareTypes: {
+      rooms: function (a, b) {
+        var roomsA = parseInt(a.room, 10);
+        var roomsB = parseInt(b.room, 10);
+
+        return (roomsA - roomsB);
+      },
+      floor: function (a, b) {
+        var floorA = parseInt(a.floor, 10);
+        var floorB = parseInt(b.floor, 10);
+
+        return (floorA - floorB);
+      },
+      area: function (a, b) {
+        var areaA = parseFloat(a.area);
+        var areaB = parseFloat(b.area);
+
+        return (areaA - areaB);
+      },
+      price: function (a, b) {
+        var priceA = parseFloat(a.price);
+        var priceB = parseFloat(b.price);
+
+        return priceA - priceB;
+      }
+    },
+    filteredFlats: null,
     isDevMode: function () {
       return location.hostname === 'localhost';
     },
@@ -38,6 +66,23 @@ window.util = (function () {
 
       return scrollWidth;
     },
+    formatNumber: function (num) {
+      var formatter = new Intl.NumberFormat('ru', {
+        minimumFractionDigits: 0
+      });
+
+      return formatter.format(num);
+    },
+    sendRequest: function (data, url) {
+      data = data || '';
+
+      return $.ajax({
+        type: "GET",
+        url: url,
+        data: data,
+        dataType: "JSON"
+      });
+    },
   };
 })();
 
@@ -50,14 +95,30 @@ window.splashScreen = (function (window, $) {
     return;
   }
 
+  var isLoaded = false;
+
   document.body.style.overflowY = 'hidden';
   document.body.style.paddingRight = window.util.getScrollbarWidth() + 'px';
 
   window.addEventListener('load', function () {
+    hideSplashScreen();
+  });
+
+  setTimeout(() => {
+    hideSplashScreen()
+  }, 1000 * 8);
+
+  function hideSplashScreen() {
+    if (isLoaded) {
+      return;
+    }
+
     splashScreen.classList.add('splash-screen--hidden');
     document.body.style.overflowY = '';
     document.body.style.paddingRight = '';
-  });
+
+    isLoaded = true;
+  }
 })(window, jQuery);
 
 window.outCover = (function() {
@@ -230,15 +291,16 @@ window.genplanTooltip = (function () {
   var genplan = window.genplan.genplan;
   var genplanScroller = window.genplan.genplanScroller;
   var genplanSVG = window.genplan.genplanSVG;
-  var prevTooltip;
+  var tooltip = genplan.querySelector('[data-target="genplan-tooltip"]');
   var limitCoords = {};
+  Handlebars.registerHelper('replaceDotOnDash', function (type) {
+    return type.replace(/\./g, '-');
+  });
+  var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
+  var template = Handlebars.compile(source);
 
   function getPinElem(pinId) {
     return genplanSVG.querySelector('#pin-' + pinId);
-  }
-
-  function getTooltipElem(pinId) {
-    return genplan.querySelector('[data-id=pin-' + pinId + ']');
   }
 
   genplanSVG.addEventListener('mouseover', function (event) {
@@ -255,47 +317,52 @@ window.genplanTooltip = (function () {
     var pin = getPinElem(pinId);
     var pinCoords = pin.getBoundingClientRect();
     var pinHeight = pinCoords.bottom - pinCoords.top;
-    var tooltip = getTooltipElem(pinId);
 
     if (!tooltip) {
       return;
     }
 
-    var tooltipCorner = tooltip.querySelector('.genplan-tooltip__corner');
+    var response = window.util.sendRequest({
+      'house_id': pinId
+    }, window.util.URL_TOOLTIP_HOUSE_HANDLER);
 
-    if (!tooltipCorner) {
-      tooltipCorner = document.createElement('span');
-      tooltipCorner.classList.add('genplan-tooltip__corner');
-      tooltip.appendChild(tooltipCorner);
-    }
+    response.done(function (data) {
+      tooltip.innerHTML = template(data);
 
-    var tooltipHeight = tooltip.offsetHeight;
-    var tooltipLeft = genplanScroller.scrollLeft + pinCoords.right + 20;
-    var tooltipTop = pinCoords.top + pinHeight / 2 - tooltipHeight / 2;
-    var tooltipCoords = null;
+      var tooltipCorner = tooltip.querySelector('.genplan-tooltip__corner');
 
-    limitCoords.top = genplanSVGCoords.top + 20;
+      if (!tooltipCorner) {
+        tooltipCorner = document.createElement('span');
+        tooltipCorner.classList.add('genplan-tooltip__corner');
+        tooltip.appendChild(tooltipCorner);
+      }
 
-    limitCoords.bottom = genplanSVGCoords.bottom - tooltipHeight - 40;
+      var tooltipHeight = tooltip.offsetHeight;
+      var tooltipLeft = genplanScroller.scrollLeft + pinCoords.right + 20;
+      var tooltipTop = pinCoords.top + pinHeight / 2 - tooltipHeight / 2;
+      var tooltipCoords = null;
 
-    if (tooltipTop <= limitCoords.top) {
-      tooltipTop = limitCoords.top;
-    } else if (tooltipTop >= limitCoords.bottom) {
-      tooltipTop = limitCoords.bottom;
-    }
+      limitCoords.top = genplanSVGCoords.top + 20;
 
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      tooltip.style.left = tooltipLeft + 'px';
-      tooltip.style.top = tooltipTop + 'px';
-    }
+      limitCoords.bottom = genplanSVGCoords.bottom - tooltipHeight - 40;
 
-    tooltip.classList.add('genplan-tooltip--showed');
+      if (tooltipTop <= limitCoords.top) {
+        tooltipTop = limitCoords.top;
+      } else if (tooltipTop >= limitCoords.bottom) {
+        tooltipTop = limitCoords.bottom;
+      }
 
-    tooltipCoords = tooltip.getBoundingClientRect();
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        tooltip.style.left = tooltipLeft + 'px';
+        tooltip.style.top = tooltipTop + 'px';
+      }
 
-    tooltipCorner.style.top = pinCoords.top + pinHeight / 2 - tooltipCoords.top + 'px';
+      tooltip.classList.add('genplan-tooltip--showed');
 
-    prevTooltip = tooltip;
+      tooltipCoords = tooltip.getBoundingClientRect();
+
+      tooltipCorner.style.top = pinCoords.top + pinHeight / 2 - tooltipCoords.top + 'px';
+    });
   });
 
   genplanSVG.addEventListener('mouseout', function (event) {
@@ -306,13 +373,147 @@ window.genplanTooltip = (function () {
       return;
     }
 
-    if (!prevTooltip) {
+    if (!tooltip) {
       return;
     }
 
-    prevTooltip.classList.remove('genplan-tooltip--showed');
+    tooltip.classList.remove('genplan-tooltip--showed');
   });
 })();
+
+////=require modules/checkboxes-select.js
+class checkboxesSelect {
+  constructor(select) {
+    this.select = select;
+    this.toggle = select.querySelector('.checkboxes-select__toggle');
+    this.checkboxesList = select.querySelectorAll('input[type="checkbox"]');
+    this.valueNode = select.querySelector('.checkboxes-select__value');
+    this.dropdown = select.querySelector('.checkboxes-select__dropdown');
+    this.selectName = this.checkboxesList[0].name;
+    this.placeholder = select.dataset.placeholder;
+    this.select.dataset.name = this.selectName;
+
+    this.displayCheckedValues();
+
+    this.toggle.addEventListener('click', this.onclickToggleHandler.bind(this));
+    this.dropdown.addEventListener('change', this.onchangeDropdownHandler.bind(this));
+  }
+
+  // Handlers
+
+  onchangeDropdownHandler(evt) {
+    var target = evt.target;
+    var checkbox = target.closest('input[type="checkbox"]');
+
+    if (!checkbox) {
+      return;
+    }
+
+    var value = checkbox.value;
+    var isChecked = checkbox.checked;
+
+    if (value === 'all') {
+      if (isChecked) {
+        this.checkAll();
+      } else {
+        this.uncheckAll();
+      }
+    } else {
+      if (this.isCheckAll()) {
+        this.checkItemValueAll();
+      } else {
+        this.uncheckItemValueAll();
+      }
+    }
+
+    this.displayCheckedValues();
+  }
+
+  onclickToggleHandler(evt) {
+    evt.preventDefault();
+
+    var isSelectOpen = this.select.classList.contains('checkboxes-select--open');
+
+    if (!isSelectOpen) {
+      this.openSelect();
+    } else {
+      this.closeSelect();
+    }
+  }
+
+  onclickWindowHandler(evt) {
+    var target = evt.target;
+    var targetSelect = target.closest('.checkboxes-select');
+
+    if (!targetSelect) {
+      this.closeSelect();
+    }
+  }
+
+  // Methods
+
+  isCheckAll() {
+    return [...this.checkboxesList].every((it, index) => {
+      return index !== 0 ? it.checked : true;
+    });
+  }
+
+  displayCheckedValues() {
+    var values = this.getValuesString();
+    this.valueNode.textContent = values ? values : this.placeholder;
+  }
+
+  checkAll() {
+    [...this.checkboxesList].forEach((it) => {
+      it.checked = true;
+    });
+  }
+
+  uncheckAll() {
+    [...this.checkboxesList].forEach((it) => {
+      it.checked = false;
+    });
+  }
+
+  checkItemValueAll() {
+    this.checkboxesList[0].checked = true;
+  }
+
+  uncheckItemValueAll() {
+    this.checkboxesList[0].checked = false;
+  }
+
+  getValuesList() {
+    if (this.isCheckAll()) {
+      var box = this.checkboxesList[0].parentElement;
+
+      return [box.textContent.trim()];
+    }
+
+    return [...this.checkboxesList]
+      .filter((it) => {
+        return it.checked;
+      })
+      .map((it) => {
+        var box = it.parentElement;
+        return box.textContent.trim();
+      });
+  }
+
+  getValuesString() {
+    return this.getValuesList().join(', ');
+  }
+
+  openSelect() {
+    this.select.classList.add('checkboxes-select--open');
+    window.addEventListener('click', this.onclickWindowHandler.bind(this));
+  }
+
+  closeSelect() {
+    this.select.classList.remove('checkboxes-select--open');
+    window.removeEventListener('click', this.onclickWindowHandler.bind(this));
+  }
+}
 
 window.favoritesCards = (function (window, $) {
   'use strict';
@@ -454,6 +655,30 @@ window.flatsCards = (function () {
   }
 })(window, jQuery);
 
+window.flatsSort = (function (window, $) {
+  'use strict';
+
+  function getSortByVal(selectControlNode) {
+    return selectControlNode.value;
+  }
+
+  function sortFlats(data, sortByVal) {
+    if (sortByVal === 'default' || !sortByVal) {
+      return data;
+    }
+
+    var copyData = data.slice();
+
+    return copyData.sort(window.util.compareTypes[sortByVal]);
+  }
+
+  return {
+    getSortByVal: getSortByVal,
+    sortFlats: sortFlats
+  }
+
+})(window, jQuery);
+
 window.flatsResult = (function (window, $) {
   'use srict';
 
@@ -464,74 +689,79 @@ window.flatsResult = (function (window, $) {
   }
 
   var cardsList = flatsResult.querySelector('.flats-cards');
-  var templateCard = document.querySelector('#flats-result-card-template').content.querySelector('.flat-card');
   var favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
+  var selectSortElem = document.querySelector('[name="sort-by"]');
+  var source = document.querySelector('#flatsResultCardTemplate').innerHTML;
+  var template = Handlebars.compile(source);
+  var textRooms = {
+    '1': 'Однокомнатная',
+    '2': 'Двухкомнатная',
+    '3': 'Трехкомнатная',
+    '4': 'Четырехкомнатная'
+  };
 
   function displayResult(params) {
-    var filtersData = params.data || '';
-    var response = sendRequest(filtersData, onSuccess);
+    startLoading();
+
+    var data = params.data || '';
+    var response = window.util.sendRequest(data, window.util.URL_FILTER_HANDLER);
 
     favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
 
-    response.done(onSuccess);
+    response.done(renderFilteredFlats);
   }
 
-  function onSuccess(data) {
-    var fragment = document.createDocumentFragment();
+  function renderFilteredFlats(data) {
     clearCardsList();
 
-    data.forEach(function (attrs, index) {
-      fragment.appendChild(renderCard(attrs, index));
-    });
+    window.util.filteredFlats = data;
 
-    cardsList.appendChild(fragment);
+    var sortedData = window.flatsSort.sortFlats(window.util.filteredFlats, window.flatsSort.getSortByVal(selectSortElem));
 
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      $('[data-sticky-target]').stick_in_parent({
-        offset_top: 110
-      });
-    }
+    cardsList.innerHTML = template(sortedData);
 
     setTimeout(function () {
       endLoading();
-    }, 800);
+    }, 300);
   }
 
   function renderCard(attrs, index) {
     var card = templateCard.cloneNode(true);
     var reserveElem = card.querySelector('.flat-card__reserved');
+    var wrapLinkElem = card.querySelector('.flat-card__wraplink');
     var image = card.querySelector('.flat-card__picture img');
 
-    var id = index + '';
+    var id = attrs.id;
+    var linkToFlat = attrs.link;
+    var imgSrc = attrs.img;
+    var room = attrs.room;
+    var isReserve = attrs.reserve;
+    var type = attrs.type;
+    var floor = attrs.floor;
+    var area = parseFloat(attrs.area, 10);
+    var price = parseFloat(attrs.price, 10);
+
     card.dataset.flatId = id;
 
     if (favoritesCards.includes(id)) {
       card.classList.add('flat-card--is-favorite');
     }
 
-    if (!attrs.reserve) {
+    if (!isReserve) {
       reserveElem.remove();
     }
 
-    image.src = 'images/plans/plan-2.svg';
+    wrapLinkElem.href = linkToFlat || 'flat-plan-page.html';
+    image.src = imgSrc || 'images/plans/1-1.png';
 
-    card.querySelector('[data-flat="room"]').textContent = attrs.room;
-    card.querySelector('[data-flat="area"]').textContent = attrs.area;
+    card.querySelector('[data-flat-type-value]').textContent = type;
+    card.querySelector('[data-flat-room-value]').textContent = textRooms[room];
+    card.querySelector('[data-flat-area-value]').textContent = area;
+    card.querySelector('[data-flat-floor-value]').textContent = floor;
+    card.querySelector('[data-flat-price-value]').textContent = window.util.formatNumber(price);
+    card.querySelector('[data-flat-price-for-square-meter-value]').textContent = window.util.formatNumber(price / area);
 
     return card;
-  }
-
-  function sendRequest(data, onSuccess, onError) {
-    data = data || '';
-
-    startLoading();
-
-    return $.ajax({
-      type: "GET",
-      url: window.util.URL_FILTER_HANDLER,
-      data: data,
-      dataType: "JSON"
-    });
   }
 
   function clearCardsList() {
@@ -548,11 +778,12 @@ window.flatsResult = (function (window, $) {
 
   return {
     displayResult: displayResult,
-    templateCard: templateCard,
     cardsList: cardsList,
-    sendRequest: sendRequest,
-    renderCard: renderCard,
-    clearCardsList: clearCardsList
+    // renderCard: renderCard,
+    startLoading: startLoading,
+    endLoading: endLoading,
+    clearCardsList: clearCardsList,
+    renderFilteredFlats: renderFilteredFlats
   };
 })(window, jQuery);
 
@@ -567,24 +798,8 @@ window.flatFilters = (function () {
   }
 
   var flatFiltersForm = flatFiltersElem.querySelector('.flat-filters__form');
+  var sliderRangeItems = flatFiltersForm.querySelectorAll('[data-type-slider]');
   var lastTimeout = null;
-
-  var areaSliderRange = flatFiltersForm.querySelector('[data-type-slider="area"]');
-  var range = JSON.parse(areaSliderRange.dataset.range);
-
-  function setValues(values) {
-    var valueFrom = parseInt(values[0]);
-    var valueTo = parseInt(values[1]);
-
-    var valueAreaFromEl = flatFiltersForm.querySelector('[data-range-from]');
-    var valueAreaToEl = flatFiltersForm.querySelector('[data-range-to]');
-
-    flatFiltersForm.elements.area_from.value = valueFrom;
-    flatFiltersForm.elements.area_to.value = valueTo;
-
-    valueAreaFromEl.textContent = valueFrom;
-    valueAreaToEl.textContent = valueTo;
-  }
 
   function handleInputFiltersForm() {
     var formData = $(flatFiltersForm).serialize();
@@ -604,36 +819,84 @@ window.flatFilters = (function () {
 
   function init() {
     var params = new URLSearchParams(location.search);
-    var paramType = params.get('type');
-    var paramAmountList = params.getAll('amount[]');
-    var paramAreaFrom = params.get('area_from');
-    var paramAreaTo = params.get('area_to');
+    // var paramType = params.get('type') || 'all';
+    // var paramFloor = params.get('floor') || 'all';
+    var paramTypesList = params.getAll('types[]');
+    var paramFloorsList = params.getAll('floors[]');
+    var paramRoomsList = params.getAll('rooms[]');
 
-    noUiSlider.create(areaSliderRange, {
-      start: range,
-      connect: true,
-      step: 1,
-      range: {
-        'min': range[0],
-        'max': range[1]
+    sliderRangeItems.forEach(prepareSliderRange);
+
+    function prepareSliderRange(sliderRange) {
+      var nameOfRange = sliderRange.dataset.typeSlider;
+      var flatFilterEl = sliderRange.closest('.flat-filter');
+      var filterInputFrom = flatFilterEl.querySelector('[name="' + nameOfRange + '_from"]');
+      var filterInputTo = flatFilterEl.querySelector('[name="' + nameOfRange + '_to"]');
+      var valueAreaFromEl = flatFilterEl.querySelector('[data-range-from]');
+      var valueAreaToEl = flatFilterEl.querySelector('[data-range-to]');
+      var params = new URLSearchParams(location.search);
+      var paramFrom = params.get(nameOfRange + '_from');
+      var paramTo = params.get(nameOfRange + '_to');
+      var range = JSON.parse(sliderRange.dataset.range);
+      var step = JSON.parse(sliderRange.dataset.step)
+
+      noUiSlider.create(sliderRange, {
+        start: range,
+        connect: true,
+        step: step,
+        range: {
+          'min': range[0],
+          'max': range[1]
+        }
+      });
+
+      sliderRange.noUiSlider.set([paramFrom, paramTo]);
+
+      sliderRange.noUiSlider.on('update', setValues);
+      sliderRange.noUiSlider.on('change', handleInputFiltersForm);
+      flatFiltersForm.addEventListener('change', handleInputFiltersForm);
+
+      function setValues(values) {
+        var valueFrom = parseInt(values[0]);
+        var valueTo = parseInt(values[1]);
+
+        filterInputFrom.value = valueFrom;
+        filterInputTo.value = valueTo;
+
+        valueAreaFromEl.textContent = window.util.formatNumber(valueFrom);
+        valueAreaToEl.textContent = window.util.formatNumber(valueTo);
       }
-    });
+    }
 
-    areaSliderRange.noUiSlider.set([paramAreaFrom, paramAreaTo]);
-    flatFiltersForm.elements.type.value = paramType;
+    // flatFiltersForm.elements.type.value = paramType;
+    // flatFiltersForm.elements.floor.value = paramFloor;
 
-    for (var checkboxItem of flatFiltersForm.elements['amount[]']) {
+    for (var checkboxItem of flatFiltersForm.elements['types[]']) {
       var val = checkboxItem.value;
 
-      if (!paramAmountList.includes(val)) {
+      if (!paramTypesList.includes(val)) {
         continue;
       }
       checkboxItem.checked = true;
     }
 
-    areaSliderRange.noUiSlider.on('update', setValues);
-    areaSliderRange.noUiSlider.on('change', handleInputFiltersForm);
-    flatFiltersForm.addEventListener('change', handleInputFiltersForm);
+    for (var checkboxItem of flatFiltersForm.elements['floors[]']) {
+      var val = checkboxItem.value;
+
+      if (!paramFloorsList.includes(val)) {
+        continue;
+      }
+      checkboxItem.checked = true;
+    }
+
+    for (var checkboxItem of flatFiltersForm.elements['rooms[]']) {
+      var val = checkboxItem.value;
+
+      if (!paramRoomsList.includes(val)) {
+        continue;
+      }
+      checkboxItem.checked = true;
+    }
   }
 
   return {
@@ -654,13 +917,34 @@ window.flat = (function (window, $) {
 
   function init() {
     var flat = document.querySelector('.flat');
+    var flatPlanSlider = document.querySelector('.js-flat-plans-slider');
     // var flatPlans = flat.querySelectorAll('.flat__plan');
     var flatPlan = flat.querySelector('.flat-plan');
     var flatDetail = flat.querySelector('.flat-detail');
     var frame = flat.querySelector('.flat-plan__frame');
-    var planZoomToImage = flatPlan.querySelector('.flat-plan__zoom-to-image');
-    var planAdjuster = flatPlan.querySelector('.flat-plan__adjuster');
-    var planImage = flatPlan.querySelector('.flat-plan__image');
+    // var planZoomToImage = flatPlan.querySelector('.flat-plan__zoom-to-image');
+    // var planAdjuster = flatPlan.querySelector('.flat-plan__adjuster');
+    // var planImage = flatPlan.querySelector('.flat-plan__image');
+
+    // var $(flatPlanSlider);
+    // var flkty = $flatPlanSliderInstance.data('flickity');
+
+    // console.log(flkty);
+
+    $(flatPlanSlider).flickity({
+      // draggable: false
+      adaptiveHeight: true,
+      imagesLoaded: true,
+      pageDots: false
+    });
+
+    var flatPlanSliderData = $(flatPlanSlider).data('flickity');
+
+    if (flatPlanSliderData.cells.length <= 1) {
+      flatPlanSlider.classList.add('flat-plans-slider--one-slide')
+    }
+
+
 
     function processingPlan(plan) {
       planAdjuster = plan.querySelector('.flat-plan__adjuster');
@@ -691,19 +975,19 @@ window.flat = (function (window, $) {
 
     if (window.matchMedia("(pointer: coarse)").matches) {
       processingPlan(flatPlan);
-      planZoomToImage.addEventListener('click', function(evt){
-        evt.preventDefault();
-      });
+      // planZoomToImage.addEventListener('click', function (evt) {
+      //   evt.preventDefault();
+      // });
     } else {
       // $(frame).zoom();
-      $(planZoomToImage).fancybox({
-        slideClass: 'flat-plan-popup',
-        animationEffect: 'zoom-in-out'
-      });
+      // $(planZoomToImage).fancybox({
+      //   slideClass: 'flat-plan-popup',
+      //   animationEffect: 'zoom-in-out'
+      // });
     }
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-      flatPlan.style.height = getDetailHeight() + 'px';
+      // flatPlan.style.height = getDetailHeight() + 'px';
     }
 
     // if (window.matchMedia("(min-width: 768px) and not (pointer: coarse)").matches) {
@@ -712,6 +996,55 @@ window.flat = (function (window, $) {
 
   return {
     init: init
+  };
+})(window, jQuery);
+
+window.flatPageNav = (function (window, $) {
+  'use strict';
+
+  var flatPageNav = document.querySelector('[data-target="flat-page-navigation"]');
+
+  if (!flatPageNav) {
+    return;
+  }
+
+  var flatPageNavItemList = flatPageNav.querySelectorAll('[data-target="flat-page-nav-item"]');
+  var flatPageNavContentList = document.querySelectorAll('[data-target="flat-page-nav-content"]');
+  var currentItemIndex = 0;
+
+  toggleActiveClassNavItem(flatPageNavItemList[currentItemIndex]);
+  toggleActiveClassNavContent(flatPageNavContentList[currentItemIndex]);
+
+  flatPageNav.addEventListener('click', handlerFlatPageNavClick);
+
+  function toggleActiveClassNavItem(currentItem) {
+    flatPageNavItemList.forEach(function (it) {
+      it.classList.toggle('flat-page-navigation__item--active', currentItem === it);
+    });
+  }
+
+  function toggleActiveClassNavContent(currentContent) {
+    flatPageNavContentList.forEach(function (it) {
+      it.classList.toggle('flat-page-nav-content--hidden', currentContent !== it);
+    });
+  }
+
+  function handlerFlatPageNavClick(evt) {
+    evt.preventDefault();
+
+    var target = evt.target;
+    var link = target.closest('[data-action="toggle-flat-page-content"]');
+
+    if (!link) {
+      return;
+    }
+
+    var item = link.parentElement;
+    var targetId = link.hash;
+    var target = document.querySelector(targetId);
+
+    toggleActiveClassNavItem(item);
+    toggleActiveClassNavContent(target);
   };
 })(window, jQuery);
 
@@ -951,5 +1284,64 @@ window.district = (function (window, $) {
 
     map.geoObjects.add(myPlacemark);
   });
+})(window, jQuery);
+
+window.promoPopup = (function (window, $) {
+  'use strict';
+
+  var promoPopup = document.querySelector('#promo-popup');
+
+  if (!promoPopup) {
+    return;
+  }
+
+  var isShowedPromoPopup = Cookies.get('promoPopup');
+  var PROMO_POPUP_OFFSET_TIME = 1000;
+  var phonePromoPopupTimeout = setTimeout(function () {
+    $.fancybox.open({
+      src: promoPopup,
+      type: 'inline',
+      opts: {
+        afterClose: function () {
+          Cookies.set('promoPopup', 1, {
+            expires: 7
+          });
+        }
+      }
+    });
+  }, PROMO_POPUP_OFFSET_TIME);
+
+  if (isShowedPromoPopup) {
+    clearTimeout(phonePromoPopupTimeout);
+  }
+})(window, jQuery);
+
+window.infoPopup = (function (window, $) {
+  'use strict';
+
+  var infoPopup = document.querySelector('#info-popup');
+
+  if (!infoPopup) {
+    return;
+  }
+
+  // var isShowedInfoPopup = Cookies.get('infoPopup');
+  var isShowedInfoPopup = 0;
+  var info_POPUP_OFFSET_TIME = 1000;
+  var phoneInfoPopupTimeout = setTimeout(function () {
+    $.fancybox.open({
+      src: '#info-popup',
+      type: 'inline',
+      opts: {
+        afterClose: function () {
+          Cookies.set('infoPopup', 1);
+        }
+      }
+    });
+  }, info_POPUP_OFFSET_TIME);
+
+  if (isShowedInfoPopup) {
+    clearTimeout(phoneInfoPopupTimeout);
+  }
 })(window, jQuery);
 

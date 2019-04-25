@@ -109,10 +109,13 @@
       <button class="main-header__toggle out-cover-toggle" type="button" aria-label="Показать меню">
         <span class="out-cover-toggle__line"></span>
       </button>
-      <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a>
+      <!-- <a class="main-header__action-button header-action-button" href="select-flats-page.html">Выбрать квартиру</a> -->
       <nav class="main-header__nav main-nav">
         <ul class="main-nav__list">
-          <li><a href="documents-page.html">Документация</a></li>
+          <li><a href="flats-filter-page.html">Выбрать планировку</a></li>
+          <li><a href="about-page.html">О проекте</a></li>
+          <li><a href="">Ипотека</a></li>
+          <!-- <li><a href="documents-page.html">Документация</a></li> -->
           <li><a href="news-page.html">Новости</a></li>
           <li class="current-menu-item"><a href="construction-page.html">Ход строительства</a></li>
           <li><a href="contacts-page.html">Контакты</a></li>
@@ -203,11 +206,41 @@
   </template>
 
   <footer class="main-footer">
-    <div class="main-footer__inner container">
-      <p class="main-footer__copy">© 2016–2018 Касабланка</p>
-      <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+    <div class="main-footer__top">
+      <div class="main-footer__top-inner container">
+        <p class="main-footer__note">*Рассчитана максимальная выгода на двухкомнатную квартиру по адресу: Степная, д. 18, кв. 2.</p>
+        <p class="main-footer__note">**Сданы/введены в эксплуатацию поз. 3.1,3.2,4.3.,4.4 комплексного освоения.</p>
+        <p class="main-footer__note main-footer__disclamer">Информация, размещенная на сайте, носит исключительно информационно-рекламный характер, и не является офертой или публичной офертой в соответствии со статьей 435 и пунктом 2 статьи 437 Гражданского кодекса Российской Федерации</p>
+      </div>
+    </div>
+    <div class="main-footer__bottom">
+      <div class="main-footer__bottom-inner container">
+        <div class="main-footer__bottom-left">
+          <p class="main-footer__copy">© 2016–2018 Касабланка</p>
+          <p class="main-footer__docs"><a href="" style="color: #fff;font-size: 18px;text-decoration: underline;">Документация</a></p>
+        </div>
+        <div class="main-footer__bottom-right">
+          <p class="main-footer__dev">Сделано с <span>❤</span> в <a href="">АМК "Промо-Маркетинг"</a></p>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <div class="promo-popup popup" id="promo-popup" hidden>
+    <div class="promo-popup__inner">
+      <div class="promo-popup__picture">
+        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fde969420cb3cea0ec5740cfbd521c93&auto=format&fit=crop&w=1350&q=80" alt="">
+      </div>
+      <div class="promo-popup__content">
+        <div class="promo-popup__header">
+          <h2 class="promo-popup__title common-title">Хочу 25% скидку</h2>
+        </div>
+        <div class="promo-popup__text">
+          <p>Будь первым, чтобы узнать о наших спец. предложениях и получить 25% на перую покупку!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="go-to-favorite-page">
     <a class="go-to-favorite-page__link" href="favorites-flats-page.html" title="Избранные планировки">

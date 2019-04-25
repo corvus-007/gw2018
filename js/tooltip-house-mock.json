@@ -1,0 +1,30 @@
+{
+  "type": "3.1",
+  "is_vacant": true,
+  "roomsList": [
+    {
+      "caption": "1-комнатные",
+      "rooms": 1,
+      "min_price": "2,4",
+      "link": "flats-filter-page.html?type=3-1&rooms[]=1"
+    },
+    {
+      "caption": "2-комнатные",
+      "rooms": 2,
+      "min_price": "2,9",
+      "link": "flats-filter-page.html?type=3-1&rooms[]=2"
+    },
+    {
+      "caption": "3-комнатные",
+      "rooms": 3,
+      "min_price": "3,2",
+      "link": "flats-filter-page.html?type=3-1&rooms[]=3"
+    },
+    {
+      "caption": "4-комнатные",
+      "rooms": 4,
+      "min_price": "5,5",
+      "link": "flats-filter-page.html?type=3-1&rooms[]=4"
+    }
+  ]
+}

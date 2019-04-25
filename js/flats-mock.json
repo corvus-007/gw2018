@@ -1,209 +1,210 @@
-[{
+[
+  {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "59.1",
-    "price": "6 477 360 ₽"
+    "price": "6477360"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "39.4",
-    "price": "4 846 200 ₽"
+    "price": "4846200"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "41.2",
-    "price": "4 985 200 ₽"
+    "price": "4985200"
   },
   {
-    "room": "С",
-    "reserve": 1,
+    "room": "1",
+    "reserve": true,
     "type": "4.2",
     "floor": "4",
     "area": "21.6",
-    "price": "3 306 960 ₽"
+    "price": "3306960"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "4",
     "area": "39.4",
-    "price": "4 846 200 ₽"
+    "price": "4846200"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "8",
     "area": "54.1",
-    "price": "6 161 990 ₽"
+    "price": "6161990"
   },
   {
     "room": "2",
-    "reserve": 1,
+    "reserve": true,
     "type": "4.3",
     "floor": "8",
     "area": "59.1",
-    "price": "6 554 190 ₽"
+    "price": "6554190"
   },
   {
     "room": "2",
-    "reserve": 1,
+    "reserve": true,
     "type": "4.3",
     "floor": "8",
     "area": "59.1",
-    "price": "6 554 190 ₽"
+    "price": "6554190"
   },
   {
     "room": "3",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "13",
     "area": "76",
-    "price": "8 094 000 ₽"
+    "price": "8094000"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "54.1",
-    "price": "6 281 010 ₽"
+    "price": "6281010"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "59.1",
-    "price": "6 672 390 ₽"
+    "price": "6672390"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "59.1",
-    "price": "6 672 390 ₽"
+    "price": "6672390"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "54.1",
-    "price": "6 281 010 ₽"
+    "price": "6281010"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "39.4",
-    "price": "4 991 980 ₽"
+    "price": "4991980"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "18",
     "area": "41.2",
-    "price": "5 133 520 ₽"
+    "price": "5133520"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "22",
     "area": "54.1",
-    "price": "6 313 470 ₽"
+    "price": "6313470"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "35.7",
-    "price": "4 491 060 ₽"
+    "price": "4491060"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "44.9",
-    "price": "5 414 940 ₽"
+    "price": "5414940"
   },
   {
     "room": "3",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "3",
     "area": "83.6",
-    "price": "8 443 600 ₽"
+    "price": "8443600"
   },
   {
     "room": "2",
-    "reserve": 1,
+    "reserve": true,
     "type": "4.3",
     "floor": "8",
     "area": "60",
-    "price": "6 552 000 ₽"
+    "price": "6552000"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "4",
     "area": "54.5",
-    "price": "6 142 150 ₽"
+    "price": "6142150"
   },
   {
-    "room": "С",
-    "reserve": 0,
+    "room": "1",
+    "reserve": false,
     "type": "4.3",
     "floor": "4",
     "area": "23.4",
-    "price": "3 531 060 ₽"
+    "price": "3531060"
   },
   {
     "room": "1",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "4",
     "area": "35.7",
-    "price": "4 491 060 ₽"
+    "price": "4491060"
   },
   {
     "room": "1",
-    "reserve": 1,
+    "reserve": true,
     "type": "4.3",
     "floor": "4",
     "area": "39.4",
-    "price": "4 767 400 ₽"
+    "price": "4767400"
   },
   {
     "room": "2",
-    "reserve": 1,
+    "reserve": true,
     "type": "4.3",
     "floor": "7",
     "area": "54.4",
-    "price": "6 196 160 ₽"
+    "price": "6196160"
   },
   {
     "room": "2",
-    "reserve": 0,
+    "reserve": false,
     "type": "4.3",
     "floor": "8",
     "area": "69.9",
-    "price": "7 793 850 ₽"
+    "price": "7793850"
   }
 ]
