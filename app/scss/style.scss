@@ -12,7 +12,6 @@
 @import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
 @import "../../node_modules/flickity/dist/flickity";
 @import "../../node_modules/nouislider/distribute/nouislider";
-@import "../../node_modules/beerslider/dist/BeerSlider";
 
 // Blocks
 // @import "blocks/flickity-override";
@@ -121,9 +120,5 @@
 @import "blocks/mobile-nav";
 @import "blocks/out-cover";
 @import "blocks/go-to-favorite-page";
-
-@media print {
-  @import "../../node_modules/gutenberg-css/dist/gutenberg";
-}
 
 @import "print";
