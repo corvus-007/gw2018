@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Иформация о планировке</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      max-width: 100%;
+      height: 100%;
+      margin: 0;
+      color: #212121;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .apartment-table {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      /* table-layout: fixed; */
+      border-collapse: collapse;
+      page-break-before: always;
+    }
+
+    td {
+      padding-top: 5mm;
+      padding-bottom: 5mm;
+      padding-right: 20mm;
+      vertical-align: top;
+    }
+
+    td:last-child {
+      padding-right: 0;
+    }
+
+    tr:last-child .apartment-table-header__cell {
+      border-bottom: 1pt solid #aaaaaa;
+    }
+
+    tr:first-child .apartment-table-header__cell {
+      padding-top: 0;
+    }
+
+    tr:first-child .apartment-table-footer__cell {
+      border-top: 1pt solid #aaaaaa;
+    }
+
+    tr:last-child .apartment-table-footer__cell {
+      padding-bottom: 0;
+    }
+
+    .apartment-table-header__cell {
+      vertical-align: middle;
+    }
+
+    .apartment-table-footer__cell {
+      vertical-align: top;
+    }
+
+    .apartment-table-footer__cell--title {
+      padding-bottom: 5mm;
+    }
+
+    .apartment-table-footer__cell--logo {
+      text-align: right;
+      vertical-align: middle;
+      padding-left: 0;
+    }
+
+    .apartment-table-footer__cell--logo img {
+      width: 6cm;
+    }
+
+    .apartment-table-footer__title {
+      margin: 0;
+      font-size: 24pt;
+      font-weight: 400;
+    }
+
+    .apartment-table__info-count-flats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26pt;
+      font-weight: 600;
+      border-radius: 50%;
+      border: 1mm solid;
+      height: 2cm;
+      width: 2cm;
+    }
+
+    .apartment-table__info {
+      margin: 0;
+      margin-bottom: 5mm;
+      white-space: nowrap;
+    }
+
+    .apartment-table__info:last-child {
+      margin-bottom: 0;
+    }
+
+    .apartment-table__info-caption {
+      display: block;
+      margin-bottom: 0.5mm;
+      text-transform: uppercase;
+      font-size: 11pt;
+      font-weight: 400;
+    }
+
+    .apartment-table__info-value {
+      display: block;
+      font-weight: 600;
+      font-size: 16pt;
+    }
+
+    .apartment-table__info-value a {
+      text-decoration: none;
+      color: #212121;
+    }
+
+    .apartment-table__info-value span {
+      display: block;
+      font-weight: 400;
+      font-size: 15pt;
+      text-transform: lowercase;
+    }
+
+    /* Content */
+    .apartment-content {
+      font-size: 15pt;
+    }
+
+    .apartment-content__picture {
+      width: 21cm;
+      height: 20cm;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1cm;
+      margin-bottom: 1cm;
+    }
+
+    .apartment-content__picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .apartment-content__body {
+      page-break-inside: avoid;
+    }
+
+    .apartment-content__title {
+      margin: 0;
+      margin-bottom: 0.5cm;
+      font-size: 20pt;
+      font-weight: 500;
+    }
+
+    .apartment-content__info {}
+
+    .apartment-content__info-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .apartment-content__info-list li {
+      width: 50%;
+      padding-bottom: 2mm;
+      padding-right: 15mm;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <table class="apartment-table">
+    <thead class="apartment-table__header apartment-table-header">
+      <tr>
+        <td class="apartment-table-header__cell">
+          <span class="apartment-table__info-count-flats">
+            4к
+          </span>
+        </td>
+        <td class="apartment-table-header__cell" colspan="2">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Цена</span>
+            <span class="apartment-table__info-value">Стоимость уточнит оператор</span>
+          </p>
+        </td>
+        <td class="apartment-table-header__cell">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Площадь, м²</span>
+            <span class="apartment-table__info-value">143.79 м²</span>
+          </p>
+        </td>
+        <td class="apartment-table-header__cell">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Этаж</span>
+            <span class="apartment-table__info-value">4</span>
+          </p>
+        </td>
+        <td class="apartment-table-header__cell">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Тип дома</span>
+            <span class="apartment-table__info-value">3.1</span>
+          </p>
+        </td>
+      </tr>
+    </thead>
+    <tbody class="apartment-table__content">
+      <tr>
+        <td colspan="6">
+          <div class="apartment-content">
+            <div class="apartment-content__picture">
+              <img src="images/plans/1-1.png" alt="">
+            </div>
+            <div class="apartment-content__body">
+              <h2 class="apartment-content__title">Заголовок</h2>
+              <div class="apartment-content__info">
+                <ul class="apartment-content__info-list">
+                  <li>Окна – Во двор</li>
+                  <li>Площадь кухни, м² – 20.77</li>
+                  <li>Жилая площадь, м² – 88.00</li>
+                  <li>Кол-во балконов – 3</li>
+                  <li>Кол-во совмещенных санузлов – 1</li>
+                  <li>Кол-во раздельных санузлов – 1</li>
+                  <li>Подъезд – 1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot class="apartment-table__footer apartment-table-footer">
+      <tr>
+        <td class="apartment-table-footer__cell apartment-table-footer__cell--title" colspan="4">
+          <span class="apartment-table-footer__title">Жилой Квартал Гринвуд</span>
+        </td>
+        <td class="apartment-table-footer__cell apartment-table-footer__cell--logo" colspan="2" rowspan="2">
+          <img src="images/logo.svg" alt="Логотип Гринвуд">
+        </td>
+      </tr>
+      <tr>
+        <td class="apartment-table-footer__cell" colspan="2">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Контактный телефон</span>
+            <span class="apartment-table__info-value">+7 953 299-33-33</span>
+          </p>
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Контактный email</span>
+            <span class="apartment-table__info-value"><a href="mailto:kvartiry.info@gmail.com">kvartiry.info@gmail.com</a></span>
+          </p>
+        </td>
+        <td class="apartment-table-footer__cell" colspan="2">
+          <p class="apartment-table__info">
+            <span class="apartment-table__info-caption">Адрес</span>
+            <span class="apartment-table__info-value">
+              Россия, Брянск, Степная улица, 12
+              <span>пн, вт, ср, чт, пт</span>
+              <span>9:00 - 18:00</span>
+            </span>
+          </p>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

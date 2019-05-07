@@ -147,15 +147,15 @@
           </div>
           <div class="page-action-panel__right-column flat-page__nav-wrapper">
             <div class="flat-page__nav flat-page-navigation" data-target="flat-page-navigation">
-              <ul class="flat-page-navigation__list">
+              <ul class="flat-page-navigation__list" role="tablist">
                 <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
-                  <a href="#flat-plan" class="flat-page-navigation__link" data-action="toggle-flat-page-content">Планировка</a>
+                  <a href="#flat-plan" class="flat-page-navigation__link" role="tab" data-action="toggle-flat-page-content">Планировка</a>
                 </li>
                 <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
-                  <a href="#flat-floor" class="flat-page-navigation__link" data-action="toggle-flat-page-content">На плане этажа</a>
+                  <a href="#flat-floor" class="flat-page-navigation__link" role="tab" data-action="toggle-flat-page-content">На плане этажа</a>
                 </li>
                 <li class="flat-page-navigation__item" data-target="flat-page-nav-item">
-                  <a href="#flat-genplan" class="flat-page-navigation__link" data-action="toggle-flat-page-content">На плане квартала</a>
+                  <a href="#flat-genplan" class="flat-page-navigation__link" role="tab" data-action="toggle-flat-page-content">На плане квартала</a>
                 </li>
               </ul>
             </div>
@@ -165,9 +165,6 @@
       <div class="common-page__body flat container">
         <div class="flat__grid">
           <div class="flat__main-column">
-
-
-
             <section class="flat-plan-section flat-page-nav-content" id="flat-plan" data-target="flat-page-nav-content">
               <h2 class="visually-hidden">Планировка</h2>
               <div class="common-tabs">
@@ -250,7 +247,7 @@
           <div class="flat__aside-column">
             <div class="flat-plan-section__detail flat-detail">
               <div class="flat-detail__info flat-info">
-                <div class="flat-info__row">
+                <!-- <div class="flat-info__row">
                   <form class="flat-detail__form request-price-form no-print" action="" method="POST">
                     <p class="request-price-form__title">Узнать стоимость квартиры</p>
                     <label class="request-price-form__field field">
@@ -268,9 +265,19 @@
                     <button class="request-price-form__submit button" type="submit">Запросить стоимость</button>
                     <p class="request-price-form__agree text-agree">Нажимая «Отправить», вы соглашаетесь с <a href="">Условиями</a> и <a href="">Правилами</a> компании</p>
                   </form>
+                </div> -->
+                <div class="flat-info__row">
+                  <div class="flat-info__column">
+                    <div class="flat-info__item">
+                      <span class="flat-info__caption">Стоимость</span>
+                      <button class="flat-detail__button button button--outline" data-src="#popup-request-cost" data-fancybox>Запросить стоимость</b>
+                    </div>
+                  </div>
                 </div>
                 <div class="flat-info__row">
-                  <a class="flat-detail__button-mortgage button button--outline" href="">Рассчитать ипотеку</a>
+                  <div class="flat-info__column">
+                    <a class="flat-detail__button button button--outline" href="">Эта квартира в ипотеку</a>
+                  </div>
                 </div>
                 <div class="flat-info__row">
                   <div class="flat-info__column">
@@ -306,7 +313,7 @@
                 <p><small>Указанный размер площади может незначительно отличаться.</small></p>
               </div>
               <div class="flat-detail__actions no-print">
-                <button class="flat-detail__to-print button button--outline" type="button">Распечать планировку</button>
+                <a class="flat-detail__button button button--outline" href="" target="_blank">Распечать планировку</a>
                 <!-- <button class="flat-detail__to-mortgage button" type="button" data-fancybox data-src="#popup-request-mortgage">Эта квартира в ипотеку</button> -->
               </div>
             </div>
@@ -474,25 +481,29 @@
     </div>
   </div>
 
-  <div id="popup-request-mortgage" class="popup popup-callback" hidden>
+  <div id="popup-request-cost" class="popup" hidden>
     <div class="popup__title">Квартира в ипотеку</div>
     <form class="form popup-form" action="" method="post">
+      <div hidden>
+        <input type="hidden" name="id" value="">;
+        <input type="hidden" name="flat" value="">;
+      </div>
       <label class="field">
         <span class="field__label">Имя</span>
         <div class="field__control">
-          <input class="field__input input" type="text" name="request_mortgage_name" placeholder="Ваше имя">
+          <input class="field__input input" type="text" name="request_cost_name" placeholder="Ваше имя">
         </div>
       </label>
       <label class="field">
         <span class="field__label">Телефон</span>
         <div class="field__control">
-          <input class="field__input input" type="tel" name="request_mortgage_phone" placeholder="+7 (___) ___-__-__" required>
+          <input class="field__input input" type="tel" name="request_cost_phone" placeholder="+7 (___) ___-__-__" required>
         </div>
       </label>
       <label class="field">
         <span class="field__label">Текст сообщения</span>
         <div class="field__control">
-          <textarea class="field__input input" name="request_mortgage_message" rows="4" placeholder="Текст сообщения" required></textarea>
+          <textarea class="field__input input" name="request_cost_message" rows="4" placeholder="Текст сообщения" required></textarea>
         </div>
       </label>
 

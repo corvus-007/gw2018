@@ -7,10 +7,20 @@ window.util = (function () {
     URL_FILTER_HANDLER: 'js/flats-mock.json',
     compareTypes: {
       rooms: function (a, b) {
-        var roomsA = parseInt(a.room, 10);
-        var roomsB = parseInt(b.room, 10);
+        var roomList = {
+          'Однокомнатная': '1',
+          'Двухкомнатная': '2',
+          'Трехкомнатная': '3',
+          'Четырёхкомнатная': '4',
+          'Пентхаус': 'П'
+        };
 
-        return (roomsA - roomsB);
+        var roomValueA = roomList[a.rooms] || '';
+        var roomValueB = roomList[b.rooms] || '';
+        var roomsA = roomValueA.toString();
+        var roomsB = roomValueB.toString();
+
+        return roomsA > roomsB ? 1 : -1;
       },
       floor: function (a, b) {
         var floorA = parseInt(a.floor, 10);
@@ -25,8 +35,10 @@ window.util = (function () {
         return (areaA - areaB);
       },
       price: function (a, b) {
-        var priceA = parseFloat(a.price);
-        var priceB = parseFloat(b.price);
+        var totalCostA = a.totalCost.replace(/\D/g, '');
+        var totalCostB = b.totalCost.replace(/\D/g, '');
+        var priceA = parseFloat(totalCostA);
+        var priceB = parseFloat(totalCostB);
 
         return priceA - priceB;
       }
@@ -974,7 +986,7 @@ window.flat = (function (window, $) {
     }
 
     if (window.matchMedia("(pointer: coarse)").matches) {
-      processingPlan(flatPlan);
+      // processingPlan(flatPlan);
       // planZoomToImage.addEventListener('click', function (evt) {
       //   evt.preventDefault();
       // });
