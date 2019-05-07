@@ -4,7 +4,7 @@ window.util = (function () {
   return {
     KEYCODE_ESC: 27,
     URL_TOOLTIP_HOUSE_HANDLER: 'js/tooltip-house-mock.json',
-    URL_FILTER_HANDLER: 'js/flats-mock.json',
+    URL_FILTER_HANDLER: '/api/getApartmentsByFilter',
     compareTypes: {
       rooms: function (a, b) {
         var roomList = {
