@@ -1,14 +1,24 @@
 <div id="popup-request-cost" class="popup" hidden>
-  <div class="popup__title">Квартира в ипотеку</div>
-  <form class="form popup-form" action="" method="post">
+  <div class="popup__title">Запросить стоимость</div>
+  <form class="form popup-form" id="popup-request-form" action="" method="post">
     <div hidden>
-      <input type="hidden" name="id" value="">;
-      <input type="hidden" name="flat" value="">;
+      <input type="hidden" name="id" value="1">
+      <input type="hidden" name="title" value="Пентхаус 90.28 м2">
+      <input type="hidden" name="houseType" value="3.1">
+      <input type="hidden" name="floor" value="1">
+      <input type="hidden" name="totalCost" value="4 892 400">
+      <input type="hidden" name="costMeter" value="54 191">
+      <input type="hidden" name="showInPreview" value="true">
+      <input type="hidden" name="type" value="penthouse">
+      <input type="hidden" name="area" value="90.28">
+      <input type="hidden" name="rooms" value="Пентхаус">
+      <input type="hidden" name="main_layout" value="/files/apartments/apartment_layouts/5cd019d186b60080462552.png">
+      <input type="hidden" name="placingApartmentOnFloorPlanFile" value="/files/apartments/placing_floor/5cc8edfee954e143497931.png">
     </div>
     <label class="field">
       <span class="field__label">Имя</span>
       <div class="field__control">
-        <input class="field__input input" type="text" name="request_cost_name" placeholder="Ваше имя">
+        <input class="field__input input" type="text" name="request_cost_name" placeholder="Ваше имя" required>
       </div>
     </label>
     <label class="field">
@@ -20,7 +30,7 @@
     <label class="field">
       <span class="field__label">Текст сообщения</span>
       <div class="field__control">
-        <textarea class="field__input input" name="request_cost_message" rows="4" placeholder="Текст сообщения" required></textarea>
+        <textarea class="field__input input" name="request_cost_message" rows="4" placeholder="Текст сообщения"></textarea>
       </div>
     </label>
 

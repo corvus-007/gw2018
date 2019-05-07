@@ -14,3 +14,5 @@
 //=require ../../node_modules/js-cookie/src/js.cookie.js
 //=require ../../node_modules/accordionjs/accordion.min.js
 //=require ../../node_modules/handlebars/dist/handlebars.min.js
+//=require ../../node_modules/jquery-validation/dist/jquery.validate.min.js
+//=require ../../node_modules/jquery-validation/dist/localization/messages_ru.min.js

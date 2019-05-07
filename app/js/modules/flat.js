@@ -25,6 +25,42 @@ window.flat = (function (window, $) {
 
     // console.log(flkty);
 
+
+    $('#popup-request-form').validate({
+      submitHandler: function (form, event) {
+        event.preventDefault();
+
+        var formData = new FormData(form);
+
+        $.ajax({
+            url: "handler.php",
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: 'json'
+          })
+          .done(function (data) {
+            if (data.status === 1) {
+              form.reset();
+              $.fancybox.close();
+              alert('Спасибо, форма отправлена ;-)');
+            } else {
+              alert('Произошла ошибка! Попробуйте снова!');
+            }
+          })
+          .fail(function () {
+            alert('Произошла ошибка! Обновите страницу и попробуйте снова!');
+          });
+      },
+      rules: {
+        'request_cost_phone': {
+          checkPhoneMask: true
+        }
+      }
+    });
+
+
     $(flatPlanSlider).flickity({
       // draggable: false
       adaptiveHeight: true,

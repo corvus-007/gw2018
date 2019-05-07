@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     "mask": "+7 (999) 999-99-99"
   });
 
+  jQuery.validator.addMethod('checkPhoneMask', function (value) {
+    return /\+7\ \(\d{3}\)\ \d{3}\-\d{2}\-\d{2}/g.test(value);
+  }, 'Заполните номер телефона');
+
   window.addEventListener('scroll', function () {
     var scrolled = window.pageYOffset || document.documentElement.scrollTop;
     if (scrolled > 0) {
