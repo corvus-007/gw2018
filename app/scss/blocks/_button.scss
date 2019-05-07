@@ -14,6 +14,7 @@
   text-transform: uppercase;
   color: #ffffff;
   background-color: $accent-color;
+  -webkit-tap-highlight-color: transparent;
   border: 1px solid transparent;
   box-shadow: 0 0 33px rgba(48, 100, 60, 0.5);
   box-sizing: border-box;
@@ -45,11 +46,11 @@
     background-color: transparent;
     box-shadow: none;
 
-  &:hover,
-  &:focus {
-    color: #ffffff;
-    background-color: lighten($accent-color-2, 6%);
-  }
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      background-color: lighten($accent-color-2, 6%);
+    }
   }
 }
 

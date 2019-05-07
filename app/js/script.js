@@ -34,12 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (commonPlansSlider) {
     $(commonPlansSlider).flickity({
       adaptiveHeight: false,
-      initialIndex: 1,
-      wrapAround: true,
       imagesLoaded: true,
       prevNextButtons: false,
-      contain: true,
-      lazyLoad: 1
+      lazyLoad: 3
     });
   }
 
@@ -114,6 +111,11 @@ document.addEventListener('DOMContentLoaded', function () {
     selectSortElem.addEventListener('change', function (evt) {
       window.flatsResult.renderFilteredFlats(window.util.filteredFlats);
     });
+
+    var selectTypeNodeList = document.querySelectorAll('[data-target="checkboxes-select"]');
+    [...selectTypeNodeList].forEach((it) => {
+      new checkboxesSelect(it);
+    });
   }
 
   if (document.querySelector('.favorites-flats')) {
@@ -152,11 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $(el).hide();
       }
     });
-  });
-
-  var selectTypeNode = document.querySelectorAll('[data-target="checkboxes-select"]');
-  [...selectTypeNode].forEach((it) => {
-    new checkboxesSelect(it);
   });
 
   $('.common-tabs').tabslet({

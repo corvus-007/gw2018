@@ -1,5 +1,4 @@
 .flat-page {
-
 }
 
 .flat-page__header {
@@ -9,12 +8,15 @@
 .flat-page__nav-wrapper {
   display: flex;
   align-items: center;
-  margin-top: -10px;
-  margin-bottom: -10px;
+
+  @include mq-min(568px) {
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
 }
 
 .flat-page__nav {
   display: flex;
-  margin-left: auto;
   height: 100%;
+  margin-left: auto;
 }

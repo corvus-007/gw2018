@@ -1,22 +1,26 @@
-<div id="popup-request-mortgage" class="popup" hidden>
-  <div class="popup__title">Запросить стоимость</div>
+<div id="popup-request-cost" class="popup" hidden>
+  <div class="popup__title">Квартира в ипотеку</div>
   <form class="form popup-form" action="" method="post">
+    <div hidden>
+      <input type="hidden" name="id" value="">;
+      <input type="hidden" name="flat" value="">;
+    </div>
     <label class="field">
       <span class="field__label">Имя</span>
       <div class="field__control">
-        <input class="field__input input" type="text" name="request_mortgage_name" placeholder="Ваше имя">
+        <input class="field__input input" type="text" name="request_cost_name" placeholder="Ваше имя">
       </div>
     </label>
     <label class="field">
       <span class="field__label">Телефон</span>
       <div class="field__control">
-        <input class="field__input input" type="tel" name="request_mortgage_phone" placeholder="+7 (___) ___-__-__" required>
+        <input class="field__input input" type="tel" name="request_cost_phone" placeholder="+7 (___) ___-__-__" required>
       </div>
     </label>
     <label class="field">
       <span class="field__label">Текст сообщения</span>
       <div class="field__control">
-        <textarea class="field__input input" name="request_mortgage_message" rows="4" placeholder="Текст сообщения" required></textarea>
+        <textarea class="field__input input" name="request_cost_message" rows="4" placeholder="Текст сообщения" required></textarea>
       </div>
     </label>
 

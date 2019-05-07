@@ -4,13 +4,8 @@
 
 .flat-info__row {
   display: flex;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  flex-wrap: wrap;
   border-bottom: 1px solid $gray-239;
-
-  &:first-child {
-    padding-top: 0;
-  }
 
   &:last-child {
     padding-bottom: 0;
@@ -19,16 +14,26 @@
 }
 
 .flat-info__column {
-  width: 50%;
-  padding-right: 15px;
+  flex: 1 0 0;
+  max-width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
 
   &:last-child {
     padding-right: 0;
   }
+
+  .flat-info__row:first-child & {
+    padding-top: 0;
+  }
+
+  .flat-info__row:last-child & {
+    padding-bottom: 0;
+  }
 }
 
 .flat-info__item {
-
+  overflow: hidden;
 }
 
 .flat-info__caption {
@@ -36,6 +41,9 @@
   margin-bottom: 4px;
   font-size: 14px;
   line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: $muted-color;
 }
 

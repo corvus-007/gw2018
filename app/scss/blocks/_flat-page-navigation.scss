@@ -1,4 +1,5 @@
 .flat-page-navigation {
+  // width: 100%;
 }
 
 .flat-page-navigation__list {
@@ -10,8 +11,9 @@
 
 .flat-page-navigation__item {
   display: flex;
+
   height: 100%;
-  margin-right: 30px;
+  margin-right: 24px;
 
   &:last-child {
     margin-right: 0;
@@ -19,16 +21,24 @@
 
   &--active {
   }
+
+  @include mq-min(768px) {
+    margin-right: 24px;
+  }
 }
 
 .flat-page-navigation__link {
   display: flex;
   align-items: center;
   height: 100%;
+  padding: 5px;
   font-weight: 700;
+  font-size: 18px;
   color: $gray-189;
+  -webkit-tap-highlight-color: transparent;
   border-bottom: 2px solid transparent;
   box-sizing: border-box;
+  white-space: nowrap;
   transition: $duration;
 
   &:hover,
@@ -39,5 +49,11 @@
   .flat-page-navigation__item--active & {
     color: $accent-color;
     border-bottom-color: currentColor;
+  }
+
+  @include mq-min(768px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 16px;
   }
 }

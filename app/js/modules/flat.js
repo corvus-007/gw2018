@@ -68,7 +68,7 @@ window.flat = (function (window, $) {
     }
 
     if (window.matchMedia("(pointer: coarse)").matches) {
-      processingPlan(flatPlan);
+      // processingPlan(flatPlan);
       // planZoomToImage.addEventListener('click', function (evt) {
       //   evt.preventDefault();
       // });
