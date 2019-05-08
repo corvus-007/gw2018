@@ -15,12 +15,12 @@ window.flatsCards = (function () {
   var currentFlatView = localStorage.getItem('currentFlatView');
   var viewModeForm = document.querySelector('.view-mode-form');
 
-  if (!currentFlatView || currentFlatView === 'card') {
-    setDisplayCard();
-    viewModeForm.elements.view.value = 'card';
-  } else {
+  if (!currentFlatView || currentFlatView === 'list') {
     setDisplayList();
     viewModeForm.elements.view.value = 'list';
+  } else {
+    setDisplayCard();
+    viewModeForm.elements.view.value = 'card';
   }
 
   flatsCards.classList.add(currentFlatView);
@@ -30,6 +30,27 @@ window.flatsCards = (function () {
     } else {
       setDisplayCard();
     }
+  });
+
+  flatsCards.addEventListener('click', function (evt) {
+    var target = evt.target;
+    var floorToLookButton = target.closest('.flat-card__floor-to-look');
+
+    if (!floorToLookButton) {
+      return;
+    }
+
+    evt.preventDefault();
+
+    var imageSrc = floorToLookButton.dataset.src;
+
+    $.fancybox.open({
+      src: imageSrc,
+      type: 'image',
+      opts: {
+        slideClass: 'slide-image-custom',
+      }
+    });
   });
 
   flatsCards.addEventListener('click', function (evt) {
