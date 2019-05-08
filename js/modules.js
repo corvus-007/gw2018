@@ -3,8 +3,9 @@ window.util = (function () {
 
   return {
     KEYCODE_ESC: 27,
-    URL_TOOLTIP_HOUSE_HANDLER: 'js/tooltip-house-mock.json',
+    URL_TOOLTIP_HOUSE_HANDLER: '/api/get_tooltip_house/',
     URL_FILTER_HANDLER: '/api/getApartmentsByFilter',
+    URL_FILTER_HANDLER: '/js/flats-mock.json',
     compareTypes: {
       rooms: function (a, b) {
         var roomList = {
@@ -305,14 +306,52 @@ window.genplanTooltip = (function () {
   var genplanSVG = window.genplan.genplanSVG;
   var tooltip = genplan.querySelector('[data-target="genplan-tooltip"]');
   var limitCoords = {};
+
   Handlebars.registerHelper('replaceDotOnDash', function (type) {
     return type.replace(/\./g, '-');
   });
-  var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
+  Handlebars.registerHelper('simpleMinPrice', function (price) {
+    return (parseInt(price, 10) / 1000000).toFixed(1);
+  });
+  // var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
+
+  var source = `
+  <div class="genplan-tooltip__type">
+    тип дома
+    <span class="genplan-tooltip__type-value">{{type}}</span>
+  </div>
+  {{#if is_vacant}}
+    <span class="genplan-tooltip__status">Квартиры в наличии</span>
+  {{/if}}
+  <ul class="genplan-tooltip__rooms-list">
+    {{#each roomsList}}
+    <li class="genplan-tooltip__room">
+      <a href="flats-filter-page.html?type={{replaceDotOnDash ../type}}&rooms[]={{rooms}}" class="genplan-tooltip__room-wraplink">
+        <b class="genplan-tooltip__room-label">{{caption}}</b>
+        <span class="genplan-tooltip__room-value">от {{simpleMinPrice min_price}} млн.</span>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+  <span class="genplan-tooltip__corner"></span>
+  `;
+
   var template = Handlebars.compile(source);
 
   function getPinElem(pinId) {
     return genplanSVG.querySelector('#pin-' + pinId);
+  }
+
+  function sendRequestHouse(id, url) {
+    return $.ajax({
+      type: "GET",
+      url: url + id,
+      dataType: "JSON"
+    });
+  }
+
+  function replaceDashOnDot(id) {
+    return id.replace(/-/g, '.');
   }
 
   genplanSVG.addEventListener('mouseover', function (event) {
@@ -334,9 +373,7 @@ window.genplanTooltip = (function () {
       return;
     }
 
-    var response = window.util.sendRequest({
-      'house_id': pinId
-    }, window.util.URL_TOOLTIP_HOUSE_HANDLER);
+    var response = sendRequestHouse(replaceDashOnDot(pinId), window.util.URL_TOOLTIP_HOUSE_HANDLER);
 
     response.done(function (data) {
       tooltip.innerHTML = template(data);
@@ -612,12 +649,12 @@ window.flatsCards = (function () {
   var currentFlatView = localStorage.getItem('currentFlatView');
   var viewModeForm = document.querySelector('.view-mode-form');
 
-  if (!currentFlatView || currentFlatView === 'card') {
-    setDisplayCard();
-    viewModeForm.elements.view.value = 'card';
-  } else {
+  if (!currentFlatView || currentFlatView === 'list') {
     setDisplayList();
     viewModeForm.elements.view.value = 'list';
+  } else {
+    setDisplayCard();
+    viewModeForm.elements.view.value = 'card';
   }
 
   flatsCards.classList.add(currentFlatView);
@@ -627,6 +664,27 @@ window.flatsCards = (function () {
     } else {
       setDisplayCard();
     }
+  });
+
+  flatsCards.addEventListener('click', function (evt) {
+    var target = evt.target;
+    var floorToLookButton = target.closest('.flat-card__floor-to-look');
+
+    if (!floorToLookButton) {
+      return;
+    }
+
+    evt.preventDefault();
+
+    var imageSrc = floorToLookButton.dataset.src;
+
+    $.fancybox.open({
+      src: imageSrc,
+      type: 'image',
+      opts: {
+        slideClass: 'slide-image-custom',
+      }
+    });
   });
 
   flatsCards.addEventListener('click', function (evt) {
@@ -703,8 +761,8 @@ window.flatsResult = (function (window, $) {
   var cardsList = flatsResult.querySelector('.flats-cards');
   var favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
   var selectSortElem = document.querySelector('[name="sort-by"]');
-  //var source = document.querySelector('#flatsResultCardTemplate').innerHTML;
-  var source = '' +
+  var source = document.querySelector('#flatsResultCardTemplate').innerHTML;
+  var source__ = '' +
       '{{#each this}}' +
       '<li class="flats-result__item flats-cards__item flat-card" data-dlat-id="{{id}}">\n' +
       '            <a class="flat-card__wraplink" href="/apartment/{{id}}/">\n' +
@@ -868,7 +926,7 @@ window.flatFilters = (function () {
     var params = new URLSearchParams(location.search);
     // var paramType = params.get('type') || 'all';
     // var paramFloor = params.get('floor') || 'all';
-    var paramTypesList = params.getAll('types[]');
+    var paramTypesList = params.getAll('house_type_id[]');
     var paramFloorsList = params.getAll('floors[]');
     var paramRoomsList = params.getAll('rooms[]');
 
@@ -918,7 +976,7 @@ window.flatFilters = (function () {
     // flatFiltersForm.elements.type.value = paramType;
     // flatFiltersForm.elements.floor.value = paramFloor;
 
-    for (var checkboxItem of flatFiltersForm.elements['types[]']) {
+    for (var checkboxItem of flatFiltersForm.elements['house_type_id[]']) {
       var val = checkboxItem.value;
 
       if (!paramTypesList.includes(val)) {
@@ -986,13 +1044,13 @@ window.flat = (function (window, $) {
         var formData = new FormData(form);
 
         $.ajax({
-            url: "handler.php",
-            method: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            dataType: 'json'
-          })
+          url: "handler.php",
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          dataType: 'json'
+        })
           .done(function (data) {
             if (data.status === 1) {
               form.reset();
@@ -1015,7 +1073,6 @@ window.flat = (function (window, $) {
 
 
     $(flatPlanSlider).flickity({
-      // draggable: false
       adaptiveHeight: true,
       imagesLoaded: true,
       pageDots: false
@@ -1027,54 +1084,13 @@ window.flat = (function (window, $) {
       flatPlanSlider.classList.add('flat-plans-slider--one-slide')
     }
 
-
-
-    function processingPlan(plan) {
-      planAdjuster = plan.querySelector('.flat-plan__adjuster');
-      planImage = plan.querySelector('.flat-plan__image');
-
-      function updatePlanAdjuster(ratio) {
-        planAdjuster.style.paddingTop = ratio * 100 + '%';
-      }
-
-      updatePlanAdjuster(getImageRatio(planImage));
-
-      planImage.addEventListener('load', function () {
-        updatePlanAdjuster(getImageRatio(planImage));
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      $('[data-target="flat-plan-popup-link"]').fancybox({
+        slideClass: 'slide-image-custom'
       });
-
-      planImage.addEventListener('click', function (event) {
-        planImage.classList.toggle('flat-plan__image--scale');
-      });
-    }
-
-    function getImageRatio(image) {
-      return image.naturalHeight / image.naturalWidth;
-    }
-
-    function getDetailHeight() {
-      return flatDetail.offsetHeight;
-    }
-
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      // processingPlan(flatPlan);
-      // planZoomToImage.addEventListener('click', function (evt) {
-      //   evt.preventDefault();
-      // });
     } else {
-      // $(frame).zoom();
-      // $(planZoomToImage).fancybox({
-      //   slideClass: 'flat-plan-popup',
-      //   animationEffect: 'zoom-in-out'
-      // });
+      $('[data-target="flat-plan-popup-link"]').attr('target', '_blank');
     }
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      // flatPlan.style.height = getDetailHeight() + 'px';
-    }
-
-    // if (window.matchMedia("(min-width: 768px) and not (pointer: coarse)").matches) {
-    // }
   }
 
   return {
