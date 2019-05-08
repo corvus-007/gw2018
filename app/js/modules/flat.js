@@ -33,13 +33,13 @@ window.flat = (function (window, $) {
         var formData = new FormData(form);
 
         $.ajax({
-            url: "handler.php",
-            method: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            dataType: 'json'
-          })
+          url: "handler.php",
+          method: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          dataType: 'json'
+        })
           .done(function (data) {
             if (data.status === 1) {
               form.reset();
@@ -62,7 +62,6 @@ window.flat = (function (window, $) {
 
 
     $(flatPlanSlider).flickity({
-      // draggable: false
       adaptiveHeight: true,
       imagesLoaded: true,
       pageDots: false
@@ -74,54 +73,13 @@ window.flat = (function (window, $) {
       flatPlanSlider.classList.add('flat-plans-slider--one-slide')
     }
 
-
-
-    function processingPlan(plan) {
-      planAdjuster = plan.querySelector('.flat-plan__adjuster');
-      planImage = plan.querySelector('.flat-plan__image');
-
-      function updatePlanAdjuster(ratio) {
-        planAdjuster.style.paddingTop = ratio * 100 + '%';
-      }
-
-      updatePlanAdjuster(getImageRatio(planImage));
-
-      planImage.addEventListener('load', function () {
-        updatePlanAdjuster(getImageRatio(planImage));
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      $('[data-target="flat-plan-popup-link"]').fancybox({
+        slideClass: 'slide-image-custom'
       });
-
-      planImage.addEventListener('click', function (event) {
-        planImage.classList.toggle('flat-plan__image--scale');
-      });
-    }
-
-    function getImageRatio(image) {
-      return image.naturalHeight / image.naturalWidth;
-    }
-
-    function getDetailHeight() {
-      return flatDetail.offsetHeight;
-    }
-
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      // processingPlan(flatPlan);
-      // planZoomToImage.addEventListener('click', function (evt) {
-      //   evt.preventDefault();
-      // });
     } else {
-      // $(frame).zoom();
-      // $(planZoomToImage).fancybox({
-      //   slideClass: 'flat-plan-popup',
-      //   animationEffect: 'zoom-in-out'
-      // });
+      $('[data-target="flat-plan-popup-link"]').attr('target', '_blank');
     }
-
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      // flatPlan.style.height = getDetailHeight() + 'px';
-    }
-
-    // if (window.matchMedia("(min-width: 768px) and not (pointer: coarse)").matches) {
-    // }
   }
 
   return {

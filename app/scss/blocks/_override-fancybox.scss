@@ -9,3 +9,16 @@
     content: none;
   }
 }
+
+.slide-image-custom {
+  .fancybox-content {
+    background-color: #f4f4f4;
+  }
+
+  .fancybox-image {
+    left: 20px;
+    top: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+  }
+}
