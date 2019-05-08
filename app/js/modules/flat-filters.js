@@ -32,7 +32,7 @@ window.flatFilters = (function () {
     var params = new URLSearchParams(location.search);
     // var paramType = params.get('type') || 'all';
     // var paramFloor = params.get('floor') || 'all';
-    var paramTypesList = params.getAll('types[]');
+    var paramTypesList = params.getAll('house_type_id[]');
     var paramFloorsList = params.getAll('floors[]');
     var paramRoomsList = params.getAll('rooms[]');
 
@@ -82,7 +82,7 @@ window.flatFilters = (function () {
     // flatFiltersForm.elements.type.value = paramType;
     // flatFiltersForm.elements.floor.value = paramFloor;
 
-    for (var checkboxItem of flatFiltersForm.elements['types[]']) {
+    for (var checkboxItem of flatFiltersForm.elements['house_type_id[]']) {
       var val = checkboxItem.value;
 
       if (!paramTypesList.includes(val)) {
