@@ -1,30 +1,24 @@
 {
-  "type": "3.1",
+  "type": "4.3",
   "is_vacant": true,
   "roomsList": [
     {
-      "caption": "1-комнатные",
+      "caption": "1-\u043a\u043e\u043c\u043d\u0430\u0442\u043d\u044b\u0435",
       "rooms": 1,
-      "min_price": "2,4",
-      "link": "flats-filter-page.html?type=3-1&rooms[]=1"
+      "min_price": "3078000.00",
+      "link": "http:\/\/dev.greenwoodclub.ru\/filter?house_type_id%5B%5D=3\u0026rooms%5B%5D=1"
     },
     {
-      "caption": "2-комнатные",
+      "caption": "2-\u043a\u043e\u043c\u043d\u0430\u0442\u043d\u044b\u0435",
       "rooms": 2,
-      "min_price": "2,9",
-      "link": "flats-filter-page.html?type=3-1&rooms[]=2"
+      "min_price": "4818000.00",
+      "link": "http:\/\/dev.greenwoodclub.ru\/filter?house_type_id%5B%5D=3\u0026rooms%5B%5D=2"
     },
     {
-      "caption": "3-комнатные",
+      "caption": "3-\u043a\u043e\u043c\u043d\u0430\u0442\u043d\u044b\u0435",
       "rooms": 3,
-      "min_price": "3,2",
-      "link": "flats-filter-page.html?type=3-1&rooms[]=3"
-    },
-    {
-      "caption": "4-комнатные",
-      "rooms": 4,
-      "min_price": "5,5",
-      "link": "flats-filter-page.html?type=3-1&rooms[]=4"
+      "min_price": "8197200.00",
+      "link": "http:\/\/dev.greenwoodclub.ru\/filter?house_type_id%5B%5D=3\u0026rooms%5B%5D=3"
     }
   ]
 }

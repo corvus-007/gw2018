@@ -10,14 +10,52 @@ window.genplanTooltip = (function () {
   var genplanSVG = window.genplan.genplanSVG;
   var tooltip = genplan.querySelector('[data-target="genplan-tooltip"]');
   var limitCoords = {};
+
   Handlebars.registerHelper('replaceDotOnDash', function (type) {
     return type.replace(/\./g, '-');
   });
-  var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
+  Handlebars.registerHelper('simpleMinPrice', function (price) {
+    return (parseInt(price, 10) / 1000000).toFixed(1);
+  });
+  // var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
+
+  var source = `
+  <div class="genplan-tooltip__type">
+    тип дома
+    <span class="genplan-tooltip__type-value">{{type}}</span>
+  </div>
+  {{#if is_vacant}}
+    <span class="genplan-tooltip__status">Квартиры в наличии</span>
+  {{/if}}
+  <ul class="genplan-tooltip__rooms-list">
+    {{#each roomsList}}
+    <li class="genplan-tooltip__room">
+      <a href="flats-filter-page.html?type={{replaceDotOnDash ../type}}&rooms[]={{rooms}}" class="genplan-tooltip__room-wraplink">
+        <b class="genplan-tooltip__room-label">{{caption}}</b>
+        <span class="genplan-tooltip__room-value">от {{simpleMinPrice min_price}} млн.</span>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+  <span class="genplan-tooltip__corner"></span>
+  `;
+
   var template = Handlebars.compile(source);
 
   function getPinElem(pinId) {
     return genplanSVG.querySelector('#pin-' + pinId);
+  }
+
+  function sendRequestHouse(id, url) {
+    return $.ajax({
+      type: "GET",
+      url: url + id,
+      dataType: "JSON"
+    });
+  }
+
+  function replaceDashOnDot(id) {
+    return id.replace(/-/g, '.');
   }
 
   genplanSVG.addEventListener('mouseover', function (event) {
@@ -39,9 +77,7 @@ window.genplanTooltip = (function () {
       return;
     }
 
-    var response = window.util.sendRequest({
-      'house_id': pinId
-    }, window.util.URL_TOOLTIP_HOUSE_HANDLER);
+    var response = sendRequestHouse(replaceDashOnDot(pinId), window.util.URL_TOOLTIP_HOUSE_HANDLER);
 
     response.done(function (data) {
       tooltip.innerHTML = template(data);
