@@ -19,12 +19,26 @@
       <div class="common-page__action-panel page-action-panel">
         <div class="page-action-panel__container container">
           <div class="page-action-panel__left-column">
-            <a class="back-link button no-print" href="flats-filter-page.html">
-              <svg class="back-link__icon button__icon button__icon--left" width="16" height="16">
-                <use xlink:href="images/symbols.svg#left-arrow"></use>
-              </svg>
-              Назад
-            </a>
+            <div class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="https://greenwoodclub.ru/">
+                    <svg class="breadcrumbs__link-icon" width="16" height="16">
+                      <use xlink:href="images/symbols.svg#home"></use>
+                    </svg>
+                    <span class="breadcrumbs__link-text visually-hidden">Главная</span>
+                  </a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="/filter">
+                    <svg class="breadcrumbs__link-icon" width="16" height="16">
+                      <use xlink:href="images/symbols.svg#left-arrow"></use>
+                    </svg>
+                    <span class="breadcrumbs__link-text">Назад</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="page-action-panel__right-column flat-page__nav-wrapper">
             <div class="flat-page__nav flat-page-navigation" data-target="flat-page-navigation">

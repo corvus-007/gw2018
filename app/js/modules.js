@@ -16,5 +16,5 @@
 //=require modules/map.js
 //=require modules/presentation-video.js
 //=require modules/district.js
-//=require modules/promo-popup.js
+////=require modules/promo-popup.js
 //=require modules/info-popup.js

@@ -21,11 +21,7 @@
     @include calc-column-width(3, 10px);
   }
 
-  @include mq-range(1280px, 1439px) {
+  @include mq-min(1280px) {
     @include calc-column-width(3, 10px);
-  }
-
-  @include mq-min(1440px) {
-    @include calc-column-width(4, 10px);
   }
 }

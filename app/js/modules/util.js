@@ -3,7 +3,7 @@ window.util = (function () {
 
   return {
     KEYCODE_ESC: 27,
-    URL_TOOLTIP_HOUSE_HANDLER: '/api/get_tooltip_house/',
+    URL_TOOLTIP_HOUSE_HANDLER: '//filter.greenwoodclub.ru/api/get_tooltip_house/',
     URL_FILTER_HANDLER: '/api/getApartmentsByFilter',
     compareTypes: {
       rooms: function (a, b) {

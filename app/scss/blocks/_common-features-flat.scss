@@ -21,14 +21,15 @@
 }
 
 .common-features-flat__label {
+  white-space: nowrap;
 }
 
 .common-features-flat__value {
   display: block;
   font-weight: 700;
-  font-size: rem(32);
+  font-size: rem(28);
 
   @include mq-min (1024px) {
-    font-size: vh(32);
+    font-size: vh(28);
   }
 }

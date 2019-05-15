@@ -57,12 +57,7 @@
 }
 
 .flat-card__info-block {
-  padding-bottom: 15px;
-
-  .flats-cards--display-card & {
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-  }
+  // padding-bottom: 15px;
 
   @include mq-min(568px) {
     .flats-cards--display-list & {

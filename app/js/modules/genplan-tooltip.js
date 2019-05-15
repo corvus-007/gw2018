@@ -50,6 +50,7 @@ window.genplanTooltip = (function () {
     return $.ajax({
       type: "GET",
       url: url + id,
+      crossDomain: true,
       dataType: "JSON"
     });
   }
