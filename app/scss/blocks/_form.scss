@@ -1,3 +1,18 @@
+label.error {
+  position: absolute;
+  right: 15.5px;
+  bottom: calc(15px / 3);
+  max-width: calc(100% - 15.5px * 2);
+  font-size: 12px;
+  color: $danger-color;
+
+  @include mq-minh($vh-height-bp) {
+    right: vh(15.5);
+    bottom: calc(#{vh(15)} / 3);
+    max-width: calc(100% - #{vh(15.5)} * 2);
+  }
+}
+
 .wpcf7-form {
   p:empty,
   br {

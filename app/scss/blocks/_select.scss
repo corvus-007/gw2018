@@ -8,16 +8,13 @@
     bottom: 0;
     right: 16px;
     z-index: 2;
-    width: 0;
-    height: 0;
+    margin: auto;
     width: 4px;
     height: 4px;
     border: 2px solid #003d58;
     border-top: none;
     border-left: none;
-    // border-top: 7px solid $secondary-color-2;
     transform: rotate(45deg);
-    margin: auto;
     transition: $duration;
     pointer-events: none;
   }
@@ -55,6 +52,10 @@
     &:hover,
     &:focus {
       border-color: darken($secondary-color-2, 10%);
+    }
+
+    &.error {
+      border-color: $danger-color;
     }
   }
 
