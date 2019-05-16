@@ -31,9 +31,10 @@ window.flat = (function (window, $) {
         event.preventDefault();
 
         var formData = new FormData(form);
+        var action = form.action;
 
         $.ajax({
-          url: "handler.php",
+          url: action,
           method: 'POST',
           data: formData,
           processData: false,
@@ -41,7 +42,7 @@ window.flat = (function (window, $) {
           dataType: 'json'
         })
           .done(function (data) {
-            if (data.status === 1) {
+            if (data.status === true) {
               form.reset();
               $.fancybox.close();
               alert('Спасибо, форма отправлена ;-)');
