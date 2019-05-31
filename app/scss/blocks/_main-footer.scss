@@ -72,6 +72,11 @@
   margin: 0;
   margin-bottom: 10px;
 
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
   @include mq-min(667px) {
     margin-right: 15px;
     margin-bottom: 0;
