@@ -281,6 +281,7 @@
 }
 
 .flat-card__reserved {
+  display: none;
   margin-right: 5px;
   color: $gray-189;
   cursor: pointer;
@@ -288,6 +289,10 @@
 
   &:hover {
     color: $gray-169;
+  }
+
+  &[data-status-flat="3"] {
+    display: block;
   }
 }
 
