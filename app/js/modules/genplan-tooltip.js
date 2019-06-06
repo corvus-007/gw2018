@@ -14,10 +14,10 @@ window.genplanTooltip = (function () {
   Handlebars.registerHelper('replaceDotOnDash', function (type) {
     return type.replace(/\./g, '-');
   });
+
   Handlebars.registerHelper('simpleMinPrice', function (price) {
     return (parseInt(price, 10) / 1000000).toFixed(1);
   });
-  // var source = document.querySelector('#tooltipHouseTemplate').innerHTML;
 
   var source = `
   <div class="genplan-tooltip__type">
