@@ -4,7 +4,6 @@
 //=require modules/animations.js
 //=require modules/genplan.js
 //=require modules/genplan-tooltip.js
-////=require modules/checkboxes-select.js
 //=require modules/checkboxes-select-class.js
 //=require modules/favorites-cards.js
 //=require modules/flats-cards.js
