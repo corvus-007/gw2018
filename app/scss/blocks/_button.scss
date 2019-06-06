@@ -32,8 +32,7 @@
   }
 
   &:active {
-    color: #ffffff;
-    background-color: $accent-color;
+    opacity: 0.9;
   }
 
   &--fluid {
