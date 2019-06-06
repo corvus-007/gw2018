@@ -66,24 +66,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Features2 slider
-  var features2Slider = document.querySelector('[data-features2-slider]');
+  // var features2Slider = document.querySelector('[data-features2-slider]');
 
-  if (features2Slider) {
-    var $features2Slider = $(features2Slider).flickity({
-      setGallerySize: false,
-      prevNextButtons: false,
-      pageDots: false,
-      draggable: false,
-      bgLazyLoad: 2
-    });
+  // if (features2Slider) {
+  //   var $features2Slider = $(features2Slider).flickity({
+  //     setGallerySize: false,
+  //     prevNextButtons: false,
+  //     pageDots: false,
+  //     draggable: false,
+  //     bgLazyLoad: 2
+  //   });
 
-    $('.features2-accordion').accordionjs({
-      beforeOpenSection: function (item) {
-        var index = item.index();
-        $features2Slider.flickity('select', index, false, false);
-      }
-    });
-  }
+  //   $('.features2-accordion').accordionjs({
+  //     beforeOpenSection: function (item) {
+  //       var index = item.index();
+  //       $features2Slider.flickity('select', index, false, false);
+  //     }
+  //   });
+  // }
 
   var menuItems = document.querySelectorAll('#menu-glavnoe-menyu .current-menu-item');
 
