@@ -166,4 +166,10 @@ document.addEventListener('DOMContentLoaded', function () {
       next: '.to-next-tab'
     }
   });
+
+  const notificationEl = document.querySelector('[data-notification]');
+
+  if (notificationEl) {
+    window.notification.init();
+  }
 });

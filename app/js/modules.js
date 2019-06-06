@@ -18,3 +18,4 @@
 //=require modules/district.js
 ////=require modules/promo-popup.js
 //=require modules/info-popup.js
+//=require modules/notification.js
