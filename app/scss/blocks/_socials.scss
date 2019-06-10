@@ -10,11 +10,12 @@
   text-decoration: none;
   color: $accent-color;
   border: none;
-  transition: $duration * 2;
+  transition: $duration;
 
   &:hover,
   &:focus {
     color: $base-color;
+    transform: scale(1.12);
   }
 
   &:last-child {
