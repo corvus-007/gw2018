@@ -11,6 +11,10 @@
     padding-bottom: 0;
     border-bottom: none;
   }
+
+  &[data-flat-status]:not([data-flat-status="3"]) {
+    display: none;
+  }
 }
 
 .flat-info__column {

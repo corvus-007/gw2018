@@ -1,9 +1,7 @@
 .flat {
-
 }
 
 .flat__grid {
-
   @include mq-min(768px) {
     position: relative;
     display: flex;
@@ -14,7 +12,6 @@
 .flat__main-column {
   flex-grow: 1;
   margin-bottom: 30px;
-  // outline: 1px solid green;
 
   @include mq-min(768px) {
     margin-bottom: 0;
@@ -23,7 +20,6 @@
 
 .flat__aside-column {
   flex-shrink: 0;
-  // outline: 1px solid tomato;
 
   @include mq-min(768px) {
     position: sticky;
@@ -35,4 +31,23 @@
   @include mq-min(1280px) {
     width: vh(270);
   }
+}
+
+.flat__reserved {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  color: $gray-25;
+  background-color: #fff59d;
+}
+
+.flat__reserved-icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  fill: currentColor;
 }
