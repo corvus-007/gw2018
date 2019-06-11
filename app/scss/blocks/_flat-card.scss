@@ -11,8 +11,8 @@
   position: relative;
   flex-grow: 1;
   display: block;
-  padding: 30px;
-  padding-top: 40px;
+  padding: 32px;
+  padding-top: 44px;
   color: $base-color;
   background-color: #ffffff;
   border: 1px solid $gray-239;
@@ -34,7 +34,9 @@
     .flats-cards--display-list & {
       display: flex;
       align-items: center;
-      padding: 8px 15px;
+      padding: 16px;
+      padding-top: 24px;
+      padding-bottom: 12px;
     }
   }
 }
@@ -146,9 +148,6 @@
   line-height: 1.15;
 
   .flats-cards--display-card & {
-    // grid-column-start: 1;
-    // grid-column-end: 3;
-    // margin-bottom: 0;
     font-size: 18px;
   }
 
@@ -169,20 +168,13 @@
   display: block;
   font-size: 14px;
   color: $muted-color;
-
-  .flats-cards--display-card & {
-    // margin-bottom: 4px;
-    // grid-column-end: -1;
-    // grid-row-start: 1;
-    // text-align: right;
-  }
 }
 
 .flat-card__floor-to-look {
   position: relative;
   display: block;
-  padding: 0;
   min-width: auto;
+  padding: 0;
   font-size: inherit;
   text-transform: none;
   color: inherit;
@@ -263,14 +255,14 @@
 
 .flat-card__stick {
   position: absolute;
+  top: 8px;
+  left: 8px;
   z-index: 1;
-  top: 15px;
-  left: 15px;
   display: flex;
 
   .flats-cards--display-list & {
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 8px;
   }
 }
 
@@ -284,21 +276,25 @@
 .flat-card__reserved {
   display: none;
   margin-right: 5px;
-  color: $gray-189;
+  padding: 4px;
+  font-size: 12px;
+  line-height: 1.1;
+  white-space: nowrap;
+  color: $gray-25;
+  background-color: #FFF59D;
   cursor: pointer;
-  transition: $duration;
-
-  &:hover {
-    color: $gray-169;
-  }
 
   &[data-status-flat="3"] {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 
 .flat-card__reserved-icon {
   display: block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
 }
 
 // .flat-card__add-to-favorite {

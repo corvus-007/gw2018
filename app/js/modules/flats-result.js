@@ -44,7 +44,9 @@ window.flatsResult = (function (window, $) {
       <div class="flat-card__stick">
         <span class="flat-card__reserved" data-status-flat="{{status}}" aria-label="Квартира забронирована" title="Квартира забронирована">
           <svg class="flat-card__reserved-icon flat-card__icon" width="16" height="16" viewBox="0 0 402 402">
-            <path d="M357.4 190.7c-5.3-5.3-11.7-8-19.4-8h-9V128c0-35-12.6-65-37.7-90.2A123 123 0 0 0 201 0a123 123 0 0 0-90.2 37.7A123 123 0 0 0 73 127.9v54.8h-9c-7.7 0-14.1 2.7-19.5 8-5.3 5.3-8 11.8-8 19.4v164.5c0 7.6 2.7 14 8 19.4 5.4 5.3 11.8 8 19.5 8h274c7.7 0 14.1-2.7 19.5-8 5.3-5.3 8-11.8 8-19.4V210c0-7.6-2.7-14-8-19.4zm-83.3-8H127.9V128c0-20.2 7.1-37.4 21.4-51.7A70.4 70.4 0 0 1 201 54.8c20.2 0 37.4 7.2 51.7 21.4A70.4 70.4 0 0 1 274 128v54.8z" /></svg>
+            <use xlink:href="public/build/images/symbols.svg#padlock"></use>
+          </svg>
+            Квартира забронирована
         </span>
       </div>
     </li>
