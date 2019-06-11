@@ -1,0 +1,21 @@
+.quiz {
+  background-color: $gray-245;
+  display: none !important;
+
+  .ios & {
+    display: block !important;
+  }
+}
+
+.quiz__inner {
+
+}
+
+.quiz__header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  @include mq-min(1024px) {
+    margin-bottom: vh(45);
+  }
+}
