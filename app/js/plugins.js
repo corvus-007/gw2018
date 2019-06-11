@@ -16,3 +16,4 @@
 //=require ../../node_modules/handlebars/dist/handlebars.min.js
 //=require ../../node_modules/jquery-validation/dist/jquery.validate.min.js
 //=require ../../node_modules/jquery-validation/dist/localization/messages_ru.min.js
+//=require ../../node_modules/current-device/umd/current-device.js
