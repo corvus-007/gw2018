@@ -13,6 +13,8 @@ class checkboxesSelect {
 
     this.toggle.addEventListener('click', this.onclickToggleHandler.bind(this));
     this.dropdown.addEventListener('change', this.onchangeDropdownHandler.bind(this));
+
+    this._onclickWindowListener = this.onclickWindowHandler.bind(this);
   }
 
   // Handlers
@@ -122,11 +124,11 @@ class checkboxesSelect {
 
   openSelect() {
     this.select.classList.add('checkboxes-select--open');
-    window.addEventListener('click', this.onclickWindowHandler.bind(this));
+    window.addEventListener('click', this._onclickWindowListener);
   }
 
   closeSelect() {
     this.select.classList.remove('checkboxes-select--open');
-    window.removeEventListener('click', this.onclickWindowHandler.bind(this));
+    window.removeEventListener('click', this._onclickWindowListener);
   }
 }
