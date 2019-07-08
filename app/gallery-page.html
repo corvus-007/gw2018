@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>Галерея / Гринвуд</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+  @@include('blocks/main-header.html')
+
+  <main class="main">
+    <article class="common-page gallery-page">
+      <header class="common-page__header container">
+        <h1 class="common-page__title common-title">Галерея</h1>
+      </header>
+      <div class="common-page__body container">
+        <div class="gallery-cards">
+          <ul class="gallery-cards__list">
+            <li class="gallery-cards__item gallery-card">
+              <a class="gallery-card__wraplink" data-fancybox-trigger="ул. Степная, 28">
+                <span class="gallery-card__picture">
+                  <img src="//images.unsplash.com/photo-1470135343847-c68fe38b176e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+                </span>
+                <span class="gallery-card__body">
+                  <h2 class="gallery-card__title">
+                    <span class="gallery-card__street">ул. Степная, 28</span>
+                    <span class="gallery-card__site">поз. 3.1</span>
+                  </h2>
+                </span>
+              </a>
+              <div hidden>
+                <a href="//images.unsplash.com/photo-1470135343847-c68fe38b176e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" data-fancybox="ул. Степная, 28"></a>
+                <a href="//images.unsplash.com/photo-1470075801209-17f9ec0cada6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" data-fancybox="ул. Степная, 28"></a>
+                <a href="//images.unsplash.com/photo-1489041763408-10ac51c35969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" data-fancybox="ул. Степная, 28"></a>
+                <a href="//images.unsplash.com/photo-1524440914234-440f66215e1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" data-fancybox="ул. Степная, 28"></a>
+                <a href="//images.unsplash.com/photo-1525538182201-02cd1909effb?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" data-fancybox="ул. Степная, 28"></a>
+                <a href="//images.unsplash.com/photo-1438893254896-34a5db3e4a8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" data-fancybox="ул. Степная, 28"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  @@include('blocks/main-footer.html')
+  @@include('blocks/out-cover.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
