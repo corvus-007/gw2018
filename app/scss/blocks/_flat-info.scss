@@ -12,7 +12,15 @@
     border-bottom: none;
   }
 
-  &[data-flat-status]:not([data-flat-status="3"]) {
+  &--status:not([data-flat-status="3"]) {
+    display: none;
+  }
+
+  &--worth[data-flat-status="3"] {
+    display: none;
+  }
+
+  &--mortgage[data-flat-status="3"] {
     display: none;
   }
 }
