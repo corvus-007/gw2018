@@ -1,0 +1,44 @@
+.choose-mortgage-box {
+  margin-bottom: 2rem;
+}
+
+.choose-mortgage-box__title {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.choose-mortgage-box__grid {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mq-min(768px) {
+    flex-direction: row;
+  }
+}
+
+.choose-mortgage-box__column {
+  @include mq-min(768px) {
+    @include calc-column-width(2, 56px);
+  }
+}
+
+.choose-mortgage-box__grid-right {
+  margin-bottom: 40px;
+
+  @include mq-min(768px) {
+    margin-bottom: 0;
+  }
+}
+
+.choose-mortgage-box__picture-logo {
+  margin-bottom: 24px;
+
+  img {
+    margin-left: 0 !important;
+  }
+}
+
+.choose-mortgage-box__disclaimer {
+  font-size: 12px;
+  color: $muted-color;
+}

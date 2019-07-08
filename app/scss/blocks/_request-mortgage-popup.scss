@@ -1,0 +1,50 @@
+.request-mortgage-popup {
+  max-width: 700px;
+}
+
+.request-mortgage-popup__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 36px;
+  line-height: 1.15;
+  text-transform: none;
+
+  img {
+    width: 120px;
+    margin-top: 16px;
+  }
+
+  @include mq-min(667px) {
+    flex-direction: row;
+    font-size: 52px;
+
+    img {
+      margin-top: 0;
+      margin-left: 12px;
+    }
+  }
+}
+
+.request-mortgage-popup__fields {
+  @include mq-min(667px) {
+    display: flex;
+  }
+}
+
+.request-mortgage-popup__field {
+  @include mq-min(667px) {
+    @include calc-column-width(2);
+  }
+
+}
+
+.request-mortgage-popup__disclaimer {
+  @include clear-mr-edges-elem();
+
+  margin-top: 30px;
+  font-size: 10px;
+  line-height: 1.1;
+  color: $muted-color;
+}
