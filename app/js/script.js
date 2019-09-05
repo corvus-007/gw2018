@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // adaptiveHeight: false,
       wrapAround: true,
       contain: true,
-      // autoPlay: 3000,
+      autoPlay: 12000,
       pauseAutoPlayOnHover: false,
       selectedAttraction: 0.018,
       prevNextButtons: isHasPromoSliderControls,

@@ -21,7 +21,6 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
-    "handlebars": "^4.1.2",
     "run-sequence": "^2.2.1"
   },
   "scripts": {
@@ -37,6 +36,7 @@
     "flickity-bg-lazyload": "^1.0.1",
     "flickity-fullscreen": "^1.1.1",
     "gsap": "^2.1.2",
+    "handlebars": "^4.1.2",
     "inputmask": "^4.0.6",
     "jquery-validation": "^1.19.0",
     "js-cookie": "^2.2.0",

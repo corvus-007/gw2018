@@ -1,27 +1,36 @@
-<div id="popup-request-mortgage" class="popup" hidden>
-  <div class="popup__title">Запросить стоимость</div>
+<div id="popup-request-mortgage" class="popup request-mortgage-popup" hidden>
+  <div class="request-mortgage-popup__title popup__title">
+    Ипотека от 5%
+    <img src="../images/lenders-logos/vtb.png" alt="">
+  </div>
   <form class="form popup-form" action="" method="post">
-    <label class="field">
-      <span class="field__label">Имя</span>
-      <div class="field__control">
-        <input class="field__input input" type="text" name="request_mortgage_name" placeholder="Ваше имя">
-      </div>
-    </label>
-    <label class="field">
-      <span class="field__label">Телефон</span>
-      <div class="field__control">
-        <input class="field__input input" type="tel" name="request_mortgage_phone" placeholder="+7 (___) ___-__-__" required>
-      </div>
-    </label>
-    <label class="field">
-      <span class="field__label">Текст сообщения</span>
-      <div class="field__control">
-        <textarea class="field__input input" name="request_mortgage_message" rows="4" placeholder="Текст сообщения" required></textarea>
-      </div>
-    </label>
-
+    <div class="request-mortgage-popup__fields">
+      <label class="request-mortgage-popup__field field">
+        <span class="field__label">Имя</span>
+        <div class="field__control">
+          <input class="field__input input" type="text" name="request_mortgage_name" placeholder="Ваше имя">
+        </div>
+      </label>
+      <label class="request-mortgage-popup__field field">
+        <span class="field__label">Телефон</span>
+        <div class="field__control">
+          <input class="field__input input" type="tel" name="request_mortgage_phone" placeholder="+7 (___) ___-__-__" required>
+        </div>
+      </label>
+    </div>
     <div class="popup-form__submit-wrapper form-submit-wrapper">
-      <button class="button form-submit" type="sumbit">Отправить</button>
+      <button class="button form-submit" type="sumbit">Подобрать выгодную ипотеку</button>
     </div>
   </form>
+  <div class="request-mortgage-popup__disclaimer">
+    <p>
+      Заемщикам, удовлетворяющим параметрам Программы, предоставляется кредит со сниженной ставкой 5% на весь срок кредитования при условии страхования жизни и трудоспособности заемщика и риска утраты/повреждения приобретаемого жилья. Заемщики - граждане РФ, имеющие второго и (или) последующих детей-граждан РФ, рожденных в период с 01.01.2018 по 31.12.2022. Кредит предоставляется на приобретение у юридического лица (первый собственник) готового жилого помещения или приобретение у юридического лица (первый собственник) жилого помещения, находящегося на этапе строительства. Сумма кредита для МиМО, СПБ и ЛО - не более 12 млн. руб., для остальных субъектов РФ – не более 6 млн. руб. Первоначальный взнос – не менее 20% от стоимости приобретаемой недвижимости. Валюта кредита – рубли. Срок кредита – от 1 до 30 лет.
+    </p>
+    <p>
+      Условия действительны на 26.04.2019 г.
+    </p>
+    <p>
+      Банк ВТБ (ПАО) оказывает исключительно банковские услуги и не участвует в строительстве или продаже недвижимости. Банк вправе отказать в предоставлении кредита без объяснения причин. Банк предоставляет кредит в случае, если заемщик (созаемщик/поручитель, при наличии) соответствует требованиям Банка и предоставил полный пакет необходимых документов. Банк ВТБ (ПАО). Генеральная лицензия Банка России №1000.
+    </p>
+  </div>
 </div>

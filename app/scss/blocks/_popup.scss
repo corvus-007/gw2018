@@ -2,6 +2,7 @@
   width: calc(100% - #{($gutter / 2)});
   max-width: 500px;
   padding: ($gutter * 2);
+  border-radius: 4px;
 
   @include mq-min(768px) {
     padding: ($gutter * 3);

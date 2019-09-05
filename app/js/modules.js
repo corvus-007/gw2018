@@ -18,3 +18,4 @@
 ////=require modules/promo-popup.js
 //=require modules/info-popup.js
 //=require modules/notification.js
+//=require modules/territory-popup.js

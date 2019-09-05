@@ -4,6 +4,7 @@
   right: 20px;
   left: 20px;
   z-index: 30;
+  min-width: 320px;
   max-width: 400px;
   padding: 32px;
   transform: translate3d(calc(100% + 24px), -50%, 0);
@@ -129,17 +130,26 @@
   position: relative;
 }
 
+.notification__header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
 .notification__title {
   margin: 0;
-  margin-bottom: 28px;
   font-weight: 500;
   font-size: 28px;
   line-height: 1.2;
-  text-align: center;
 
   @include mq-min(768px) {
     font-size: 32px;
   }
+}
+
+.notification__subtitle {
+  margin: 0;
+  margin-top: 4px;
+  font-size: 18px;
 }
 
 .notification__text {

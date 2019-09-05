@@ -1,0 +1,15 @@
+.territory-popup-slider {
+
+  img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+  }
+
+  @include mq-min(768px) {
+    img {
+      height: 400px;
+    }
+  }
+}

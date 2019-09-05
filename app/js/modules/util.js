@@ -4,7 +4,8 @@ window.util = (function () {
   return {
     KEYCODE_ESC: 27,
     URL_TOOLTIP_HOUSE_HANDLER: '//filter.greenwoodclub.ru/api/get_tooltip_house/',
-    URL_FILTER_HANDLER: '/api/getApartmentsByFilter',
+    // URL_FILTER_HANDLER: '/api/getApartmentsByFilter',
+    URL_FILTER_HANDLER: 'http://45.67.57.189/api/2/getApartmentsByFilter',
     compareTypes: {
       rooms: function (a, b) {
         var roomList = {

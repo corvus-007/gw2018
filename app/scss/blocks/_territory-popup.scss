@@ -1,0 +1,47 @@
+.territory-popup {
+  max-width: 650px;
+  padding: 0;
+}
+
+.territory-popup__inner {
+  @include mq-min(568px) {
+    display: flex;
+  }
+}
+
+.territory-popup__slider {
+  width: 100%;
+
+  @include mq-min(568px) {
+    width: 50%;
+  }
+}
+
+.territory-popup__content {
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+
+  @include mq-min(568px) {
+    width: 50%;
+  }
+}
+
+.territory-popup__header {
+  margin-bottom: 40px;
+}
+
+.territory-popup__title {
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 44px;
+}
+
+.territory-popup__text {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  line-height: 24px;
+  color: $muted-color;
+}

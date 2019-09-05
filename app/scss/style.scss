@@ -36,9 +36,11 @@
 @import "blocks/popup-form";
 @import "blocks/promo-popup";
 @import "blocks/info-popup";
+@import "blocks/request-mortgage-popup";
 @import "blocks/pagination";
 @import "blocks/override-fancybox";
 @import "blocks/textual";
+@import "blocks/socials";
 @import "blocks/incut-visual";
 @import "blocks/block-out";
 @import "blocks/out-cover-toggle";
@@ -61,6 +63,7 @@
 @import "blocks/intro-action";
 @import "blocks/intro-actions";
 @import "blocks/section-choose";
+@import "blocks/quiz";
 // @import "blocks/presentation-video";
 @import "blocks/district-legend";
 @import "blocks/district-legend-toggle";
@@ -110,18 +113,25 @@
 @import "blocks/construction-card";
 @import "blocks/construction-cards";
 @import "blocks/construction-filter-buttons";
+@import "blocks/gallery-card";
+@import "blocks/gallery-cards";
 @import "blocks/contacts-info";
 @import "blocks/contacts";
 @import "blocks/contacts-page";
+@import "blocks/choose-mortgage-form";
+@import "blocks/choose-mortgage-box";
 // @import "blocks/documents-file";
 // @import "blocks/documents";
 @import "blocks/download-attachments";
 
+@import "blocks/floating-block";
+
 @import "blocks/main-footer";
-@import "blocks/socials";
 @import "blocks/mobile-nav";
 @import "blocks/out-cover";
 @import "blocks/go-to-favorite-page";
 @import "blocks/notification";
+@import "blocks/territory-popup-slider";
+@import "blocks/territory-popup";
 
 @import "print";

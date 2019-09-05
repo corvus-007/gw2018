@@ -98,6 +98,11 @@
   margin: 0;
   margin-left: 20px;
 
+  .is-out-cover-opened & {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   @include mq-min(1024px) {
     // margin-top: vh(-7); // высота нижнего паддинга у ссылки
     margin-left: vh(30);
@@ -117,11 +122,6 @@
   line-height: 1.15;
   text-decoration: none;
   color: $base-color;
-
-  .is-out-cover-opened & {
-    visibility: hidden;
-    opacity: 0;
-  }
 
   span {
     font-size: rem(24);

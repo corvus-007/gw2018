@@ -60,7 +60,7 @@ window.flatsResult = (function (window, $) {
     var data = params.data || '';
     var response = window.util.sendRequest(data, window.util.URL_FILTER_HANDLER);
 
-    favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
+    // favoritesCards = window.favoritesCards.getFavoritesFlatsAsArr();
     response.done(renderFilteredFlats);
   }
 
@@ -68,9 +68,18 @@ window.flatsResult = (function (window, $) {
     clearCardsList();
 
     window.util.filteredFlats = data;
-    console.log(data);
+
     var sortedData = window.flatsSort.sortFlats(data, window.flatsSort.getSortByVal(selectSortElem));
-    cardsList.innerHTML = template(sortedData);
+
+    var resultString = '';
+
+    if (sortedData.length > 0) {
+      resultString = template(sortedData);
+    } else {
+      resultString = `<li style="flex-grow: 1;"><h2 style="text-align: center;">Извините, ничего не найдено :(</h2></li>`;
+    }
+
+    cardsList.innerHTML = resultString;
 
     setTimeout(function () {
       endLoading();

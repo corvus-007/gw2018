@@ -40,7 +40,7 @@ window.notification = (function (window, $) {
     notification.classList.remove('notification--open');
     notification.classList.add('notification--closed');
 
-    writeToSessionStorage('is_notification_watched', true);
+    // writeToSessionStorage('is_notification_watched', true);
   }
 
   function addAnimationClass() {
