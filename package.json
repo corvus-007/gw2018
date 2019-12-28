@@ -36,7 +36,7 @@
     "flickity-bg-lazyload": "^1.0.1",
     "flickity-fullscreen": "^1.1.1",
     "gsap": "^2.1.2",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.3.0",
     "inputmask": "^4.0.6",
     "jquery-validation": "^1.19.0",
     "js-cookie": "^2.2.0",
